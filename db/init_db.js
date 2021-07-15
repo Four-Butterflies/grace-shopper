@@ -1,19 +1,18 @@
 // code to build and initialize DB goes here
+const client = require("./client");
+
 const {
-  client,
-  // other db methods
   createAlbums,
   createGenres,
   createAlbumGenres,
   createUser,
-} = require('./index');
+} = require('../db');
 
 const albums = require('./seeddata.json');
 
 async function buildTables() {
   try {
     console.log('Building tables...');
-    await client.connect();
 
     // build tables in correct order
 
@@ -58,7 +57,7 @@ async function buildTables() {
   }
 }
 
-async function populateInitialData() {
+async function createInitialAlbums() {
   try {
     console.log('Starting to create albums...');
     await Promise.all(
@@ -89,14 +88,26 @@ async function populateInitialData() {
         });
       })
     );
-
+    
     console.log('Finished creating albums');
   } catch (error) {
     throw error;
   }
 }
 
-buildTables()
-  .then(populateInitialData)
+async function rebuildDB(){
+  try {
+    client.connect();
+    //await dropTables()
+    await buildTables();
+    await createInitialAlbums();
+  } catch (error) {
+    console.log("Error during rebuildDB");
+    throw error;
+
+  }
+}
+
+rebuildDB()
   .catch(console.error)
   .finally(() => client.end());
