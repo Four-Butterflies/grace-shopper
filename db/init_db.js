@@ -19,11 +19,11 @@ async function buildTables() {
     DROP TABLE IF EXISTS users;
     DROP TABLE IF EXISTS genre_albums;
     DROP TABLE IF EXISTS genres;
-    DROP TABLE IF EXISTS products;
+    DROP TABLE IF EXISTS albums;
 
-    CREATE TABLE products (
+    CREATE TABLE albums (
       id SERIAL PRIMARY KEY,
-      album_name varchar(255) UNIQUE NOT NULL,
+      album_name varchar(255) NOT NULL,
       artist varchar(255) NOT NULL,
       year INT,
       price INT DEFAULT 1999,
@@ -37,7 +37,7 @@ async function buildTables() {
     );
     CREATE TABLE genre_albums (
       id SERIAL PRIMARY KEY,
-      "productId" INTEGER REFERENCES products(id) ON DELETE CASCADE NOT NULL,
+      "albumId" INTEGER REFERENCES albums(id) ON DELETE CASCADE NOT NULL,
       "genreId" INTEGER REFERENCES genres(id) ON DELETE CASCADE NOT NULL
     );
     CREATE TABLE users (

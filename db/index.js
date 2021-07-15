@@ -17,9 +17,8 @@ async function createAlbums({
 }) {
   try {
     const { rows: [ album ] } = await client.query(`
-      INSERT INTO products(album_name, artist, year, price, quantity, reorder_number, img_url)
+      INSERT INTO albums(album_name, artist, year, price, quantity, reorder_number, img_url)
       VALUES($1, $2, $3, $4, $5, $6, $7)
-      ON CONFLICT (album_name) DO NOTHING
       RETURNING *;
     `, [album_name, artist, year, price, quantity, reorder, img_url]);
 
@@ -33,25 +32,25 @@ async function createGenres({
   genre,
 }) {
   try {
-    const { rows: [ genrename ] } = await client.query(`
+    const { rows: [ genreName ] } = await client.query(`
       INSERT INTO genres(genre)
       VALUES($1)
       ON CONFLICT (genre) DO NOTHING
       RETURNING *;
     `, [genre]);
 
-    return genrename;
+    return genreName;
   } catch (error) {
     throw error;
   }
 }
 
-async function createAlbumGenres(productId, genreId) {
+async function createAlbumGenres(albumId, genreId) {
   try {
     await client.query(`
-      INSERT INTO genre_albums("productId", "genreId")
+      INSERT INTO genre_albums("albumId", "genreId")
       VALUES ($1, $2)
-      `, [productId, genreId]);
+      `, [albumId, genreId]);
   } catch (error) {
     throw error;
   }
@@ -67,7 +66,7 @@ async function createUser({
       INSERT INTO users(username, password, email)
       VALUES($1, $2, $3)
       ON CONFLICT (username) DO NOTHING
-      RETURNING *;
+      RETURNING id, username, email;
     `, [username, password, email]);
 
     return user;
