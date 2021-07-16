@@ -1,9 +1,4 @@
-// Connect to DB
-const { Client } = require('pg');
-// I chose vinyldb as our DB name
-const DB_NAME = 'vinyldb'
-const DB_URL = process.env.DATABASE_URL || `postgres://localhost:5432/${ DB_NAME }`;
-const client = new Client(DB_URL);
+const client = require("./client")
 
 // database methods
 async function createAlbums({
@@ -56,31 +51,29 @@ async function createAlbumGenres(albumId, genreId) {
   }
 }
 
-async function createUser({
-  username,
-  password,
-  email
-}) {
-  try {
-    const { rows: [ user ] } = await client.query(`
-      INSERT INTO users(username, password, email)
-      VALUES($1, $2, $3)
-      ON CONFLICT (username) DO NOTHING
-      RETURNING id, username, email;
-    `, [username, password, email]);
+// async function createUser({
+//   username,
+//   password,
+//   email
+// }) {
+//   try {
+//     const { rows: [ user ] } = await client.query(`
+//       INSERT INTO users(username, password, email)
+//       VALUES($1, $2, $3)
+//       ON CONFLICT (username) DO NOTHING
+//       RETURNING id, username, email;
+//     `, [username, password, email]);
 
-    return user;
-  } catch (error) {
-    throw error;
-  }
-}
+//     return user;
+//   } catch (error) {
+//     throw error;
+//   }
+// }
 
 // export
 module.exports = {
-  client,
   // db methods
   createAlbums,
   createGenres,
   createAlbumGenres,
-  createUser
 }

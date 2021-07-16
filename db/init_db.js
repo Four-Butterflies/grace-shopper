@@ -1,17 +1,21 @@
 // code to build and initialize DB goes here
-const {
-  client,
-  // other db methods 
-  createAlbums,
-  createGenres,
-  createAlbumGenres,
-  createUser
-} = require('./index');
+// const {
+//   // other db methods 
+//   createAlbums,
+//   createGenres,
+//   createAlbumGenres,
+// } = require('../db');
+
+const { client } = require('./client')
+
+const { createUser } = require('./users.js')
+
+const users = require('./usersseeddata.json')
 
 async function buildTables() {
   try {
     console.log("Building tables...");
-    await client.connect();
+    // await client.connect();
 
     // build tables in correct order
 
@@ -54,27 +58,43 @@ async function buildTables() {
   }
 }
 
-async function populateInitialData() {
+async function createInitialUsers() {
   try {
-    console.log("Starting to create albums...");
-    await createAlbums({
-      album_name: 'The Colour and the Shape',
-      artist: 'Foo Fighters',
-      year: 1997,
-      price: 1999,
-      quantity: 12,
-      reorder: 1,
-      img_url: 'https://upload.wikimedia.org/wikipedia/en/0/0d/FooFighters-TheColourAndTheShape.jpg'
-    });
+    console.log('Starting to create users...')
+    await Promise.all(
+      users.map(async (user) => {
+        const {
+          username,
+          password,
+          email
+        } = user
 
-    console.log("finished creating albums")
-
-  } catch (error) {
-    throw error;
+        await createUser({
+          username, 
+          password, 
+          email
+        })
+      })
+    )
+    
+    console.log('Finished creating users!')
+  } catch(error) {
+    throw error
   }
 }
 
-buildTables()
-  .then(populateInitialData)
+async function rebuildDB(){
+  try {
+    client.connect();
+    await buildTables();
+    await createInitialUsers();
+  } catch (error) {
+    console.log("Error during rebuildDB");
+    throw error;
+
+  }
+}
+
+rebuildDB()
   .catch(console.error)
   .finally(() => client.end());
