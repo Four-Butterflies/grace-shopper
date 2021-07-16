@@ -1,21 +1,18 @@
-// code to build and initialize DB goes here
-// const {
-//   // other db methods 
-//   createAlbums,
-//   createGenres,
-//   createAlbumGenres,
-// } = require('../db');
+const client = require("./client");
 
-const { client } = require('./client')
+const {
+  createAlbums,
+  createGenres,
+  createAlbumGenres,
+  createUser,
+} = require('../db');
 
-const { createUser } = require('./users.js')
-
+const albums = require('./seeddata.json');
 const users = require('./usersseeddata.json')
 
 async function buildTables() {
   try {
-    console.log("Building tables...");
-    // await client.connect();
+    console.log('Building tables...');
 
     // build tables in correct order
 
@@ -33,7 +30,9 @@ async function buildTables() {
       price INT DEFAULT 1999,
       quantity INT DEFAULT 0,
       reorder_number INT DEFAULT 0,
-      img_url varchar(255) DEFAULT 'https://cdn4.vectorstock.com/i/thumb-large/82/48/vinyl-record-blank-realistic-vinyl-disc-mockup-on-vector-17128248.jpg'
+      img_url text DEFAULT 'https://cdn4.vectorstock.com/i/thumb-large/82/48/vinyl-record-blank-realistic-vinyl-disc-mockup-on-vector-17128248.jpg',
+      spotify varchar(255),
+      total_tracks INT
     );
     CREATE TABLE genres (
       id SERIAL PRIMARY KEY,
@@ -52,7 +51,7 @@ async function buildTables() {
     )
   `);
 
-    console.log("Tables Built!")
+    console.log('Tables Built!');
   } catch (error) {
     throw error;
   }
@@ -83,15 +82,54 @@ async function createInitialUsers() {
   }
 }
 
+async function createInitialAlbums() {
+  try {
+    console.log('Starting to create albums...');
+    await Promise.all(
+      albums.map(async (album) => {
+        const {
+          name,
+          artists,
+          release_date,
+          genres,
+          images,
+          price,
+          quantity,
+          reorder,
+          total_tracks,
+          spotify,
+        } = album;
+
+        await createAlbums({
+          name,
+          artists,
+          release_date,
+          price,
+          quantity,
+          reorder,
+          images,
+          total_tracks,
+          spotify,
+        });
+      })
+    );
+    
+    console.log('Finished creating albums');
+  } catch (error) {
+    throw error;
+  }
+}
+
 async function rebuildDB(){
   try {
     client.connect();
+    //await dropTables()
     await buildTables();
-    await createInitialUsers();
+    await createInitialAlbums();
+    await createInitialUsers()
   } catch (error) {
     console.log("Error during rebuildDB");
     throw error;
-
   }
 }
 

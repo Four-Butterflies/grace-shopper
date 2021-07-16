@@ -61,7 +61,7 @@ const getUserById = async (id) => {
     }
 }
 
-// select a user using the user's username. Return the user object.
+// select a user using the user's email. Return the user object.
 const getUserByEmail = async (email) => {
     try {
         const { rows: [user] } = await client.query(`
