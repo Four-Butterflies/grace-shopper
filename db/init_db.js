@@ -1,4 +1,3 @@
-// code to build and initialize DB goes here
 const client = require("./client");
 
 const {
@@ -9,6 +8,7 @@ const {
 } = require('../db');
 
 const albums = require('./seeddata.json');
+const users = require('./usersseeddata.json')
 
 async function buildTables() {
   try {
@@ -57,6 +57,31 @@ async function buildTables() {
   }
 }
 
+async function createInitialUsers() {
+  try {
+    console.log('Starting to create users...')
+    await Promise.all(
+      users.map(async (user) => {
+        const {
+          username,
+          password,
+          email
+        } = user
+
+        await createUser({
+          username, 
+          password, 
+          email
+        })
+      })
+    )
+    
+    console.log('Finished creating users!')
+  } catch(error) {
+    throw error
+  }
+}
+
 async function createInitialAlbums() {
   try {
     console.log('Starting to create albums...');
@@ -101,10 +126,10 @@ async function rebuildDB(){
     //await dropTables()
     await buildTables();
     await createInitialAlbums();
+    await createInitialUsers()
   } catch (error) {
     console.log("Error during rebuildDB");
     throw error;
-
   }
 }
 

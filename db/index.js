@@ -4,9 +4,3 @@ module.exports = {
   ...require('./genres'),
   ...require('./album_genres'),
 }
-
-
-
-
-
-
