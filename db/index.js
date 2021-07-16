@@ -3,10 +3,4 @@ module.exports = {
   ...require('./albums'),
   ...require('./genres'),
   ...require('./album_genres'),
-}
-
-
-
-
-
-
+};
