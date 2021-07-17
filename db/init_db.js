@@ -1,17 +1,19 @@
 // code to build and initialize DB goes here
+const client = require('./client');
+
 const {
-  client,
-  // other db methods 
   createAlbums,
   createGenres,
   createAlbumGenres,
-  createUser
-} = require('./index');
+  createUser,
+} = require('../db');
+
+const albums = require('./seeddata.json');
+const users = require('./usersseeddata.json')
 
 async function buildTables() {
   try {
-    console.log("Building tables...");
-    await client.connect();
+    console.log('Building tables...');
 
     // build tables in correct order
 
@@ -29,7 +31,9 @@ async function buildTables() {
       price INT DEFAULT 1999,
       quantity INT DEFAULT 0,
       reorder_number INT DEFAULT 0,
-      img_url varchar(255) DEFAULT 'https://cdn4.vectorstock.com/i/thumb-large/82/48/vinyl-record-blank-realistic-vinyl-disc-mockup-on-vector-17128248.jpg'
+      img_url text DEFAULT 'https://cdn4.vectorstock.com/i/thumb-large/82/48/vinyl-record-blank-realistic-vinyl-disc-mockup-on-vector-17128248.jpg',
+      spotify varchar(255),
+      total_tracks INT
     );
     CREATE TABLE genres (
       id SERIAL PRIMARY KEY,
@@ -48,33 +52,88 @@ async function buildTables() {
     )
   `);
 
-    console.log("Tables Built!")
+    console.log('Tables Built!');
   } catch (error) {
     throw error;
   }
 }
 
-async function populateInitialData() {
+async function createInitialUsers() {
   try {
-    console.log("Starting to create albums...");
-    await createAlbums({
-      album_name: 'The Colour and the Shape',
-      artist: 'Foo Fighters',
-      year: 1997,
-      price: 1999,
-      quantity: 12,
-      reorder: 1,
-      img_url: 'https://upload.wikimedia.org/wikipedia/en/0/0d/FooFighters-TheColourAndTheShape.jpg'
-    });
+    console.log('Starting to create users...')
+    await Promise.all(
+      users.map(async (user) => {
+        const {
+          username,
+          password,
+          email
+        } = user
 
-    console.log("finished creating albums")
+        await createUser({
+          username, 
+          password, 
+          email
+        })
+      })
+    )
+    
+    console.log('Finished creating users!')
+  } catch(error) {
+    throw error
+  }
+}
 
+async function createInitialAlbums() {
+  try {
+    console.log('Starting to create albums...');
+    await Promise.all(
+      albums.map(async (album) => {
+        const {
+          name,
+          artists,
+          release_date,
+          genres,
+          images,
+          price,
+          quantity,
+          reorder,
+          total_tracks,
+          spotify,
+        } = album;
+
+        await createAlbums({
+          name,
+          artists,
+          release_date,
+          price,
+          quantity,
+          reorder,
+          images,
+          total_tracks,
+          spotify,
+        });
+      })
+    );
+
+    console.log('Finished creating albums');
   } catch (error) {
     throw error;
   }
 }
 
-buildTables()
-  .then(populateInitialData)
+async function rebuildDB() {
+  try {
+    client.connect();
+    //await dropTables()
+    await buildTables();
+    await createInitialAlbums();
+    await createInitialUsers()
+  } catch (error) {
+    console.log('Error during rebuildDB');
+    throw error;
+  }
+}
+
+rebuildDB()
   .catch(console.error)
   .finally(() => client.end());
