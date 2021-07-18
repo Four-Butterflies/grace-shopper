@@ -11,4 +11,3 @@ First, go to your username/grace-shopper. Click on "fetch upstream"
 To DL the up to date code, terminal:
 git pull origin master
 
-
