@@ -5,7 +5,7 @@ const {
   getAllUsers,
   createUser,
   getUserByEmailAndPassword,
-  getUserByUsername,
+  getUserByEmail,
 } = require('../db');
 
 usersRouter.get('/', async (req, res) => {
@@ -17,7 +17,7 @@ usersRouter.post('/register', async (req, res, next) => {
     
   const { username, password, email } = req.body;
   try {
-    const existingUser = await getUserByUsername(username);
+    const existingUser = await getUserByEmail(email);
 
     if (existingUser) {
       res.status(400).send({
