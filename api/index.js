@@ -6,6 +6,7 @@ const genresRouter = require('./genres.js');
 const albumGenresRouter = require('./album_genres.js');
 
 apiRouter.get('/health', (req, res, next) => {
+  console.log('A request is being made to', req.path);
   res.send({ message: 'All is good on /api/health!' });
   next();
 });
