@@ -18,6 +18,8 @@ async function buildTables() {
     // build tables in correct order
 
     await client.query(`
+    DROP TABLE IF EXISTS cart;
+    DROP TABLE IF EXISTS reviews;
     DROP TABLE IF EXISTS users;
     DROP TABLE IF EXISTS genre_albums;
     DROP TABLE IF EXISTS genres;
@@ -48,7 +50,25 @@ async function buildTables() {
       id SERIAL PRIMARY KEY,
       username varchar(255) UNIQUE NOT NULL,
       password varchar(255) NOT NULL,
+<<<<<<< HEAD
       email varchar(255) UNIQUE NOT NULL
+=======
+      email varchar(255) NOT NULL
+    );
+    CREATE TABLE reviews (
+      id SERIAL PRIMARY KEY,
+      review TEXT,
+      rating BOOLEAN DEFAULT true,
+      date DATE DEFAULT CURRENT_DATE,
+      "albumId" INTEGER REFERENCES albums(id) ON DELETE CASCADE NOT NULL,
+      "userId" INTEGER REFERENCES users(id) ON DELETE CASCADE NOT NULL
+    );
+    CREATE TABLE cart (
+      id SERIAL PRIMARY KEY, 
+      quantity INT DEFAULT 0,
+      "albumId" INTEGER REFERENCES albums(id) ON DELETE CASCADE NOT NULL,
+      "userId" INTEGER REFERENCES users(id) ON DELETE CASCADE NOT NULL
+>>>>>>> 55b2165d9448a89afe43590c4040f79c54f89c6b
     )
   `);
 
