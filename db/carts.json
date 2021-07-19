@@ -1,0 +1,77 @@
+[
+    {
+        "quantity": "2",
+        "albumId": "4",
+        "userId": "10"
+    },
+    {
+        "quantity": "1",
+        "albumId": "36",
+        "userId": "10"
+    },
+    {
+        "quantity": "1",
+        "albumId": "20",
+        "userId": "10"
+    },
+    {
+        "quantity": "2",
+        "albumId": "4",
+        "userId": "36"
+    },
+    {
+        "quantity": "1",
+        "albumId": "8",
+        "userId": "28"
+    },
+    {
+        "quantity": "1",
+        "albumId": "87",
+        "userId": "28"
+    },
+    {
+        "quantity": "1",
+        "albumId": "37",
+        "userId": "28"
+    },
+    {
+        "quantity": "1",
+        "albumId": "64",
+        "userId": "42"
+    },
+    {
+        "quantity": "2",
+        "albumId": "53",
+        "userId": "23"
+    },
+    {
+        "quantity": "1",
+        "albumId": "81",
+        "userId": "31"
+    },
+    {
+        "quantity": "1",
+        "albumId": "19",
+        "userId": "16"
+    },
+    {
+        "quantity": "2",
+        "albumId": "29",
+        "userId": "39"
+    },
+    {
+        "quantity": "1",
+        "albumId": "74",
+        "userId": "15"
+    },
+    {
+        "quantity": "1",
+        "albumId": "63",
+        "userId": "41"
+    },
+    {
+        "quantity": "1",
+        "albumId": "37",
+        "userId": "7"
+    }
+]
