@@ -6,10 +6,13 @@ const {
   createGenres,
   createAlbumGenres,
   createUser,
+  createCart
 } = require('../db');
 
 const albums = require('./seeddata.json');
-const users = require('./usersseeddata.json');
+
+const users = require('./usersseeddata.json')
+const carts = require('./carts.json')
 
 async function buildTables() {
   try {
@@ -50,10 +53,7 @@ async function buildTables() {
       id SERIAL PRIMARY KEY,
       username varchar(255) UNIQUE NOT NULL,
       password varchar(255) NOT NULL,
-<<<<<<< HEAD
       email varchar(255) UNIQUE NOT NULL
-=======
-      email varchar(255) NOT NULL
     );
     CREATE TABLE reviews (
       id SERIAL PRIMARY KEY,
@@ -68,7 +68,6 @@ async function buildTables() {
       quantity INT DEFAULT 0,
       "albumId" INTEGER REFERENCES albums(id) ON DELETE CASCADE NOT NULL,
       "userId" INTEGER REFERENCES users(id) ON DELETE CASCADE NOT NULL
->>>>>>> 55b2165d9448a89afe43590c4040f79c54f89c6b
     )
   `);
 
@@ -78,6 +77,7 @@ async function buildTables() {
   }
 }
 
+// CREATE INITIAL USERS
 async function createInitialUsers() {
   try {
     console.log('Starting to create users...');
@@ -99,6 +99,7 @@ async function createInitialUsers() {
   }
 }
 
+// CREATE INITIAL ALBUMS
 async function createInitialAlbums() {
   try {
     console.log('Starting to create albums...');
@@ -134,6 +135,32 @@ async function createInitialAlbums() {
     console.log('Finished creating albums');
   } catch (error) {
     throw error;
+  }
+}
+
+// CREATE INITIAL CARTS
+async function createInitialCarts() {
+  try {
+    console.log('Starting to create carts...')
+    await Promise.all(
+      carts.map(async (cart) => {
+        const {
+          quantity,
+          albumId,
+          userId
+        } = cart
+
+        await createCart({
+          quantity,
+          albumId,
+          userId
+        })
+      })
+    )
+    
+    console.log('Finished creating carts!')
+  } catch(error) {
+    throw error
   }
 }
 
