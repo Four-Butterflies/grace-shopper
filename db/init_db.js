@@ -6,10 +6,12 @@ const {
   createGenres,
   createAlbumGenres,
   createUser,
+  createCart
 } = require('../db');
 
 const albums = require('./seeddata.json');
 const users = require('./usersseeddata.json')
+const carts = require('./carts.json')
 
 async function buildTables() {
   try {
@@ -74,6 +76,7 @@ async function buildTables() {
   }
 }
 
+// CREATE INITIAL USERS
 async function createInitialUsers() {
   try {
     console.log('Starting to create users...')
@@ -99,6 +102,7 @@ async function createInitialUsers() {
   }
 }
 
+// CREATE INITIAL ALBUMS
 async function createInitialAlbums() {
   try {
     console.log('Starting to create albums...');
@@ -137,13 +141,40 @@ async function createInitialAlbums() {
   }
 }
 
+// CREATE INITIAL CARTS
+async function createInitialCarts() {
+  try {
+    console.log('Starting to create carts...')
+    await Promise.all(
+      carts.map(async (cart) => {
+        const {
+          quantity,
+          albumId,
+          userId
+        } = cart
+
+        await createCart({
+          quantity,
+          albumId,
+          userId
+        })
+      })
+    )
+    
+    console.log('Finished creating carts!')
+  } catch(error) {
+    throw error
+  }
+}
+
 async function rebuildDB() {
   try {
     client.connect();
     //await dropTables()
     await buildTables();
     await createInitialAlbums();
-    await createInitialUsers()
+    await createInitialUsers();
+    await createInitialCarts();
   } catch (error) {
     console.log('Error during rebuildDB');
     throw error;
