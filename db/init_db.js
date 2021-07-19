@@ -10,6 +10,7 @@ const {
 } = require('../db');
 
 const albums = require('./seeddata.json');
+
 const users = require('./usersseeddata.json')
 const carts = require('./carts.json')
 
@@ -52,7 +53,7 @@ async function buildTables() {
       id SERIAL PRIMARY KEY,
       username varchar(255) UNIQUE NOT NULL,
       password varchar(255) NOT NULL,
-      email varchar(255) NOT NULL
+      email varchar(255) UNIQUE NOT NULL
     );
     CREATE TABLE reviews (
       id SERIAL PRIMARY KEY,
@@ -79,26 +80,22 @@ async function buildTables() {
 // CREATE INITIAL USERS
 async function createInitialUsers() {
   try {
-    console.log('Starting to create users...')
+    console.log('Starting to create users...');
     await Promise.all(
       users.map(async (user) => {
-        const {
-          username,
-          password,
-          email
-        } = user
+        const { username, password, email } = user;
 
         await createUser({
-          username, 
-          password, 
-          email
-        })
+          username,
+          password,
+          email,
+        });
       })
-    )
-    
-    console.log('Finished creating users!')
-  } catch(error) {
-    throw error
+    );
+
+    console.log('Finished creating users!');
+  } catch (error) {
+    throw error;
   }
 }
 
@@ -174,7 +171,6 @@ async function rebuildDB() {
     await buildTables();
     await createInitialAlbums();
     await createInitialUsers();
-    await createInitialCarts();
   } catch (error) {
     console.log('Error during rebuildDB');
     throw error;
