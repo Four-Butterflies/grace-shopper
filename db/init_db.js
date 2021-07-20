@@ -6,13 +6,13 @@ const {
   createGenres,
   createAlbumGenres,
   createUser,
-  createCart
+  createCart,
 } = require('../db');
 
 const albums = require('./seeddata.json');
 
-const users = require('./usersseeddata.json')
-const carts = require('./carts.json')
+const users = require('./usersseeddata.json');
+const carts = require('./carts.json');
 
 async function buildTables() {
   try {
@@ -42,7 +42,7 @@ async function buildTables() {
     );
     CREATE TABLE genres (
       id SERIAL PRIMARY KEY,
-      genre varchar(255)
+      genre varchar(255) UNIQUE NOT NULL
     );
     CREATE TABLE genre_albums (
       id SERIAL PRIMARY KEY,
@@ -118,7 +118,7 @@ async function createInitialAlbums() {
           spotify,
         } = album;
 
-        await createAlbums({
+        const album = await createAlbums({
           name,
           artists,
           release_date,
@@ -129,6 +129,8 @@ async function createInitialAlbums() {
           total_tracks,
           spotify,
         });
+
+        await createAlbumGenres(album.id);
       })
     );
 
@@ -141,26 +143,22 @@ async function createInitialAlbums() {
 // CREATE INITIAL CARTS
 async function createInitialCarts() {
   try {
-    console.log('Starting to create carts...')
+    console.log('Starting to create carts...');
     await Promise.all(
       carts.map(async (cart) => {
-        const {
-          quantity,
-          albumId,
-          userId
-        } = cart
+        const { quantity, albumId, userId } = cart;
 
         await createCart({
           quantity,
           albumId,
-          userId
-        })
+          userId,
+        });
       })
-    )
-    
-    console.log('Finished creating carts!')
-  } catch(error) {
-    throw error
+    );
+
+    console.log('Finished creating carts!');
+  } catch (error) {
+    throw error;
   }
 }
 

@@ -10,7 +10,6 @@ async function createGenres({ genre }) {
       `
         INSERT INTO genres(genre)
         VALUES($1)
-        ON CONFLICT (genre) DO NOTHING
         RETURNING *;
       `,
       [genre]
