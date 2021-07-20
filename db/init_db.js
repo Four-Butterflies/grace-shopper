@@ -7,12 +7,14 @@ const {
   createAlbumGenres,
   createUser,
   createCart,
+  createReview,
 } = require('../db');
 
+// SEED DATA
 const albums = require('./seeddata.json');
-
 const users = require('./usersseeddata.json');
 const carts = require('./carts.json');
+const reviews = require('./reviews.json');
 
 async function buildTables() {
   try {
@@ -162,6 +164,29 @@ async function createInitialCarts() {
   }
 }
 
+// CREATE INITIAL REVIEWS
+async function createInitialReviews() {
+  try {
+    console.log('Starting to create reviews...');
+    await Promise.all(
+      reviews.map(async (eachReview) => {
+        const { review, rating, albumId, userId } = eachReview;
+
+        await createReview({
+          review,
+          rating,
+          albumId,
+          userId,
+        });
+      })
+    );
+
+    console.log('Finished creating reviews!');
+  } catch (error) {
+    throw error;
+  }
+}
+
 async function rebuildDB() {
   try {
     client.connect();
@@ -169,6 +194,8 @@ async function rebuildDB() {
     await buildTables();
     await createInitialAlbums();
     await createInitialUsers();
+    await createInitialCarts();
+    await createInitialReviews();
   } catch (error) {
     console.log('Error during rebuildDB');
     throw error;

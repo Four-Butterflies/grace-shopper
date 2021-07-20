@@ -3,5 +3,6 @@ module.exports = {
   ...require('./albums'),
   ...require('./genres'),
   ...require('./album_genres'),
-  ...require('./carts')
+  ...require('./carts'),
+  ...require('./reviews')
 };
