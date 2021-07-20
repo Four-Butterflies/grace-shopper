@@ -2,7 +2,7 @@ const client = require('./client');
 
 // database methods
 
-async function createGenres({ genre }) {
+async function createGenre(genre) {
   try {
     const {
       rows: [genreName],
@@ -10,7 +10,7 @@ async function createGenres({ genre }) {
       `
         INSERT INTO genres(genre)
         VALUES($1)
-        ON CONFLICT (genre) DO NOTHING
+        ON CONFLICT DO NOTHING
         RETURNING *;
       `,
       [genre]
@@ -22,4 +22,54 @@ async function createGenres({ genre }) {
   }
 }
 
-module.exports = { createGenres };
+async function getAllGenres() {
+  try {
+    const { rows } = await client.query(
+      ` 
+      SELECT * FROM genres;
+    `
+    );
+
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function getGenreByName(genreName) {
+  try {
+    const {
+      rows: [genre],
+    } = await client.query(
+      ` 
+      SELECT * FROM genres
+      WHERE genre = $1;
+    `,
+      [genreName]
+    );
+
+    return genre;
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function getGenreById(id) {
+  try {
+    const {
+      rows: [genre],
+    } = await client.query(
+      ` 
+      SELECT * FROM genres
+      WHERE id = $1;
+    `,
+      [id]
+    );
+
+    return genre;
+  } catch (error) {
+    throw error;
+  }
+}
+
+module.exports = { createGenre, getAllGenres, getGenreByName, getGenreById };

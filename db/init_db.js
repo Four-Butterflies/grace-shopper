@@ -3,7 +3,8 @@ const client = require('./client');
 
 const {
   createAlbums,
-  createGenres,
+  createGenre,
+  getGenreByName,
   createAlbumGenres,
   createUser,
   createOrder,
@@ -47,7 +48,7 @@ async function buildTables() {
     );
     CREATE TABLE genres (
       id SERIAL PRIMARY KEY,
-      genre varchar(255)
+      genre varchar(255) UNIQUE NOT NULL
     );
     CREATE TABLE genre_albums (
       id SERIAL PRIMARY KEY,
@@ -94,6 +95,26 @@ async function buildTables() {
   }
 }
 
+// CREATE INITIAL GENRES
+async function createInitialGenres() {
+  try {
+    console.log('Starting to create genres...');
+    await Promise.all(
+      albums.map(async (album) => {
+        const { genres } = album;
+
+        for (let i = 0; i < genres.length; i++) {
+          await createGenre(genres[i]);
+        }
+      })
+    );
+
+    console.log('Finished creating genres');
+  } catch (error) {
+    throw error;
+  }
+}
+
 // CREATE INITIAL USERS
 async function createInitialUsers() {
   try {
@@ -135,7 +156,14 @@ async function createInitialAlbums() {
           spotify,
         } = album;
 
-        await createAlbums({
+        const genreIDs = [];
+
+        for (let i = 0; i < genres.length; i++) {
+          const genre = await getGenreByName(genres[i]);
+          genreIDs.push(genre.id);
+        }
+
+        const albumInDB = await createAlbums({
           name,
           artists,
           release_date,
@@ -145,6 +173,10 @@ async function createInitialAlbums() {
           images,
           total_tracks,
           spotify,
+        });
+
+        genreIDs.map(async (genreID) => {
+          await createAlbumGenres(albumInDB.id, genreID);
         });
       })
     );
@@ -184,28 +216,23 @@ async function createInitialAlbums() {
 // CREATE INITIAL REVIEWS
 async function createInitialReviews() {
   try {
-    console.log('Starting to create reviews...')
+    console.log('Starting to create reviews...');
     await Promise.all(
       reviews.map(async (eachReview) => {
-        const {
-          review,
-          rating,
-          albumId,
-          userId
-        } = eachReview
+        const { review, rating, albumId, userId } = eachReview;
 
         await createReview({
           review,
           rating,
           albumId,
-          userId
-        })
+          userId,
+        });
       })
-    )
-    
-    console.log('Finished creating reviews!')
-  } catch(error) {
-    throw error
+    );
+
+    console.log('Finished creating reviews!');
+  } catch (error) {
+    throw error;
   }
 }
 
@@ -214,6 +241,7 @@ async function rebuildDB() {
     client.connect();
     //await dropTables()
     await buildTables();
+    await createInitialGenres();
     await createInitialAlbums();
     await createInitialUsers();
     // await createInitialOrders();
