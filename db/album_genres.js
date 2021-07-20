@@ -16,4 +16,36 @@ async function createAlbumGenres(albumId, genreId) {
   }
 }
 
-module.exports = { createAlbumGenres };
+async function getAlbumsByGenreId(genreId) {
+  try {
+    const { rows } = await client.query(
+      ` 
+      SELECT * FROM genre_albums
+      WHERE "genreId" = $1
+    `,
+      [genreId]
+    );
+
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function getGenresByAlbumId(albumId) {
+  try {
+    const { rows } = await client.query(
+      ` 
+      SELECT * FROM genre_albums
+      WHERE "albumId" = $1
+    `,
+      [albumId]
+    );
+
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+}
+
+module.exports = { createAlbumGenres, getAlbumsByGenreId, getGenresByAlbumId };
