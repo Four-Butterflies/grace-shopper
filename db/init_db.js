@@ -3,7 +3,8 @@ const client = require('./client');
 
 const {
   createAlbums,
-  createGenres,
+  createGenre,
+  getGenreByName,
   createAlbumGenres,
   createUser,
   createCart,
@@ -79,6 +80,26 @@ async function buildTables() {
   }
 }
 
+// CREATE INITIAL GENRES
+async function createInitialGenres() {
+  try {
+    console.log('Starting to create genres...');
+    await Promise.all(
+      albums.map(async (album) => {
+        const { genres } = album;
+
+        for (let i = 0; i < genres.length; i++) {
+          await createGenre(genres[i]);
+        }
+      })
+    );
+
+    console.log('Finished creating genres');
+  } catch (error) {
+    throw error;
+  }
+}
+
 // CREATE INITIAL USERS
 async function createInitialUsers() {
   try {
@@ -120,7 +141,14 @@ async function createInitialAlbums() {
           spotify,
         } = album;
 
-        const album = await createAlbums({
+        const genreIDs = [];
+
+        for (let i = 0; i < genres.length; i++) {
+          const genre = await getGenreByName(genres[i]);
+          genreIDs.push(genre.id);
+        }
+
+        const albumInDB = await createAlbums({
           name,
           artists,
           release_date,
@@ -132,7 +160,9 @@ async function createInitialAlbums() {
           spotify,
         });
 
-        await createAlbumGenres(album.id);
+        genreIDs.map(async (genreID) => {
+          await createAlbumGenres(albumInDB.id, genreID);
+        });
       })
     );
 
@@ -192,6 +222,7 @@ async function rebuildDB() {
     client.connect();
     //await dropTables()
     await buildTables();
+    await createInitialGenres();
     await createInitialAlbums();
     await createInitialUsers();
     await createInitialCarts();
