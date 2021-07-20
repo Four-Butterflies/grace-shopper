@@ -1,32 +1,32 @@
-const client = require('./client');
+// const client = require('./client');
 
-// database methods
+// // database methods
 
-async function createCart({
-  quantity,
-  albumId,
-  userId
-}) {
-  try {
-    const {
-      rows: [cart],
-    } = await client.query(
-      `
-        INSERT INTO cart(quantity, "albumId", "userId")
-        VALUES($1, $2, $3)
-        RETURNING *;
-      `,
-      [
-        quantity,
-        albumId,
-        userId
-      ]
-    );
+// async function createOrder({
+//   albumId,
+//   userId,
+//   strikePrice
+// }) {
+//   try {
+//     const {
+//       rows: [order],
+//     } = await client.query(
+//       `
+//         INSERT INTO orders("albumId", "userId", strike_price)
+//         VALUES($1, $2, $3)
+//         RETURNING *;
+//       `,
+//       [
+//         albumId,
+//         userId,
+//         strikePrice
+//       ]
+//     );
 
-    return cart;
-  } catch (error) {
-    throw error;
-  }
-}
+//     return order;
+//   } catch (error) {
+//     throw error;
+//   }
+// }
 
-module.exports = { createCart };
+// module.exports = { createOrder };

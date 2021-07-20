@@ -6,14 +6,14 @@ const {
   createGenres,
   createAlbumGenres,
   createUser,
-  createCart,
+  createOrder,
   createReview
 } = require('../db');
 
 // SEED DATA
 const albums = require('./seeddata.json');
 const users = require('./usersseeddata.json')
-const carts = require('./carts.json')
+// const carts = require('./carts.json')
 const reviews = require('./reviews.json')
 
 
@@ -24,12 +24,14 @@ async function buildTables() {
     // build tables in correct order
 
     await client.query(`
-    DROP TABLE IF EXISTS cart;
+    DROP TABLE IF EXISTS album_units;
+    DROP TABLE IF EXISTS orders;
+    DROP TABLE IF EXISTS order_status;
     DROP TABLE IF EXISTS reviews;
-    DROP TABLE IF EXISTS users;
+    DROP TABLE IF EXISTS users CASCADE;
     DROP TABLE IF EXISTS genre_albums;
     DROP TABLE IF EXISTS genres;
-    DROP TABLE IF EXISTS albums;
+    DROP TABLE IF EXISTS albums CASCADE;
 
     CREATE TABLE albums (
       id SERIAL PRIMARY KEY,
@@ -66,12 +68,24 @@ async function buildTables() {
       "albumId" INTEGER REFERENCES albums(id) ON DELETE CASCADE NOT NULL,
       "userId" INTEGER REFERENCES users(id) ON DELETE CASCADE NOT NULL
     );
-    CREATE TABLE cart (
+    CREATE TABLE order_status (
+      id SERIAL PRIMARY KEY,
+      status varchar(255)
+    );
+    CREATE TABLE album_units (
       id SERIAL PRIMARY KEY, 
-      quantity INT DEFAULT 0,
       "albumId" INTEGER REFERENCES albums(id) ON DELETE CASCADE NOT NULL,
-      "userId" INTEGER REFERENCES users(id) ON DELETE CASCADE NOT NULL
-    )
+      "userId" INTEGER REFERENCES users(id) ON DELETE CASCADE NOT NULL,
+      strike_price INT
+    );
+    CREATE TABLE orders (
+      id SERIAL PRIMARY KEY, 
+      "albumUnitsId" INTEGER REFERENCES album_units(id) ON DELETE CASCADE NOT NULL,
+      "userId" INTEGER REFERENCES users(id) ON DELETE CASCADE NOT NULL,
+      status INTEGER REFERENCES order_status(id) ON DELETE CASCADE NOT NULL,
+      total INT
+    );
+
   `);
 
     console.log('Tables Built!');
@@ -142,30 +156,30 @@ async function createInitialAlbums() {
 }
 
 // CREATE INITIAL CARTS
-async function createInitialCarts() {
-  try {
-    console.log('Starting to create carts...')
-    await Promise.all(
-      carts.map(async (cart) => {
-        const {
-          quantity,
-          albumId,
-          userId
-        } = cart
+// async function createInitialOrders() {
+//   try {
+//     console.log('Starting to create carts...')
+//     await Promise.all(
+//       carts.map(async (cart) => {
+//         const {
+//           albumId,
+//           userId,
+//           strikePrice
+//         } = cart
 
-        await createCart({
-          quantity,
-          albumId,
-          userId
-        })
-      })
-    )
+//         await createOrder({
+//           albumId,
+//           userId,
+//           strikePrice
+//         })
+//       })
+//     )
     
-    console.log('Finished creating carts!')
-  } catch(error) {
-    throw error
-  }
-}
+//     console.log('Finished creating orders!')
+//   } catch(error) {
+//     throw error
+//   }
+// }
 
 // CREATE INITIAL REVIEWS
 async function createInitialReviews() {
@@ -202,7 +216,7 @@ async function rebuildDB() {
     await buildTables();
     await createInitialAlbums();
     await createInitialUsers();
-    await createInitialCarts();
+    // await createInitialOrders();
     await createInitialReviews();
   } catch (error) {
     console.log('Error during rebuildDB');
