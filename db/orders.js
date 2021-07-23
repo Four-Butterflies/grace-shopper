@@ -11,6 +11,7 @@ const createOrder = async (albumUnitsId, userId, status, total) => {
         `,
       [albumUnitsId, userId, status, total]
     );
+    return order;
   } catch (error) {
     console.log(error);
   }
