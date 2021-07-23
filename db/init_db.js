@@ -22,7 +22,7 @@ async function buildTables() {
   try {
     console.log('Building tables...');
 
-    // build tables in correct order
+    // build tables in correct order kakakak
 
     await client.query(`
     DROP TABLE IF EXISTS album_units CASCADE;
