@@ -1,6 +1,6 @@
 const client = require('./client');
 
-// database methods
+// database methods!
 
 async function createGenre(genre) {
   try {

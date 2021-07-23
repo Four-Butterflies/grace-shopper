@@ -22,12 +22,11 @@ async function buildTables() {
   try {
     console.log('Building tables...');
 
-    // build tables in correct order
+    // build tables in correct order kakakak
 
     await client.query(`
-    DROP TABLE IF EXISTS album_units;
+    DROP TABLE IF EXISTS album_units CASCADE;
     DROP TABLE IF EXISTS orders;
-    DROP TABLE IF EXISTS order_status;
     DROP TABLE IF EXISTS reviews;
     DROP TABLE IF EXISTS users CASCADE;
     DROP TABLE IF EXISTS genre_albums;
@@ -69,10 +68,6 @@ async function buildTables() {
       "albumId" INTEGER REFERENCES albums(id) ON DELETE CASCADE NOT NULL,
       "userId" INTEGER REFERENCES users(id) ON DELETE CASCADE NOT NULL
     );
-    CREATE TABLE order_status (
-      id SERIAL PRIMARY KEY,
-      status varchar(255)
-    );
     CREATE TABLE album_units (
       id SERIAL PRIMARY KEY, 
       "albumId" INTEGER REFERENCES albums(id) ON DELETE CASCADE NOT NULL,
@@ -83,8 +78,9 @@ async function buildTables() {
       id SERIAL PRIMARY KEY, 
       "albumUnitsId" INTEGER REFERENCES album_units(id) ON DELETE CASCADE NOT NULL,
       "userId" INTEGER REFERENCES users(id) ON DELETE CASCADE NOT NULL,
-      status INTEGER REFERENCES order_status(id) ON DELETE CASCADE NOT NULL,
-      total INT
+      status varchar(255) NOT NULL,
+      total INT,
+      date DATE DEFAULT CURRENT_DATE
     );
 
   `);
