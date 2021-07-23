@@ -41,4 +41,34 @@ async function createAlbums({
   }
 }
 
-module.exports = { createAlbums };
+async function getAlbumsByTitle(title) {
+  try {
+    const { rows: [albums] } = client.query(`
+      SELECT * FROM albums
+      WHERE name LIKE $1;
+    `, [`%${title}%`])
+
+    return albums
+  } catch(error) {
+    throw error
+  }
+}
+
+async function getAlbumsByArtist(artist) {
+  try {
+    const { rows: [albums] } = client.query(`
+      SELECT * FROM albums
+      WHERE artists LIKE $1;
+    `, [`%${artist}%`])
+
+    return albums
+  } catch(error) {
+    throw error
+  }
+}
+
+async function getAlbumsByGenre(genre) {
+  
+}
+
+module.exports = { createAlbums, getAlbumsByTitle, getAlbumsByArtist };
