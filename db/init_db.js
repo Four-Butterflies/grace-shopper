@@ -1,22 +1,17 @@
 // code to build and initialize DB goes here
 const client = require('./client');
-
-const {
-  createAlbums,
-  createGenre,
-  getGenreByName,
-  createAlbumGenres,
-  createUser,
-  createOrder,
-  createReview
-} = require('../db');
+const { createAlbums } = require('./albums.js');
+const { createGenre, getGenreByName } = require('./genres.js');
+const { createAlbumGenres } = require('./album_genres.js');
+// const { createOrder } = require('./orders.js');
+const { createReview } = require('./reviews.js');
+const { createUser } = require('./users.js');
 
 // SEED DATA
 const albums = require('./seeddata.json');
-const users = require('./usersseeddata.json')
+const users = require('./usersseeddata.json');
 // const carts = require('./carts.json')
-const reviews = require('./reviews.json')
-
+const reviews = require('./reviews.json');
 
 async function buildTables() {
   try {
@@ -202,7 +197,7 @@ async function createInitialAlbums() {
 //         })
 //       })
 //     )
-    
+
 //     console.log('Finished creating orders!')
 //   } catch(error) {
 //     throw error
@@ -240,7 +235,7 @@ async function rebuildDB() {
     await createInitialGenres();
     await createInitialAlbums();
     await createInitialUsers();
-    // await createInitialOrders();
+    //await createInitialOrders();
     await createInitialReviews();
   } catch (error) {
     console.log('Error during rebuildDB');
