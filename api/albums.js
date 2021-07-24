@@ -11,7 +11,7 @@ const {
 } = require('../db/albums.js');
 
 // GET
-albumsRouter.get('/albums', async (req, res, next) => {
+albumsRouter.get('/', async (req, res, next) => {
   try {
     const result = await getAlbums();
 
@@ -21,9 +21,9 @@ albumsRouter.get('/albums', async (req, res, next) => {
   }
 });
 
-albumsRouter.get('/albums/:albumID', async (req, res, next) => {
+albumsRouter.get('/:albumID', async (req, res, next) => {
   const { albumID } = req.params;
-  
+
   try {
     const result = await getAlbumByID(albumID);
 
@@ -33,30 +33,30 @@ albumsRouter.get('/albums/:albumID', async (req, res, next) => {
   }
 });
 
-albumsRouter.get('/:name', async (req, res, next) => {
-    const { name } = req.params;
+// albumsRouter.get('/:name', async (req, res, next) => {
+//   const { name } = req.params;
 
-    try{
-        const albumNames = await getAlbumsByName(name)
-        res.send(albumNames)
-    } catch(error) {
-        next(error)
-    }
-})
+//   try {
+//     const albumNames = await getAlbumsByName(name);
+//     res.send(albumNames);
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
-albumsRouter.get('/:artist', async (req, res, next ) => {
-    const { artist } = req.params;
+// albumsRouter.get('/:artist', async (req, res, next) => {
+//   const { artist } = req.params;
 
-    try {
-        const albumArtist = await getAlbumsByArtist(artist)
-        res.send(albumArtist)
-    } catch(error) {
-        next(error)
-    }
-})
+//   try {
+//     const albumArtist = await getAlbumsByArtist(artist);
+//     res.send(albumArtist);
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
 // POST
-albumsRouter.post('/albums', async (req, res, next) => {
+albumsRouter.post('/', async (req, res, next) => {
   const {
     name,
     artists,
@@ -65,7 +65,7 @@ albumsRouter.post('/albums', async (req, res, next) => {
     price,
     quantity,
     reorder,
-    images,
+    image,
     total_tracks,
     spotify,
   } = req.body;
@@ -79,7 +79,7 @@ albumsRouter.post('/albums', async (req, res, next) => {
       price,
       quantity,
       reorder,
-      images,
+      image,
       total_tracks,
       spotify,
     });
@@ -91,7 +91,7 @@ albumsRouter.post('/albums', async (req, res, next) => {
 });
 
 // PATCH
-albumsRouter.patch('/albums/:albumID', async (req, res, next) => {
+albumsRouter.patch('/:albumID', async (req, res, next) => {
   const { albumID } = req.params;
   const {
     name,
@@ -101,13 +101,13 @@ albumsRouter.patch('/albums/:albumID', async (req, res, next) => {
     price,
     quantity,
     reorder,
-    images,
+    image,
     total_tracks,
     spotify,
   } = req.body;
 
   try {
-    const result = await editAlbum({
+    const result = await editAlbum(albumID, {
       name,
       artists,
       release_date,
@@ -115,7 +115,7 @@ albumsRouter.patch('/albums/:albumID', async (req, res, next) => {
       price,
       quantity,
       reorder,
-      images,
+      image,
       total_tracks,
       spotify,
     });
@@ -127,7 +127,7 @@ albumsRouter.patch('/albums/:albumID', async (req, res, next) => {
 });
 
 // DELETE
-albumsRouter.delete('/albums/:albumID', async (req, res, next) => {
+albumsRouter.delete('/:albumID', async (req, res, next) => {
   const { albumID } = req.params;
 
   try {
