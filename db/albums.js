@@ -41,12 +41,12 @@ async function createAlbums({
   }
 }
 
-async function getAlbumsByTitle(title) {
+async function getAlbumsByName(name) {
   try {
     const { rows: [albums] } = client.query(`
       SELECT * FROM albums
       WHERE name LIKE $1;
-    `, [`%${title}%`])
+    `, [`%${name}%`])
 
     return albums
   } catch(error) {
@@ -67,8 +67,8 @@ async function getAlbumsByArtist(artist) {
   }
 }
 
-async function getAlbumsByGenre(genre) {
+// async function getAlbumsByGenre(genre) {
   
-}
+// }
 
-module.exports = { createAlbums, getAlbumsByTitle, getAlbumsByArtist };
+module.exports = { createAlbums, getAlbumsByName, getAlbumsByArtist };
