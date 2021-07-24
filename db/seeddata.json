@@ -1,7 +1,7 @@
 [
   {
     "artists": "Pink Floyd",
-    "genres": [],
+    "genres": ["Rock", "Progressive Rock", "English Rock", "Dad Rock"],
     "images": [
       {
         "height": 640,
@@ -29,7 +29,13 @@
   },
   {
     "artists": "Nas",
-    "genres": [],
+    "genres": [
+      "Hip Hop",
+      "Rap",
+      "East Coast Hip Hop",
+      "Jazz Rap",
+      "New York Hip Hop"
+    ],
     "images": [
       {
         "height": 640,
@@ -57,7 +63,7 @@
   },
   {
     "artists": "Death Cab for Cutie",
-    "genres": [],
+    "genres": ["Rock", "Indie Rock", "Art Rock", "Post-Punk Revival"],
     "images": [
       {
         "height": 640,
@@ -85,7 +91,7 @@
   },
   {
     "artists": "Nirvana",
-    "genres": [],
+    "genres": ["Rock", "Grunge", "Alternative Rock"],
     "images": [
       {
         "height": 640,
@@ -113,7 +119,13 @@
   },
   {
     "artists": "Frank Ocean",
-    "genres": [],
+    "genres": [
+      "R&B",
+      "Alternative R&B",
+      "Soul",
+      "Progressive Soul",
+      "Neo Soul"
+    ],
     "images": [
       {
         "height": 640,
@@ -141,7 +153,7 @@
   },
   {
     "artists": "Wu-Tang Clan",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "East Coast Hip Hop", "New York Hip Hop"],
     "images": [
       {
         "height": 640,
@@ -169,7 +181,7 @@
   },
   {
     "artists": "Pearl Jam",
-    "genres": [],
+    "genres": ["Rock", "Grunge", "Alternative Rock", "Hard Rock"],
     "images": [
       {
         "height": 640,
@@ -197,7 +209,7 @@
   },
   {
     "artists": "The Smashing Pumpkins",
-    "genres": [],
+    "genres": ["Rock", "Grunge", "Alternative Rock", "Indie Rock"],
     "images": [
       {
         "height": 640,
@@ -225,7 +237,7 @@
   },
   {
     "artists": "The War On Drugs",
-    "genres": [],
+    "genres": ["Rock", "Indie Rock", "Americana", "Psychedelic Rock"],
     "images": [
       {
         "height": 640,
@@ -253,7 +265,7 @@
   },
   {
     "artists": "Bladee",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Cloud Rap", "Art Pop", "Pop Rap"],
     "images": [
       {
         "height": 640,
@@ -281,7 +293,7 @@
   },
   {
     "artists": "Unknown Mortal Orchestra",
-    "genres": [],
+    "genres": ["Rock", "Indie Rock", "Psychedelic Rock"],
     "images": [
       {
         "height": 640,
@@ -309,7 +321,7 @@
   },
   {
     "artists": "Playboi Carti",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Trap", "Mumble Rap", "Atlanta Hip Hop"],
     "images": [
       {
         "height": 640,
@@ -337,7 +349,13 @@
   },
   {
     "artists": "Panda Bear",
-    "genres": [],
+    "genres": [
+      "Rock",
+      "Avant-Garde",
+      "Post-Rock",
+      "Experimental Pop",
+      "Psychedelic Rock"
+    ],
     "images": [
       {
         "height": 640,
@@ -365,7 +383,7 @@
   },
   {
     "artists": "MGMT",
-    "genres": [],
+    "genres": ["Rock", "Indie Rock", "Psychedelic Rock"],
     "images": [
       {
         "height": 640,
@@ -393,7 +411,7 @@
   },
   {
     "artists": "Madvillain",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Alternative Hip Hop", "Jazz Rap"],
     "images": [
       {
         "height": 640,
@@ -421,7 +439,7 @@
   },
   {
     "artists": "Lil Peep",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Emo Rap", "Pop Punk"],
     "images": [
       {
         "height": 640,
@@ -449,7 +467,7 @@
   },
   {
     "artists": "Kurt Vile",
-    "genres": [],
+    "genres": ["Rock", "Indie Rock", "Folk Rock", "Psychedelic Rock"],
     "images": [
       {
         "height": 640,
@@ -477,7 +495,7 @@
   },
   {
     "artists": "Julien Baker",
-    "genres": [],
+    "genres": ["Rock", "Indie Rock", "Folk", "Indie Folk"],
     "images": [
       {
         "height": 640,
@@ -505,7 +523,7 @@
   },
   {
     "artists": "BONES",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Cloud Rap", "Trap", "Emo Rap"],
     "images": [
       {
         "height": 640,
@@ -533,7 +551,7 @@
   },
   {
     "artists": "Gorillaz",
-    "genres": [],
+    "genres": ["Rock", "Pop", "Hip Hop", "Electronic"],
     "images": [
       {
         "height": 640,
@@ -561,7 +579,7 @@
   },
   {
     "artists": "Flying Lotus",
-    "genres": [],
+    "genres": ["Hip Hop", "Electronic", "Jazz Rap"],
     "images": [
       {
         "height": 640,
@@ -589,7 +607,7 @@
   },
   {
     "artists": "FKA twigs",
-    "genres": [],
+    "genres": ["Pop", "Art Pop", "Experimental Pop"],
     "images": [
       {
         "height": 640,
@@ -617,7 +635,7 @@
   },
   {
     "artists": "Deltron 3030",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Alternative Hip Hop"],
     "images": [
       {
         "height": 640,
@@ -645,7 +663,7 @@
   },
   {
     "artists": "The Beatles",
-    "genres": [],
+    "genres": ["Rock", "Dad Rock", "Folk", "Folk Rock", "English Rock"],
     "images": [
       {
         "height": 640,
@@ -673,7 +691,7 @@
   },
   {
     "artists": "Ariel Pink",
-    "genres": [],
+    "genres": ["Rock", "Indie Rock", "Art Rock", "Pop", "Psychedelic Rock"],
     "images": [
       {
         "height": 640,
@@ -701,7 +719,7 @@
   },
   {
     "artists": "Ecco2k",
-    "genres": [],
+    "genres": ["Pop", "Pop Rap", "Rap", "Experimental Pop"],
     "images": [
       {
         "height": 640,
@@ -729,7 +747,7 @@
   },
   {
     "artists": "Mechatok",
-    "genres": [],
+    "genres": ["Electronic", "Video Game Music", "Ambient"],
     "images": [
       {
         "height": 640,
@@ -757,7 +775,7 @@
   },
   {
     "artists": "Deadfriend",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Indie Hip Hop"],
     "images": [
       {
         "height": 640,
@@ -785,7 +803,13 @@
   },
   {
     "artists": "Animal Collective",
-    "genres": [],
+    "genres": [
+      "Rock",
+      "Psychedelic Rock",
+      "Electronic",
+      "Pop",
+      "Psychedelic Rock"
+    ],
     "images": [
       {
         "height": 640,
@@ -813,7 +837,7 @@
   },
   {
     "artists": "Beach House",
-    "genres": [],
+    "genres": ["Pop", "Dream Pop"],
     "images": [
       {
         "height": 640,
@@ -841,7 +865,7 @@
   },
   {
     "artists": "Black Sabbath",
-    "genres": [],
+    "genres": ["Metal", "Heavy Metal", "Dad Rock"],
     "images": [
       {
         "height": 640,
@@ -869,7 +893,7 @@
   },
   {
     "artists": "BUSDRIVER",
-    "genres": [],
+    "genres": ["Hip Hop", "Indie Hip Hop"],
     "images": [
       {
         "height": 640,
@@ -897,7 +921,7 @@
   },
   {
     "artists": "Death Grips",
-    "genres": [],
+    "genres": ["Hip Hop", "Electronic"],
     "images": [
       {
         "height": 640,
@@ -925,7 +949,7 @@
   },
   {
     "artists": "Deakin",
-    "genres": [],
+    "genres": ["Rock", "Electronic"],
     "images": [
       {
         "height": 640,
@@ -953,7 +977,7 @@
   },
   {
     "artists": "The Doors",
-    "genres": [],
+    "genres": ["Rock", "Psychedelic Rock", "Dad Rock"],
     "images": [
       {
         "height": 640,
@@ -981,7 +1005,7 @@
   },
   {
     "artists": "Phoebe Bridgers",
-    "genres": [],
+    "genres": ["Rock", "Indie Rock", "Folk", "Indie Folk"],
     "images": [
       {
         "height": 640,
@@ -1009,7 +1033,7 @@
   },
   {
     "artists": "Radiohead",
-    "genres": [],
+    "genres": ["Rock", "Art Rock", "Art Pop", "Alternative Rock", "Electronic"],
     "images": [
       {
         "height": 640,
@@ -1037,7 +1061,7 @@
   },
   {
     "artists": "Sickboyrari",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Trap", "Mumble Rap", "Southern Hip Hop"],
     "images": [
       {
         "height": 640,
@@ -1065,7 +1089,7 @@
   },
   {
     "artists": "surrenderdorothy",
-    "genres": [],
+    "genres": ["R&B", "Hip Hop", "Emo Rap", "Folk"],
     "images": [
       {
         "height": 640,
@@ -1093,7 +1117,7 @@
   },
   {
     "artists": "System Of A Down",
-    "genres": [],
+    "genres": ["Rock", "Metal", "Nu Metal"],
     "images": [
       {
         "height": 640,
@@ -1121,7 +1145,14 @@
   },
   {
     "artists": "Xavier Wulf",
-    "genres": [],
+    "genres": [
+      "Hip Hop",
+      "Rap",
+      "Trap",
+      "Cloud Rap",
+      "Southern Hip Hop",
+      "Memphis Rap"
+    ],
     "images": [
       {
         "height": 640,
@@ -1149,7 +1180,7 @@
   },
   {
     "artists": "Yung Lean",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Art Pop"],
     "images": [
       {
         "height": 640,
@@ -1177,7 +1208,7 @@
   },
   {
     "artists": "Yung Simmie",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Trap", "Southern Hip Hop"],
     "images": [
       {
         "height": 640,
@@ -1205,7 +1236,7 @@
   },
   {
     "artists": "Pigeons Playing Ping Pong",
-    "genres": [],
+    "genres": ["Rock", "Ska", "Jam Band"],
     "images": [
       {
         "height": 640,
@@ -1233,7 +1264,7 @@
   },
   {
     "artists": "100 gecs",
-    "genres": [],
+    "genres": ["Pop", "Hyperpop"],
     "images": [
       {
         "height": 640,
@@ -1261,7 +1292,7 @@
   },
   {
     "artists": "Every Time I Die",
-    "genres": [],
+    "genres": ["Metal", "Metalcore"],
     "images": [
       {
         "height": 640,
@@ -1289,7 +1320,7 @@
   },
   {
     "artists": "Drake",
-    "genres": [],
+    "genres": ["Rap", "Pop Rap"],
     "images": [
       {
         "height": 640,
@@ -1317,7 +1348,7 @@
   },
   {
     "artists": "Kendrick Lamar",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "West Coast Hip Hop", "Pop Rap"],
     "images": [
       {
         "height": 640,
@@ -1345,7 +1376,7 @@
   },
   {
     "artists": "Young the Giant",
-    "genres": [],
+    "genres": ["Rock", "Indie Rock", "Alternative Rock"],
     "images": [
       {
         "height": 640,
@@ -1373,7 +1404,7 @@
   },
   {
     "artists": "Wilco",
-    "genres": [],
+    "genres": ["Rock", "Indie Rock", "Americana", "Alternative Rock"],
     "images": [
       {
         "height": 640,
@@ -1401,7 +1432,7 @@
   },
   {
     "artists": "The White Stripes",
-    "genres": [],
+    "genres": ["Rock", "Garage Rock", "Alternative Rock"],
     "images": [
       {
         "height": 640,
@@ -1429,7 +1460,7 @@
   },
   {
     "artists": "St. Vincent",
-    "genres": [],
+    "genres": ["Rock", "Indie Rock", "Pop", "Art Pop", "Art Rock"],
     "images": [
       {
         "height": 640,
@@ -1457,7 +1488,7 @@
   },
   {
     "artists": "Sonic Youth",
-    "genres": [],
+    "genres": ["Rock", "Alternative Rock"],
     "images": [
       {
         "height": 640,
@@ -1485,7 +1516,7 @@
   },
   {
     "artists": "Shabazz Palaces",
-    "genres": [],
+    "genres": ["Hip Hop", "Cloud Rap"],
     "images": [
       {
         "height": 640,
@@ -1503,7 +1534,7 @@
         "width": 64
       }
     ],
-    "name": "Quazarz: Born on a Gangster Star",
+    "name": "Quazarz:Born on a Gangster Star",
     "total_tracks": 11,
     "release_date": "2017",
     "spotify": "https://open.spotify.com/album/403FpASwFwZEg1oc0qzwBR",
@@ -1513,7 +1544,7 @@
   },
   {
     "artists": "Rico Nasty",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "East Coast Hip Hop", "Trap"],
     "images": [
       {
         "height": 640,
@@ -1541,7 +1572,7 @@
   },
   {
     "artists": "Queens of the Stone Age",
-    "genres": [],
+    "genres": ["Rock", "Alternative Rock", "Art Rock"],
     "images": [
       {
         "height": 640,
@@ -1569,7 +1600,7 @@
   },
   {
     "artists": "Quasimoto",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "West Coast Hip Hop", "Jazz Rap"],
     "images": [
       {
         "height": 640,
@@ -1596,8 +1627,8 @@
     "reorder": 20
   },
   {
-    "artists": "Pi’erre Bourne",
-    "genres": [],
+    "artists": "Pi'erre Bourne",
+    "genres": ["Hip Hop", "Rap", "Pop Rap", "Cloud Rap", "Trap"],
     "images": [
       {
         "height": 640,
@@ -1625,7 +1656,7 @@
   },
   {
     "artists": "Neutral Milk Hotel",
-    "genres": [],
+    "genres": ["Rock", "Indie Rock", "Folk", "Indie Folk"],
     "images": [
       {
         "height": 640,
@@ -1653,7 +1684,7 @@
   },
   {
     "artists": "Milo",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Jazz Rap", "Cloud Rap", "Indie Hip Hop"],
     "images": [
       {
         "height": 640,
@@ -1681,7 +1712,7 @@
   },
   {
     "artists": "Lil Ugly Mane",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Memphis Rap"],
     "images": [
       {
         "height": 640,
@@ -1709,7 +1740,7 @@
   },
   {
     "artists": "Kid Cudi",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Emo Rap", "Pop", "Art Pop"],
     "images": [
       {
         "height": 640,
@@ -1727,7 +1758,7 @@
         "width": 64
       }
     ],
-    "name": "Man On The Moon: The End Of Day",
+    "name": "Man On The Moon:The End Of Day",
     "total_tracks": 15,
     "release_date": "2009",
     "spotify": "https://open.spotify.com/album/47y3PbX8oIDCkYAFylCJz0",
@@ -1737,7 +1768,7 @@
   },
   {
     "artists": "Kanye West",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Pop Rap", "Neo Soul"],
     "images": [
       {
         "height": 640,
@@ -1765,7 +1796,7 @@
   },
   {
     "artists": "Jimi Hendrix",
-    "genres": [],
+    "genres": ["Rock", "Psychedelic Rock", "Dad Rock"],
     "images": [
       {
         "height": 640,
@@ -1783,7 +1814,7 @@
         "width": 64
       }
     ],
-    "name": "Axis: Bold As Love",
+    "name": "Axis:Bold As Love",
     "total_tracks": 13,
     "release_date": "1967",
     "spotify": "https://open.spotify.com/album/3uFZf8rykoHo7XMIQVYW6r",
@@ -1793,7 +1824,7 @@
   },
   {
     "artists": "The I.L.Y's",
-    "genres": [],
+    "genres": ["Rock", "Psychedelic Rock", "Punk"],
     "images": [
       {
         "height": 640,
@@ -1821,7 +1852,7 @@
   },
   {
     "artists": "HOMESHAKE",
-    "genres": [],
+    "genres": ["Pop", "Alternative R&B"],
     "images": [
       {
         "height": 640,
@@ -1849,7 +1880,7 @@
   },
   {
     "artists": "Deerhunter",
-    "genres": [],
+    "genres": ["Rock", "Indie Rock", "Psychedelic Rock", "Dream Pop"],
     "images": [
       {
         "height": 640,
@@ -1877,7 +1908,7 @@
   },
   {
     "artists": "Cage The Elephant",
-    "genres": [],
+    "genres": ["Rock", "Alternative Rock", "Indie Rock", "Garage Rock"],
     "images": [
       {
         "height": 640,
@@ -1905,7 +1936,7 @@
   },
   {
     "artists": "Brand New",
-    "genres": [],
+    "genres": ["Rock", "Indie Rock", "Emo"],
     "images": [
       {
         "height": 640,
@@ -1933,7 +1964,7 @@
   },
   {
     "artists": "The Holdup",
-    "genres": [],
+    "genres": ["Rock", "Reggae", "Rap"],
     "images": [
       {
         "height": 640,
@@ -1961,7 +1992,13 @@
   },
   {
     "artists": "Azealia Banks",
-    "genres": [],
+    "genres": [
+      "Hip Hop",
+      "Rap",
+      "East Coast Hip Hop",
+      "New York Hip Hop",
+      "Electronic"
+    ],
     "images": [
       {
         "height": 640,
@@ -1989,7 +2026,7 @@
   },
   {
     "artists": "GREAF",
-    "genres": [],
+    "genres": ["Hip Hop"],
     "images": [
       {
         "height": 640,
@@ -2017,7 +2054,7 @@
   },
   {
     "artists": "Danny Brown",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Alternative Hip Hop"],
     "images": [
       {
         "height": 640,
@@ -2045,7 +2082,7 @@
   },
   {
     "artists": "Talking Heads",
-    "genres": [],
+    "genres": ["Rock", "New Wave"],
     "images": [
       {
         "height": 640,
@@ -2073,7 +2110,7 @@
   },
   {
     "artists": "Ty Segall",
-    "genres": [],
+    "genres": ["Rock", "Garage Rock", "Psychedelic Rock"],
     "images": [
       {
         "height": 640,
@@ -2101,7 +2138,15 @@
   },
   {
     "artists": "Young Thug",
-    "genres": [],
+    "genres": [
+      "Hip Hop",
+      "Rap",
+      "Southern Hip Hop",
+      "Atlanta Hip Hop",
+      "Mumble Rap",
+      "Trap",
+      "Cloud Rap"
+    ],
     "images": [
       {
         "height": 640,
@@ -2129,7 +2174,7 @@
   },
   {
     "artists": "Tyler, The Creator",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Jazz Rap", "West Coast Hip Hop", "Neo Soul"],
     "images": [
       {
         "height": 640,
@@ -2157,7 +2202,7 @@
   },
   {
     "artists": "Spooky Black",
-    "genres": [],
+    "genres": ["R&B", "Alternative R&B", "Emo Rap", "Cloud Rap"],
     "images": [
       {
         "height": 640,
@@ -2185,7 +2230,7 @@
   },
   {
     "artists": "Bladee",
-    "genres": [],
+    "genres": ["Pop Rap", "Electronic"],
     "images": [
       {
         "height": 640,
@@ -2213,7 +2258,7 @@
   },
   {
     "artists": "Arcade Fire",
-    "genres": [],
+    "genres": ["Rock", "Indie Rock", "Post-Punk Revival"],
     "images": [
       {
         "height": 640,
@@ -2241,7 +2286,7 @@
   },
   {
     "artists": "Jason Derulo",
-    "genres": [],
+    "genres": ["Pop", "R&B"],
     "images": [
       {
         "height": 640,
@@ -2269,7 +2314,7 @@
   },
   {
     "artists": "50 Cent",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "East Coast Hip Hop", "Pop Rap"],
     "images": [
       {
         "height": 640,
@@ -2297,7 +2342,7 @@
   },
   {
     "artists": "Men At Work",
-    "genres": [],
+    "genres": ["Rock", "New Wave"],
     "images": [
       {
         "height": 640,
@@ -2325,7 +2370,7 @@
   },
   {
     "artists": "Elton John",
-    "genres": [],
+    "genres": ["Rock", "Pop Rock", "Piano Rock"],
     "images": [
       {
         "height": 640,
@@ -2353,7 +2398,7 @@
   },
   {
     "artists": "The Black Keys",
-    "genres": [],
+    "genres": ["Rock", "Garage Rock", "Psychedelic Rock"],
     "images": [
       {
         "height": 640,
@@ -2381,7 +2426,13 @@
   },
   {
     "artists": "Outkast",
-    "genres": [],
+    "genres": [
+      "Hip Hop",
+      "Rap",
+      "Southern Hip Hop",
+      "Neo Soul",
+      "Atlanta Hip Hop"
+    ],
     "images": [
       {
         "height": 640,
@@ -2409,7 +2460,7 @@
   },
   {
     "artists": "Sublime",
-    "genres": [],
+    "genres": ["Rock", "Ska", "Reggae", "Punk", "Hip Hop", "Rock"],
     "images": [
       {
         "height": 640,
@@ -2437,7 +2488,7 @@
   },
   {
     "artists": "alt-J",
-    "genres": [],
+    "genres": ["Pop", "Art Pop"],
     "images": [
       {
         "height": 640,
@@ -2465,7 +2516,7 @@
   },
   {
     "artists": "Janelle Monáe",
-    "genres": [],
+    "genres": ["R&B", "Neo Soul", "Pop", "Art Pop"],
     "images": [
       {
         "height": 640,
@@ -2493,7 +2544,7 @@
   },
   {
     "artists": "MGMT",
-    "genres": [],
+    "genres": ["Pop", "New Wave"],
     "images": [
       {
         "height": 640,
@@ -2521,7 +2572,7 @@
   },
   {
     "artists": "MGMT",
-    "genres": [],
+    "genres": ["Pop", "Electronic"],
     "images": [
       {
         "height": 640,
@@ -2549,7 +2600,7 @@
   },
   {
     "artists": "Thundercat",
-    "genres": [],
+    "genres": ["Jazz", "Alternative R&B", "Neo Soul"],
     "images": [
       {
         "height": 640,
@@ -2577,7 +2628,7 @@
   },
   {
     "artists": "Die Antwoord",
-    "genres": [],
+    "genres": ["Pop", "Rap", "Electronic"],
     "images": [
       {
         "height": 640,
@@ -2605,7 +2656,7 @@
   },
   {
     "artists": "M.I.A.",
-    "genres": [],
+    "genres": ["Pop", "Experimental Pop", "Hip Hop"],
     "images": [
       {
         "height": 640,
@@ -2633,7 +2684,7 @@
   },
   {
     "artists": "Britney Spears",
-    "genres": [],
+    "genres": ["Pop", "Teen Pop"],
     "images": [
       {
         "height": 640,
@@ -2661,7 +2712,7 @@
   },
   {
     "artists": "Britney Spears",
-    "genres": [],
+    "genres": ["Pop", "Teen Pop"],
     "images": [
       {
         "height": 640,
@@ -2689,7 +2740,7 @@
   },
   {
     "artists": "Britney Spears",
-    "genres": [],
+    "genres": ["Pop", "R&B"],
     "images": [
       {
         "height": 640,
@@ -2717,7 +2768,7 @@
   },
   {
     "artists": "Britney Spears",
-    "genres": [],
+    "genres": ["Pop", "R&B"],
     "images": [
       {
         "height": 640,
@@ -2745,7 +2796,7 @@
   },
   {
     "artists": "Doja Cat",
-    "genres": [],
+    "genres": ["Pop", "Rap", "Pop Rap", "Trap", "R&B"],
     "images": [
       {
         "height": 640,
@@ -2773,7 +2824,7 @@
   },
   {
     "artists": "Cage The Elephant",
-    "genres": [],
+    "genres": ["Rock", "Alternative Rock", "Indie Rock", "Garage Rock"],
     "images": [
       {
         "height": 640,
@@ -2801,7 +2852,7 @@
   },
   {
     "artists": "Hozier",
-    "genres": [],
+    "genres": ["Rock", "Indie Rock", "Folk", "Indie Folk"],
     "images": [
       {
         "height": 640,
@@ -2829,7 +2880,13 @@
   },
   {
     "artists": "Cage The Elephant",
-    "genres": [],
+    "genres": [
+      "Rock",
+      "Indie Rock",
+      "Garage Rock",
+      "Alternative Rock",
+      "Psychedelic Rock"
+    ],
     "images": [
       {
         "height": 640,
@@ -2857,7 +2914,14 @@
   },
   {
     "artists": "Mother Mother",
-    "genres": [],
+    "genres": [
+      "Rock",
+      "Indie Rock",
+      "Pop",
+      "Post-Punk Revival",
+      "Folk",
+      "Folk Rock"
+    ],
     "images": [
       {
         "height": 640,
@@ -2885,7 +2949,7 @@
   },
   {
     "artists": "Unknown Mortal Orchestra",
-    "genres": [],
+    "genres": ["Rock", "Psychedelic Rock", "Pop", "Psychedelic Pop"],
     "images": [
       {
         "height": 640,
@@ -2903,7 +2967,7 @@
         "width": 64
       }
     ],
-    "name": "Sex &amp; Food",
+    "name": "Sex & Food",
     "total_tracks": 12,
     "release_date": "2018",
     "spotify": "https://open.spotify.com/album/7c2Xfq7aQKzs0KdSI3K7Rc",
@@ -2913,7 +2977,7 @@
   },
   {
     "artists": "The California Honeydrops",
-    "genres": [],
+    "genres": ["Rhythm & Blues"],
     "images": [
       {
         "height": 640,
@@ -2941,7 +3005,7 @@
   },
   {
     "artists": "Hiatus Kaiyote",
-    "genres": [],
+    "genres": ["R&B", "Alternative R&B", "Neo Soul", "Jazz"],
     "images": [
       {
         "height": 640,
@@ -2969,7 +3033,7 @@
   },
   {
     "artists": "Bosley",
-    "genres": [],
+    "genres": ["Rock", "Soul"],
     "images": [
       {
         "height": 640,
@@ -2997,7 +3061,7 @@
   },
   {
     "artists": "Black Eyed Peas",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Pop Rap", "Electronic"],
     "images": [
       {
         "height": 640,
@@ -3025,7 +3089,7 @@
   },
   {
     "artists": "Danny Brown",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Alternative Hip Hop"],
     "images": [
       {
         "height": 640,
@@ -3053,7 +3117,7 @@
   },
   {
     "artists": "Stromae",
-    "genres": [],
+    "genres": ["Pop", "Electronic", "Hip Hop"],
     "images": [
       {
         "height": 640,
@@ -3081,7 +3145,7 @@
   },
   {
     "artists": "Oliver Tree",
-    "genres": [],
+    "genres": ["Rock", "Alternative Rock", "Pop", "Pop Rap"],
     "images": [
       {
         "height": 640,
@@ -3099,7 +3163,7 @@
         "width": 64
       }
     ],
-    "name": "Ugly is Beautiful: Shorter, Thicker &amp; Uglier (Deluxe)",
+    "name": "Ugly is Beautiful:Shorter, Thicker & Uglier (Deluxe)",
     "total_tracks": 21,
     "release_date": "2021",
     "spotify": "https://open.spotify.com/album/5vP0fNictdWyU48o83Q7ob",
@@ -3109,7 +3173,7 @@
   },
   {
     "artists": "Jack Stauber",
-    "genres": [],
+    "genres": ["Pop", "Experimental Pop"],
     "images": [
       {
         "height": 640,
@@ -3137,7 +3201,7 @@
   },
   {
     "artists": "Smash Mouth",
-    "genres": [],
+    "genres": ["Rock", "Pop Rock"],
     "images": [
       {
         "height": 640,
@@ -3165,7 +3229,7 @@
   },
   {
     "artists": "Paramore",
-    "genres": [],
+    "genres": ["Rock", "Pop Punk", "Alternative Rock"],
     "images": [
       {
         "height": 640,
@@ -3193,7 +3257,7 @@
   },
   {
     "artists": "Paramore",
-    "genres": [],
+    "genres": ["Rock", "Pop Punk", "Alternative Rock"],
     "images": [
       {
         "height": 640,
@@ -3221,7 +3285,7 @@
   },
   {
     "artists": "Childish Gambino",
-    "genres": [],
+    "genres": ["Psychedelic Soul", "Neo Soul"],
     "images": [
       {
         "height": 640,
@@ -3249,7 +3313,7 @@
   },
   {
     "artists": "STRFKR",
-    "genres": [],
+    "genres": ["Pop", "Electronic", "Post-Punk Revival"],
     "images": [
       {
         "height": 640,
@@ -3277,7 +3341,7 @@
   },
   {
     "artists": "Kid Cudi",
-    "genres": [],
+    "genres": ["Hip Hop", "Rap", "Emo Rap", "Pop", "Art Pop"],
     "images": [
       {
         "height": 640,
@@ -3295,7 +3359,7 @@
         "width": 64
       }
     ],
-    "name": "Man On The Moon II: The Legend Of Mr. Rager",
+    "name": "Man On The Moon II:The Legend Of Mr. Rager",
     "total_tracks": 17,
     "release_date": "2010",
     "spotify": "https://open.spotify.com/album/08eM9GRdr5BCCHNqS3Wwud",
@@ -3305,7 +3369,7 @@
   },
   {
     "artists": "SEGA SOUND TEAM",
-    "genres": [],
+    "genres": ["Video Game Music"],
     "images": [
       {
         "height": 640,
@@ -3333,7 +3397,7 @@
   },
   {
     "artists": "Joe Hisaishi",
-    "genres": [],
+    "genres": ["Anime Soundtrack"],
     "images": [
       {
         "height": 640,
