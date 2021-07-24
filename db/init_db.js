@@ -4,7 +4,7 @@ const { createAlbums } = require('./albums.js');
 const { createGenre, getGenreByName } = require('./genres.js');
 const { createAlbumGenres } = require('./album_genres.js');
 const { createAlbumUnit} = require('./album_units');
-const { createOrder } = require('./orders.js');
+const { createOrder, getAllOrders } = require('./orders.js');
 const { createReview } = require('./reviews.js');
 const { createUser, getAllUsers } = require('./users.js');
 
@@ -183,7 +183,6 @@ async function createInitialOrders(){
   try {
     console.log('Starting to create Initial Orders...');
     const users = await getAllUsers()
-    console.log(users[0].id)
     const ordersTocreate = [
       {
         userId: 1,
@@ -235,6 +234,47 @@ async function createInitialOrders(){
 }
 
 
+// CREATE INITIAL album-units
+async function createInitialAlbumUnits(){
+  try {
+    console.log('Starting to create Initial AlbumUnits...');
+
+    const albumUntsToCreate = [
+      {
+        albumId:10,
+        orderId: 1,
+        strikePrice: 1999,
+      },
+      {
+        albumId:20,
+        orderId: 1,
+        strikePrice: 1499,
+      },
+      {
+        albumId:30,
+        orderId: 2,
+        strikePrice: 599,
+      },
+      {
+        albumId:4,
+        orderId: 3,
+        strikePrice: 699, 
+      },
+      {
+        albumId:6,
+        orderId: 3,
+        strikePrice: 1699, 
+      }
+
+    ]
+    const albumUnits = await Promise.all(albumUntsToCreate.map((au)=> createAlbumUnit(au)));
+    console.log('AlbumUnits created: ', albumUnits)
+    console.log('Finished creating Initial AlbumUnits');
+
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 
 // CREATE INITIAL CARTS
@@ -295,6 +335,7 @@ async function rebuildDB() {
     await createInitialAlbums();
     await createInitialUsers();
     await createInitialOrders();
+    await createInitialAlbumUnits();
     await createInitialReviews();
   } catch (error) {
     console.log('Error during rebuildDB');
