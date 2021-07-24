@@ -53,14 +53,15 @@ async function createAlbums({
       rows: [album],
     } = await client.query(
       `
-        INSERT INTO albums(album_name, artist, year, price, quantity, reorder_number, img_url, total_tracks, spotify)
-        VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)
+        INSERT INTO albums(album_name, artist, year, genres, price, quantity, reorder_number, img_url, total_tracks, spotify)
+        VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
         RETURNING *;
       `,
       [
         name,
         artists,
         release_date,
+        genres,
         price,
         quantity,
         reorder,
@@ -68,29 +69,6 @@ async function createAlbums({
         total_tracks,
         spotify,
       ]
-    );
-
-    //After creating album, create album genre relations
-    Promise.all(
-      genres.map(async (genre) => {
-        //Find the genre in DB
-        let genreInDB = await getGenreByName(genre);
-        // console.log(genre)
-
-        //If it doesn't exist
-        if (!genreInDB) {
-          //Create it
-          genreInDB = await createGenre(genre);
-        }
-
-        //debug
-        if (!genreInDB) {
-          console.log(genre, genreInDB, name);
-        }
-
-        //Create album genre relation
-        await createAlbumGenres(album.id, genreInDB.id);
-      })
     );
 
     return album;

@@ -17,7 +17,7 @@ async function buildTables() {
   try {
     console.log('Building tables...');
 
-    // build tables in correct order kakakak
+    // build tables in correct order
 
     await client.query(`
     DROP TABLE IF EXISTS album_units CASCADE;
@@ -33,21 +33,13 @@ async function buildTables() {
       album_name varchar(255) NOT NULL,
       artist varchar(255) NOT NULL,
       year INT,
+      genres text,
       price INT DEFAULT 1999,
       quantity INT DEFAULT 0,
       reorder_number INT DEFAULT 0,
       img_url text DEFAULT 'https://cdn4.vectorstock.com/i/thumb-large/82/48/vinyl-record-blank-realistic-vinyl-disc-mockup-on-vector-17128248.jpg',
       spotify varchar(255),
       total_tracks INT
-    );
-    CREATE TABLE genres (
-      id SERIAL PRIMARY KEY,
-      genre varchar(255) UNIQUE NOT NULL
-    );
-    CREATE TABLE genre_albums (
-      id SERIAL PRIMARY KEY,
-      "albumId" INTEGER REFERENCES albums(id) ON DELETE CASCADE NOT NULL,
-      "genreId" INTEGER REFERENCES genres(id) ON DELETE CASCADE NOT NULL
     );
     CREATE TABLE users (
       id SERIAL PRIMARY KEY,
