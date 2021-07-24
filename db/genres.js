@@ -2,6 +2,8 @@ const client = require('./client');
 
 // database methods!
 
+
+// Why do nothing on conflict?
 async function createGenre(genre) {
   try {
     const {

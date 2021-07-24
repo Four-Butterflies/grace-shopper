@@ -2,6 +2,7 @@ const client = require('./client');
 
 // database methods!
 
+// Inconsistent indentation for query strings.
 async function createAlbumGenres(albumId, genreId) {
   try {
     await client.query(

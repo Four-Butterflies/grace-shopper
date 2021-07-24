@@ -1,5 +1,7 @@
 // const client = require('./client');
 
+// If something isnt being used, delete it.
+
 // // database methods
 
 // async function createOrder({
