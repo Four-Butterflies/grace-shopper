@@ -6,11 +6,17 @@ const {
   createUser,
   getUserByEmailAndPassword,
   getUserByEmail,
-} = require('../db');
+} = require('../db/users.js');
 
 usersRouter.get('/', async (req, res) => {
-  const users = await getAllUsers();
-  res.send({ users });
+  try {
+    const users = await getAllUsers();
+    res.send({ users });
+  } catch (error) {
+    console.log(error);
+  }
+ 
+ 
 });
 
 usersRouter.post('/register', async (req, res, next) => {
@@ -59,7 +65,6 @@ usersRouter.post('/login', async (req, res, next) => {
 
   try {
     const user = await getUserByEmailAndPassword({email, password});
-    console.log("user", user)
     if (!user) {
       res.status(401).send({ message: 'User not found.' });
     }
