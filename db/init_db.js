@@ -90,26 +90,6 @@ async function buildTables() {
   }
 }
 
-// CREATE INITIAL GENRES
-async function createInitialGenres() {
-  try {
-    console.log('Starting to create genres...');
-    await Promise.all(
-      albums.map(async (album) => {
-        const { genres } = album;
-
-        for (let i = 0; i < genres.length; i++) {
-          await createGenre(genres[i]);
-        }
-      })
-    );
-
-    console.log('Finished creating genres');
-  } catch (error) {
-    throw error;
-  }
-}
-
 // CREATE INITIAL USERS
 async function createInitialUsers() {
   try {
@@ -132,47 +112,13 @@ async function createInitialUsers() {
   }
 }
 
-// CREATE INITIAL ALBUMS
+// CREATE INITIAL ALBUMS, ALSO CREATES GENRES AND ALBUM GENRE RELATIONS
 async function createInitialAlbums() {
   try {
     console.log('Starting to create albums...');
     await Promise.all(
       albums.map(async (album) => {
-        const {
-          name,
-          artists,
-          release_date,
-          genres,
-          images,
-          price,
-          quantity,
-          reorder,
-          total_tracks,
-          spotify,
-        } = album;
-
-        const genreIDs = [];
-
-        for (let i = 0; i < genres.length; i++) {
-          const genre = await getGenreByName(genres[i]);
-          genreIDs.push(genre.id);
-        }
-
-        const albumInDB = await createAlbums({
-          name,
-          artists,
-          release_date,
-          price,
-          quantity,
-          reorder,
-          images,
-          total_tracks,
-          spotify,
-        });
-
-        genreIDs.map(async (genreID) => {
-          await createAlbumGenres(albumInDB.id, genreID);
-        });
+        await createAlbums(album);
       })
     );
 
@@ -232,7 +178,6 @@ async function rebuildDB() {
     client.connect();
     //await dropTables()
     await buildTables();
-    await createInitialGenres();
     await createInitialAlbums();
     await createInitialUsers();
     // await createInitialOrders();
