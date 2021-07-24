@@ -1,15 +1,16 @@
 const client = require('./client');
 
-const createOrder = async (albumUnitsId, userId, status, total) => {
+const createOrder = async ({userId, status, total}) => {
   try {
     const {
       rows: [order],
     } = await client.query(
       `
-        INSERT INTO orders("albumUnitsId", "userId", status, total)
+        INSERT INTO orders( "userId", status, total)
+        VALUES($1, $2, $3)
         RETURNING *;
         `,
-      [albumUnitsId, userId, status, total]
+      [ userId, status, total]
     );
     return order;
   } catch (error) {
@@ -20,7 +21,7 @@ const createOrder = async (albumUnitsId, userId, status, total) => {
 const getAllOrders = async () => {
   try {
     const { rows } = await client.query(
-      `SELECT id, "albumUnitsId", "userId", status, total, date FROM orders;`
+      `SELECT id, "userId", status, total, date FROM orders;`
     );
     return rows;
   } catch (error) {

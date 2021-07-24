@@ -77,6 +77,36 @@ async function createAlbums({
   }
 }
 
+async function getAlbumsByName(name) {
+  try {
+    const { rows: [albums] } = client.query(`
+      SELECT * FROM albums
+      WHERE name LIKE $1;
+    `, [`%${name}%`])
+
+    return albums
+  } catch(error) {
+    throw error
+  }
+}
+
+async function getAlbumsByArtist(artist) {
+  try {
+    const { rows: [albums] } = client.query(`
+      SELECT * FROM albums
+      WHERE artists LIKE $1;
+    `, [`%${artist}%`])
+
+    return albums
+  } catch(error) {
+    throw error
+  }
+}
+
+// async function getAlbumsByGenre(genre) {
+  
+// }
+
 async function editAlbum() {
   // Will allow editing of albums
 }
@@ -89,6 +119,8 @@ module.exports = {
   getAlbums,
   getAlbumByID,
   createAlbums,
+  getAlbumsByName,
+  getAlbumsByArtist,
   editAlbum,
   deleteAlbum,
 };

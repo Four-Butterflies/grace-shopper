@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const JWT_SECRET = process.env.JWT_SECRET || 'secret';
+const bcrypt = require('bcrypt');
 
 const createJWT = (email, id, username) => {
   const token = jwt.sign(
@@ -38,8 +39,20 @@ const authMiddleware = (req, res, next) => {
   next();
 };
 
+const hash = (password) => {
+  const salt = bcrypt.genSaltSync(10);
+
+  return bcrypt.hashSync(password, salt);
+};
+
+const comparePasswords = (password, hashedPassword) => {
+  return bcrypt.compareSync(password, hashedPassword);
+};
+
 module.exports = {
   createJWT,
   verifyJWT,
   authMiddleware,
+  hash,
+  comparePasswords,
 };
