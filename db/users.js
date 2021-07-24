@@ -30,11 +30,10 @@ const getUserByEmailAndPassword = async ({ email, password }) => {
       rows: [user],
     } = await client.query(
       `
-     SELECT id, username, password FROM users WHERE email=$1 LIMIT 1;
+     SELECT id, username, email, password FROM users WHERE email=$1 LIMIT 1;
     `,
       [email]
     );
-
     if (!user) return false;
 
     const passwordMatch = comparePasswords(password, user.password);
@@ -101,7 +100,7 @@ const getUserByEmail = async (email) => {
 const getAllUsers = async () => {
   try {
     const { rows } = await client.query(`
-        SELECT * FROM users;
+        SELECT id, username, password, email FROM users;
         `);
     return rows;
   } catch (error) {
@@ -114,5 +113,5 @@ module.exports = {
   getUserByEmailAndPassword,
   getUserById,
   getUserByEmail,
-  getAllUsers,
+  getAllUsers 
 };
