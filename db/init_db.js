@@ -10,7 +10,7 @@ const { createUser } = require('./users.js');
 // SEED DATA
 const albums = require('./seeddata.json');
 const users = require('./usersseeddata.json');
-// const carts = require('./carts.json')
+// const carts = require('./carts.json');
 const reviews = require('./reviews.json');
 
 async function buildTables() {
@@ -178,29 +178,25 @@ async function createInitialAlbums() {
   }
 }
 
-// CREATE INITIAL CARTS
+//CREATE INITIAL CARTS
 // async function createInitialOrders() {
 //   try {
-//     console.log('Starting to create carts...')
+//     console.log('Starting to create carts...');
 //     await Promise.all(
 //       carts.map(async (cart) => {
-//         const {
-//           albumId,
-//           userId,
-//           strikePrice
-//         } = cart
+//         const { albumId, userId, strikePrice } = cart;
 
 //         await createOrder({
 //           albumId,
 //           userId,
-//           strikePrice
-//         })
+//           strikePrice,
+//         });
 //       })
-//     )
+//     );
 
-//     console.log('Finished creating orders!')
-//   } catch(error) {
-//     throw error
+//     console.log('Finished creating orders!');
+//   } catch (error) {
+//     throw error;
 //   }
 // }
 
