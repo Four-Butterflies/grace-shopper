@@ -1,5 +1,5 @@
 const client = require('./client');
-const { hash, comparePasswords } = require('./hash.js');
+const { hash, comparePasswords } = require('../utils');
 
 // CREATING THE USER
 const createUser = async ({ username, password, email }) => {

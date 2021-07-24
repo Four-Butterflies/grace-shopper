@@ -33,7 +33,7 @@ ordersRouter.get('/user_orders', async (req, res) => {
   }
 });
 
-ordersRouter.post('/:userId/submit_order', (req, res)=>{
+ordersRouter.post('/:userId/submit_order', async(req, res)=>{
     const {albumUnitsId, userId,  status, total} = req.body
 
     try {
@@ -45,6 +45,6 @@ ordersRouter.post('/:userId/submit_order', (req, res)=>{
     } catch (error) {
         console.log(error);
     }
-})
+});
 
 module.exports = ordersRouter;

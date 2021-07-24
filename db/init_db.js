@@ -3,6 +3,7 @@ const client = require('./client');
 const { createAlbums } = require('./albums.js');
 const { createGenre, getGenreByName } = require('./genres.js');
 const { createAlbumGenres } = require('./album_genres.js');
+const { createAlbumUnit} = require('./album_units');
 // const { createOrder } = require('./orders.js');
 const { createReview } = require('./reviews.js');
 const { createUser } = require('./users.js');
@@ -177,6 +178,22 @@ async function createInitialAlbums() {
     throw error;
   }
 }
+
+//CREATE INITIAL ALBUM UNITS
+async function createInitialAlbumUnits(){
+  try {
+    console.log('Starting to create Initial Albums Units...');
+
+    
+
+    console.log('Finishing creating Initial Albums Units');
+  } catch (error) {
+    
+  }
+}
+
+
+
 
 // CREATE INITIAL CARTS
 // async function createInitialOrders() {
