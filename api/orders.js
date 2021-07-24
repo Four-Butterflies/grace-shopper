@@ -34,12 +34,12 @@ ordersRouter.get('/user_orders', async (req, res) => {
 });
 
 ordersRouter.post('/:userId/submit_order', async(req, res)=>{
-    const {albumUnitsId, userId,  status, total} = req.body
+    const { userId,  status, total} = req.body
 
     try {
-        const order = await createOrder(albumUnitsId, userId, status, total)
+        const order = await createOrder( userId, status, total)
         res.send({
-            order:{id: order.id, albumUnitsId: order.albumUnitsId, userId: order.userId, status: order.status, total: order.total, date: order.date},
+            order:{id: order.id, userId: order.userId, status: order.status, total: order.total, date: order.date},
             message: 'Your order has been received, Thank you for your purchase',
         })
     } catch (error) {

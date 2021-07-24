@@ -4,9 +4,9 @@ const { createAlbums } = require('./albums.js');
 const { createGenre, getGenreByName } = require('./genres.js');
 const { createAlbumGenres } = require('./album_genres.js');
 const { createAlbumUnit} = require('./album_units');
-// const { createOrder } = require('./orders.js');
+const { createOrder } = require('./orders.js');
 const { createReview } = require('./reviews.js');
-const { createUser } = require('./users.js');
+const { createUser, getAllUsers } = require('./users.js');
 
 // SEED DATA
 const albums = require('./seeddata.json');
@@ -64,19 +64,18 @@ async function buildTables() {
       "albumId" INTEGER REFERENCES albums(id) ON DELETE CASCADE NOT NULL,
       "userId" INTEGER REFERENCES users(id) ON DELETE CASCADE NOT NULL
     );
-    CREATE TABLE album_units (
-      id SERIAL PRIMARY KEY, 
-      "albumId" INTEGER REFERENCES albums(id) ON DELETE CASCADE NOT NULL,
-      "userId" INTEGER REFERENCES users(id) ON DELETE CASCADE NOT NULL,
-      strike_price INT
-    );
     CREATE TABLE orders (
       id SERIAL PRIMARY KEY, 
-      "albumUnitsId" INTEGER REFERENCES album_units(id) ON DELETE CASCADE NOT NULL,
-      "userId" INTEGER REFERENCES users(id) ON DELETE CASCADE NOT NULL,
+      "userId" INT REFERENCES users(id) ON DELETE CASCADE NOT NULL,
       status varchar(255) NOT NULL,
       total INT,
       date DATE DEFAULT CURRENT_DATE
+    );
+    CREATE TABLE album_units (
+      id SERIAL PRIMARY KEY, 
+      "albumId" INTEGER REFERENCES albums(id) ON DELETE CASCADE NOT NULL,
+      "orderId" INTEGER REFERENCES orders(id) ON DELETE CASCADE NOT NULL,
+      strike_price INT
     );
 
   `);
@@ -179,16 +178,59 @@ async function createInitialAlbums() {
   }
 }
 
-//CREATE INITIAL ALBUM UNITS
-async function createInitialAlbumUnits(){
+//CREATE INITIAL Orders
+async function createInitialOrders(){
   try {
-    console.log('Starting to create Initial Albums Units...');
-
-    
-
-    console.log('Finishing creating Initial Albums Units');
+    console.log('Starting to create Initial Orders...');
+    const users = await getAllUsers()
+    console.log(users[0].id)
+    const ordersTocreate = [
+      {
+        userId: 1,
+        status: 'in progress',
+        total: 1299,
+      },
+      {
+        userId: 2,
+        status: 'in progress',
+        total: 1399,
+      },
+      {
+        userId: 3,
+        status: 'in progress',
+        total: 1099,
+      },
+      {
+        userId: 1,
+        status: 'Delivered',
+        total: 2000,
+      },
+      {
+        userId: 4,
+        status: 'Cancelled',
+        total: 599,
+      },
+      {
+        userId: 4,
+        status: 'in progress',
+        total: 599,
+      },
+      {
+        userId: 3,
+        status: 'in progress',
+        total: 4999,
+      },
+      {
+        userId: 5,
+        status: 'delivered',
+        total: 9999,
+      }
+    ];
+    const orders = await Promise.all(ordersTocreate.map((order) => createOrder(order)));
+    console.log('orders created: ', orders)
+    console.log('Finished creating Initial Orders');
   } catch (error) {
-    
+    throw error;
   }
 }
 
@@ -252,7 +294,7 @@ async function rebuildDB() {
     await createInitialGenres();
     await createInitialAlbums();
     await createInitialUsers();
-    //await createInitialOrders();
+    await createInitialOrders();
     await createInitialReviews();
   } catch (error) {
     console.log('Error during rebuildDB');
