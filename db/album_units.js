@@ -23,7 +23,17 @@ async function createAlbumUnit({albumId,  orderId, strikePrice}) {
     }
 }
 
+async function deleteAlbumUnit(albumUnitId) {
+    try {
+        const { rows: [albumUnit] } = await client.query(`
+            DELETE FROM album_units
+            WHERE id = $1
+        `, [albumUnitId]);
 
-module.exports = {
-    createAlbumUnit,
+        return albumUnit
+    } catch(error) {
+        throw error
+    }
 }
+
+module.exports = { createAlbumUnit, deleteAlbumUnit }
