@@ -11,14 +11,14 @@ const { createUser, getAllUsers } = require('./users.js');
 // SEED DATA
 const albums = require('./seeddata.json');
 const users = require('./usersseeddata.json');
-// const carts = require('./carts.json')
+// const carts = require('./carts.json');
 const reviews = require('./reviews.json');
 
 async function buildTables() {
   try {
     console.log('Building tables...');
 
-    // build tables in correct order kakakak
+    // build tables in correct order
 
     await client.query(`
     DROP TABLE IF EXISTS album_units CASCADE;
@@ -34,21 +34,13 @@ async function buildTables() {
       album_name varchar(255) NOT NULL,
       artist varchar(255) NOT NULL,
       year INT,
+      genres text,
       price INT DEFAULT 1999,
       quantity INT DEFAULT 0,
       reorder_number INT DEFAULT 0,
       img_url text DEFAULT 'https://cdn4.vectorstock.com/i/thumb-large/82/48/vinyl-record-blank-realistic-vinyl-disc-mockup-on-vector-17128248.jpg',
       spotify varchar(255),
       total_tracks INT
-    );
-    CREATE TABLE genres (
-      id SERIAL PRIMARY KEY,
-      genre varchar(255) UNIQUE NOT NULL
-    );
-    CREATE TABLE genre_albums (
-      id SERIAL PRIMARY KEY,
-      "albumId" INTEGER REFERENCES albums(id) ON DELETE CASCADE NOT NULL,
-      "genreId" INTEGER REFERENCES genres(id) ON DELETE CASCADE NOT NULL
     );
     CREATE TABLE users (
       id SERIAL PRIMARY KEY,
@@ -86,26 +78,6 @@ async function buildTables() {
   }
 }
 
-// CREATE INITIAL GENRES
-async function createInitialGenres() {
-  try {
-    console.log('Starting to create genres...');
-    await Promise.all(
-      albums.map(async (album) => {
-        const { genres } = album;
-
-        for (let i = 0; i < genres.length; i++) {
-          await createGenre(genres[i]);
-        }
-      })
-    );
-
-    console.log('Finished creating genres');
-  } catch (error) {
-    throw error;
-  }
-}
-
 // CREATE INITIAL USERS
 async function createInitialUsers() {
   try {
@@ -128,47 +100,13 @@ async function createInitialUsers() {
   }
 }
 
-// CREATE INITIAL ALBUMS
+// CREATE INITIAL ALBUMS, ALSO CREATES GENRES AND ALBUM GENRE RELATIONS
 async function createInitialAlbums() {
   try {
     console.log('Starting to create albums...');
     await Promise.all(
       albums.map(async (album) => {
-        const {
-          name,
-          artists,
-          release_date,
-          genres,
-          images,
-          price,
-          quantity,
-          reorder,
-          total_tracks,
-          spotify,
-        } = album;
-
-        const genreIDs = [];
-
-        for (let i = 0; i < genres.length; i++) {
-          const genre = await getGenreByName(genres[i]);
-          genreIDs.push(genre.id);
-        }
-
-        const albumInDB = await createAlbums({
-          name,
-          artists,
-          release_date,
-          price,
-          quantity,
-          reorder,
-          images,
-          total_tracks,
-          spotify,
-        });
-
-        genreIDs.map(async (genreID) => {
-          await createAlbumGenres(albumInDB.id, genreID);
-        });
+        await createAlbums(album);
       })
     );
 
@@ -280,26 +218,22 @@ async function createInitialAlbumUnits(){
 // CREATE INITIAL CARTS
 // async function createInitialOrders() {
 //   try {
-//     console.log('Starting to create carts...')
+//     console.log('Starting to create carts...');
 //     await Promise.all(
 //       carts.map(async (cart) => {
-//         const {
-//           albumId,
-//           userId,
-//           strikePrice
-//         } = cart
+//         const { albumId, userId, strikePrice } = cart;
 
 //         await createOrder({
 //           albumId,
 //           userId,
-//           strikePrice
-//         })
+//           strikePrice,
+//         });
 //       })
-//     )
+//     );
 
-//     console.log('Finished creating orders!')
-//   } catch(error) {
-//     throw error
+//     console.log('Finished creating orders!');
+//   } catch (error) {
+//     throw error;
 //   }
 // }
 
@@ -331,7 +265,6 @@ async function rebuildDB() {
     client.connect();
     //await dropTables()
     await buildTables();
-    await createInitialGenres();
     await createInitialAlbums();
     await createInitialUsers();
     await createInitialOrders();
