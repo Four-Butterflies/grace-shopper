@@ -3,9 +3,10 @@ const client = require('./client');
 const { createAlbums } = require('./albums.js');
 const { createGenre, getGenreByName } = require('./genres.js');
 const { createAlbumGenres } = require('./album_genres.js');
-// const { createOrder } = require('./orders.js');
+const { createAlbumUnit} = require('./album_units');
+const { createOrder, getAllOrders } = require('./orders.js');
 const { createReview } = require('./reviews.js');
-const { createUser } = require('./users.js');
+const { createUser, getAllUsers } = require('./users.js');
 
 // SEED DATA
 const albums = require('./seeddata.json');
@@ -63,19 +64,18 @@ async function buildTables() {
       "albumId" INTEGER REFERENCES albums(id) ON DELETE CASCADE NOT NULL,
       "userId" INTEGER REFERENCES users(id) ON DELETE CASCADE NOT NULL
     );
-    CREATE TABLE album_units (
-      id SERIAL PRIMARY KEY, 
-      "albumId" INTEGER REFERENCES albums(id) ON DELETE CASCADE NOT NULL,
-      "userId" INTEGER REFERENCES users(id) ON DELETE CASCADE NOT NULL,
-      strike_price INT
-    );
     CREATE TABLE orders (
       id SERIAL PRIMARY KEY, 
-      "albumUnitsId" INTEGER REFERENCES album_units(id) ON DELETE CASCADE NOT NULL,
-      "userId" INTEGER REFERENCES users(id) ON DELETE CASCADE NOT NULL,
+      "userId" INT REFERENCES users(id) ON DELETE CASCADE NOT NULL,
       status varchar(255) NOT NULL,
       total INT,
       date DATE DEFAULT CURRENT_DATE
+    );
+    CREATE TABLE album_units (
+      id SERIAL PRIMARY KEY, 
+      "albumId" INTEGER REFERENCES albums(id) ON DELETE CASCADE NOT NULL,
+      "orderId" INTEGER REFERENCES orders(id) ON DELETE CASCADE NOT NULL,
+      strike_price INT
     );
 
   `);
@@ -178,6 +178,105 @@ async function createInitialAlbums() {
   }
 }
 
+//CREATE INITIAL Orders
+async function createInitialOrders(){
+  try {
+    console.log('Starting to create Initial Orders...');
+    const users = await getAllUsers()
+    const ordersTocreate = [
+      {
+        userId: 1,
+        status: 'in progress',
+        total: 1299,
+      },
+      {
+        userId: 2,
+        status: 'in progress',
+        total: 1399,
+      },
+      {
+        userId: 3,
+        status: 'in progress',
+        total: 1099,
+      },
+      {
+        userId: 1,
+        status: 'Delivered',
+        total: 2000,
+      },
+      {
+        userId: 4,
+        status: 'Cancelled',
+        total: 599,
+      },
+      {
+        userId: 4,
+        status: 'in progress',
+        total: 599,
+      },
+      {
+        userId: 3,
+        status: 'in progress',
+        total: 4999,
+      },
+      {
+        userId: 5,
+        status: 'delivered',
+        total: 9999,
+      }
+    ];
+    const orders = await Promise.all(ordersTocreate.map((order) => createOrder(order)));
+    console.log('orders created: ', orders)
+    console.log('Finished creating Initial Orders');
+  } catch (error) {
+    throw error;
+  }
+}
+
+
+// CREATE INITIAL album-units
+async function createInitialAlbumUnits(){
+  try {
+    console.log('Starting to create Initial AlbumUnits...');
+
+    const albumUntsToCreate = [
+      {
+        albumId:10,
+        orderId: 1,
+        strikePrice: 1999,
+      },
+      {
+        albumId:20,
+        orderId: 1,
+        strikePrice: 1499,
+      },
+      {
+        albumId:30,
+        orderId: 2,
+        strikePrice: 599,
+      },
+      {
+        albumId:4,
+        orderId: 3,
+        strikePrice: 699, 
+      },
+      {
+        albumId:6,
+        orderId: 3,
+        strikePrice: 1699, 
+      }
+
+    ]
+    const albumUnits = await Promise.all(albumUntsToCreate.map((au)=> createAlbumUnit(au)));
+    console.log('AlbumUnits created: ', albumUnits)
+    console.log('Finished creating Initial AlbumUnits');
+
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
 // CREATE INITIAL CARTS
 // async function createInitialOrders() {
 //   try {
@@ -235,7 +334,8 @@ async function rebuildDB() {
     await createInitialGenres();
     await createInitialAlbums();
     await createInitialUsers();
-    //await createInitialOrders();
+    await createInitialOrders();
+    await createInitialAlbumUnits();
     await createInitialReviews();
   } catch (error) {
     console.log('Error during rebuildDB');

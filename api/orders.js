@@ -20,7 +20,7 @@ ordersRouter.get('/', async (req, res) => {
 ordersRouter.get('/user_orders', async (req, res) => {
     const {userId} = req.body;
   try {
-    const orders = await getOrdersByUserId(userId);
+    const orders = await getOrdersByUserId(1);
     if (!orders || orders.length === 0) {
         res.status(500).send({
           name: 'Not Orders Found',
@@ -33,18 +33,19 @@ ordersRouter.get('/user_orders', async (req, res) => {
   }
 });
 
-ordersRouter.post('/:userId/submit_order', (req, res)=>{
-    const {albumUnitsId, userId,  status, total} = req.body
+ordersRouter.post('/submit_order', async(req, res)=>{
+    const { userId, status, total} = req.body
 
     try {
-        const order = await createOrder(albumUnitsId, userId, status, total)
+        const order = await createOrder( {userId, status, total})
+        console.log(order);
         res.send({
-            order:{id: order.id, albumUnitsId: order.albumUnitsId, userId: order.userId, status: order.status, total: order.total, date: order.date},
+            order:{id: order.id, userId: order.userId, status: order.status, total: order.total, date: order.date},
             message: 'Your order has been received, Thank you for your purchase',
         })
     } catch (error) {
         console.log(error);
     }
-})
+});
 
 module.exports = ordersRouter;

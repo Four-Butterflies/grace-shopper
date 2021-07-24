@@ -1,18 +1,18 @@
 const client = require('./client');
 
-async function createAlbumUnit(albumId, userId, strikePrice) {
+async function createAlbumUnit({albumId,  orderId, strikePrice}) {
     try {
         const {
             rows: [albumUnit],
           } = await client.query(
             `
-              INSERT INTO album_units("albumId", "userId", strike_price)
+              INSERT INTO album_units("albumId", "orderId", strike_price)
               VALUES($1, $2, $3)
               RETURNING *;
             `,
             [
               albumId,
-              userId,
+              orderId,
               strikePrice
             ]
           );
