@@ -41,4 +41,19 @@ const getOrdersByUserId = async (userId) => {
   } catch (error) {}
 };
 
-module.exports = { createOrder, getAllOrders, getOrdersByUserId };
+const getOrderDetailsByOrderId = async(orderId) =>{
+  try {
+    const {rows} = await client.query(`
+      SELECT o.id as "orderID", o."userId", o.status, o.total, o.date, au.id as "albumUnitId", au."albumId", au.strike_price
+      FROM orders o
+      JOIN album_units au ON o.id = au."orderId"
+      WHERE o.id = $1; 
+    `,[orderId]);
+    return rows;
+  } catch (error) {
+    console.log(error);
+    throw error
+  }
+}
+
+module.exports = { createOrder, getAllOrders, getOrdersByUserId, getOrderDetailsByOrderId };

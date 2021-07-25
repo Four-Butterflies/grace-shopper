@@ -1,6 +1,6 @@
 const express = require('express');
 const ordersRouter = express.Router();
-const { createOrder, getAllOrders, getOrdersByUserId } = require('./../db/orders');
+const { createOrder, getAllOrders, getOrdersByUserId, getOrderDetailsByOrderId } = require('./../db/orders');
 
 ordersRouter.get('/', async (req, res) => {
   try {
@@ -16,6 +16,23 @@ ordersRouter.get('/', async (req, res) => {
     console.log(error);
   }
 });
+
+ordersRouter.get('/details', async(req, res) => {
+  const {orderId} = req.body;
+  
+  try {
+    const orders = await getOrderDetailsByOrderId(orderId);
+    if (!orders || orders.length === 0) {
+      res.status(500).send({
+        name: 'Not Orders Found',
+        message: 'There are not orders under this user Id.',
+      });
+    }
+    res.send({orders})
+  } catch (error) {
+    console.log(error);
+  }
+})
 
 ordersRouter.get('/user_orders', async (req, res) => {
     const {userId} = req.body;
