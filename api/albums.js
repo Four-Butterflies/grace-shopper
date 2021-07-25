@@ -33,6 +33,7 @@ albumsRouter.get('/:albumID', async (req, res, next) => {
   }
 });
 
+// These functions don't seem to work?
 // albumsRouter.get('/:name', async (req, res, next) => {
 //   const { name } = req.params;
 
@@ -94,31 +95,39 @@ albumsRouter.post('/', async (req, res, next) => {
 albumsRouter.patch('/:albumID', async (req, res, next) => {
   const { albumID } = req.params;
   const {
-    name,
-    artists,
-    release_date,
+    name: album_name,
+    artists: artist,
+    release_date: year,
     genres,
     price,
     quantity,
-    reorder,
-    image,
+    reorder: reorder_number,
+    image: img_url,
     total_tracks,
     spotify,
   } = req.body;
 
+  const albumObj = {
+    album_name,
+    artist,
+    year,
+    genres,
+    price,
+    quantity,
+    reorder_number,
+    img_url,
+    total_tracks,
+    spotify,
+  };
+
+  Object.keys(albumObj).forEach((key) => {
+    if (albumObj[key] === undefined) {
+      delete albumObj[key];
+    }
+  });
+
   try {
-    const result = await editAlbum(albumID, {
-      name,
-      artists,
-      release_date,
-      genres,
-      price,
-      quantity,
-      reorder,
-      image,
-      total_tracks,
-      spotify,
-    });
+    const result = await editAlbum(albumID, albumObj);
 
     res.send(result);
   } catch (error) {

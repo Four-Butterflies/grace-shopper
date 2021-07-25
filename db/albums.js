@@ -24,7 +24,7 @@ async function getAlbumByID(id) {
     SELECT * FROM albums
     WHERE id = $1;
     `,
-      id
+      [id]
     );
 
     return album;
