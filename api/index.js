@@ -2,11 +2,8 @@ const express = require('express');
 const apiRouter = express.Router();
 const usersRouter = require('./users.js');
 const albumsRouter = require('./albums.js');
-const genresRouter = require('./genres.js');
-const albumGenresRouter = require('./album_genres.js');
-const albumUnitsRouter = require('./album_units.js')
-const ordersRouter =  require('./orders.js')
-
+const albumUnitsRouter = require('./album_units.js');
+const ordersRouter = require('./orders.js');
 
 apiRouter.get('/health', (req, res, next) => {
   console.log('A request is being made to', req.path);
@@ -16,9 +13,7 @@ apiRouter.get('/health', (req, res, next) => {
 
 apiRouter.use('/users', usersRouter);
 apiRouter.use('/albums', albumsRouter);
-apiRouter.use('/genres', genresRouter);
-apiRouter.use('/album_genres', albumGenresRouter);
-apiRouter.use('/album_units', albumUnitsRouter)
+apiRouter.use('/album_units', albumUnitsRouter);
 apiRouter.use('/orders', ordersRouter);
 
 apiRouter.use((error, req, res, next) => {
