@@ -1,24 +1,21 @@
 // code to build and initialize DB goes here
 const client = require('./client');
 const { createAlbums } = require('./albums.js');
-const { createGenre, getGenreByName } = require('./genres.js');
-const { createAlbumGenres } = require('./album_genres.js');
-const { createAlbumUnit} = require('./album_units');
-const { createOrder, getAllOrders } = require('./orders.js');
+const { createAlbumUnit } = require('./album_units');
+const { createOrder } = require('./orders.js');
 const { createReview } = require('./reviews.js');
 const { createUser, getAllUsers } = require('./users.js');
 
 // SEED DATA
 const albums = require('./seeddata.json');
 const users = require('./usersseeddata.json');
-// const carts = require('./carts.json')
 const reviews = require('./reviews.json');
 
 async function buildTables() {
   try {
     console.log('Building tables...');
 
-    // build tables in correct order kakakak
+    // build tables in correct order
 
     await client.query(`
     DROP TABLE IF EXISTS album_units CASCADE;
@@ -34,21 +31,13 @@ async function buildTables() {
       album_name varchar(255) NOT NULL,
       artist varchar(255) NOT NULL,
       year INT,
+      genres text,
       price INT DEFAULT 1999,
       quantity INT DEFAULT 0,
       reorder_number INT DEFAULT 0,
       img_url text DEFAULT 'https://cdn4.vectorstock.com/i/thumb-large/82/48/vinyl-record-blank-realistic-vinyl-disc-mockup-on-vector-17128248.jpg',
-      spotify varchar(255),
+      spotify text,
       total_tracks INT
-    );
-    CREATE TABLE genres (
-      id SERIAL PRIMARY KEY,
-      genre varchar(255) UNIQUE NOT NULL
-    );
-    CREATE TABLE genre_albums (
-      id SERIAL PRIMARY KEY,
-      "albumId" INTEGER REFERENCES albums(id) ON DELETE CASCADE NOT NULL,
-      "genreId" INTEGER REFERENCES genres(id) ON DELETE CASCADE NOT NULL
     );
     CREATE TABLE users (
       id SERIAL PRIMARY KEY,
@@ -86,26 +75,6 @@ async function buildTables() {
   }
 }
 
-// CREATE INITIAL GENRES
-async function createInitialGenres() {
-  try {
-    console.log('Starting to create genres...');
-    await Promise.all(
-      albums.map(async (album) => {
-        const { genres } = album;
-
-        for (let i = 0; i < genres.length; i++) {
-          await createGenre(genres[i]);
-        }
-      })
-    );
-
-    console.log('Finished creating genres');
-  } catch (error) {
-    throw error;
-  }
-}
-
 // CREATE INITIAL USERS
 async function createInitialUsers() {
   try {
@@ -128,47 +97,13 @@ async function createInitialUsers() {
   }
 }
 
-// CREATE INITIAL ALBUMS
+// CREATE INITIAL ALBUMS, ALSO CREATES GENRES AND ALBUM GENRE RELATIONS
 async function createInitialAlbums() {
   try {
     console.log('Starting to create albums...');
     await Promise.all(
       albums.map(async (album) => {
-        const {
-          name,
-          artists,
-          release_date,
-          genres,
-          images,
-          price,
-          quantity,
-          reorder,
-          total_tracks,
-          spotify,
-        } = album;
-
-        const genreIDs = [];
-
-        for (let i = 0; i < genres.length; i++) {
-          const genre = await getGenreByName(genres[i]);
-          genreIDs.push(genre.id);
-        }
-
-        const albumInDB = await createAlbums({
-          name,
-          artists,
-          release_date,
-          price,
-          quantity,
-          reorder,
-          images,
-          total_tracks,
-          spotify,
-        });
-
-        genreIDs.map(async (genreID) => {
-          await createAlbumGenres(albumInDB.id, genreID);
-        });
+        await createAlbums(album);
       })
     );
 
@@ -179,10 +114,10 @@ async function createInitialAlbums() {
 }
 
 //CREATE INITIAL Orders
-async function createInitialOrders(){
+async function createInitialOrders() {
   try {
     console.log('Starting to create Initial Orders...');
-    const users = await getAllUsers()
+    const users = await getAllUsers();
     const ordersTocreate = [
       {
         userId: 1,
@@ -223,85 +158,59 @@ async function createInitialOrders(){
         userId: 5,
         status: 'delivered',
         total: 9999,
-      }
+      },
     ];
-    const orders = await Promise.all(ordersTocreate.map((order) => createOrder(order)));
-    console.log('orders created: ', orders)
+    const orders = await Promise.all(
+      ordersTocreate.map((order) => createOrder(order))
+    );
+    // console.log('Orders created: ', orders);
     console.log('Finished creating Initial Orders');
   } catch (error) {
     throw error;
   }
 }
 
-
 // CREATE INITIAL album-units
-async function createInitialAlbumUnits(){
+async function createInitialAlbumUnits() {
   try {
     console.log('Starting to create Initial AlbumUnits...');
 
     const albumUntsToCreate = [
       {
-        albumId:10,
+        albumId: 10,
         orderId: 1,
         strikePrice: 1999,
       },
       {
-        albumId:20,
+        albumId: 20,
         orderId: 1,
         strikePrice: 1499,
       },
       {
-        albumId:30,
+        albumId: 30,
         orderId: 2,
         strikePrice: 599,
       },
       {
-        albumId:4,
+        albumId: 4,
         orderId: 3,
-        strikePrice: 699, 
+        strikePrice: 699,
       },
       {
-        albumId:6,
+        albumId: 6,
         orderId: 3,
-        strikePrice: 1699, 
-      }
-
-    ]
-    const albumUnits = await Promise.all(albumUntsToCreate.map((au)=> createAlbumUnit(au)));
-    console.log('AlbumUnits created: ', albumUnits)
+        strikePrice: 1699,
+      },
+    ];
+    const albumUnits = await Promise.all(
+      albumUntsToCreate.map((au) => createAlbumUnit(au))
+    );
+    // console.log('AlbumUnits created: ', albumUnits);
     console.log('Finished creating Initial AlbumUnits');
-
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
-
-
-// CREATE INITIAL CARTS
-// async function createInitialOrders() {
-//   try {
-//     console.log('Starting to create carts...')
-//     await Promise.all(
-//       carts.map(async (cart) => {
-//         const {
-//           albumId,
-//           userId,
-//           strikePrice
-//         } = cart
-
-//         await createOrder({
-//           albumId,
-//           userId,
-//           strikePrice
-//         })
-//       })
-//     )
-
-//     console.log('Finished creating orders!')
-//   } catch(error) {
-//     throw error
-//   }
-// }
 
 // CREATE INITIAL REVIEWS
 async function createInitialReviews() {
@@ -329,9 +238,7 @@ async function createInitialReviews() {
 async function rebuildDB() {
   try {
     client.connect();
-    //await dropTables()
     await buildTables();
-    await createInitialGenres();
     await createInitialAlbums();
     await createInitialUsers();
     await createInitialOrders();
