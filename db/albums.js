@@ -43,26 +43,28 @@ async function createAlbums({
 
 async function getAlbumsByName(name) {
   try {
-    const { rows: [albums] } = client.query(`
+    const { rows } = await client.query(`
       SELECT * FROM albums
-      WHERE name LIKE $1;
+      WHERE album_name ILIKE $1;
     `, [`%${name}%`])
-
-    return albums
+    console.log('did the query!')
+    return rows
   } catch(error) {
+    console.log('had an error')
     throw error
   }
 }
 
 async function getAlbumsByArtist(artist) {
   try {
-    const { rows: [albums] } = client.query(`
+    const { rows } = await client.query(`
       SELECT * FROM albums
-      WHERE artists LIKE $1;
+      WHERE artist ILIKE $1;
     `, [`%${artist}%`])
-
-    return albums
+    console.log('did the query')
+    return rows
   } catch(error) {
+    console.log('had an error')
     throw error
   }
 }

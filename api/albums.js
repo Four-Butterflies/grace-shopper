@@ -2,8 +2,8 @@ const express = require('express');
 const { getAlbumsByName, getAlbumsByArtist } = require('../db/albums');
 const albumsRouter = express.Router();
 
-albumsRouter.get('/:name', async (req, res, next) => {
-    const { name } = req.params;
+albumsRouter.get('/name', async (req, res, next) => {
+    const { name } = req.body;
 
     try{
         const albumNames = await getAlbumsByName(name)
@@ -13,8 +13,8 @@ albumsRouter.get('/:name', async (req, res, next) => {
     }
 })
 
-albumsRouter.get('/:artist', async (req, res, next ) => {
-    const { artist } = req.params;
+albumsRouter.get('/artist', async (req, res, next ) => {
+    const { artist } = req.body;
 
     try {
         const albumArtist = await getAlbumsByArtist(artist)
