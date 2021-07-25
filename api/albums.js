@@ -10,7 +10,6 @@ const {
   deleteAlbum,
 } = require('../db/albums.js');
 
-// GET
 albumsRouter.get('/', async (req, res, next) => {
   try {
     const result = await getAlbums();
@@ -34,27 +33,28 @@ albumsRouter.get('/:albumID', async (req, res, next) => {
 });
 
 // These functions don't seem to work?
-// albumsRouter.get('/:name', async (req, res, next) => {
-//   const { name } = req.params;
+albumsRouter.get('/name/:name', async (req, res, next) => {
+  const { name } = req.params;
+  console.log(name)
 
-//   try {
-//     const albumNames = await getAlbumsByName(name);
-//     res.send(albumNames);
-//   } catch (error) {
-//     next(error);
-//   }
-// });
+  try {
+    const albumNames = await getAlbumsByName(name);
+    res.send(albumNames);
+  } catch (error) {
+    next(error);
+  }
+});
 
-// albumsRouter.get('/:artist', async (req, res, next) => {
-//   const { artist } = req.params;
+albumsRouter.get('/artist/:artist', async (req, res, next) => {
+  const { artist } = req.params;
 
-//   try {
-//     const albumArtist = await getAlbumsByArtist(artist);
-//     res.send(albumArtist);
-//   } catch (error) {
-//     next(error);
-//   }
-// });
+  try {
+    const albumArtist = await getAlbumsByArtist(artist);
+    res.send(albumArtist);
+  } catch (error) {
+    next(error);
+  }
+});
 
 // POST
 albumsRouter.post('/', async (req, res, next) => {
