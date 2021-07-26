@@ -51,7 +51,7 @@ const getOrdersWithDetailsByUserId = async (userId) => {
 const getOrderWithDetailsByOrderId = async (orderId) => {
   try {
     const order = await getOrderById(orderId);
-    const orderWithDetails = addDetailsToOrders(order);
+    const orderWithDetails = await addDetailsToOrders(order);
 
     return orderWithDetails;
   } catch (error) {
@@ -95,7 +95,6 @@ const getDetailsForOrder = async (orderId) => {
 
 const addDetailsToOrders = async (orders) => {
   try {
-    console.log(orders);
     const result = Promise.all(
       orders.map(async (order) => {
         const details = await getDetailsForOrder(order.id);
