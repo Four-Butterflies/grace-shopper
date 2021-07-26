@@ -9,25 +9,8 @@ async function getAlbums() {
     `
     );
 
-    return rows;
-  } catch (error) {
-    throw error;
-  }
-}
-
-async function getAlbumByID(id) {
-  try {
-    const {
-      rows: [album],
-    } = await client.query(
-      `
-    SELECT * FROM albums
-    WHERE id = $1;
-    `,
-      [id]
-    );
-
-    return album;
+    const albumsWithReviews = await addReviewsToAlbum(rows);
+    return albumsWithReviews;
   } catch (error) {
     throw error;
   }
@@ -75,31 +58,90 @@ async function createAlbums({
 }
 
 async function getAlbumsByName(name) {
-  console.log(name)
+  console.log(name);
   try {
-    const { rows } = await client.query(`
+    const { rows } = await client.query(
+      `
       SELECT * FROM albums
       WHERE album_name ILIKE $1;
-    `, [`%${name}%`])
-    console.log('did the query!')
-    return rows
-  } catch(error) {
-    console.log('had an error')
-    throw error
+    `,
+      [`%${name}%`]
+    );
+
+    const albumsWithReviews = await addReviewsToAlbum(rows);
+    return albumsWithReviews;
+  } catch (error) {
+    throw error;
   }
 }
 
 async function getAlbumsByArtist(artist) {
   try {
-    const { rows } = await client.query(`
+    const { rows } = await client.query(
+      `
       SELECT * FROM albums
       WHERE artist ILIKE $1;
-    `, [`%${artist}%`])
-    console.log('did the query')
-    return rows
-  } catch(error) {
-    console.log('had an error')
-    throw error
+    `,
+      [`%${artist}%`]
+    );
+
+    const albumsWithReviews = await addReviewsToAlbum(rows);
+    return albumsWithReviews;
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function getAlbumByID(id) {
+  try {
+    const { rows } = await client.query(
+      `
+    SELECT * FROM albums
+    WHERE id = $1;
+    `,
+      [id]
+    );
+
+    const albumsWithReviews = await addReviewsToAlbum(rows);
+    return albumsWithReviews;
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function getReviewsForAlbum(albumId) {
+  try {
+    const { rows } = await client.query(
+      `
+      SELECT r.id, r.review, r.rating, r.date, r."userId"
+      FROM albums a
+      JOIN reviews r ON a.id = r."albumId"
+      WHERE a.id = $1;
+    `,
+      [albumId]
+    );
+    return rows;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
+async function addReviewsToAlbum(albums) {
+  try {
+    const result = Promise.all(
+      albums.map(async (album) => {
+        const reviews = await getReviewsForAlbum(album.id);
+        return {
+          ...album,
+          reviews,
+        };
+      })
+    );
+    return result;
+  } catch (error) {
+    console.log(error);
+    throw error;
   }
 }
 

@@ -32,10 +32,8 @@ albumsRouter.get('/:albumID', async (req, res, next) => {
   }
 });
 
-// These functions don't seem to work?
 albumsRouter.get('/name/:name', async (req, res, next) => {
   const { name } = req.params;
-  console.log(name)
 
   try {
     const albumNames = await getAlbumsByName(name);
