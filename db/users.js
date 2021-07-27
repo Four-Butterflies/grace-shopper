@@ -23,6 +23,29 @@ const createUser = async ({ username, password, email }) => {
   }
 };
 
+//UPDATING USER
+const updateUser = async(userId, fields = {}) => {
+  const setString = Object.keys(fields).map(
+    (key, index) => `"${ key }"=$${ index + 1 }`
+  ).join(', ');
+
+  if (setString.length === 0) {
+    return;
+  };
+  try {
+    const {rows: [ user ] } = await client.query(`
+      UPDATE users
+      SET ${ setString }
+      WHERE user_id=${ userId }
+      RETURNING *;
+      `, Object.values(fields));
+    
+      return user;
+  } catch (error) {
+    throw error
+  }
+}
+
 // GETTING THE USER WITH EMAIL AND PASSWORD - log in.
 const getUserByEmailAndPassword = async ({ email, password }) => {
   try {
@@ -112,6 +135,7 @@ module.exports = {
   createUser,
   getUserByEmailAndPassword,
   getUserById,
+  updateUser,
   getUserByEmail,
   getAllUsers 
 };
