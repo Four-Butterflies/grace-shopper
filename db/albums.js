@@ -145,9 +145,45 @@ async function addReviewsToAlbum(albums) {
   }
 }
 
-// async function getAlbumsByGenre(genre) {
+async function getAllGenres() {
+  try {
+    const { rows } = await client.query(
+      `
+      SELECT genres FROM albums;
+    `
+    );
 
-// }
+    const result = [];
+
+    rows.forEach((row) => {
+      row.genres.forEach((genre) => {
+        if (!result.includes(genre)) {
+          result.push(genre);
+        }
+      });
+    });
+
+    return result;
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function getAlbumsByGenre(genre) {
+  try {
+    const { rows } = await client.query(
+      `
+    SELECT * FROM albums
+    WHERE genres @> $1;
+    `,
+      [genre]
+    );
+
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+}
 
 async function editAlbum(id, fields = {}) {
   const setString = Object.keys(fields).map(
@@ -201,6 +237,8 @@ module.exports = {
   createAlbums,
   getAlbumsByName,
   getAlbumsByArtist,
+  getAllGenres,
+  getAlbumsByGenre,
   editAlbum,
   deleteAlbum,
 };
