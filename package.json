@@ -25,6 +25,7 @@
     "npm-merge-driver": "^2.3.6",
     "pg": "^8.6.0",
     "react": "^16.13.1",
+    "react-bootstrap": "^2.0.0-beta.4",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.1",
