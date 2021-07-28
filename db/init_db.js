@@ -31,7 +31,7 @@ async function buildTables() {
       album_name varchar(255) NOT NULL,
       artist varchar(255) NOT NULL,
       year INT,
-      genres text,
+      genres text[],
       price INT DEFAULT 1999,
       quantity INT DEFAULT 0,
       reorder_number INT DEFAULT 0,

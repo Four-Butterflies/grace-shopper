@@ -5,6 +5,8 @@ const {
   getAlbumByID,
   getAlbumsByName,
   getAlbumsByArtist,
+  getAllGenres,
+  getAlbumsByGenre,
   createAlbums,
   editAlbum,
   deleteAlbum,
@@ -20,7 +22,7 @@ albumsRouter.get('/', async (req, res, next) => {
   }
 });
 
-albumsRouter.get('/:albumID', async (req, res, next) => {
+albumsRouter.get('/album/:albumID', async (req, res, next) => {
   const { albumID } = req.params;
 
   try {
@@ -37,6 +39,7 @@ albumsRouter.get('/name/:name', async (req, res, next) => {
 
   try {
     const albumNames = await getAlbumsByName(name);
+
     res.send(albumNames);
   } catch (error) {
     next(error);
@@ -48,7 +51,31 @@ albumsRouter.get('/artist/:artist', async (req, res, next) => {
 
   try {
     const albumArtist = await getAlbumsByArtist(artist);
+
     res.send(albumArtist);
+  } catch (error) {
+    next(error);
+  }
+});
+
+albumsRouter.get('/genres', async (req, res, next) => {
+  try {
+    const genres = await getAllGenres();
+
+    res.send(genres);
+  } catch (error) {
+    next(error);
+  }
+});
+
+albumsRouter.get('/genres/:genre', async (req, res, next) => {
+  let { genre } = req.params;
+  genre = genre.split('&');
+
+  try {
+    const albums = await getAlbumsByGenre(genre);
+
+    res.send(albums);
   } catch (error) {
     next(error);
   }
