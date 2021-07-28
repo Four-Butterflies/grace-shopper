@@ -1,4 +1,5 @@
 import React from 'react';
+import '../index.css';
 
 import { 
   Navbar,
@@ -12,7 +13,9 @@ import {
 
 const NavbarComp = () => {
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar expand="lg" style={{
+          backgroundColor: 'var(--color-primary)',
+        }}>
         <Container>
           <Navbar.Brand href="#home">VINYLS</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
