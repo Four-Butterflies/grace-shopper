@@ -5,6 +5,7 @@ const albumsRouter = require('./albums.js');
 const albumUnitsRouter = require('./album_units.js');
 const ordersRouter = require('./orders.js');
 const reviewsRouter = require('./reviews');
+const chargeRouter = require('./charge');
 
 apiRouter.get('/health', (req, res, next) => {
   res.send({ message: 'All is good on /api/health!' });
@@ -15,6 +16,7 @@ apiRouter.use('/reviews', reviewsRouter);
 apiRouter.use('/albums', albumsRouter);
 apiRouter.use('/album_units', albumUnitsRouter);
 apiRouter.use('/orders', ordersRouter);
+apiRouter.use('/charge', chargeRouter);
 
 apiRouter.use((error, req, res, next) => {
   res.send(error);
