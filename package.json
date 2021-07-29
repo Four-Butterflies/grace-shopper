@@ -33,7 +33,6 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.1",
     "stripe": "^8.167.0"
-
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

@@ -45,6 +45,11 @@ const NavbarComp = () => {
                 Albums
               </Link>
             </Navbar.Text>
+            <Navbar.Text>
+              <Link to={'/checkout'} style={{ marginLeft: '1rem' }}>
+                Albums
+              </Link>
+            </Navbar.Text>
             <Form
               inline
               style={{
