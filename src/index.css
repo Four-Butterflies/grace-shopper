@@ -1,11 +1,40 @@
 :root {
-  --size: 1rem;
-  --color-primary: #0fb058;
-  --background: rgb(255, 255, 255);
-  --color-secondary: #b04a0f;
-  --color-tertiary: #b00f3a;
+    --size: 1rem;
+    --color-primary: #0fb058;
+    --background: rgb(255, 255, 255);
+    --color-secondary: #b04a0f;
+    --color-tertiary: #b00f3a;
 }
 
+/* FRONT PAGE FORMATTING */
+
+.background-image {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    width: 100vw;
+    height: 50rem;
+    object-fit: conatin;
+    filter: opacity(0.7);
+}
+
+.content {
+    left: 0;
+    right: 0;
+    z-index: 2;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 50rem;
+    transition: all .2s ease-in-out;
+}
+
+.content:hover {
+    transform: scale(1.2);
+}
+    
+    
 /* Stripe checkout Form style */
   
 .CheckoutForm {
