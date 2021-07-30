@@ -1,4 +1,4 @@
-export { default as Home } from './Home';
-export { default as NavbarComp } from './NavbarComp';
-export { default as CheckoutForm } from './CheckoutForm';
-export { default as LoginModal } from './Login';
+export { default as Home } from './Home.js';
+export { default as NavbarComp } from './NavbarComp.js';
+export { default as CheckoutForm } from './CheckoutForm.js';
+export { default as LoginModal } from './Login.js';

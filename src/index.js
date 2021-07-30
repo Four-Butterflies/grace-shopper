@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { loadStripe } from '@stripe/stripe-js';
@@ -8,24 +8,12 @@ import './index.css';
 
 import { Home, NavbarComp, CheckoutForm } from './components';
 
-import { getSomething } from './api';
-
 const stripePromise = loadStripe(
   'pk_test_51JIKRDAKg6qdYHfmrwdd1XDwBfUzU6lhJc5JjzWSQIibxbPEAwPSVkgqBAKxr4sG9KihcS9tOZFZ8glLP0R04hJs00x9APJi1Q'
 );
 
 const App = () => {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    getSomething()
-      .then((response) => {
-        setMessage(response.message);
-      })
-      .catch((error) => {
-        setMessage(error.message);
-      });
-  });
+  const [token, setToken] = useState('');
 
   return (
     <BrowserRouter>
