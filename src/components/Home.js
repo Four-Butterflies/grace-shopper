@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
-import { getAlbumById, getAllAlbums } from '../api';
+import { getAlbumById } from '../api';
 
 // IDEA: CHANGE THE RANDOM ALBUMS DAILY
 
@@ -30,10 +30,10 @@ const Home = () => {
 
   return (
       <Carousel activeIndex={index} onSelect={handleSelect} style={{
-        height: "55rem",
+        height: "50rem",
       }}>
         <Carousel.Item >
-          <img class="background-image" src={albumOne.img_url} />
+          <img class="background-image" src={albumOne.img_url} alt={albumOne.album_name}/>
           <img class="content"
               src={albumOne.img_url}
               alt={albumOne.album_name}
@@ -53,7 +53,7 @@ const Home = () => {
             </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img class="background-image" src={albumTwo.img_url} />
+          <img class="background-image" src={albumTwo.img_url} alt={albumTwo.album_name}/>
           <img class="content"
             src={albumTwo.img_url}
             alt={albumTwo.album_name}
@@ -73,7 +73,7 @@ const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img class="background-image" src={albumThree.img_url} />
+          <img class="background-image" src={albumThree.img_url} alt={albumThree.album_name}/>
           <img class="content"
             src={albumThree.img_url}
             alt={albumThree.album_name}
