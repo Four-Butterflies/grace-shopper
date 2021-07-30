@@ -1,11 +1,6 @@
-const client = require('./client');
+const client = require('./client.js');
 
-async function createReview({
-  review,
-  rating,
-  albumId,
-  userId
-}) {
+async function createReview({ review, rating, albumId, userId }) {
   try {
     const {
       rows: [row],
@@ -15,12 +10,7 @@ async function createReview({
         VALUES($1, $2, $3, $4)
         RETURNING *;
       `,
-      [
-        review,
-        rating,
-        albumId,
-        userId
-      ]
+      [review, rating, albumId, userId]
     );
 
     return row;
