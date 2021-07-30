@@ -1,1 +1,2083 @@
-[{"name":"The Dark Side of the Moon","artists":"Pink Floyd","release_date":"1973","genres":["Rock","Progressive Rock","English Rock","Dad Rock"],"price":1599,"quantity":216,"reorder":12,"image":"https://i.scdn.co/image/ab67616d0000b273f05e5ac32fdd79d100315a20","total_tracks":10,"spotify":"https://open.spotify.com/album/4LH4d3cOWNNsVw41Gqt2kv"},{"name":"Illmatic","artists":"Nas","release_date":"1994","genres":["Hip Hop","Rap","East Coast Hip Hop","Jazz Rap","New York Hip Hop"],"price":499,"quantity":195,"reorder":24,"image":"https://i.scdn.co/image/ab67616d0000b273045fc920ecf4f8094888ec26","total_tracks":10,"spotify":"https://open.spotify.com/album/3kEtdS2pH6hKcMU9Wioob1"},{"name":"Transatlanticism","artists":"Death Cab for Cutie","release_date":"2003","genres":["Rock","Indie Rock","Art Rock","Post-Punk Revival"],"price":2099,"quantity":228,"reorder":18,"image":"https://i.scdn.co/image/ab67616d0000b2739cee4aea1e76e95ba1fdf63d","total_tracks":11,"spotify":"https://open.spotify.com/album/5FJTVcpDFYqlo7vjjHEA9V"},{"name":"Nevermind (Remastered)","artists":"Nirvana","release_date":"1991","genres":["Rock","Grunge","Alternative Rock"],"price":1599,"quantity":88,"reorder":13,"image":"https://i.scdn.co/image/ab67616d0000b273e175a19e530c898d167d39bf","total_tracks":13,"spotify":"https://open.spotify.com/album/2guirTSEqLizK7j9i1MTTZ"},{"name":"channel ORANGE","artists":"Frank Ocean","release_date":"2012","genres":["R&B","Alternative R&B","Soul","Progressive Soul","Neo Soul"],"price":1999,"quantity":217,"reorder":24,"image":"https://i.scdn.co/image/ab67616d0000b2737aede4855f6d0d738012e2e5","total_tracks":17,"spotify":"https://open.spotify.com/album/392p3shh2jkxUxY2VHvlH8"},{"name":"Enter The Wu-Tang (36 Chambers) [Expanded Edition]","artists":"Wu-Tang Clan","release_date":"1993","genres":["Hip Hop","Rap","East Coast Hip Hop","New York Hip Hop"],"price":1999,"quantity":189,"reorder":15,"image":"https://i.scdn.co/image/ab67616d0000b2735901aaa980d3e714bf01171c","total_tracks":15,"spotify":"https://open.spotify.com/album/3tQd5mwBtVyxCoEo4htGAV"},{"name":"Ten","artists":"Pearl Jam","release_date":"1991","genres":["Rock","Grunge","Alternative Rock","Hard Rock"],"price":399,"quantity":17,"reorder":19,"image":"https://i.scdn.co/image/ab67616d0000b27376713b7514fdc2770ec12ab7","total_tracks":11,"spotify":"https://open.spotify.com/album/7ynCbyrQ0x3yA8lOLLOsPK"},{"name":"Siamese Dream (2011 - Remaster)","artists":"The Smashing Pumpkins","release_date":"1993","genres":["Rock","Grunge","Alternative Rock","Indie Rock"],"price":1999,"quantity":259,"reorder":8,"image":"https://i.scdn.co/image/ab67616d0000b2736af07f596b36d08f0361326b","total_tracks":13,"spotify":"https://open.spotify.com/album/4LM0Xz37nLClzcQUvWiGoL"},{"name":"Lost In The Dream","artists":"The War On Drugs","release_date":"2014","genres":["Rock","Indie Rock","Americana","Psychedelic Rock"],"price":1899,"quantity":99,"reorder":19,"image":"https://i.scdn.co/image/ab67616d0000b2733d26fed2a5a4e270a4485de6","total_tracks":10,"spotify":"https://open.spotify.com/album/14xxjLlbGy8ACm4MorBjD5"},{"name":"333","artists":"Bladee","release_date":"2020","genres":["Hip Hop","Rap","Cloud Rap","Art Pop","Pop Rap"],"price":699,"quantity":72,"reorder":11,"image":"https://i.scdn.co/image/ab67616d0000b273d6fd1b584642c8df660ef50a","total_tracks":16,"spotify":"https://open.spotify.com/album/6RKwoaGftOUrIugxRIBPqZ"},{"name":"II","artists":"Unknown Mortal Orchestra","release_date":"2013","genres":["Rock","Indie Rock","Psychedelic Rock"],"price":2499,"quantity":296,"reorder":8,"image":"https://i.scdn.co/image/ab67616d0000b273d4c801e232fceb86e9dc539a","total_tracks":10,"spotify":"https://open.spotify.com/album/41C5iULlHU9sMYiekI75Pn"},{"name":"Die Lit","artists":"Playboi Carti","release_date":"2018","genres":["Hip Hop","Rap","Trap","Mumble Rap","Atlanta Hip Hop"],"price":1899,"quantity":287,"reorder":6,"image":"https://i.scdn.co/image/ab67616d0000b273a1e867d40e7bb29ced5c0194","total_tracks":19,"spotify":"https://open.spotify.com/album/7dAm8ShwJLFm9SaJ6Yc58O"},{"name":"Person Pitch","artists":"Panda Bear","release_date":"2007","genres":["Rock","Avant-Garde","Post-Rock","Experimental Pop","Psychedelic Rock"],"price":1099,"quantity":47,"reorder":6,"image":"https://i.scdn.co/image/ab67616d0000b273406d094f12d251ff2322482a","total_tracks":7,"spotify":"https://open.spotify.com/album/3Ds8HpXvbIoPRLLVdDF6Uj"},{"name":"Congratulations","artists":"MGMT","release_date":"2010","genres":["Rock","Indie Rock","Psychedelic Rock"],"price":1999,"quantity":13,"reorder":11,"image":"https://i.scdn.co/image/ab67616d0000b273a38f4c1b8f53a2f792ffb561","total_tracks":9,"spotify":"https://open.spotify.com/album/3HA1Ru1gEAgaxTywkJmBOL"},{"name":"Madvillainy","artists":"Madvillain","release_date":"2004","genres":["Hip Hop","Rap","Alternative Hip Hop","Jazz Rap"],"price":99,"quantity":178,"reorder":21,"image":"https://i.scdn.co/image/ab67616d0000b27302abe1eaf9da931f42629b4a","total_tracks":22,"spotify":"https://open.spotify.com/album/01FCoGEQ3NFWF4fHJzdiax"},{"name":"HELLBOY","artists":"Lil Peep","release_date":"2016","genres":["Hip Hop","Rap","Emo Rap","Pop Punk"],"price":1199,"quantity":21,"reorder":13,"image":"https://i.scdn.co/image/ab67616d0000b273e15ed14cb9cb4a9908f6cdde","total_tracks":16,"spotify":"https://open.spotify.com/album/3PGFdp8MUJ25eJjUl0O58X"},{"name":"b'lieve i'm goin down...","artists":"Kurt Vile","release_date":"2015","genres":["Rock","Indie Rock","Folk Rock","Psychedelic Rock"],"price":899,"quantity":109,"reorder":17,"image":"https://i.scdn.co/image/ab67616d0000b273306069233aa653d7a1d0d594","total_tracks":12,"spotify":"https://open.spotify.com/album/2uRTsStAmo7Z2UwCIvuwMv"},{"name":"Sprained Ankle","artists":"Julien Baker","release_date":"2015","genres":["Rock","Indie Rock","Folk","Indie Folk"],"price":1599,"quantity":74,"reorder":14,"image":"https://i.scdn.co/image/ab67616d0000b27319ec2bda3f2349a7416f13e6","total_tracks":9,"spotify":"https://open.spotify.com/album/4dRzxZm69k9s0nzKmKb8Gj"},{"name":"Banshee","artists":"BONES","release_date":"2015","genres":["Hip Hop","Rap","Cloud Rap","Trap","Emo Rap"],"price":699,"quantity":113,"reorder":22,"image":"https://i.scdn.co/image/ab67616d0000b273e2af26eb7cc109281f9c77c9","total_tracks":13,"spotify":"https://open.spotify.com/album/6Kvyp02niEI97xzoTwcCaU"},{"name":"Plastic Beach","artists":"Gorillaz","release_date":"2010","genres":["Rock","Pop","Hip Hop","Electronic"],"price":399,"quantity":151,"reorder":23,"image":"https://i.scdn.co/image/ab67616d0000b273661d019f34569f79eae9e985","total_tracks":16,"spotify":"https://open.spotify.com/album/2dIGnmEIy1WZIcZCFSj6i8"},{"name":"You're Dead! (Deluxe)","artists":"Flying Lotus","release_date":"2015","genres":["Hip Hop","Electronic","Jazz Rap"],"price":399,"quantity":91,"reorder":19,"image":"https://i.scdn.co/image/ab67616d0000b2737b12c640bbabc94ef707f986","total_tracks":39,"spotify":"https://open.spotify.com/album/3Y9XeEhhPyzFnCGDjKcVB0"},{"name":"M3LL155X","artists":"FKA twigs","release_date":"2015","genres":["Pop","Art Pop","Experimental Pop"],"price":2599,"quantity":273,"reorder":9,"image":"https://i.scdn.co/image/ab67616d0000b273f2b15eb7758d131811680981","total_tracks":5,"spotify":"https://open.spotify.com/album/7rSESybi14vAuEVzkipODD"},{"name":"Deltron 3030","artists":"Deltron 3030","release_date":"2000","genres":["Hip Hop","Rap","Alternative Hip Hop"],"price":1299,"quantity":231,"reorder":19,"image":"https://i.scdn.co/image/ab67616d0000b273210c8f856757abec0806209c","total_tracks":24,"spotify":"https://open.spotify.com/album/04uhhcjGVCHodMgZjXOlye"},{"name":"Rubber Soul (Remastered)","artists":"The Beatles","release_date":"1965","genres":["Rock","Dad Rock","Folk","Folk Rock","English Rock"],"price":399,"quantity":11,"reorder":11,"image":"https://i.scdn.co/image/ab67616d0000b273ed801e58a9ababdea6ac7ce4","total_tracks":14,"spotify":"https://open.spotify.com/album/50o7kf2wLwVmOTVYJOTplm"},{"name":"pom pom","artists":"Ariel Pink","release_date":"2014","genres":["Rock","Indie Rock","Art Rock","Pop","Psychedelic Rock"],"price":1699,"quantity":259,"reorder":12,"image":"https://i.scdn.co/image/ab67616d0000b2733ec144b51b97424b0f0decb5","total_tracks":17,"spotify":"https://open.spotify.com/album/4UhaqAS8V23KozB3dzLMax"},{"name":"E","artists":"Ecco2k","release_date":"2019","genres":["Pop","Pop Rap","Rap","Experimental Pop"],"price":2299,"quantity":247,"reorder":24,"image":"https://i.scdn.co/image/ab67616d0000b273d10fd2514a37d436538a74be","total_tracks":12,"spotify":"https://open.spotify.com/album/1I8mUtgebG39rNBApC7clb"},{"name":"Defective Holiday OST","artists":"Mechatok","release_date":"2020","genres":["Electronic","Video Game Music","Ambient"],"price":1599,"quantity":176,"reorder":12,"image":"https://i.scdn.co/image/ab67616d0000b273c552cc0830a93621eef5b368","total_tracks":12,"spotify":"https://open.spotify.com/album/7EV6GsiM2nvt38n2FnnpEj"},{"name":"Stranger","artists":"Deadfriend","release_date":"2019","genres":["Hip Hop","Rap","Indie Hip Hop"],"price":2099,"quantity":207,"reorder":12,"image":"https://i.scdn.co/image/ab67616d0000b2730acb93c3d2dfb4ed0e4bae3b","total_tracks":10,"spotify":"https://open.spotify.com/album/3VBz6HVsTvv1ZC4ABKP7m1"},{"name":"Merriweather Post Pavilion","artists":"Animal Collective","release_date":"2009","genres":["Rock","Psychedelic Rock","Electronic","Pop","Psychedelic Rock"],"price":999,"quantity":11,"reorder":9,"image":"https://i.scdn.co/image/ab67616d0000b273400b0756273d1168643d8891","total_tracks":11,"spotify":"https://open.spotify.com/album/5O9OXl9zAWMJTzawofxuan"},{"name":"Devotion","artists":"Beach House","release_date":"2008","genres":["Pop","Dream Pop"],"price":1499,"quantity":96,"reorder":8,"image":"https://i.scdn.co/image/ab67616d0000b273ebd18d625c86daade9d1cccd","total_tracks":11,"spotify":"https://open.spotify.com/album/6Unw8A3kdy8ZPj6MmlbA7E"},{"name":"Paranoid (Remaster)","artists":"Black Sabbath","release_date":"1970","genres":["Metal","Heavy Metal","Dad Rock"],"price":599,"quantity":125,"reorder":20,"image":"https://i.scdn.co/image/ab67616d0000b273d5fccf9ce08b6a1e7d12a222","total_tracks":8,"spotify":"https://open.spotify.com/album/6r7LZXAVueS5DqdrvXJJK7"},{"name":"Perfect Hair","artists":"BUSDRIVER","release_date":"2014","genres":["Hip Hop","Indie Hip Hop"],"price":1199,"quantity":206,"reorder":19,"image":"https://i.scdn.co/image/ab67616d0000b27312e107173b46d98c2e1387d2","total_tracks":10,"spotify":"https://open.spotify.com/album/5f9H4fFLC7oQRRFj6i50ow"},{"name":"Government Plates","artists":"Death Grips","release_date":"2013","genres":["Hip Hop","Electronic"],"price":699,"quantity":190,"reorder":10,"image":"https://i.scdn.co/image/ab67616d0000b273dfab0b43e267fc2227be8502","total_tracks":11,"spotify":"https://open.spotify.com/album/3T01oOjbrox1jz0pR112oV"},{"name":"Sleep Cycle","artists":"Deakin","release_date":"2016","genres":["Rock","Electronic"],"price":1899,"quantity":67,"reorder":13,"image":"https://i.scdn.co/image/ab67616d0000b2738a24e2663e5a578ac686ea90","total_tracks":6,"spotify":"https://open.spotify.com/album/18rF6jv5Yk8e4HpbmOFY8n"},{"name":"The Doors","artists":"The Doors","release_date":"1967","genres":["Rock","Psychedelic Rock","Dad Rock"],"price":1899,"quantity":169,"reorder":14,"image":"https://i.scdn.co/image/ab67616d0000b2735b96a8c5d61be8878452f8f1","total_tracks":11,"spotify":"https://open.spotify.com/album/1jWmEhn3ggaL6isoyLfwBn"},{"name":"Stranger in the Alps (Deluxe Edition)","artists":"Phoebe Bridgers","release_date":"2018","genres":["Rock","Indie Rock","Folk","Indie Folk"],"price":2799,"quantity":127,"reorder":9,"image":"https://i.scdn.co/image/ab67616d0000b2732a5edd6218037175ddf7c2c8","total_tracks":13,"spotify":"https://open.spotify.com/album/1p16WxrdVBNIAAxbpZMWJR"},{"name":"In Rainbows","artists":"Radiohead","release_date":"2007","genres":["Rock","Art Rock","Art Pop","Alternative Rock","Electronic"],"price":2099,"quantity":144,"reorder":19,"image":"https://i.scdn.co/image/ab67616d0000b27334733f87148c2fbe0176abdb","total_tracks":10,"spotify":"https://open.spotify.com/album/7eyQXxuf2nGj9d2367Gi5f"},{"name":"Bloodrain","artists":"Sickboyrari","release_date":"2018","genres":["Hip Hop","Rap","Trap","Mumble Rap","Southern Hip Hop"],"price":1299,"quantity":211,"reorder":7,"image":"https://i.scdn.co/image/ab67616d0000b273d11e7e9f4e2ed449c6835d34","total_tracks":7,"spotify":"https://open.spotify.com/album/0ApSVk8bGg13w4KYWMa8Vi"},{"name":"BreathingExercise","artists":"surrenderdorothy","release_date":"2018","genres":["R&B","Hip Hop","Emo Rap","Folk"],"price":2399,"quantity":236,"reorder":6,"image":"https://i.scdn.co/image/ab67616d0000b273fada2f5d94bc544f67b9b42c","total_tracks":9,"spotify":"https://open.spotify.com/album/35jxEKfiHeAU9yXJlmPOcD"},{"name":"Toxicity","artists":"System Of A Down","release_date":"2001","genres":["Rock","Metal","Nu Metal"],"price":1199,"quantity":50,"reorder":22,"image":"https://i.scdn.co/image/ab67616d0000b27330d45198d0c9e8841f9a9578","total_tracks":15,"spotify":"https://open.spotify.com/album/6jWde94ln40epKIQCd8XUh"},{"name":"Tundra Boy Season One","artists":"Xavier Wulf","release_date":"2015","genres":["Hip Hop","Rap","Trap","Cloud Rap","Southern Hip Hop","Memphis Rap"],"price":1699,"quantity":239,"reorder":23,"image":"https://i.scdn.co/image/ab67616d0000b2736ecd5c869036bddf7a59d59a","total_tracks":8,"spotify":"https://open.spotify.com/album/3XGWDXVG95ME1YsmKn4ZQ8"},{"name":"Stranger","artists":"Yung Lean","release_date":"2017","genres":["Hip Hop","Rap","Art Pop"],"price":1299,"quantity":158,"reorder":7,"image":"https://i.scdn.co/image/ab67616d0000b273fe81407d98ef67144560b96d","total_tracks":14,"spotify":"https://open.spotify.com/album/6pbfofGywFkDyt1HoKYnRd"},{"name":"Simmie Season","artists":"Yung Simmie","release_date":"2016","genres":["Hip Hop","Rap","Trap","Southern Hip Hop"],"price":2099,"quantity":128,"reorder":19,"image":"https://i.scdn.co/image/ab67616d0000b2731acf30f3635d81203e044fd6","total_tracks":9,"spotify":"https://open.spotify.com/album/6s1m8c5SKQilSa3d00OtcO"},{"name":"Psychology","artists":"Pigeons Playing Ping Pong","release_date":"2014","genres":["Rock","Ska","Jam Band"],"price":1499,"quantity":287,"reorder":10,"image":"https://i.scdn.co/image/ab67616d0000b273453c76a540cbceedb48b2438","total_tracks":13,"spotify":"https://open.spotify.com/album/27wYCoAJYIyymo5LIe6Jz8"},{"name":"1000 gecs","artists":"100 gecs","release_date":"2019","genres":["Pop","Hyperpop"],"price":199,"quantity":102,"reorder":18,"image":"https://i.scdn.co/image/ab67616d0000b2734123c0f9b6689205d20f350f","total_tracks":10,"spotify":"https://open.spotify.com/album/2uhB1KivbFnlkARpbd0Cvu"},{"name":"Low Teens (Deluxe Edition)","artists":"Every Time I Die","release_date":"2016","genres":["Metal","Metalcore"],"price":199,"quantity":288,"reorder":21,"image":"https://i.scdn.co/image/ab67616d0000b273ff2db662746917b1675281fc","total_tracks":15,"spotify":"https://open.spotify.com/album/6YIQv7ZD6WRY2NM88FBucx"},{"name":"If You're Reading This It's Too Late","artists":"Drake","release_date":"2015","genres":["Rap","Pop Rap"],"price":1399,"quantity":89,"reorder":19,"image":"https://i.scdn.co/image/ab67616d0000b2732090f4f6cc406e6d3c306733","total_tracks":17,"spotify":"https://open.spotify.com/album/0ptlfJfwGTy0Yvrk14JK1I"},{"name":"good kid, m.A.A.d city (Deluxe)","artists":"Kendrick Lamar","release_date":"2012","genres":["Hip Hop","Rap","West Coast Hip Hop","Pop Rap"],"price":399,"quantity":49,"reorder":15,"image":"https://i.scdn.co/image/ab67616d0000b273d58e537cea05c2156792c53d","total_tracks":17,"spotify":"https://open.spotify.com/album/3DGQ1iZ9XKUQxAUWjfC34w"},{"name":"Young The Giant","artists":"Young the Giant","release_date":"2011","genres":["Rock","Indie Rock","Alternative Rock"],"price":399,"quantity":248,"reorder":13,"image":"https://i.scdn.co/image/ab67616d0000b2732d057fa5b5580c47ea6474c4","total_tracks":12,"spotify":"https://open.spotify.com/album/0SjFStr64eylrHDmZHGiTI"},{"name":"Yankee Hotel Foxtrot","artists":"Wilco","release_date":"2002","genres":["Rock","Indie Rock","Americana","Alternative Rock"],"price":2899,"quantity":253,"reorder":23,"image":"https://i.scdn.co/image/ab67616d0000b273f53fbb4abe27c792221e5c27","total_tracks":11,"spotify":"https://open.spotify.com/album/0rPtXOMN42nsLDiShvGamv"},{"name":"Elephant","artists":"The White Stripes","release_date":"2003","genres":["Rock","Garage Rock","Alternative Rock"],"price":99,"quantity":41,"reorder":13,"image":"https://i.scdn.co/image/ab67616d0000b273588ca88c368d5f6eae5cb9b1","total_tracks":14,"spotify":"https://open.spotify.com/album/48Atx1uS9J4KL5iQt3weoS"},{"name":"Marry Me","artists":"St. Vincent","release_date":"2007","genres":["Rock","Indie Rock","Pop","Art Pop","Art Rock"],"price":1999,"quantity":265,"reorder":10,"image":"https://i.scdn.co/image/ab67616d0000b27329276161f08b49a5f02e8f97","total_tracks":11,"spotify":"https://open.spotify.com/album/338T7GIYUEuyeeHeZnSJta"},{"name":"Goo (Deluxe Edition)","artists":"Sonic Youth","release_date":"1990","genres":["Rock","Alternative Rock"],"price":2299,"quantity":136,"reorder":21,"image":"https://i.scdn.co/image/ab67616d0000b273f54097f3e51ebba766dcf5a2","total_tracks":31,"spotify":"https://open.spotify.com/album/1Qsx0sOd9rcIeTuI1j419U"},{"name":"Quazarz:Born on a Gangster Star","artists":"Shabazz Palaces","release_date":"2017","genres":["Hip Hop","Cloud Rap"],"price":799,"quantity":5,"reorder":14,"image":"https://i.scdn.co/image/ab67616d0000b27388ed00d3517a626968cf66aa","total_tracks":11,"spotify":"https://open.spotify.com/album/403FpASwFwZEg1oc0qzwBR"},{"name":"Nasty","artists":"Rico Nasty","release_date":"2018","genres":["Hip Hop","Rap","East Coast Hip Hop","Trap"],"price":2699,"quantity":286,"reorder":13,"image":"https://i.scdn.co/image/ab67616d0000b27341e7c5b95a9d860b5d868b0e","total_tracks":14,"spotify":"https://open.spotify.com/album/4RKiTVGT9pCVRnqIkwKWo1"},{"name":"...Like Clockwork","artists":"Queens of the Stone Age","release_date":"2013","genres":["Rock","Alternative Rock","Art Rock"],"price":1199,"quantity":220,"reorder":9,"image":"https://i.scdn.co/image/ab67616d0000b2731d11a5e2159392827af124d5","total_tracks":10,"spotify":"https://open.spotify.com/album/06S2JBsr4U1Dz3YaenPdVq"},{"name":"The Unseen","artists":"Quasimoto","release_date":"2000","genres":["Hip Hop","Rap","West Coast Hip Hop","Jazz Rap"],"price":1999,"quantity":21,"reorder":20,"image":"https://i.scdn.co/image/ab67616d0000b273018e03421de1b6a1d41501c9","total_tracks":24,"spotify":"https://open.spotify.com/album/03K0iYeTVKHyTf0kEBoloy"},{"name":"The Life Of Pi'erre 4","artists":"Pi’erre Bourne","release_date":"2019","genres":["Hip Hop","Rap","Pop Rap","Cloud Rap","Trap"],"price":899,"quantity":272,"reorder":21,"image":"https://i.scdn.co/image/ab67616d0000b27346fe2968c4c6f8f82ab4eb5b","total_tracks":16,"spotify":"https://open.spotify.com/album/0agALBMd2a8cnpbpukTg03"},{"name":"In the Aeroplane Over the Sea","artists":"Neutral Milk Hotel","release_date":"1998","genres":["Rock","Indie Rock","Folk","Indie Folk"],"price":699,"quantity":65,"reorder":24,"image":"https://i.scdn.co/image/ab67616d0000b273c984eaf4d6a23e0bc64041d6","total_tracks":11,"spotify":"https://open.spotify.com/album/5COXoP5kj2DWfCDg0vxi4F"},{"name":"Who Told You To Think??!!?!?!?!","artists":"Milo","release_date":"2017","genres":["Hip Hop","Rap","Jazz Rap","Cloud Rap","Indie Hip Hop"],"price":1399,"quantity":40,"reorder":10,"image":"https://i.scdn.co/image/ab67616d0000b2732b0498ba38a91c8b0487e4da","total_tracks":15,"spotify":"https://open.spotify.com/album/4Gp0hjbEreTxanivZ5N62V"},{"name":"Uneven Compromise","artists":"Lil Ugly Mane","release_date":"2017","genres":["Hip Hop","Rap","Memphis Rap"],"price":2099,"quantity":89,"reorder":14,"image":"https://i.scdn.co/image/ab67616d0000b273600f66d0f4a147990bdb2ad5","total_tracks":1,"spotify":"https://open.spotify.com/album/0ka72x65Pev7XmsNBRxhf3"},{"name":"Man On The Moon:The End Of Day","artists":"Kid Cudi","release_date":"2009","genres":["Hip Hop","Rap","Emo Rap","Pop","Art Pop"],"price":2099,"quantity":127,"reorder":21,"image":"https://i.scdn.co/image/ab67616d0000b273aab2c3c3f1f3207137d915c9","total_tracks":15,"spotify":"https://open.spotify.com/album/47y3PbX8oIDCkYAFylCJz0"},{"name":"ye","artists":"Kanye West","release_date":"2018","genres":["Hip Hop","Rap","Pop Rap","Neo Soul"],"price":1199,"quantity":115,"reorder":11,"image":"https://i.scdn.co/image/ab67616d0000b2730cd942c1a864afa4e92d04f2","total_tracks":7,"spotify":"https://open.spotify.com/album/2Ek1q2haOnxVqhvVKqMvJe"},{"name":"Axis:Bold As Love","artists":"Jimi Hendrix","release_date":"1967","genres":["Rock","Psychedelic Rock","Dad Rock"],"price":2699,"quantity":294,"reorder":11,"image":"https://i.scdn.co/image/ab67616d0000b27319dcd95d28b63d10164327f2","total_tracks":13,"spotify":"https://open.spotify.com/album/3uFZf8rykoHo7XMIQVYW6r"},{"name":"Scum With Boundaries","artists":"The I.L.Y's","release_date":"2016","genres":["Rock","Psychedelic Rock","Punk"],"price":599,"quantity":206,"reorder":18,"image":"https://i.scdn.co/image/ab67616d0000b273b24876060871d60a04859cc7","total_tracks":11,"spotify":"https://open.spotify.com/album/1WFLRLfSkfYjkf65iqz6Oe"},{"name":"Fresh Air","artists":"HOMESHAKE","release_date":"2017","genres":["Pop","Alternative R&B"],"price":1899,"quantity":34,"reorder":6,"image":"https://i.scdn.co/image/ab67616d0000b273cd7c3cba379ae624e118ebcb","total_tracks":14,"spotify":"https://open.spotify.com/album/6hXa2OPdIt6xwGpaRpvDFz"},{"name":"Fading Frontier","artists":"Deerhunter","release_date":"2015","genres":["Rock","Indie Rock","Psychedelic Rock","Dream Pop"],"price":599,"quantity":199,"reorder":5,"image":"https://i.scdn.co/image/ab67616d0000b273eba21fd3c71cb20082c8e8d9","total_tracks":9,"spotify":"https://open.spotify.com/album/0y5XgOUEiJSSIMxC4ALRAC"},{"name":"Thank You Happy Birthday","artists":"Cage The Elephant","release_date":"2011","genres":["Rock","Alternative Rock","Indie Rock","Garage Rock"],"price":199,"quantity":261,"reorder":16,"image":"https://i.scdn.co/image/ab67616d0000b2735f1590fb5d2f9e1bed8bb2e8","total_tracks":14,"spotify":"https://open.spotify.com/album/0WizSRN8LuMWhliou9PFlg"},{"name":"The Devil And God Are Raging Inside Me","artists":"Brand New","release_date":"2006","genres":["Rock","Indie Rock","Emo"],"price":699,"quantity":115,"reorder":21,"image":"https://i.scdn.co/image/ab67616d0000b2739f8ac0f160a5141a077b41c1","total_tracks":12,"spotify":"https://open.spotify.com/album/2YnqAuFmC2r8JeQVOIozTy"},{"name":"Leaves in the Pool","artists":"The Holdup","release_date":"2016","genres":["Rock","Reggae","Rap"],"price":2899,"quantity":68,"reorder":10,"image":"https://i.scdn.co/image/ab67616d0000b27355ea8b54e9784e5cd1dcf70d","total_tracks":16,"spotify":"https://open.spotify.com/album/59KmDVMRAjogxtQI3mCDta"},{"name":"Broke with Expensive Taste","artists":"Azealia Banks","release_date":"2014","genres":["Hip Hop","Rap","East Coast Hip Hop","New York Hip Hop","Electronic"],"price":1599,"quantity":13,"reorder":16,"image":"https://i.scdn.co/image/ab67616d0000b273008d18ff3243cf478a085c28","total_tracks":16,"spotify":"https://open.spotify.com/album/1YmJl4Cm06bArz3D560pzk"},{"name":"HERE'S TO A BETTER TOMORROW","artists":"GREAF","release_date":"2021","genres":["Hip Hop"],"price":99,"quantity":167,"reorder":14,"image":"https://i.scdn.co/image/ab67616d0000b27339ec1f0de0e7dd3cf7cfbe2d","total_tracks":21,"spotify":"https://open.spotify.com/album/0i5cChF6iRoYlEjnT46crW"},{"name":"XXX (Deluxe Edition)","artists":"Danny Brown","release_date":"2012","genres":["Hip Hop","Rap","Alternative Hip Hop"],"price":399,"quantity":217,"reorder":19,"image":"https://i.scdn.co/image/ab67616d0000b27395a3b7515ee986584694607c","total_tracks":22,"spotify":"https://open.spotify.com/album/1QESrfmlfAl19Gr8mXcysi"},{"name":"Remain in Light","artists":"Talking Heads","release_date":"1980","genres":["Rock","New Wave"],"price":2499,"quantity":178,"reorder":13,"image":"https://i.scdn.co/image/ab67616d0000b273f9e2d82b9969defab2105859","total_tracks":8,"spotify":"https://open.spotify.com/album/1JvXxLsm0PxlGH4LXzqMGq"},{"name":"Melted","artists":"Ty Segall","release_date":"2010","genres":["Rock","Garage Rock","Psychedelic Rock"],"price":2699,"quantity":131,"reorder":21,"image":"https://i.scdn.co/image/ab67616d0000b2731d99b68491ca47084bda0734","total_tracks":11,"spotify":"https://open.spotify.com/album/5P0LN9xrnLY1By7mlkKtkx"},{"name":"Barter 6","artists":"Young Thug","release_date":"2015","genres":["Hip Hop","Rap","Southern Hip Hop","Atlanta Hip Hop","Mumble Rap","Trap","Cloud Rap"],"price":1999,"quantity":39,"reorder":5,"image":"https://i.scdn.co/image/ab67616d0000b27388053a98d0abb8ed3a02efe1","total_tracks":13,"spotify":"https://open.spotify.com/album/0BsMZIueWsJLWng8A7sE8e"},{"name":"Wolf","artists":"Tyler, The Creator","release_date":"2013","genres":["Hip Hop","Rap","Jazz Rap","West Coast Hip Hop","Neo Soul"],"price":2099,"quantity":215,"reorder":17,"image":"https://i.scdn.co/image/ab67616d0000b2736be6806a01c452f360cab678","total_tracks":18,"spotify":"https://open.spotify.com/album/40QTqOBBxCEIQlLNdSjFQB"},{"name":"Leaving","artists":"Spooky Black","release_date":"2014","genres":["R&B","Alternative R&B","Emo Rap","Cloud Rap"],"price":2499,"quantity":188,"reorder":10,"image":"https://i.scdn.co/image/ab67616d0000b273dc27327ba8f41aaac53b5846","total_tracks":8,"spotify":"https://open.spotify.com/album/34jUAKMBHMCl3hjzb9rsut"},{"name":"Good Luck","artists":"Bladee","release_date":"2020","genres":["Pop Rap","Electronic"],"price":1699,"quantity":264,"reorder":18,"image":"https://i.scdn.co/image/ab67616d0000b273e510fefb5484842ad19185b0","total_tracks":8,"spotify":"https://open.spotify.com/album/5Ptb745JTuc2YNBNwZGBHz"},{"name":"The Suburbs (Deluxe)","artists":"Arcade Fire","release_date":"2010","genres":["Rock","Indie Rock","Post-Punk Revival"],"price":2799,"quantity":91,"reorder":23,"image":"https://i.scdn.co/image/ab67616d0000b2731d6b4b0418200b6324734062","total_tracks":18,"spotify":"https://open.spotify.com/album/0gkUcpkyW2SXN49Yktkf6F"},{"name":"Jason Derulo (Deluxe Audio)","artists":"Jason Derulo","release_date":"2010","genres":["Pop","R&B"],"price":1399,"quantity":282,"reorder":20,"image":"https://i.scdn.co/image/ab67616d0000b27372473d3770372061cadc55e7","total_tracks":11,"spotify":"https://open.spotify.com/album/773TVtjVxXvD6DFHsWFJGN"},{"name":"Get Rich Or Die Tryin'","artists":"50 Cent","release_date":"2003","genres":["Hip Hop","Rap","East Coast Hip Hop","Pop Rap"],"price":1799,"quantity":3,"reorder":15,"image":"https://i.scdn.co/image/ab67616d0000b273f7f74100d5cc850e01172cbf","total_tracks":19,"spotify":"https://open.spotify.com/album/4ycNE7y1rp5215g1kkqk1P"},{"name":"Cargo","artists":"Men At Work","release_date":"1983","genres":["Rock","New Wave"],"price":2199,"quantity":111,"reorder":13,"image":"https://i.scdn.co/image/ab67616d0000b273d6484fa762c216ccb6b0dd45","total_tracks":15,"spotify":"https://open.spotify.com/album/4GDchmJ8oESRJ58cDXvnE0"},{"name":"Honky Chateau","artists":"Elton John","release_date":"1972","genres":["Rock","Pop Rock","Piano Rock"],"price":799,"quantity":103,"reorder":23,"image":"https://i.scdn.co/image/ab67616d0000b2733009007708ab5134936a58b3","total_tracks":11,"spotify":"https://open.spotify.com/album/2ei2X6ghPnw7YRwQtAH075"},{"name":"Brothers","artists":"The Black Keys","release_date":"2010","genres":["Rock","Garage Rock","Psychedelic Rock"],"price":1099,"quantity":8,"reorder":8,"image":"https://i.scdn.co/image/ab67616d0000b2734cf61635ecdee5d4c4ef2bac","total_tracks":15,"spotify":"https://open.spotify.com/album/7qE6RXYyz5kj5Tll7mJU0v"},{"name":"Speakerboxxx/The Love Below","artists":"Outkast","release_date":"2003","genres":["Hip Hop","Rap","Southern Hip Hop","Neo Soul","Atlanta Hip Hop"],"price":599,"quantity":269,"reorder":17,"image":"https://i.scdn.co/image/ab67616d0000b2736a6387ab37f64034cdc7b367","total_tracks":40,"spotify":"https://open.spotify.com/album/1UsmQ3bpJTyK6ygoOOjG1r"},{"name":"Sublime (Explicit Version)","artists":"Sublime","release_date":"1996","genres":["Rock","Ska","Reggae","Punk","Hip Hop","Rock"],"price":399,"quantity":78,"reorder":14,"image":"https://i.scdn.co/image/ab67616d0000b2730193b418a25d229453c1927b","total_tracks":17,"spotify":"https://open.spotify.com/album/5dwkpREUiLdmPLy4POzFSa"},{"name":"An Awesome Wave","artists":"alt-J","release_date":"2012","genres":["Pop","Art Pop"],"price":299,"quantity":40,"reorder":9,"image":"https://i.scdn.co/image/ab67616d0000b27369592e88bb29d610a35118f8","total_tracks":14,"spotify":"https://open.spotify.com/album/6k3vC8nep1BfqAIJ81L6OL"},{"name":"The Electric Lady","artists":"Janelle Monáe","release_date":"2013","genres":["R&B","Neo Soul","Pop","Art Pop"],"price":1599,"quantity":205,"reorder":19,"image":"https://i.scdn.co/image/ab67616d0000b27357cc241e3fc4e95eea8c4b20","total_tracks":19,"spotify":"https://open.spotify.com/album/3bnHtSmmsgJiG82hGCmsq9"},{"name":"Little Dark Age","artists":"MGMT","release_date":"2018","genres":["Pop","New Wave"],"price":2899,"quantity":26,"reorder":20,"image":"https://i.scdn.co/image/ab67616d0000b273b47d309281c66820b7137f5d","total_tracks":10,"spotify":"https://open.spotify.com/album/7GjVWG39IOj4viyWplJV4H"},{"name":"Oracular Spectacular","artists":"MGMT","release_date":"2007","genres":["Pop","Electronic"],"price":2099,"quantity":22,"reorder":6,"image":"https://i.scdn.co/image/ab67616d0000b2738b32b139981e79f2ebe005eb","total_tracks":10,"spotify":"https://open.spotify.com/album/6mm1Skz3JE6AXneya9Nyiv"},{"name":"It Is What It Is","artists":"Thundercat","release_date":"2020","genres":["Jazz","Alternative R&B","Neo Soul"],"price":2399,"quantity":159,"reorder":8,"image":"https://i.scdn.co/image/ab67616d0000b27323fb02f383f3bef16ab9d092","total_tracks":15,"spotify":"https://open.spotify.com/album/59GRmAvlGs7KjLizFnV7Y9"},{"name":"Ten$ion","artists":"Die Antwoord","release_date":"2012","genres":["Pop","Rap","Electronic"],"price":1799,"quantity":233,"reorder":20,"image":"https://i.scdn.co/image/ab67616d0000b273fbb5215d753b10d6ab619ced","total_tracks":13,"spotify":"https://open.spotify.com/album/3yHZDkK1VZnZ2DJ8ymhXLV"},{"name":"Kala","artists":"M.I.A.","release_date":"2007","genres":["Pop","Experimental Pop","Hip Hop"],"price":1299,"quantity":22,"reorder":13,"image":"https://i.scdn.co/image/ab67616d0000b27320e0d874026f971dc2c4822b","total_tracks":12,"spotify":"https://open.spotify.com/album/2xoj2gYed3IYmGWn3owSfu"},{"name":"...Baby One More Time (Digital Deluxe Version)","artists":"Britney Spears","release_date":"1999","genres":["Pop","Teen Pop"],"price":1299,"quantity":107,"reorder":21,"image":"https://i.scdn.co/image/ab67616d0000b2738e49866860c25afffe2f1a02","total_tracks":16,"spotify":"https://open.spotify.com/album/3WNxdumkSMGMJRhEgK80qx"},{"name":"Oops!... I Did It Again","artists":"Britney Spears","release_date":"2000","genres":["Pop","Teen Pop"],"price":2599,"quantity":270,"reorder":7,"image":"https://i.scdn.co/image/ab67616d0000b2732aa20611c7fb964a74ab01a6","total_tracks":12,"spotify":"https://open.spotify.com/album/5PmgtkodFl2Om3hMXONDll"},{"name":"In The Zone","artists":"Britney Spears","release_date":"2003","genres":["Pop","R&B"],"price":1199,"quantity":160,"reorder":16,"image":"https://i.scdn.co/image/ab67616d0000b273efc6988972cb04105f002cd4","total_tracks":13,"spotify":"https://open.spotify.com/album/0z7pVBGOD7HCIB7S8eLkLI"},{"name":"Circus (Deluxe Version)","artists":"Britney Spears","release_date":"2008","genres":["Pop","R&B"],"price":2499,"quantity":259,"reorder":22,"image":"https://i.scdn.co/image/ab67616d0000b27354c6edd554935d73e159e199","total_tracks":15,"spotify":"https://open.spotify.com/album/2tve5DGwub1TtbX1khPX5j"},{"name":"Planet Her","artists":"Doja Cat","release_date":"2021","genres":["Pop","Rap","Pop Rap","Trap","R&B"],"price":2399,"quantity":251,"reorder":9,"image":"https://i.scdn.co/image/ab67616d0000b2734df3245f26298a1579ecc321","total_tracks":14,"spotify":"https://open.spotify.com/album/1nAQbHeOWTfQzbOoFrvndW"},{"name":"Cage The Elephant","artists":"Cage The Elephant","release_date":"2009","genres":["Rock","Alternative Rock","Indie Rock","Garage Rock"],"price":2699,"quantity":90,"reorder":19,"image":"https://i.scdn.co/image/ab67616d0000b27373a791d2e07cdd53ba932f6e","total_tracks":11,"spotify":"https://open.spotify.com/album/2vs5faN4o8NCNXAGLh3HJf"},{"name":"Hozier (Expanded Edition)","artists":"Hozier","release_date":"2014","genres":["Rock","Indie Rock","Folk","Indie Folk"],"price":1299,"quantity":218,"reorder":19,"image":"https://i.scdn.co/image/ab67616d0000b2734ca68d59a4a29c856a4a39c2","total_tracks":15,"spotify":"https://open.spotify.com/album/4Pv7m8D82A1Xun7xNCKZjJ"},{"name":"Melophobia","artists":"Cage The Elephant","release_date":"2013","genres":["Rock","Indie Rock","Garage Rock","Alternative Rock","Psychedelic Rock"],"price":1299,"quantity":201,"reorder":18,"image":"https://i.scdn.co/image/ab67616d0000b273c707823ed5683c77b37b121d","total_tracks":10,"spotify":"https://open.spotify.com/album/4EK8gtQfdVsmDTji7gBFlz"},{"name":"O My Heart","artists":"Mother Mother","release_date":"2008","genres":["Rock","Indie Rock","Pop","Post-Punk Revival","Folk","Folk Rock"],"price":2399,"quantity":250,"reorder":7,"image":"https://i.scdn.co/image/ab67616d0000b27332771a1171c90a67b39de00a","total_tracks":12,"spotify":"https://open.spotify.com/album/2EE3oTf8Dnb46og0MR0B8R"},{"name":"Sex & Food","artists":"Unknown Mortal Orchestra","release_date":"2018","genres":["Rock","Psychedelic Rock","Pop","Psychedelic Pop"],"price":2699,"quantity":188,"reorder":22,"image":"https://i.scdn.co/image/ab67616d0000b273aa839bb04931542d830c73b1","total_tracks":12,"spotify":"https://open.spotify.com/album/7c2Xfq7aQKzs0KdSI3K7Rc"},{"name":"A River's Invitation","artists":"The California Honeydrops","release_date":"2015","genres":["Rhythm & Blues"],"price":2199,"quantity":55,"reorder":19,"image":"https://i.scdn.co/image/ab67616d0000b2732e2e9a174fcb9d64bfc629c9","total_tracks":11,"spotify":"https://open.spotify.com/album/6oGFUErSaMw5kXdcYCQ3gL"},{"name":"Choose Your Weapon","artists":"Hiatus Kaiyote","release_date":"2015","genres":["R&B","Alternative R&B","Neo Soul","Jazz"],"price":299,"quantity":86,"reorder":20,"image":"https://i.scdn.co/image/ab67616d0000b27365c29c4a590e9e9b03467c5a","total_tracks":18,"spotify":"https://open.spotify.com/album/3qzmmmRmVBiOuMvrerfW4z"},{"name":"Honey Pig","artists":"Bosley","release_date":"2011","genres":["Rock","Soul"],"price":999,"quantity":140,"reorder":6,"image":"https://i.scdn.co/image/ab67616d0000b2736cbce7991aee5093a1a5fb7d","total_tracks":8,"spotify":"https://open.spotify.com/album/4XQO8bplLX6wCtgVfb4Iha"},{"name":"Monkey Business","artists":"Black Eyed Peas","release_date":"2005","genres":["Hip Hop","Rap","Pop Rap","Electronic"],"price":2099,"quantity":95,"reorder":5,"image":"https://i.scdn.co/image/ab67616d0000b27308b19a033829c0bec97be61a","total_tracks":15,"spotify":"https://open.spotify.com/album/2szeSQtOcJgRhDXmTS3SIf"},{"name":"Atrocity Exhibition","artists":"Danny Brown","release_date":"2016","genres":["Hip Hop","Rap","Alternative Hip Hop"],"price":1799,"quantity":167,"reorder":16,"image":"https://i.scdn.co/image/ab67616d0000b2733e25c9ef701bb637773531fe","total_tracks":15,"spotify":"https://open.spotify.com/album/3e7vtKJ3m1zVh38VGq2g3H"},{"name":"Racine Carrée (Standard US Version)","artists":"Stromae","release_date":"2013","genres":["Pop","Electronic","Hip Hop"],"price":1099,"quantity":68,"reorder":17,"image":"https://i.scdn.co/image/ab67616d0000b273e742841accccf949d7af1b75","total_tracks":14,"spotify":"https://open.spotify.com/album/22yd3bcffqUO7Pn5nsDaoj"},{"name":"Ugly is Beautiful:Shorter, Thicker & Uglier (Deluxe)","artists":"Oliver Tree","release_date":"2021","genres":["Rock","Alternative Rock","Pop","Pop Rap"],"price":2899,"quantity":232,"reorder":16,"image":"https://i.scdn.co/image/ab67616d0000b2731c5a484110522f2b9c7038cc","total_tracks":21,"spotify":"https://open.spotify.com/album/5vP0fNictdWyU48o83Q7ob"},{"name":"Pop Food","artists":"Jack Stauber","release_date":"2017","genres":["Pop","Experimental Pop"],"price":399,"quantity":96,"reorder":13,"image":"https://i.scdn.co/image/ab67616d0000b273affdacd1466cdde505ab97ee","total_tracks":11,"spotify":"https://open.spotify.com/album/1RHa1VdX6lsLbeedgsV1cb"},{"name":"Astro Lounge","artists":"Smash Mouth","release_date":"1999","genres":["Rock","Pop Rock"],"price":399,"quantity":257,"reorder":20,"image":"https://i.scdn.co/image/ab67616d0000b2734f3bbf9631faeb8de9912a23","total_tracks":15,"spotify":"https://open.spotify.com/album/2kyTLcEZe6nc1s6ve0zW9P"},{"name":"Riot!","artists":"Paramore","release_date":"2007","genres":["Rock","Pop Punk","Alternative Rock"],"price":2899,"quantity":86,"reorder":12,"image":"https://i.scdn.co/image/ab67616d0000b273bee754528c08d5ff6799a1eb","total_tracks":12,"spotify":"https://open.spotify.com/album/71rziY9eLo1tA2dBMxrwhc"},{"name":"Brand New Eyes","artists":"Paramore","release_date":"2009","genres":["Rock","Pop Punk","Alternative Rock"],"price":2599,"quantity":138,"reorder":22,"image":"https://i.scdn.co/image/ab67616d0000b273e01d7d558032457b0e4883f6","total_tracks":11,"spotify":"https://open.spotify.com/album/27UqZoE1kV6sIV6uQcI28A"},{"name":"\"Awaken, My Love!\"","artists":"Childish Gambino","release_date":"2016","genres":["Psychedelic Soul","Neo Soul"],"price":299,"quantity":170,"reorder":13,"image":"https://i.scdn.co/image/ab67616d0000b2730b97e56ffad7c6211aa848f8","total_tracks":11,"spotify":"https://open.spotify.com/album/4xnq1L6P551Qcb9gBXNMK7"},{"name":"Starfucker","artists":"STRFKR","release_date":"2008","genres":["Pop","Electronic","Post-Punk Revival"],"price":1299,"quantity":190,"reorder":17,"image":"https://i.scdn.co/image/ab67616d0000b273a42a9e3de0baca2e178d0c73","total_tracks":11,"spotify":"https://open.spotify.com/album/4mBSeOEiQ4WgDaCnydb0tZ"},{"name":"Man On The Moon II:The Legend Of Mr. Rager","artists":"Kid Cudi","release_date":"2010","genres":["Hip Hop","Rap","Emo Rap","Pop","Art Pop"],"price":1899,"quantity":14,"reorder":13,"image":"https://i.scdn.co/image/ab67616d0000b27359e842b6a3566a141f27f815","total_tracks":17,"spotify":"https://open.spotify.com/album/08eM9GRdr5BCCHNqS3Wwud"},{"name":"SONIC ADVENTURE 2 Original Soundtrack (20th Anniversary Edition)","artists":"SEGA SOUND TEAM","release_date":"2011","genres":["Video Game Music"],"price":1999,"quantity":252,"reorder":23,"image":"https://i.scdn.co/image/ab67616d0000b273d76889a6c3f76a9a8f37079c","total_tracks":30,"spotify":"https://open.spotify.com/album/534RtJP8QXhoGc3yNqb5Vb"},{"name":"となりのトトロ イメージ・ソング集","artists":"Joe Hisaishi","release_date":"2004","genres":["Anime Soundtrack"],"price":2899,"quantity":106,"reorder":17,"image":"https://i.scdn.co/image/ab67616d0000b273d2928fe873d65f035ba55171","total_tracks":11,"spotify":"https://open.spotify.com/album/2FWckiMlypib4j0YTfktv3"}]
+{
+  "albums": [
+    {
+      "name": "The Dark Side of the Moon",
+      "artists": "Pink Floyd",
+      "release_date": "1973",
+      "genres": ["Rock", "Progressive Rock", "English Rock", "Dad Rock"],
+      "price": 1599,
+      "quantity": 216,
+      "reorder": 12,
+      "image": "https://i.scdn.co/image/ab67616d0000b273f05e5ac32fdd79d100315a20",
+      "total_tracks": 10,
+      "spotify": "https://open.spotify.com/album/4LH4d3cOWNNsVw41Gqt2kv"
+    },
+    {
+      "name": "Illmatic",
+      "artists": "Nas",
+      "release_date": "1994",
+      "genres": [
+        "Hip Hop",
+        "Rap",
+        "East Coast Hip Hop",
+        "Jazz Rap",
+        "New York Hip Hop"
+      ],
+      "price": 499,
+      "quantity": 195,
+      "reorder": 24,
+      "image": "https://i.scdn.co/image/ab67616d0000b273045fc920ecf4f8094888ec26",
+      "total_tracks": 10,
+      "spotify": "https://open.spotify.com/album/3kEtdS2pH6hKcMU9Wioob1"
+    },
+    {
+      "name": "Transatlanticism",
+      "artists": "Death Cab for Cutie",
+      "release_date": "2003",
+      "genres": ["Rock", "Indie Rock", "Art Rock", "Post-Punk Revival"],
+      "price": 2099,
+      "quantity": 228,
+      "reorder": 18,
+      "image": "https://i.scdn.co/image/ab67616d0000b2739cee4aea1e76e95ba1fdf63d",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/5FJTVcpDFYqlo7vjjHEA9V"
+    },
+    {
+      "name": "Nevermind (Remastered)",
+      "artists": "Nirvana",
+      "release_date": "1991",
+      "genres": ["Rock", "Grunge", "Alternative Rock"],
+      "price": 1599,
+      "quantity": 88,
+      "reorder": 13,
+      "image": "https://i.scdn.co/image/ab67616d0000b273e175a19e530c898d167d39bf",
+      "total_tracks": 13,
+      "spotify": "https://open.spotify.com/album/2guirTSEqLizK7j9i1MTTZ"
+    },
+    {
+      "name": "channel ORANGE",
+      "artists": "Frank Ocean",
+      "release_date": "2012",
+      "genres": [
+        "R&B",
+        "Alternative R&B",
+        "Soul",
+        "Progressive Soul",
+        "Neo Soul"
+      ],
+      "price": 1999,
+      "quantity": 217,
+      "reorder": 24,
+      "image": "https://i.scdn.co/image/ab67616d0000b2737aede4855f6d0d738012e2e5",
+      "total_tracks": 17,
+      "spotify": "https://open.spotify.com/album/392p3shh2jkxUxY2VHvlH8"
+    },
+    {
+      "name": "Enter The Wu-Tang (36 Chambers) [Expanded Edition]",
+      "artists": "Wu-Tang Clan",
+      "release_date": "1993",
+      "genres": ["Hip Hop", "Rap", "East Coast Hip Hop", "New York Hip Hop"],
+      "price": 1999,
+      "quantity": 189,
+      "reorder": 15,
+      "image": "https://i.scdn.co/image/ab67616d0000b2735901aaa980d3e714bf01171c",
+      "total_tracks": 15,
+      "spotify": "https://open.spotify.com/album/3tQd5mwBtVyxCoEo4htGAV"
+    },
+    {
+      "name": "Ten",
+      "artists": "Pearl Jam",
+      "release_date": "1991",
+      "genres": ["Rock", "Grunge", "Alternative Rock", "Hard Rock"],
+      "price": 399,
+      "quantity": 17,
+      "reorder": 19,
+      "image": "https://i.scdn.co/image/ab67616d0000b27376713b7514fdc2770ec12ab7",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/7ynCbyrQ0x3yA8lOLLOsPK"
+    },
+    {
+      "name": "Siamese Dream (2011 - Remaster)",
+      "artists": "The Smashing Pumpkins",
+      "release_date": "1993",
+      "genres": ["Rock", "Grunge", "Alternative Rock", "Indie Rock"],
+      "price": 1999,
+      "quantity": 259,
+      "reorder": 8,
+      "image": "https://i.scdn.co/image/ab67616d0000b2736af07f596b36d08f0361326b",
+      "total_tracks": 13,
+      "spotify": "https://open.spotify.com/album/4LM0Xz37nLClzcQUvWiGoL"
+    },
+    {
+      "name": "Lost In The Dream",
+      "artists": "The War On Drugs",
+      "release_date": "2014",
+      "genres": ["Rock", "Indie Rock", "Americana", "Psychedelic Rock"],
+      "price": 1899,
+      "quantity": 99,
+      "reorder": 19,
+      "image": "https://i.scdn.co/image/ab67616d0000b2733d26fed2a5a4e270a4485de6",
+      "total_tracks": 10,
+      "spotify": "https://open.spotify.com/album/14xxjLlbGy8ACm4MorBjD5"
+    },
+    {
+      "name": "333",
+      "artists": "Bladee",
+      "release_date": "2020",
+      "genres": ["Hip Hop", "Rap", "Cloud Rap", "Art Pop", "Pop Rap"],
+      "price": 699,
+      "quantity": 72,
+      "reorder": 11,
+      "image": "https://i.scdn.co/image/ab67616d0000b273d6fd1b584642c8df660ef50a",
+      "total_tracks": 16,
+      "spotify": "https://open.spotify.com/album/6RKwoaGftOUrIugxRIBPqZ"
+    },
+    {
+      "name": "II",
+      "artists": "Unknown Mortal Orchestra",
+      "release_date": "2013",
+      "genres": ["Rock", "Indie Rock", "Psychedelic Rock"],
+      "price": 2499,
+      "quantity": 296,
+      "reorder": 8,
+      "image": "https://i.scdn.co/image/ab67616d0000b273d4c801e232fceb86e9dc539a",
+      "total_tracks": 10,
+      "spotify": "https://open.spotify.com/album/41C5iULlHU9sMYiekI75Pn"
+    },
+    {
+      "name": "Die Lit",
+      "artists": "Playboi Carti",
+      "release_date": "2018",
+      "genres": ["Hip Hop", "Rap", "Trap", "Mumble Rap", "Atlanta Hip Hop"],
+      "price": 1899,
+      "quantity": 287,
+      "reorder": 6,
+      "image": "https://i.scdn.co/image/ab67616d0000b273a1e867d40e7bb29ced5c0194",
+      "total_tracks": 19,
+      "spotify": "https://open.spotify.com/album/7dAm8ShwJLFm9SaJ6Yc58O"
+    },
+    {
+      "name": "Person Pitch",
+      "artists": "Panda Bear",
+      "release_date": "2007",
+      "genres": [
+        "Rock",
+        "Avant-Garde",
+        "Post-Rock",
+        "Experimental Pop",
+        "Psychedelic Rock"
+      ],
+      "price": 1099,
+      "quantity": 47,
+      "reorder": 6,
+      "image": "https://i.scdn.co/image/ab67616d0000b273406d094f12d251ff2322482a",
+      "total_tracks": 7,
+      "spotify": "https://open.spotify.com/album/3Ds8HpXvbIoPRLLVdDF6Uj"
+    },
+    {
+      "name": "Congratulations",
+      "artists": "MGMT",
+      "release_date": "2010",
+      "genres": ["Rock", "Indie Rock", "Psychedelic Rock"],
+      "price": 1999,
+      "quantity": 13,
+      "reorder": 11,
+      "image": "https://i.scdn.co/image/ab67616d0000b273a38f4c1b8f53a2f792ffb561",
+      "total_tracks": 9,
+      "spotify": "https://open.spotify.com/album/3HA1Ru1gEAgaxTywkJmBOL"
+    },
+    {
+      "name": "Madvillainy",
+      "artists": "Madvillain",
+      "release_date": "2004",
+      "genres": ["Hip Hop", "Rap", "Alternative Hip Hop", "Jazz Rap"],
+      "price": 99,
+      "quantity": 178,
+      "reorder": 21,
+      "image": "https://i.scdn.co/image/ab67616d0000b27302abe1eaf9da931f42629b4a",
+      "total_tracks": 22,
+      "spotify": "https://open.spotify.com/album/01FCoGEQ3NFWF4fHJzdiax"
+    },
+    {
+      "name": "HELLBOY",
+      "artists": "Lil Peep",
+      "release_date": "2016",
+      "genres": ["Hip Hop", "Rap", "Emo Rap", "Pop Punk"],
+      "price": 1199,
+      "quantity": 21,
+      "reorder": 13,
+      "image": "https://i.scdn.co/image/ab67616d0000b273e15ed14cb9cb4a9908f6cdde",
+      "total_tracks": 16,
+      "spotify": "https://open.spotify.com/album/3PGFdp8MUJ25eJjUl0O58X"
+    },
+    {
+      "name": "b'lieve i'm goin down...",
+      "artists": "Kurt Vile",
+      "release_date": "2015",
+      "genres": ["Rock", "Indie Rock", "Folk Rock", "Psychedelic Rock"],
+      "price": 899,
+      "quantity": 109,
+      "reorder": 17,
+      "image": "https://i.scdn.co/image/ab67616d0000b273306069233aa653d7a1d0d594",
+      "total_tracks": 12,
+      "spotify": "https://open.spotify.com/album/2uRTsStAmo7Z2UwCIvuwMv"
+    },
+    {
+      "name": "Sprained Ankle",
+      "artists": "Julien Baker",
+      "release_date": "2015",
+      "genres": ["Rock", "Indie Rock", "Folk", "Indie Folk"],
+      "price": 1599,
+      "quantity": 74,
+      "reorder": 14,
+      "image": "https://i.scdn.co/image/ab67616d0000b27319ec2bda3f2349a7416f13e6",
+      "total_tracks": 9,
+      "spotify": "https://open.spotify.com/album/4dRzxZm69k9s0nzKmKb8Gj"
+    },
+    {
+      "name": "Banshee",
+      "artists": "BONES",
+      "release_date": "2015",
+      "genres": ["Hip Hop", "Rap", "Cloud Rap", "Trap", "Emo Rap"],
+      "price": 699,
+      "quantity": 113,
+      "reorder": 22,
+      "image": "https://i.scdn.co/image/ab67616d0000b273e2af26eb7cc109281f9c77c9",
+      "total_tracks": 13,
+      "spotify": "https://open.spotify.com/album/6Kvyp02niEI97xzoTwcCaU"
+    },
+    {
+      "name": "Plastic Beach",
+      "artists": "Gorillaz",
+      "release_date": "2010",
+      "genres": ["Rock", "Pop", "Hip Hop", "Electronic"],
+      "price": 399,
+      "quantity": 151,
+      "reorder": 23,
+      "image": "https://i.scdn.co/image/ab67616d0000b273661d019f34569f79eae9e985",
+      "total_tracks": 16,
+      "spotify": "https://open.spotify.com/album/2dIGnmEIy1WZIcZCFSj6i8"
+    },
+    {
+      "name": "You're Dead! (Deluxe)",
+      "artists": "Flying Lotus",
+      "release_date": "2015",
+      "genres": ["Hip Hop", "Electronic", "Jazz Rap"],
+      "price": 399,
+      "quantity": 91,
+      "reorder": 19,
+      "image": "https://i.scdn.co/image/ab67616d0000b2737b12c640bbabc94ef707f986",
+      "total_tracks": 39,
+      "spotify": "https://open.spotify.com/album/3Y9XeEhhPyzFnCGDjKcVB0"
+    },
+    {
+      "name": "M3LL155X",
+      "artists": "FKA twigs",
+      "release_date": "2015",
+      "genres": ["Pop", "Art Pop", "Experimental Pop"],
+      "price": 2599,
+      "quantity": 273,
+      "reorder": 9,
+      "image": "https://i.scdn.co/image/ab67616d0000b273f2b15eb7758d131811680981",
+      "total_tracks": 5,
+      "spotify": "https://open.spotify.com/album/7rSESybi14vAuEVzkipODD"
+    },
+    {
+      "name": "Deltron 3030",
+      "artists": "Deltron 3030",
+      "release_date": "2000",
+      "genres": ["Hip Hop", "Rap", "Alternative Hip Hop"],
+      "price": 1299,
+      "quantity": 231,
+      "reorder": 19,
+      "image": "https://i.scdn.co/image/ab67616d0000b273210c8f856757abec0806209c",
+      "total_tracks": 24,
+      "spotify": "https://open.spotify.com/album/04uhhcjGVCHodMgZjXOlye"
+    },
+    {
+      "name": "Rubber Soul (Remastered)",
+      "artists": "The Beatles",
+      "release_date": "1965",
+      "genres": ["Rock", "Dad Rock", "Folk", "Folk Rock", "English Rock"],
+      "price": 399,
+      "quantity": 11,
+      "reorder": 11,
+      "image": "https://i.scdn.co/image/ab67616d0000b273ed801e58a9ababdea6ac7ce4",
+      "total_tracks": 14,
+      "spotify": "https://open.spotify.com/album/50o7kf2wLwVmOTVYJOTplm"
+    },
+    {
+      "name": "pom pom",
+      "artists": "Ariel Pink",
+      "release_date": "2014",
+      "genres": ["Rock", "Indie Rock", "Art Rock", "Pop", "Psychedelic Rock"],
+      "price": 1699,
+      "quantity": 259,
+      "reorder": 12,
+      "image": "https://i.scdn.co/image/ab67616d0000b2733ec144b51b97424b0f0decb5",
+      "total_tracks": 17,
+      "spotify": "https://open.spotify.com/album/4UhaqAS8V23KozB3dzLMax"
+    },
+    {
+      "name": "E",
+      "artists": "Ecco2k",
+      "release_date": "2019",
+      "genres": ["Pop", "Pop Rap", "Rap", "Experimental Pop"],
+      "price": 2299,
+      "quantity": 247,
+      "reorder": 24,
+      "image": "https://i.scdn.co/image/ab67616d0000b273d10fd2514a37d436538a74be",
+      "total_tracks": 12,
+      "spotify": "https://open.spotify.com/album/1I8mUtgebG39rNBApC7clb"
+    },
+    {
+      "name": "Defective Holiday OST",
+      "artists": "Mechatok",
+      "release_date": "2020",
+      "genres": ["Electronic", "Video Game Music", "Ambient"],
+      "price": 1599,
+      "quantity": 176,
+      "reorder": 12,
+      "image": "https://i.scdn.co/image/ab67616d0000b273c552cc0830a93621eef5b368",
+      "total_tracks": 12,
+      "spotify": "https://open.spotify.com/album/7EV6GsiM2nvt38n2FnnpEj"
+    },
+    {
+      "name": "Stranger",
+      "artists": "Deadfriend",
+      "release_date": "2019",
+      "genres": ["Hip Hop", "Rap", "Indie Hip Hop"],
+      "price": 2099,
+      "quantity": 207,
+      "reorder": 12,
+      "image": "https://i.scdn.co/image/ab67616d0000b2730acb93c3d2dfb4ed0e4bae3b",
+      "total_tracks": 10,
+      "spotify": "https://open.spotify.com/album/3VBz6HVsTvv1ZC4ABKP7m1"
+    },
+    {
+      "name": "Merriweather Post Pavilion",
+      "artists": "Animal Collective",
+      "release_date": "2009",
+      "genres": [
+        "Rock",
+        "Psychedelic Rock",
+        "Electronic",
+        "Pop",
+        "Psychedelic Rock"
+      ],
+      "price": 999,
+      "quantity": 11,
+      "reorder": 9,
+      "image": "https://i.scdn.co/image/ab67616d0000b273400b0756273d1168643d8891",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/5O9OXl9zAWMJTzawofxuan"
+    },
+    {
+      "name": "Devotion",
+      "artists": "Beach House",
+      "release_date": "2008",
+      "genres": ["Pop", "Dream Pop"],
+      "price": 1499,
+      "quantity": 96,
+      "reorder": 8,
+      "image": "https://i.scdn.co/image/ab67616d0000b273ebd18d625c86daade9d1cccd",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/6Unw8A3kdy8ZPj6MmlbA7E"
+    },
+    {
+      "name": "Paranoid (Remaster)",
+      "artists": "Black Sabbath",
+      "release_date": "1970",
+      "genres": ["Metal", "Heavy Metal", "Dad Rock"],
+      "price": 599,
+      "quantity": 125,
+      "reorder": 20,
+      "image": "https://i.scdn.co/image/ab67616d0000b273d5fccf9ce08b6a1e7d12a222",
+      "total_tracks": 8,
+      "spotify": "https://open.spotify.com/album/6r7LZXAVueS5DqdrvXJJK7"
+    },
+    {
+      "name": "Perfect Hair",
+      "artists": "BUSDRIVER",
+      "release_date": "2014",
+      "genres": ["Hip Hop", "Indie Hip Hop"],
+      "price": 1199,
+      "quantity": 206,
+      "reorder": 19,
+      "image": "https://i.scdn.co/image/ab67616d0000b27312e107173b46d98c2e1387d2",
+      "total_tracks": 10,
+      "spotify": "https://open.spotify.com/album/5f9H4fFLC7oQRRFj6i50ow"
+    },
+    {
+      "name": "Government Plates",
+      "artists": "Death Grips",
+      "release_date": "2013",
+      "genres": ["Hip Hop", "Electronic"],
+      "price": 699,
+      "quantity": 190,
+      "reorder": 10,
+      "image": "https://i.scdn.co/image/ab67616d0000b273dfab0b43e267fc2227be8502",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/3T01oOjbrox1jz0pR112oV"
+    },
+    {
+      "name": "Sleep Cycle",
+      "artists": "Deakin",
+      "release_date": "2016",
+      "genres": ["Rock", "Electronic"],
+      "price": 1899,
+      "quantity": 67,
+      "reorder": 13,
+      "image": "https://i.scdn.co/image/ab67616d0000b2738a24e2663e5a578ac686ea90",
+      "total_tracks": 6,
+      "spotify": "https://open.spotify.com/album/18rF6jv5Yk8e4HpbmOFY8n"
+    },
+    {
+      "name": "The Doors",
+      "artists": "The Doors",
+      "release_date": "1967",
+      "genres": ["Rock", "Psychedelic Rock", "Dad Rock"],
+      "price": 1899,
+      "quantity": 169,
+      "reorder": 14,
+      "image": "https://i.scdn.co/image/ab67616d0000b2735b96a8c5d61be8878452f8f1",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/1jWmEhn3ggaL6isoyLfwBn"
+    },
+    {
+      "name": "Stranger in the Alps (Deluxe Edition)",
+      "artists": "Phoebe Bridgers",
+      "release_date": "2018",
+      "genres": ["Rock", "Indie Rock", "Folk", "Indie Folk"],
+      "price": 2799,
+      "quantity": 127,
+      "reorder": 9,
+      "image": "https://i.scdn.co/image/ab67616d0000b2732a5edd6218037175ddf7c2c8",
+      "total_tracks": 13,
+      "spotify": "https://open.spotify.com/album/1p16WxrdVBNIAAxbpZMWJR"
+    },
+    {
+      "name": "In Rainbows",
+      "artists": "Radiohead",
+      "release_date": "2007",
+      "genres": [
+        "Rock",
+        "Art Rock",
+        "Art Pop",
+        "Alternative Rock",
+        "Electronic"
+      ],
+      "price": 2099,
+      "quantity": 144,
+      "reorder": 19,
+      "image": "https://i.scdn.co/image/ab67616d0000b27334733f87148c2fbe0176abdb",
+      "total_tracks": 10,
+      "spotify": "https://open.spotify.com/album/7eyQXxuf2nGj9d2367Gi5f"
+    },
+    {
+      "name": "Bloodrain",
+      "artists": "Sickboyrari",
+      "release_date": "2018",
+      "genres": ["Hip Hop", "Rap", "Trap", "Mumble Rap", "Southern Hip Hop"],
+      "price": 1299,
+      "quantity": 211,
+      "reorder": 7,
+      "image": "https://i.scdn.co/image/ab67616d0000b273d11e7e9f4e2ed449c6835d34",
+      "total_tracks": 7,
+      "spotify": "https://open.spotify.com/album/0ApSVk8bGg13w4KYWMa8Vi"
+    },
+    {
+      "name": "BreathingExercise",
+      "artists": "surrenderdorothy",
+      "release_date": "2018",
+      "genres": ["R&B", "Hip Hop", "Emo Rap", "Folk"],
+      "price": 2399,
+      "quantity": 236,
+      "reorder": 6,
+      "image": "https://i.scdn.co/image/ab67616d0000b273fada2f5d94bc544f67b9b42c",
+      "total_tracks": 9,
+      "spotify": "https://open.spotify.com/album/35jxEKfiHeAU9yXJlmPOcD"
+    },
+    {
+      "name": "Toxicity",
+      "artists": "System Of A Down",
+      "release_date": "2001",
+      "genres": ["Rock", "Metal", "Nu Metal"],
+      "price": 1199,
+      "quantity": 50,
+      "reorder": 22,
+      "image": "https://i.scdn.co/image/ab67616d0000b27330d45198d0c9e8841f9a9578",
+      "total_tracks": 15,
+      "spotify": "https://open.spotify.com/album/6jWde94ln40epKIQCd8XUh"
+    },
+    {
+      "name": "Tundra Boy Season One",
+      "artists": "Xavier Wulf",
+      "release_date": "2015",
+      "genres": [
+        "Hip Hop",
+        "Rap",
+        "Trap",
+        "Cloud Rap",
+        "Southern Hip Hop",
+        "Memphis Rap"
+      ],
+      "price": 1699,
+      "quantity": 239,
+      "reorder": 23,
+      "image": "https://i.scdn.co/image/ab67616d0000b2736ecd5c869036bddf7a59d59a",
+      "total_tracks": 8,
+      "spotify": "https://open.spotify.com/album/3XGWDXVG95ME1YsmKn4ZQ8"
+    },
+    {
+      "name": "Stranger",
+      "artists": "Yung Lean",
+      "release_date": "2017",
+      "genres": ["Hip Hop", "Rap", "Art Pop"],
+      "price": 1299,
+      "quantity": 158,
+      "reorder": 7,
+      "image": "https://i.scdn.co/image/ab67616d0000b273fe81407d98ef67144560b96d",
+      "total_tracks": 14,
+      "spotify": "https://open.spotify.com/album/6pbfofGywFkDyt1HoKYnRd"
+    },
+    {
+      "name": "Simmie Season",
+      "artists": "Yung Simmie",
+      "release_date": "2016",
+      "genres": ["Hip Hop", "Rap", "Trap", "Southern Hip Hop"],
+      "price": 2099,
+      "quantity": 128,
+      "reorder": 19,
+      "image": "https://i.scdn.co/image/ab67616d0000b2731acf30f3635d81203e044fd6",
+      "total_tracks": 9,
+      "spotify": "https://open.spotify.com/album/6s1m8c5SKQilSa3d00OtcO"
+    },
+    {
+      "name": "Psychology",
+      "artists": "Pigeons Playing Ping Pong",
+      "release_date": "2014",
+      "genres": ["Rock", "Ska", "Jam Band"],
+      "price": 1499,
+      "quantity": 287,
+      "reorder": 10,
+      "image": "https://i.scdn.co/image/ab67616d0000b273453c76a540cbceedb48b2438",
+      "total_tracks": 13,
+      "spotify": "https://open.spotify.com/album/27wYCoAJYIyymo5LIe6Jz8"
+    },
+    {
+      "name": "1000 gecs",
+      "artists": "100 gecs",
+      "release_date": "2019",
+      "genres": ["Pop", "Hyperpop"],
+      "price": 199,
+      "quantity": 102,
+      "reorder": 18,
+      "image": "https://i.scdn.co/image/ab67616d0000b2734123c0f9b6689205d20f350f",
+      "total_tracks": 10,
+      "spotify": "https://open.spotify.com/album/2uhB1KivbFnlkARpbd0Cvu"
+    },
+    {
+      "name": "Low Teens (Deluxe Edition)",
+      "artists": "Every Time I Die",
+      "release_date": "2016",
+      "genres": ["Metal", "Metalcore"],
+      "price": 199,
+      "quantity": 288,
+      "reorder": 21,
+      "image": "https://i.scdn.co/image/ab67616d0000b273ff2db662746917b1675281fc",
+      "total_tracks": 15,
+      "spotify": "https://open.spotify.com/album/6YIQv7ZD6WRY2NM88FBucx"
+    },
+    {
+      "name": "If You're Reading This It's Too Late",
+      "artists": "Drake",
+      "release_date": "2015",
+      "genres": ["Rap", "Pop Rap"],
+      "price": 1399,
+      "quantity": 89,
+      "reorder": 19,
+      "image": "https://i.scdn.co/image/ab67616d0000b2732090f4f6cc406e6d3c306733",
+      "total_tracks": 17,
+      "spotify": "https://open.spotify.com/album/0ptlfJfwGTy0Yvrk14JK1I"
+    },
+    {
+      "name": "good kid, m.A.A.d city (Deluxe)",
+      "artists": "Kendrick Lamar",
+      "release_date": "2012",
+      "genres": ["Hip Hop", "Rap", "West Coast Hip Hop", "Pop Rap"],
+      "price": 399,
+      "quantity": 49,
+      "reorder": 15,
+      "image": "https://i.scdn.co/image/ab67616d0000b273d58e537cea05c2156792c53d",
+      "total_tracks": 17,
+      "spotify": "https://open.spotify.com/album/3DGQ1iZ9XKUQxAUWjfC34w"
+    },
+    {
+      "name": "Young The Giant",
+      "artists": "Young the Giant",
+      "release_date": "2011",
+      "genres": ["Rock", "Indie Rock", "Alternative Rock"],
+      "price": 399,
+      "quantity": 248,
+      "reorder": 13,
+      "image": "https://i.scdn.co/image/ab67616d0000b2732d057fa5b5580c47ea6474c4",
+      "total_tracks": 12,
+      "spotify": "https://open.spotify.com/album/0SjFStr64eylrHDmZHGiTI"
+    },
+    {
+      "name": "Yankee Hotel Foxtrot",
+      "artists": "Wilco",
+      "release_date": "2002",
+      "genres": ["Rock", "Indie Rock", "Americana", "Alternative Rock"],
+      "price": 2899,
+      "quantity": 253,
+      "reorder": 23,
+      "image": "https://i.scdn.co/image/ab67616d0000b273f53fbb4abe27c792221e5c27",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/0rPtXOMN42nsLDiShvGamv"
+    },
+    {
+      "name": "Elephant",
+      "artists": "The White Stripes",
+      "release_date": "2003",
+      "genres": ["Rock", "Garage Rock", "Alternative Rock"],
+      "price": 99,
+      "quantity": 41,
+      "reorder": 13,
+      "image": "https://i.scdn.co/image/ab67616d0000b273588ca88c368d5f6eae5cb9b1",
+      "total_tracks": 14,
+      "spotify": "https://open.spotify.com/album/48Atx1uS9J4KL5iQt3weoS"
+    },
+    {
+      "name": "Marry Me",
+      "artists": "St. Vincent",
+      "release_date": "2007",
+      "genres": ["Rock", "Indie Rock", "Pop", "Art Pop", "Art Rock"],
+      "price": 1999,
+      "quantity": 265,
+      "reorder": 10,
+      "image": "https://i.scdn.co/image/ab67616d0000b27329276161f08b49a5f02e8f97",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/338T7GIYUEuyeeHeZnSJta"
+    },
+    {
+      "name": "Goo (Deluxe Edition)",
+      "artists": "Sonic Youth",
+      "release_date": "1990",
+      "genres": ["Rock", "Alternative Rock"],
+      "price": 2299,
+      "quantity": 136,
+      "reorder": 21,
+      "image": "https://i.scdn.co/image/ab67616d0000b273f54097f3e51ebba766dcf5a2",
+      "total_tracks": 31,
+      "spotify": "https://open.spotify.com/album/1Qsx0sOd9rcIeTuI1j419U"
+    },
+    {
+      "name": "Quazarz:Born on a Gangster Star",
+      "artists": "Shabazz Palaces",
+      "release_date": "2017",
+      "genres": ["Hip Hop", "Cloud Rap"],
+      "price": 799,
+      "quantity": 5,
+      "reorder": 14,
+      "image": "https://i.scdn.co/image/ab67616d0000b27388ed00d3517a626968cf66aa",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/403FpASwFwZEg1oc0qzwBR"
+    },
+    {
+      "name": "Nasty",
+      "artists": "Rico Nasty",
+      "release_date": "2018",
+      "genres": ["Hip Hop", "Rap", "East Coast Hip Hop", "Trap"],
+      "price": 2699,
+      "quantity": 286,
+      "reorder": 13,
+      "image": "https://i.scdn.co/image/ab67616d0000b27341e7c5b95a9d860b5d868b0e",
+      "total_tracks": 14,
+      "spotify": "https://open.spotify.com/album/4RKiTVGT9pCVRnqIkwKWo1"
+    },
+    {
+      "name": "...Like Clockwork",
+      "artists": "Queens of the Stone Age",
+      "release_date": "2013",
+      "genres": ["Rock", "Alternative Rock", "Art Rock"],
+      "price": 1199,
+      "quantity": 220,
+      "reorder": 9,
+      "image": "https://i.scdn.co/image/ab67616d0000b2731d11a5e2159392827af124d5",
+      "total_tracks": 10,
+      "spotify": "https://open.spotify.com/album/06S2JBsr4U1Dz3YaenPdVq"
+    },
+    {
+      "name": "The Unseen",
+      "artists": "Quasimoto",
+      "release_date": "2000",
+      "genres": ["Hip Hop", "Rap", "West Coast Hip Hop", "Jazz Rap"],
+      "price": 1999,
+      "quantity": 21,
+      "reorder": 20,
+      "image": "https://i.scdn.co/image/ab67616d0000b273018e03421de1b6a1d41501c9",
+      "total_tracks": 24,
+      "spotify": "https://open.spotify.com/album/03K0iYeTVKHyTf0kEBoloy"
+    },
+    {
+      "name": "The Life Of Pi'erre 4",
+      "artists": "Pi’erre Bourne",
+      "release_date": "2019",
+      "genres": ["Hip Hop", "Rap", "Pop Rap", "Cloud Rap", "Trap"],
+      "price": 899,
+      "quantity": 272,
+      "reorder": 21,
+      "image": "https://i.scdn.co/image/ab67616d0000b27346fe2968c4c6f8f82ab4eb5b",
+      "total_tracks": 16,
+      "spotify": "https://open.spotify.com/album/0agALBMd2a8cnpbpukTg03"
+    },
+    {
+      "name": "In the Aeroplane Over the Sea",
+      "artists": "Neutral Milk Hotel",
+      "release_date": "1998",
+      "genres": ["Rock", "Indie Rock", "Folk", "Indie Folk"],
+      "price": 699,
+      "quantity": 65,
+      "reorder": 24,
+      "image": "https://i.scdn.co/image/ab67616d0000b273c984eaf4d6a23e0bc64041d6",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/5COXoP5kj2DWfCDg0vxi4F"
+    },
+    {
+      "name": "Who Told You To Think??!!?!?!?!",
+      "artists": "Milo",
+      "release_date": "2017",
+      "genres": ["Hip Hop", "Rap", "Jazz Rap", "Cloud Rap", "Indie Hip Hop"],
+      "price": 1399,
+      "quantity": 40,
+      "reorder": 10,
+      "image": "https://i.scdn.co/image/ab67616d0000b2732b0498ba38a91c8b0487e4da",
+      "total_tracks": 15,
+      "spotify": "https://open.spotify.com/album/4Gp0hjbEreTxanivZ5N62V"
+    },
+    {
+      "name": "Uneven Compromise",
+      "artists": "Lil Ugly Mane",
+      "release_date": "2017",
+      "genres": ["Hip Hop", "Rap", "Memphis Rap"],
+      "price": 2099,
+      "quantity": 89,
+      "reorder": 14,
+      "image": "https://i.scdn.co/image/ab67616d0000b273600f66d0f4a147990bdb2ad5",
+      "total_tracks": 1,
+      "spotify": "https://open.spotify.com/album/0ka72x65Pev7XmsNBRxhf3"
+    },
+    {
+      "name": "Man On The Moon:The End Of Day",
+      "artists": "Kid Cudi",
+      "release_date": "2009",
+      "genres": ["Hip Hop", "Rap", "Emo Rap", "Pop", "Art Pop"],
+      "price": 2099,
+      "quantity": 127,
+      "reorder": 21,
+      "image": "https://i.scdn.co/image/ab67616d0000b273aab2c3c3f1f3207137d915c9",
+      "total_tracks": 15,
+      "spotify": "https://open.spotify.com/album/47y3PbX8oIDCkYAFylCJz0"
+    },
+    {
+      "name": "ye",
+      "artists": "Kanye West",
+      "release_date": "2018",
+      "genres": ["Hip Hop", "Rap", "Pop Rap", "Neo Soul"],
+      "price": 1199,
+      "quantity": 115,
+      "reorder": 11,
+      "image": "https://i.scdn.co/image/ab67616d0000b2730cd942c1a864afa4e92d04f2",
+      "total_tracks": 7,
+      "spotify": "https://open.spotify.com/album/2Ek1q2haOnxVqhvVKqMvJe"
+    },
+    {
+      "name": "Axis:Bold As Love",
+      "artists": "Jimi Hendrix",
+      "release_date": "1967",
+      "genres": ["Rock", "Psychedelic Rock", "Dad Rock"],
+      "price": 2699,
+      "quantity": 294,
+      "reorder": 11,
+      "image": "https://i.scdn.co/image/ab67616d0000b27319dcd95d28b63d10164327f2",
+      "total_tracks": 13,
+      "spotify": "https://open.spotify.com/album/3uFZf8rykoHo7XMIQVYW6r"
+    },
+    {
+      "name": "Scum With Boundaries",
+      "artists": "The I.L.Y's",
+      "release_date": "2016",
+      "genres": ["Rock", "Psychedelic Rock", "Punk"],
+      "price": 599,
+      "quantity": 206,
+      "reorder": 18,
+      "image": "https://i.scdn.co/image/ab67616d0000b273b24876060871d60a04859cc7",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/1WFLRLfSkfYjkf65iqz6Oe"
+    },
+    {
+      "name": "Fresh Air",
+      "artists": "HOMESHAKE",
+      "release_date": "2017",
+      "genres": ["Pop", "Alternative R&B"],
+      "price": 1899,
+      "quantity": 34,
+      "reorder": 6,
+      "image": "https://i.scdn.co/image/ab67616d0000b273cd7c3cba379ae624e118ebcb",
+      "total_tracks": 14,
+      "spotify": "https://open.spotify.com/album/6hXa2OPdIt6xwGpaRpvDFz"
+    },
+    {
+      "name": "Fading Frontier",
+      "artists": "Deerhunter",
+      "release_date": "2015",
+      "genres": ["Rock", "Indie Rock", "Psychedelic Rock", "Dream Pop"],
+      "price": 599,
+      "quantity": 199,
+      "reorder": 5,
+      "image": "https://i.scdn.co/image/ab67616d0000b273eba21fd3c71cb20082c8e8d9",
+      "total_tracks": 9,
+      "spotify": "https://open.spotify.com/album/0y5XgOUEiJSSIMxC4ALRAC"
+    },
+    {
+      "name": "Thank You Happy Birthday",
+      "artists": "Cage The Elephant",
+      "release_date": "2011",
+      "genres": ["Rock", "Alternative Rock", "Indie Rock", "Garage Rock"],
+      "price": 199,
+      "quantity": 261,
+      "reorder": 16,
+      "image": "https://i.scdn.co/image/ab67616d0000b2735f1590fb5d2f9e1bed8bb2e8",
+      "total_tracks": 14,
+      "spotify": "https://open.spotify.com/album/0WizSRN8LuMWhliou9PFlg"
+    },
+    {
+      "name": "The Devil And God Are Raging Inside Me",
+      "artists": "Brand New",
+      "release_date": "2006",
+      "genres": ["Rock", "Indie Rock", "Emo"],
+      "price": 699,
+      "quantity": 115,
+      "reorder": 21,
+      "image": "https://i.scdn.co/image/ab67616d0000b2739f8ac0f160a5141a077b41c1",
+      "total_tracks": 12,
+      "spotify": "https://open.spotify.com/album/2YnqAuFmC2r8JeQVOIozTy"
+    },
+    {
+      "name": "Leaves in the Pool",
+      "artists": "The Holdup",
+      "release_date": "2016",
+      "genres": ["Rock", "Reggae", "Rap"],
+      "price": 2899,
+      "quantity": 68,
+      "reorder": 10,
+      "image": "https://i.scdn.co/image/ab67616d0000b27355ea8b54e9784e5cd1dcf70d",
+      "total_tracks": 16,
+      "spotify": "https://open.spotify.com/album/59KmDVMRAjogxtQI3mCDta"
+    },
+    {
+      "name": "Broke with Expensive Taste",
+      "artists": "Azealia Banks",
+      "release_date": "2014",
+      "genres": [
+        "Hip Hop",
+        "Rap",
+        "East Coast Hip Hop",
+        "New York Hip Hop",
+        "Electronic"
+      ],
+      "price": 1599,
+      "quantity": 13,
+      "reorder": 16,
+      "image": "https://i.scdn.co/image/ab67616d0000b273008d18ff3243cf478a085c28",
+      "total_tracks": 16,
+      "spotify": "https://open.spotify.com/album/1YmJl4Cm06bArz3D560pzk"
+    },
+    {
+      "name": "HERE'S TO A BETTER TOMORROW",
+      "artists": "GREAF",
+      "release_date": "2021",
+      "genres": ["Hip Hop"],
+      "price": 99,
+      "quantity": 167,
+      "reorder": 14,
+      "image": "https://i.scdn.co/image/ab67616d0000b27339ec1f0de0e7dd3cf7cfbe2d",
+      "total_tracks": 21,
+      "spotify": "https://open.spotify.com/album/0i5cChF6iRoYlEjnT46crW"
+    },
+    {
+      "name": "XXX (Deluxe Edition)",
+      "artists": "Danny Brown",
+      "release_date": "2012",
+      "genres": ["Hip Hop", "Rap", "Alternative Hip Hop"],
+      "price": 399,
+      "quantity": 217,
+      "reorder": 19,
+      "image": "https://i.scdn.co/image/ab67616d0000b27395a3b7515ee986584694607c",
+      "total_tracks": 22,
+      "spotify": "https://open.spotify.com/album/1QESrfmlfAl19Gr8mXcysi"
+    },
+    {
+      "name": "Remain in Light",
+      "artists": "Talking Heads",
+      "release_date": "1980",
+      "genres": ["Rock", "New Wave"],
+      "price": 2499,
+      "quantity": 178,
+      "reorder": 13,
+      "image": "https://i.scdn.co/image/ab67616d0000b273f9e2d82b9969defab2105859",
+      "total_tracks": 8,
+      "spotify": "https://open.spotify.com/album/1JvXxLsm0PxlGH4LXzqMGq"
+    },
+    {
+      "name": "Melted",
+      "artists": "Ty Segall",
+      "release_date": "2010",
+      "genres": ["Rock", "Garage Rock", "Psychedelic Rock"],
+      "price": 2699,
+      "quantity": 131,
+      "reorder": 21,
+      "image": "https://i.scdn.co/image/ab67616d0000b2731d99b68491ca47084bda0734",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/5P0LN9xrnLY1By7mlkKtkx"
+    },
+    {
+      "name": "Barter 6",
+      "artists": "Young Thug",
+      "release_date": "2015",
+      "genres": [
+        "Hip Hop",
+        "Rap",
+        "Southern Hip Hop",
+        "Atlanta Hip Hop",
+        "Mumble Rap",
+        "Trap",
+        "Cloud Rap"
+      ],
+      "price": 1999,
+      "quantity": 39,
+      "reorder": 5,
+      "image": "https://i.scdn.co/image/ab67616d0000b27388053a98d0abb8ed3a02efe1",
+      "total_tracks": 13,
+      "spotify": "https://open.spotify.com/album/0BsMZIueWsJLWng8A7sE8e"
+    },
+    {
+      "name": "Wolf",
+      "artists": "Tyler, The Creator",
+      "release_date": "2013",
+      "genres": [
+        "Hip Hop",
+        "Rap",
+        "Jazz Rap",
+        "West Coast Hip Hop",
+        "Neo Soul"
+      ],
+      "price": 2099,
+      "quantity": 215,
+      "reorder": 17,
+      "image": "https://i.scdn.co/image/ab67616d0000b2736be6806a01c452f360cab678",
+      "total_tracks": 18,
+      "spotify": "https://open.spotify.com/album/40QTqOBBxCEIQlLNdSjFQB"
+    },
+    {
+      "name": "Leaving",
+      "artists": "Spooky Black",
+      "release_date": "2014",
+      "genres": ["R&B", "Alternative R&B", "Emo Rap", "Cloud Rap"],
+      "price": 2499,
+      "quantity": 188,
+      "reorder": 10,
+      "image": "https://i.scdn.co/image/ab67616d0000b273dc27327ba8f41aaac53b5846",
+      "total_tracks": 8,
+      "spotify": "https://open.spotify.com/album/34jUAKMBHMCl3hjzb9rsut"
+    },
+    {
+      "name": "Good Luck",
+      "artists": "Bladee",
+      "release_date": "2020",
+      "genres": ["Pop Rap", "Electronic"],
+      "price": 1699,
+      "quantity": 264,
+      "reorder": 18,
+      "image": "https://i.scdn.co/image/ab67616d0000b273e510fefb5484842ad19185b0",
+      "total_tracks": 8,
+      "spotify": "https://open.spotify.com/album/5Ptb745JTuc2YNBNwZGBHz"
+    },
+    {
+      "name": "The Suburbs (Deluxe)",
+      "artists": "Arcade Fire",
+      "release_date": "2010",
+      "genres": ["Rock", "Indie Rock", "Post-Punk Revival"],
+      "price": 2799,
+      "quantity": 91,
+      "reorder": 23,
+      "image": "https://i.scdn.co/image/ab67616d0000b2731d6b4b0418200b6324734062",
+      "total_tracks": 18,
+      "spotify": "https://open.spotify.com/album/0gkUcpkyW2SXN49Yktkf6F"
+    },
+    {
+      "name": "Jason Derulo (Deluxe Audio)",
+      "artists": "Jason Derulo",
+      "release_date": "2010",
+      "genres": ["Pop", "R&B"],
+      "price": 1399,
+      "quantity": 282,
+      "reorder": 20,
+      "image": "https://i.scdn.co/image/ab67616d0000b27372473d3770372061cadc55e7",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/773TVtjVxXvD6DFHsWFJGN"
+    },
+    {
+      "name": "Get Rich Or Die Tryin'",
+      "artists": "50 Cent",
+      "release_date": "2003",
+      "genres": ["Hip Hop", "Rap", "East Coast Hip Hop", "Pop Rap"],
+      "price": 1799,
+      "quantity": 3,
+      "reorder": 15,
+      "image": "https://i.scdn.co/image/ab67616d0000b273f7f74100d5cc850e01172cbf",
+      "total_tracks": 19,
+      "spotify": "https://open.spotify.com/album/4ycNE7y1rp5215g1kkqk1P"
+    },
+    {
+      "name": "Cargo",
+      "artists": "Men At Work",
+      "release_date": "1983",
+      "genres": ["Rock", "New Wave"],
+      "price": 2199,
+      "quantity": 111,
+      "reorder": 13,
+      "image": "https://i.scdn.co/image/ab67616d0000b273d6484fa762c216ccb6b0dd45",
+      "total_tracks": 15,
+      "spotify": "https://open.spotify.com/album/4GDchmJ8oESRJ58cDXvnE0"
+    },
+    {
+      "name": "Honky Chateau",
+      "artists": "Elton John",
+      "release_date": "1972",
+      "genres": ["Rock", "Pop Rock", "Piano Rock"],
+      "price": 799,
+      "quantity": 103,
+      "reorder": 23,
+      "image": "https://i.scdn.co/image/ab67616d0000b2733009007708ab5134936a58b3",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/2ei2X6ghPnw7YRwQtAH075"
+    },
+    {
+      "name": "Brothers",
+      "artists": "The Black Keys",
+      "release_date": "2010",
+      "genres": ["Rock", "Garage Rock", "Psychedelic Rock"],
+      "price": 1099,
+      "quantity": 8,
+      "reorder": 8,
+      "image": "https://i.scdn.co/image/ab67616d0000b2734cf61635ecdee5d4c4ef2bac",
+      "total_tracks": 15,
+      "spotify": "https://open.spotify.com/album/7qE6RXYyz5kj5Tll7mJU0v"
+    },
+    {
+      "name": "Speakerboxxx/The Love Below",
+      "artists": "Outkast",
+      "release_date": "2003",
+      "genres": [
+        "Hip Hop",
+        "Rap",
+        "Southern Hip Hop",
+        "Neo Soul",
+        "Atlanta Hip Hop"
+      ],
+      "price": 599,
+      "quantity": 269,
+      "reorder": 17,
+      "image": "https://i.scdn.co/image/ab67616d0000b2736a6387ab37f64034cdc7b367",
+      "total_tracks": 40,
+      "spotify": "https://open.spotify.com/album/1UsmQ3bpJTyK6ygoOOjG1r"
+    },
+    {
+      "name": "Sublime (Explicit Version)",
+      "artists": "Sublime",
+      "release_date": "1996",
+      "genres": ["Rock", "Ska", "Reggae", "Punk", "Hip Hop", "Rock"],
+      "price": 399,
+      "quantity": 78,
+      "reorder": 14,
+      "image": "https://i.scdn.co/image/ab67616d0000b2730193b418a25d229453c1927b",
+      "total_tracks": 17,
+      "spotify": "https://open.spotify.com/album/5dwkpREUiLdmPLy4POzFSa"
+    },
+    {
+      "name": "An Awesome Wave",
+      "artists": "alt-J",
+      "release_date": "2012",
+      "genres": ["Pop", "Art Pop"],
+      "price": 299,
+      "quantity": 40,
+      "reorder": 9,
+      "image": "https://i.scdn.co/image/ab67616d0000b27369592e88bb29d610a35118f8",
+      "total_tracks": 14,
+      "spotify": "https://open.spotify.com/album/6k3vC8nep1BfqAIJ81L6OL"
+    },
+    {
+      "name": "The Electric Lady",
+      "artists": "Janelle Monáe",
+      "release_date": "2013",
+      "genres": ["R&B", "Neo Soul", "Pop", "Art Pop"],
+      "price": 1599,
+      "quantity": 205,
+      "reorder": 19,
+      "image": "https://i.scdn.co/image/ab67616d0000b27357cc241e3fc4e95eea8c4b20",
+      "total_tracks": 19,
+      "spotify": "https://open.spotify.com/album/3bnHtSmmsgJiG82hGCmsq9"
+    },
+    {
+      "name": "Little Dark Age",
+      "artists": "MGMT",
+      "release_date": "2018",
+      "genres": ["Pop", "New Wave"],
+      "price": 2899,
+      "quantity": 26,
+      "reorder": 20,
+      "image": "https://i.scdn.co/image/ab67616d0000b273b47d309281c66820b7137f5d",
+      "total_tracks": 10,
+      "spotify": "https://open.spotify.com/album/7GjVWG39IOj4viyWplJV4H"
+    },
+    {
+      "name": "Oracular Spectacular",
+      "artists": "MGMT",
+      "release_date": "2007",
+      "genres": ["Pop", "Electronic"],
+      "price": 2099,
+      "quantity": 22,
+      "reorder": 6,
+      "image": "https://i.scdn.co/image/ab67616d0000b2738b32b139981e79f2ebe005eb",
+      "total_tracks": 10,
+      "spotify": "https://open.spotify.com/album/6mm1Skz3JE6AXneya9Nyiv"
+    },
+    {
+      "name": "It Is What It Is",
+      "artists": "Thundercat",
+      "release_date": "2020",
+      "genres": ["Jazz", "Alternative R&B", "Neo Soul"],
+      "price": 2399,
+      "quantity": 159,
+      "reorder": 8,
+      "image": "https://i.scdn.co/image/ab67616d0000b27323fb02f383f3bef16ab9d092",
+      "total_tracks": 15,
+      "spotify": "https://open.spotify.com/album/59GRmAvlGs7KjLizFnV7Y9"
+    },
+    {
+      "name": "Ten$ion",
+      "artists": "Die Antwoord",
+      "release_date": "2012",
+      "genres": ["Pop", "Rap", "Electronic"],
+      "price": 1799,
+      "quantity": 233,
+      "reorder": 20,
+      "image": "https://i.scdn.co/image/ab67616d0000b273fbb5215d753b10d6ab619ced",
+      "total_tracks": 13,
+      "spotify": "https://open.spotify.com/album/3yHZDkK1VZnZ2DJ8ymhXLV"
+    },
+    {
+      "name": "Kala",
+      "artists": "M.I.A.",
+      "release_date": "2007",
+      "genres": ["Pop", "Experimental Pop", "Hip Hop"],
+      "price": 1299,
+      "quantity": 22,
+      "reorder": 13,
+      "image": "https://i.scdn.co/image/ab67616d0000b27320e0d874026f971dc2c4822b",
+      "total_tracks": 12,
+      "spotify": "https://open.spotify.com/album/2xoj2gYed3IYmGWn3owSfu"
+    },
+    {
+      "name": "...Baby One More Time (Digital Deluxe Version)",
+      "artists": "Britney Spears",
+      "release_date": "1999",
+      "genres": ["Pop", "Teen Pop"],
+      "price": 1299,
+      "quantity": 107,
+      "reorder": 21,
+      "image": "https://i.scdn.co/image/ab67616d0000b2738e49866860c25afffe2f1a02",
+      "total_tracks": 16,
+      "spotify": "https://open.spotify.com/album/3WNxdumkSMGMJRhEgK80qx"
+    },
+    {
+      "name": "Oops!... I Did It Again",
+      "artists": "Britney Spears",
+      "release_date": "2000",
+      "genres": ["Pop", "Teen Pop"],
+      "price": 2599,
+      "quantity": 270,
+      "reorder": 7,
+      "image": "https://i.scdn.co/image/ab67616d0000b2732aa20611c7fb964a74ab01a6",
+      "total_tracks": 12,
+      "spotify": "https://open.spotify.com/album/5PmgtkodFl2Om3hMXONDll"
+    },
+    {
+      "name": "In The Zone",
+      "artists": "Britney Spears",
+      "release_date": "2003",
+      "genres": ["Pop", "R&B"],
+      "price": 1199,
+      "quantity": 160,
+      "reorder": 16,
+      "image": "https://i.scdn.co/image/ab67616d0000b273efc6988972cb04105f002cd4",
+      "total_tracks": 13,
+      "spotify": "https://open.spotify.com/album/0z7pVBGOD7HCIB7S8eLkLI"
+    },
+    {
+      "name": "Circus (Deluxe Version)",
+      "artists": "Britney Spears",
+      "release_date": "2008",
+      "genres": ["Pop", "R&B"],
+      "price": 2499,
+      "quantity": 259,
+      "reorder": 22,
+      "image": "https://i.scdn.co/image/ab67616d0000b27354c6edd554935d73e159e199",
+      "total_tracks": 15,
+      "spotify": "https://open.spotify.com/album/2tve5DGwub1TtbX1khPX5j"
+    },
+    {
+      "name": "Planet Her",
+      "artists": "Doja Cat",
+      "release_date": "2021",
+      "genres": ["Pop", "Rap", "Pop Rap", "Trap", "R&B"],
+      "price": 2399,
+      "quantity": 251,
+      "reorder": 9,
+      "image": "https://i.scdn.co/image/ab67616d0000b2734df3245f26298a1579ecc321",
+      "total_tracks": 14,
+      "spotify": "https://open.spotify.com/album/1nAQbHeOWTfQzbOoFrvndW"
+    },
+    {
+      "name": "Cage The Elephant",
+      "artists": "Cage The Elephant",
+      "release_date": "2009",
+      "genres": ["Rock", "Alternative Rock", "Indie Rock", "Garage Rock"],
+      "price": 2699,
+      "quantity": 90,
+      "reorder": 19,
+      "image": "https://i.scdn.co/image/ab67616d0000b27373a791d2e07cdd53ba932f6e",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/2vs5faN4o8NCNXAGLh3HJf"
+    },
+    {
+      "name": "Hozier (Expanded Edition)",
+      "artists": "Hozier",
+      "release_date": "2014",
+      "genres": ["Rock", "Indie Rock", "Folk", "Indie Folk"],
+      "price": 1299,
+      "quantity": 218,
+      "reorder": 19,
+      "image": "https://i.scdn.co/image/ab67616d0000b2734ca68d59a4a29c856a4a39c2",
+      "total_tracks": 15,
+      "spotify": "https://open.spotify.com/album/4Pv7m8D82A1Xun7xNCKZjJ"
+    },
+    {
+      "name": "Melophobia",
+      "artists": "Cage The Elephant",
+      "release_date": "2013",
+      "genres": [
+        "Rock",
+        "Indie Rock",
+        "Garage Rock",
+        "Alternative Rock",
+        "Psychedelic Rock"
+      ],
+      "price": 1299,
+      "quantity": 201,
+      "reorder": 18,
+      "image": "https://i.scdn.co/image/ab67616d0000b273c707823ed5683c77b37b121d",
+      "total_tracks": 10,
+      "spotify": "https://open.spotify.com/album/4EK8gtQfdVsmDTji7gBFlz"
+    },
+    {
+      "name": "O My Heart",
+      "artists": "Mother Mother",
+      "release_date": "2008",
+      "genres": [
+        "Rock",
+        "Indie Rock",
+        "Pop",
+        "Post-Punk Revival",
+        "Folk",
+        "Folk Rock"
+      ],
+      "price": 2399,
+      "quantity": 250,
+      "reorder": 7,
+      "image": "https://i.scdn.co/image/ab67616d0000b27332771a1171c90a67b39de00a",
+      "total_tracks": 12,
+      "spotify": "https://open.spotify.com/album/2EE3oTf8Dnb46og0MR0B8R"
+    },
+    {
+      "name": "Sex & Food",
+      "artists": "Unknown Mortal Orchestra",
+      "release_date": "2018",
+      "genres": ["Rock", "Psychedelic Rock", "Pop", "Psychedelic Pop"],
+      "price": 2699,
+      "quantity": 188,
+      "reorder": 22,
+      "image": "https://i.scdn.co/image/ab67616d0000b273aa839bb04931542d830c73b1",
+      "total_tracks": 12,
+      "spotify": "https://open.spotify.com/album/7c2Xfq7aQKzs0KdSI3K7Rc"
+    },
+    {
+      "name": "A River's Invitation",
+      "artists": "The California Honeydrops",
+      "release_date": "2015",
+      "genres": ["Rhythm & Blues"],
+      "price": 2199,
+      "quantity": 55,
+      "reorder": 19,
+      "image": "https://i.scdn.co/image/ab67616d0000b2732e2e9a174fcb9d64bfc629c9",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/6oGFUErSaMw5kXdcYCQ3gL"
+    },
+    {
+      "name": "Choose Your Weapon",
+      "artists": "Hiatus Kaiyote",
+      "release_date": "2015",
+      "genres": ["R&B", "Alternative R&B", "Neo Soul", "Jazz"],
+      "price": 299,
+      "quantity": 86,
+      "reorder": 20,
+      "image": "https://i.scdn.co/image/ab67616d0000b27365c29c4a590e9e9b03467c5a",
+      "total_tracks": 18,
+      "spotify": "https://open.spotify.com/album/3qzmmmRmVBiOuMvrerfW4z"
+    },
+    {
+      "name": "Honey Pig",
+      "artists": "Bosley",
+      "release_date": "2011",
+      "genres": ["Rock", "Soul"],
+      "price": 999,
+      "quantity": 140,
+      "reorder": 6,
+      "image": "https://i.scdn.co/image/ab67616d0000b2736cbce7991aee5093a1a5fb7d",
+      "total_tracks": 8,
+      "spotify": "https://open.spotify.com/album/4XQO8bplLX6wCtgVfb4Iha"
+    },
+    {
+      "name": "Monkey Business",
+      "artists": "Black Eyed Peas",
+      "release_date": "2005",
+      "genres": ["Hip Hop", "Rap", "Pop Rap", "Electronic"],
+      "price": 2099,
+      "quantity": 95,
+      "reorder": 5,
+      "image": "https://i.scdn.co/image/ab67616d0000b27308b19a033829c0bec97be61a",
+      "total_tracks": 15,
+      "spotify": "https://open.spotify.com/album/2szeSQtOcJgRhDXmTS3SIf"
+    },
+    {
+      "name": "Atrocity Exhibition",
+      "artists": "Danny Brown",
+      "release_date": "2016",
+      "genres": ["Hip Hop", "Rap", "Alternative Hip Hop"],
+      "price": 1799,
+      "quantity": 167,
+      "reorder": 16,
+      "image": "https://i.scdn.co/image/ab67616d0000b2733e25c9ef701bb637773531fe",
+      "total_tracks": 15,
+      "spotify": "https://open.spotify.com/album/3e7vtKJ3m1zVh38VGq2g3H"
+    },
+    {
+      "name": "Racine Carrée (Standard US Version)",
+      "artists": "Stromae",
+      "release_date": "2013",
+      "genres": ["Pop", "Electronic", "Hip Hop"],
+      "price": 1099,
+      "quantity": 68,
+      "reorder": 17,
+      "image": "https://i.scdn.co/image/ab67616d0000b273e742841accccf949d7af1b75",
+      "total_tracks": 14,
+      "spotify": "https://open.spotify.com/album/22yd3bcffqUO7Pn5nsDaoj"
+    },
+    {
+      "name": "Ugly is Beautiful:Shorter, Thicker & Uglier (Deluxe)",
+      "artists": "Oliver Tree",
+      "release_date": "2021",
+      "genres": ["Rock", "Alternative Rock", "Pop", "Pop Rap"],
+      "price": 2899,
+      "quantity": 232,
+      "reorder": 16,
+      "image": "https://i.scdn.co/image/ab67616d0000b2731c5a484110522f2b9c7038cc",
+      "total_tracks": 21,
+      "spotify": "https://open.spotify.com/album/5vP0fNictdWyU48o83Q7ob"
+    },
+    {
+      "name": "Pop Food",
+      "artists": "Jack Stauber",
+      "release_date": "2017",
+      "genres": ["Pop", "Experimental Pop"],
+      "price": 399,
+      "quantity": 96,
+      "reorder": 13,
+      "image": "https://i.scdn.co/image/ab67616d0000b273affdacd1466cdde505ab97ee",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/1RHa1VdX6lsLbeedgsV1cb"
+    },
+    {
+      "name": "Astro Lounge",
+      "artists": "Smash Mouth",
+      "release_date": "1999",
+      "genres": ["Rock", "Pop Rock"],
+      "price": 399,
+      "quantity": 257,
+      "reorder": 20,
+      "image": "https://i.scdn.co/image/ab67616d0000b2734f3bbf9631faeb8de9912a23",
+      "total_tracks": 15,
+      "spotify": "https://open.spotify.com/album/2kyTLcEZe6nc1s6ve0zW9P"
+    },
+    {
+      "name": "Riot!",
+      "artists": "Paramore",
+      "release_date": "2007",
+      "genres": ["Rock", "Pop Punk", "Alternative Rock"],
+      "price": 2899,
+      "quantity": 86,
+      "reorder": 12,
+      "image": "https://i.scdn.co/image/ab67616d0000b273bee754528c08d5ff6799a1eb",
+      "total_tracks": 12,
+      "spotify": "https://open.spotify.com/album/71rziY9eLo1tA2dBMxrwhc"
+    },
+    {
+      "name": "Brand New Eyes",
+      "artists": "Paramore",
+      "release_date": "2009",
+      "genres": ["Rock", "Pop Punk", "Alternative Rock"],
+      "price": 2599,
+      "quantity": 138,
+      "reorder": 22,
+      "image": "https://i.scdn.co/image/ab67616d0000b273e01d7d558032457b0e4883f6",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/27UqZoE1kV6sIV6uQcI28A"
+    },
+    {
+      "name": "\"Awaken, My Love!\"",
+      "artists": "Childish Gambino",
+      "release_date": "2016",
+      "genres": ["Psychedelic Soul", "Neo Soul"],
+      "price": 299,
+      "quantity": 170,
+      "reorder": 13,
+      "image": "https://i.scdn.co/image/ab67616d0000b2730b97e56ffad7c6211aa848f8",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/4xnq1L6P551Qcb9gBXNMK7"
+    },
+    {
+      "name": "Starfucker",
+      "artists": "STRFKR",
+      "release_date": "2008",
+      "genres": ["Pop", "Electronic", "Post-Punk Revival"],
+      "price": 1299,
+      "quantity": 190,
+      "reorder": 17,
+      "image": "https://i.scdn.co/image/ab67616d0000b273a42a9e3de0baca2e178d0c73",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/4mBSeOEiQ4WgDaCnydb0tZ"
+    },
+    {
+      "name": "Man On The Moon II:The Legend Of Mr. Rager",
+      "artists": "Kid Cudi",
+      "release_date": "2010",
+      "genres": ["Hip Hop", "Rap", "Emo Rap", "Pop", "Art Pop"],
+      "price": 1899,
+      "quantity": 14,
+      "reorder": 13,
+      "image": "https://i.scdn.co/image/ab67616d0000b27359e842b6a3566a141f27f815",
+      "total_tracks": 17,
+      "spotify": "https://open.spotify.com/album/08eM9GRdr5BCCHNqS3Wwud"
+    },
+    {
+      "name": "SONIC ADVENTURE 2 Original Soundtrack (20th Anniversary Edition)",
+      "artists": "SEGA SOUND TEAM",
+      "release_date": "2011",
+      "genres": ["Video Game Music"],
+      "price": 1999,
+      "quantity": 252,
+      "reorder": 23,
+      "image": "https://i.scdn.co/image/ab67616d0000b273d76889a6c3f76a9a8f37079c",
+      "total_tracks": 30,
+      "spotify": "https://open.spotify.com/album/534RtJP8QXhoGc3yNqb5Vb"
+    },
+    {
+      "name": "となりのトトロ イメージ・ソング集",
+      "artists": "Joe Hisaishi",
+      "release_date": "2004",
+      "genres": ["Anime Soundtrack"],
+      "price": 2899,
+      "quantity": 106,
+      "reorder": 17,
+      "image": "https://i.scdn.co/image/ab67616d0000b273d2928fe873d65f035ba55171",
+      "total_tracks": 11,
+      "spotify": "https://open.spotify.com/album/2FWckiMlypib4j0YTfktv3"
+    }
+  ],
+  "users": [
+    {
+      "username": "Forest Jaswinder",
+      "password": "magnetring",
+      "email": "forestjaswinder@gmail.com"
+    },
+    {
+      "username": "Petra Yale",
+      "password": "beetschevrolet",
+      "email": "petrafied@yahoo.com"
+    },
+    {
+      "username": "Anuja Drahoslav",
+      "password": "perhapstrainer",
+      "email": "A_drahoslav@gmail.com"
+    },
+    {
+      "username": "Minta Dewayne",
+      "password": "babyishhighjump",
+      "email": "mintababy1@aol.com"
+    },
+    {
+      "username": "Wynonna Anna",
+      "password": "blueberrieshelpful",
+      "email": "blue_anna@outlook.com"
+    },
+    {
+      "username": "Emi Gabriela",
+      "password": "bicyclingdata",
+      "email": "emiemiemi@aol.com"
+    },
+    {
+      "username": "Eliza Sofia",
+      "password": "sniffpolitician",
+      "email": "eliza1234@gmail.com"
+    },
+    {
+      "username": "Oscar Wendel",
+      "password": "morticianbeef",
+      "email": "not_Oscar_Wendel@yahoo.com"
+    },
+    {
+      "username": "Shanna Erik",
+      "password": "whizzswamp",
+      "email": "erikismybrothersname@yahoo.com"
+    },
+    {
+      "username": "Krysten Nao",
+      "password": "gravellymosquitoe",
+      "email": "Krysten.yes@outlook.com"
+    },
+    {
+      "username": "Jerry Bruno",
+      "password": "pitchchamomile",
+      "email": "jerry.bruno@outlook.com"
+    },
+    {
+      "username": "Senne Galia",
+      "password": "onionsdevice",
+      "email": "sgalia@gmail.com"
+    },
+    {
+      "username": "Jackie Daragh",
+      "password": "footpregnancy",
+      "email": "jackiedaragh@outlook.com"
+    },
+    {
+      "username": "Mari Lucile",
+      "password": "armorjoiner",
+      "email": "mari.lucile@yahoo.com"
+    },
+    {
+      "username": "Natália Calvin",
+      "password": "widowexamine",
+      "email": "natalia_thebest@aol.com"
+    },
+    {
+      "username": "Margarita Nelson",
+      "password": "correctviolation",
+      "email": "its.margarita.time@yahoo.com"
+    },
+    {
+      "username": "Alan Wu",
+      "password": "buttockssister",
+      "email": "alan.who@gmail.com"
+    },
+    {
+      "username": "Nanami Truman",
+      "password": "pressunhappy",
+      "email": "nanami.truman@yahoo.com"
+    },
+    {
+      "username": "Florentino Bevin",
+      "password": "catererexpectant",
+      "email": "f.belvin@gmail.com"
+    },
+    {
+      "username": "Armand Debi",
+      "password": "dialnormal",
+      "email": "armanddebi@gmail.com"
+    },
+    {
+      "username": "Kevin Celestina",
+      "password": "harasshilarious",
+      "email": "celestina94@gmail.com"
+    },
+    {
+      "username": "Addie Isabel",
+      "password": "bloatshuffle",
+      "email": "addison.isabel@yahoo.com"
+    },
+    {
+      "username": "João Paulo Agustina",
+      "password": "kiwithief",
+      "email": "jpagustina@outlook.com"
+    },
+    {
+      "username": "Alayah Kristel",
+      "password": "esteemedforget",
+      "email": "kristel.alayah@gmail.com"
+    },
+    {
+      "username": "Rhiannon Warwick",
+      "password": "beanietinkle",
+      "email": "rhiannon.podcast@gmail.com"
+    },
+    {
+      "username": "Donatello Maurizia",
+      "password": "severaltabernacle",
+      "email": "donatello.nottheturtle@yahoo.com"
+    },
+    {
+      "username": "Jun Cristen",
+      "password": "cuddlyother",
+      "email": "jun.cristen@gmail.com"
+    },
+    {
+      "username": "Richard Valero",
+      "password": "tridentbooger",
+      "email": "valero_richard@yahoo.com"
+    },
+    {
+      "username": "Sharla Soo-Jin",
+      "password": "weightsdisturbed",
+      "email": "s.soojin@gmail.com"
+    },
+    {
+      "username": "Feidhlimidh Florence",
+      "password": "oppositeprince",
+      "email": "ffprince@gmail.com"
+    },
+    {
+      "username": "Jarvis Nayara",
+      "password": "locationtomatoes",
+      "email": "jarvis.n@aol.com"
+    },
+    {
+      "username": "César Yoan",
+      "password": "worsehole",
+      "email": "thebestcesar@yahoo.com"
+    },
+    {
+      "username": "Clarice Nelly",
+      "password": "bongwornout",
+      "email": "clarice420@yahoo.com"
+    },
+    {
+      "username": "Enrico Dora",
+      "password": "numeralsiege",
+      "email": "enrico.dora@gmail.com"
+    },
+    {
+      "username": "Kieron Cam",
+      "password": "jugglehiss",
+      "email": "i.love.smash.mouth.astrolounge@yahoo.com"
+    },
+    {
+      "username": "Amato Juan Bautista",
+      "password": "hotpotshyster",
+      "email": "what.if.burk.reads.this@yahoo.com"
+    },
+    {
+      "username": "Berta Kiki",
+      "password": "quailregardless",
+      "email": "another_email@gmail.com"
+    },
+    {
+      "username": "Hermina Francisca",
+      "password": "shushglamorous",
+      "email": "hermina.fracisca@yahoo.com"
+    },
+    {
+      "username": "Grimaldo Salud",
+      "password": "grittyrectum",
+      "email": "passionfruit.by.drake.is.my.jam@gmail.com"
+    },
+    {
+      "username": "Natacha Jacinto",
+      "password": "germandearest",
+      "email": "natacha.jacinto@yahoo.com"
+    },
+    {
+      "username": "Shizuka Tyron",
+      "password": "conclusionmarble",
+      "email": "shizuka_tyron@aol.com"
+    },
+    {
+      "username": "Lettie Channing",
+      "password": "shapedogwatch",
+      "email": "lettie666@aol.com"
+    },
+    {
+      "username": "Chiyoko Brendon",
+      "password": "giantstudent",
+      "email": "80085chiyoko@yahoo.com"
+    },
+    {
+      "username": "Kathleen Allyson",
+      "password": "taboodocument",
+      "email": "tabooKathleen@gmail.com"
+    },
+    {
+      "username": "Guillermo Timo",
+      "password": "intensebutthead",
+      "email": "guillermo.timo84@gmail.com"
+    },
+    {
+      "username": "Carlyn Diana",
+      "password": "fireworksflashy",
+      "email": "carlyndiana@outlook.com"
+    },
+    {
+      "username": "Harmon Takara",
+      "password": "bossybathe",
+      "email": "bossbabeHarmon@yahoo.com"
+    },
+    {
+      "username": "Elke Nayara",
+      "password": "pityingfoolhardy",
+      "email": "elke.nayara@gmail.com"
+    },
+    {
+      "username": "Karson Liesa",
+      "password": "explainvinegar",
+      "email": "karson.liesa@gmail.com"
+    },
+    {
+      "username": "Aristide Katrijn",
+      "password": "giftedgroan",
+      "email": "aristide.katrijn@gmail.com"
+    }
+  ],
+  "reviews": [
+    {
+      "review": "100 gecs is better",
+      "rating": "false",
+      "albumId": "24",
+      "userId": "34"
+    },
+    {
+      "review": "Anthony Fantano told me to buy this",
+      "rating": "true",
+      "albumId": "33",
+      "userId": "1"
+    },
+    {
+      "review": "absolutely my most favorite album that's ever been created in human history",
+      "rating": "false",
+      "albumId": "47",
+      "userId": "21"
+    },
+    {
+      "review": "broke up with my ex and binged this album",
+      "rating": "true",
+      "albumId": "55",
+      "userId": "44"
+    },
+    {
+      "review": "hated my ex that showed me this album but I still like it",
+      "rating": "true",
+      "albumId": "59",
+      "userId": "16"
+    },
+    {
+      "review": "so good!!",
+      "rating": "true",
+      "albumId": "62",
+      "userId": "41"
+    },
+    {
+      "review": "gets better on every listen, shipping was fast",
+      "rating": "true",
+      "albumId": "63",
+      "userId": "29"
+    },
+    {
+      "review": "one of my faves!",
+      "rating": "true",
+      "albumId": "68",
+      "userId": "11"
+    },
+    {
+      "review": "got this for my mom",
+      "rating": "true",
+      "albumId": "73",
+      "userId": "36"
+    },
+    {
+      "review": "",
+      "rating": "true",
+      "albumId": "73",
+      "userId": "47"
+    },
+    {
+      "review": "",
+      "rating": "true",
+      "albumId": "76",
+      "userId": "24"
+    },
+    {
+      "review": "",
+      "rating": "true",
+      "albumId": "77",
+      "userId": "33"
+    },
+    {
+      "review": "",
+      "rating": "true",
+      "albumId": "80",
+      "userId": "44"
+    },
+    {
+      "review": "JSON derulo",
+      "rating": "true",
+      "albumId": "81",
+      "userId": "20"
+    },
+    {
+      "review": "",
+      "rating": "true",
+      "albumId": "82",
+      "userId": "10"
+    },
+    {
+      "review": "",
+      "rating": "true",
+      "albumId": "86",
+      "userId": "30"
+    },
+    {
+      "review": "",
+      "rating": "true",
+      "albumId": "86",
+      "userId": "35"
+    },
+    {
+      "review": "middle school throwback",
+      "rating": "true",
+      "albumId": "88",
+      "userId": "19"
+    },
+    {
+      "review": "FREE BRITNEY",
+      "rating": "true",
+      "albumId": "95",
+      "userId": "7"
+    },
+    {
+      "review": "free britney!!!!!!!",
+      "rating": "true",
+      "albumId": "95",
+      "userId": "45"
+    },
+    {
+      "review": "",
+      "rating": "true",
+      "albumId": "96",
+      "userId": "29"
+    },
+    {
+      "review": "end her conservatorship",
+      "rating": "true",
+      "albumId": "96",
+      "userId": "31"
+    },
+    {
+      "review": "free britney",
+      "rating": "true",
+      "albumId": "97",
+      "userId": "45"
+    },
+    {
+      "review": "Free Britney",
+      "rating": "true",
+      "albumId": "98",
+      "userId": "16"
+    },
+    {
+      "review": "Free Britney",
+      "rating": "true",
+      "albumId": "97",
+      "userId": "37"
+    },
+    {
+      "review": "love Britney",
+      "rating": "true",
+      "albumId": "98",
+      "userId": "46"
+    },
+    {
+      "review": "",
+      "rating": "true",
+      "albumId": "97",
+      "userId": "29"
+    },
+    {
+      "review": "I love smash smouth Astro Lounge",
+      "rating": "true",
+      "albumId": "113",
+      "userId": "42"
+    },
+    {
+      "review": "I wanted to be Hayley Williams when I was 13",
+      "rating": "true",
+      "albumId": "114",
+      "userId": "22"
+    },
+    {
+      "review": "dont know why this is on vinyl but you know I had to buy",
+      "rating": "true",
+      "albumId": "119",
+      "userId": "36"
+    },
+    {
+      "review": "",
+      "rating": "true",
+      "albumId": "119",
+      "userId": "11"
+    },
+    {
+      "review": "",
+      "rating": "true",
+      "albumId": "14",
+      "userId": "43"
+    },
+    {
+      "review": "",
+      "rating": "false",
+      "albumId": "24",
+      "userId": "5"
+    },
+    {
+      "review": "",
+      "rating": "false",
+      "albumId": "24",
+      "userId": "8"
+    },
+    {
+      "review": "",
+      "rating": "true",
+      "albumId": "44",
+      "userId": "3"
+    },
+    {
+      "review": "",
+      "rating": "true",
+      "albumId": "47",
+      "userId": "2"
+    },
+    {
+      "review": "",
+      "rating": "false",
+      "albumId": "47",
+      "userId": "6"
+    },
+    {
+      "review": "",
+      "rating": "false",
+      "albumId": "47",
+      "userId": "15"
+    },
+    {
+      "review": "Shine on you crazy Diamond",
+      "rating": "true",
+      "albumId": "1",
+      "userId": "17"
+    },
+    {
+      "review": "",
+      "rating": "true",
+      "albumId": "2",
+      "userId": "4"
+    }
+  ],
+  "orders": [
+    {
+      "userId": 1,
+      "status": "in progress",
+      "total": 1299
+    },
+    {
+      "userId": 2,
+      "status": "in progress",
+      "total": 1399
+    },
+    {
+      "userId": 3,
+      "status": "in progress",
+      "total": 1099
+    },
+    {
+      "userId": 1,
+      "status": "Delivered",
+      "total": 2000
+    },
+    {
+      "userId": 4,
+      "status": "Cancelled",
+      "total": 599
+    },
+    {
+      "userId": 4,
+      "status": "in progress",
+      "total": 599
+    },
+    {
+      "userId": 3,
+      "status": "in progress",
+      "total": 4999
+    },
+    {
+      "userId": 5,
+      "status": "delivered",
+      "total": 9999
+    }
+  ],
+  "albumUnits": [
+    {
+      "albumId": 10,
+      "orderId": 1,
+      "strikePrice": 1999
+    },
+    {
+      "albumId": 20,
+      "orderId": 1,
+      "strikePrice": 1499
+    },
+    {
+      "albumId": 30,
+      "orderId": 2,
+      "strikePrice": 599
+    },
+    {
+      "albumId": 4,
+      "orderId": 3,
+      "strikePrice": 699
+    },
+    {
+      "albumId": 6,
+      "orderId": 3,
+      "strikePrice": 1699
+    }
+  ]
+}
