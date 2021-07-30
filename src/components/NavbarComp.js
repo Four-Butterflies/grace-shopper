@@ -12,6 +12,8 @@ import {
   Button,
 } from 'react-bootstrap';
 
+import LoginModal from './Login';
+
 const NavbarComp = () => {
   return (
     <Navbar
@@ -47,7 +49,12 @@ const NavbarComp = () => {
             </Navbar.Text>
             <Navbar.Text>
               <Link to={'/checkout'} style={{ marginLeft: '1rem' }}>
-                Albums
+                Checkout
+              </Link>
+            </Navbar.Text>
+            <Navbar.Text>
+              <Link to={'/users'} style={{ marginLeft: '1rem' }}>
+                Login
               </Link>
             </Navbar.Text>
             <Form

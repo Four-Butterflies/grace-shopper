@@ -7,7 +7,7 @@
     "postinstall": "npm run client:build",
     "client:dev": "react-scripts start",
     "client:build": "react-scripts build",
-    "server:dev": "nodemon index.js",
+    "server:dev": "nodemon -L index.js",
     "db:build": "node ./db/init_db",
     "start": "node index.js"
   },
