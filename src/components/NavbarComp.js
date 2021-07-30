@@ -13,7 +13,7 @@ import {
 
 const NavbarComp = () => {
     return (
-        <Navbar expand="lg" style={{
+        <div><Navbar expand="lg" style={{
           backgroundColor: 'var(--color-primary)',
         }}>
         <Container>
@@ -23,7 +23,7 @@ const NavbarComp = () => {
             <Nav className="me-auto" >
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#link">Sale</Nav.Link>
-              <Form inline style={{
+              <Form inline='true' style={{
                 marginLeft: '600px' // this styling needs to be fixed
               }}>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -32,6 +32,7 @@ const NavbarComp = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      </div>
     )
 }
 

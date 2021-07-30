@@ -1,33 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 import { 
     Home,
-    NavbarComp
+    NavbarComp,
  } from './components';
-
-import {
-    getSomething
-  } from './api';
 
 const App = () => {
     const [message, setMessage] = useState('');
 
-  useEffect(() => {
-    getSomething()
-      .then(response => {
-        setMessage(response.message);
-      })
-      .catch(error => {
-        setMessage(error.message);
-      });
-  });
+  // useEffect(() => {
+  //   getSomething()
+  //     .then(response => {
+  //       setMessage(response.message);
+  //     })
+  //     .catch(error => {
+  //       setMessage(error.message);
+  //     });
+  // });
 
   return (
-    <div className="App">
+    <div className="App" style={{
+      minHeight: "100%"
+    }}>
       <NavbarComp />
       <Home />
     </div>
