@@ -15,12 +15,9 @@ usersRouter.get('/', async (req, res) => {
   } catch (error) {
     console.log(error);
   }
- 
- 
 });
 
 usersRouter.post('/register', async (req, res, next) => {
-    
   const { username, password, email } = req.body;
   try {
     const existingUser = await getUserByEmail(email);
@@ -38,7 +35,7 @@ usersRouter.post('/register', async (req, res, next) => {
         .send({ message: 'Password must be at least 5 characters long' });
     }
 
-    const user = await createUser({username, password, email});
+    const user = await createUser({ username, password, email });
 
     const token = createJWT(user.email, user.id, user.username);
 
@@ -64,7 +61,7 @@ usersRouter.post('/login', async (req, res, next) => {
   }
 
   try {
-    const user = await getUserByEmailAndPassword({email, password});
+    const user = await getUserByEmailAndPassword({ email, password });
     if (!user) {
       res.status(401).send({ message: 'User not found.' });
     }
@@ -91,15 +88,15 @@ usersRouter.post('/login', async (req, res, next) => {
 });
 
 usersRouter.get('/whoami', (req, res) => {
-    if (req.user) {
-      res.send({
-        user: req.user,
-      });
-    } else {
-      res.status(401).send({
-        message: 'You are not a signed in or authenticated user.',
-      });
-    }
-  });
+  if (req.user) {
+    res.send({
+      user: req.user,
+    });
+  } else {
+    res.status(401).send({
+      message: 'You are not a signed in or authenticated user.',
+    });
+  }
+});
 
 module.exports = usersRouter;
