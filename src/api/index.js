@@ -29,7 +29,7 @@ export async function getAlbumById(id) {
 
 export async function stripeCharge({ id, amount }) {
   try {
-    const { data } = await axios.post(`${BASE_URL}/api/charge`, { id, amount });
+    const { data } = await axios.post(`${BASE_URL}/charge`, { id, amount });
     console.log(data)
     return data;
   } catch (error) {
