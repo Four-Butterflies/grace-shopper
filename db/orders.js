@@ -1,4 +1,4 @@
-const client = require('./client');
+const client = require('./client.js');
 
 const createOrder = async ({ userId, status, total }) => {
   try {
@@ -9,7 +9,7 @@ const createOrder = async ({ userId, status, total }) => {
         INSERT INTO orders( "userId", status, total)
         VALUES($1, $2, $3)
         RETURNING *;
-        `,
+      `,
       [userId, status, total]
     );
     return order;
@@ -36,8 +36,8 @@ const getOrdersWithDetailsByUserId = async (userId) => {
   try {
     const { rows } = await client.query(
       `
-            SELECT * FROM orders WHERE "userId"=$1;
-        `,
+        SELECT * FROM orders WHERE "userId"=$1;
+      `,
       [userId]
     );
     const orderWithDetails = addDetailsToOrders(rows);
@@ -64,8 +64,8 @@ const getOrderById = async (orderId) => {
   try {
     const { rows } = await client.query(
       `
-      SELECT * FROM orders WHERE id = $1;
-    `,
+        SELECT * FROM orders WHERE id = $1;
+      `,
       [orderId]
     );
     return rows;
@@ -79,11 +79,11 @@ const getDetailsForOrder = async (orderId) => {
   try {
     const { rows } = await client.query(
       `
-      SELECT  au.id as "albumUnitId", au."albumId", au.strike_price
-      FROM orders o
-      JOIN album_units au ON o.id = au."orderId"
-      WHERE o.id = $1; 
-    `,
+        SELECT  au.id as "albumUnitId", au."albumId", au.strike_price
+        FROM orders o
+        JOIN album_units au ON o.id = au."orderId"
+        WHERE o.id = $1; 
+      `,
       [orderId]
     );
     return rows;

@@ -61,7 +61,6 @@ const NavbarComp = () => {
               </Link>
             </Navbar.Text>
             <Form
-              inline
               style={{
                 marginLeft: '600px', // this styling needs to be fixed
               }}

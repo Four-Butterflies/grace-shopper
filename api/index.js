@@ -4,8 +4,8 @@ const usersRouter = require('./users.js');
 const albumsRouter = require('./albums.js');
 const albumUnitsRouter = require('./album_units.js');
 const ordersRouter = require('./orders.js');
-const reviewsRouter = require('./reviews');
-const chargeRouter = require('./charge');
+const reviewsRouter = require('./reviews.js');
+const chargeRouter = require('./charge.js');
 
 apiRouter.get('/health', (req, res, next) => {
   res.send({ message: 'All is good on /api/health!' });

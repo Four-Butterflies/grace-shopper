@@ -1,19 +1,19 @@
-const client = require('./client');
+const client = require('./client.js');
 const { hash, comparePasswords } = require('../utils');
 
 // CREATING THE USER
 const createUser = async ({ username, password, email }) => {
   const hashedPassword = hash(password);
-   try {
+  try {
     const {
       rows: [user],
     } = await client.query(
       `
-            INSERT INTO users(username, password, email)
-            VALUES($1, $2, $3)
-            ON CONFLICT (username) DO NOTHING
-            RETURNING id, username, email;
-        `,
+        INSERT INTO users(username, password, email)
+        VALUES($1, $2, $3)
+        ON CONFLICT (username) DO NOTHING
+        RETURNING id, username, email;
+      `,
       [username, hashedPassword, email]
     );
 
@@ -23,28 +23,33 @@ const createUser = async ({ username, password, email }) => {
   }
 };
 
-//UPDATING USER
-const updateUser = async(userId, fields = {}) => {
-  const setString = Object.keys(fields).map(
-    (key, index) => `"${ key }"=$${ index + 1 }`
-  ).join(', ');
+// UPDATING USER
+const updateUser = async (userId, fields = {}) => {
+  const setString = Object.keys(fields)
+    .map((key, index) => `"${key}"=$${index + 1}`)
+    .join(', ');
 
   if (setString.length === 0) {
     return;
-  };
-  try {
-    const {rows: [ user ] } = await client.query(`
-      UPDATE users
-      SET ${ setString }
-      WHERE user_id=${ userId }
-      RETURNING *;
-      `, Object.values(fields));
-    
-      return user;
-  } catch (error) {
-    throw error
   }
-}
+  try {
+    const {
+      rows: [user],
+    } = await client.query(
+      `
+        UPDATE users
+        SET ${setString}
+        WHERE user_id=${userId}
+        RETURNING *;
+      `,
+      Object.values(fields)
+    );
+
+    return user;
+  } catch (error) {
+    throw error;
+  }
+};
 
 // GETTING THE USER WITH EMAIL AND PASSWORD - log in.
 const getUserByEmailAndPassword = async ({ email, password }) => {
@@ -53,18 +58,21 @@ const getUserByEmailAndPassword = async ({ email, password }) => {
       rows: [user],
     } = await client.query(
       `
-     SELECT id, username, email, password FROM users WHERE email=$1 LIMIT 1;
-    `,
+        SELECT id, username, email, password FROM users WHERE email=$1 LIMIT 1;
+      `,
       [email]
     );
-    if (!user) return false;
+    if (!user) {
+      return false;
+    }
 
     const passwordMatch = comparePasswords(password, user.password);
 
-    if (!passwordMatch) return false;
+    if (!passwordMatch) {
+      return false;
+    }
 
     return { id: user.id, email: user.email, username: user.username };
-
   } catch (error) {
     throw error;
   }
@@ -78,10 +86,10 @@ const getUserById = async (id) => {
       rows: [user],
     } = await client.query(
       `
-            SELECT id, username, email
-            FROM users
-            WHERE id=$1;
-        `,
+        SELECT id, username, email
+        FROM users
+        WHERE id=$1;
+      `,
       [id]
     );
 
@@ -102,10 +110,10 @@ const getUserByEmail = async (email) => {
       rows: [user],
     } = await client.query(
       `
-            SELECT id, username, email
-            FROM users
-            WHERE email=$1;
-        `,
+        SELECT id, username, email
+        FROM users
+        WHERE email=$1;
+      `,
       [email]
     );
 
@@ -119,12 +127,12 @@ const getUserByEmail = async (email) => {
   }
 };
 
-// wild car to check for api calls
+// wild card to check for api calls
 const getAllUsers = async () => {
   try {
-    const { rows } = await client.query(`
-        SELECT id, username, password, email FROM users;
-        `);
+    const { rows } = await client.query(
+      `SELECT id, username, password, email FROM users;`
+    );
     return rows;
   } catch (error) {
     throw error;
@@ -137,5 +145,5 @@ module.exports = {
   getUserById,
   updateUser,
   getUserByEmail,
-  getAllUsers 
+  getAllUsers,
 };
