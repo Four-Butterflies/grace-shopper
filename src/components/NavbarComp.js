@@ -11,13 +11,22 @@ import {
   Button,
 } from 'react-bootstrap';
 
-import LoginModal from './Login.js';
+import { logoutUser } from '../api';
 
-const NavbarComp = () => {
+import LoginModal from './Login.js';
+import RegisterModal from './Register.js';
+
+const NavbarComp = (props) => {
+  const { user, setUser } = props;
   const [showLogin, setShowLogin] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
 
   const handleShowLogin = () => {
     setShowLogin(true);
+  };
+
+  const handleShowRegister = () => {
+    setShowRegister(true);
   };
 
   return (
@@ -71,17 +80,48 @@ const NavbarComp = () => {
                 className="mr-sm-2"
               />
             </Form>
-            <Button
-              onClick={handleShowLogin}
-              variant="warning"
-              style={{ marginLeft: '1rem' }}
-            >
-              Login
-            </Button>
+            {!user.username ? (
+              <>
+                <Button
+                  onClick={handleShowLogin}
+                  variant="warning"
+                  style={{ marginLeft: '1rem' }}
+                >
+                  Login
+                </Button>
+                <Button
+                  onClick={handleShowRegister}
+                  variant="warning"
+                  style={{ marginLeft: '1rem' }}
+                >
+                  Register
+                </Button>
+              </>
+            ) : (
+              <Button
+                onClick={() => {
+                  logoutUser();
+                  setUser({});
+                }}
+                variant="warning"
+                style={{ marginLeft: '1rem' }}
+              >
+                Logout
+              </Button>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
-      <LoginModal showLogin={showLogin} setShowLogin={setShowLogin} />
+      <LoginModal
+        showLogin={showLogin}
+        setShowLogin={setShowLogin}
+        setUser={setUser}
+      />
+      <RegisterModal
+        showRegister={showRegister}
+        setShowRegister={setShowRegister}
+        setUser={setUser}
+      />
     </Navbar>
   );
 };

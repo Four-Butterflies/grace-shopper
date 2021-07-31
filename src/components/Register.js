@@ -1,32 +1,34 @@
 import React, { useState } from 'react';
-import { loginUser } from '../api';
+import { registerUser } from '../api';
 import { Form, Button, Modal } from 'react-bootstrap';
 
-// TODO - Add message when login fails
-const LoginModal = ({ showLogin, setShowLogin, setUser }) => {
+// TODO - Add message when register fails
+const RegisterModal = ({ showRegister, setShowRegister, setUser }) => {
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleClose = () => {
-    setShowLogin(false);
+    setShowRegister(false);
   };
 
   const clearForm = () => {
+    setUsername('');
     setEmail('');
     setPassword('');
   };
 
   return (
-    <Modal show={showLogin} size="mini">
+    <Modal show={showRegister} size="mini">
       <Modal.Header
-        className="login-user-header"
+        className="register-user-header"
         style={{
           backgroundColor: 'green',
           color: 'white',
           borderBottom: '2px solid black',
         }}
       >
-        Login
+        Register
       </Modal.Header>
       <Modal.Body
         style={{
@@ -38,7 +40,7 @@ const LoginModal = ({ showLogin, setShowLogin, setUser }) => {
             event.preventDefault();
 
             try {
-              const { user } = await loginUser(email, password);
+              const { user } = await registerUser(username, email, password);
               setUser(user);
             } catch (error) {
               console.error(error);
@@ -48,6 +50,20 @@ const LoginModal = ({ showLogin, setShowLogin, setUser }) => {
             handleClose();
           }}
         >
+          <Form.Group>
+            <Form.Label>Username:</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Username"
+              style={{
+                border: '1px solid black',
+                borderRadius: '5px',
+              }}
+              onChange={(event) => setUsername(event.target.value)}
+              value={username}
+              required
+            />
+          </Form.Group>
           <Form.Group>
             <Form.Label>Email:</Form.Label>
             <Form.Control
@@ -101,4 +117,4 @@ const LoginModal = ({ showLogin, setShowLogin, setUser }) => {
   );
 };
 
-export default LoginModal;
+export default RegisterModal;

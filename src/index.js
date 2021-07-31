@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { loadStripe } from '@stripe/stripe-js';
@@ -13,11 +13,17 @@ const stripePromise = loadStripe(
 );
 
 const App = () => {
-  const [token, setToken] = useState('');
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    if (localStorage.getItem('user')) {
+      setUser(JSON.parse(localStorage.getItem('user')));
+    }
+  }, []);
 
   return (
     <BrowserRouter>
-      <NavbarComp />
+      <NavbarComp user={user} setUser={setUser} />
       <Switch>
         <Route path={'/checkout'}>
           <Elements stripe={stripePromise} className="App">
