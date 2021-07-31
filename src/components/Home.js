@@ -20,8 +20,8 @@ const Home = () => {
       setAlbumOne(firstAlbum[0]);
       const secondAlbum = await getAlbumById(7);
       setAlbumTwo(secondAlbum[0]);
-      const thridAlbum = await getAlbumById(3);
-      setAlbumThree(thridAlbum[0]);
+      const thirdAlbum = await getAlbumById(3);
+      setAlbumThree(thirdAlbum[0]);
     };
     mount();
   }, []);

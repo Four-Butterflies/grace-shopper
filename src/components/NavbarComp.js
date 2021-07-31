@@ -14,13 +14,19 @@ import {
 import { logoutUser } from '../api';
 
 import LoginModal from './Login.js';
+import RegisterModal from './Register.js';
 
 const NavbarComp = (props) => {
   const { user, setUser } = props;
   const [showLogin, setShowLogin] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
 
   const handleShowLogin = () => {
     setShowLogin(true);
+  };
+
+  const handleShowRegister = () => {
+    setShowRegister(true);
   };
 
   return (
@@ -75,13 +81,22 @@ const NavbarComp = (props) => {
               />
             </Form>
             {!user.username ? (
-              <Button
-                onClick={handleShowLogin}
-                variant="warning"
-                style={{ marginLeft: '1rem' }}
-              >
-                Login
-              </Button>
+              <>
+                <Button
+                  onClick={handleShowLogin}
+                  variant="warning"
+                  style={{ marginLeft: '1rem' }}
+                >
+                  Login
+                </Button>
+                <Button
+                  onClick={handleShowRegister}
+                  variant="warning"
+                  style={{ marginLeft: '1rem' }}
+                >
+                  Register
+                </Button>
+              </>
             ) : (
               <Button
                 onClick={() => {
@@ -100,6 +115,11 @@ const NavbarComp = (props) => {
       <LoginModal
         showLogin={showLogin}
         setShowLogin={setShowLogin}
+        setUser={setUser}
+      />
+      <RegisterModal
+        showRegister={showRegister}
+        setShowRegister={setShowRegister}
         setUser={setUser}
       />
     </Navbar>

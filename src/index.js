@@ -19,7 +19,7 @@ const App = () => {
     if (localStorage.getItem('user')) {
       setUser(JSON.parse(localStorage.getItem('user')));
     }
-  });
+  }, []);
 
   return (
     <BrowserRouter>

@@ -1,9 +1,11 @@
+import axios from 'axios';
+
 const BASE_URL = `http://localhost:5000/api`;
 
 // ALBUM
 export async function getAllAlbums() {
   try {
-    const { data } = await fetch(`${BASE_URL}/albums`);
+    const { data } = await axios.get(`${BASE_URL}/albums`);
 
     return data;
   } catch (error) {
@@ -13,7 +15,7 @@ export async function getAllAlbums() {
 
 export async function getAlbumById(id) {
   try {
-    const { data } = await fetch(`${BASE_URL}/albums/album/${id}`);
+    const { data } = await axios.get(`${BASE_URL}/albums/album/${id}`);
 
     return data;
   } catch (error) {
@@ -24,11 +26,7 @@ export async function getAlbumById(id) {
 // CHECKOUT
 export async function stripeCharge({ id, amount }) {
   try {
-    const { data } = await fetch(`${BASE_URL}/charge`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id, amount }),
-    });
+    const { data } = await axios.post(`${BASE_URL}/charge`, { id, amount });
 
     console.log(data);
 
