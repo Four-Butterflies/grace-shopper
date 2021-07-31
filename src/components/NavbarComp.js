@@ -11,9 +11,12 @@ import {
   Button,
 } from 'react-bootstrap';
 
+import { logoutUser } from '../api';
+
 import LoginModal from './Login.js';
 
-const NavbarComp = () => {
+const NavbarComp = (props) => {
+  const { user, setUser } = props;
   const [showLogin, setShowLogin] = useState(false);
 
   const handleShowLogin = () => {
@@ -71,17 +74,34 @@ const NavbarComp = () => {
                 className="mr-sm-2"
               />
             </Form>
-            <Button
-              onClick={handleShowLogin}
-              variant="warning"
-              style={{ marginLeft: '1rem' }}
-            >
-              Login
-            </Button>
+            {!user.username ? (
+              <Button
+                onClick={handleShowLogin}
+                variant="warning"
+                style={{ marginLeft: '1rem' }}
+              >
+                Login
+              </Button>
+            ) : (
+              <Button
+                onClick={() => {
+                  logoutUser();
+                  setUser({});
+                }}
+                variant="warning"
+                style={{ marginLeft: '1rem' }}
+              >
+                Logout
+              </Button>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
-      <LoginModal showLogin={showLogin} setShowLogin={setShowLogin} />
+      <LoginModal
+        showLogin={showLogin}
+        setShowLogin={setShowLogin}
+        setUser={setUser}
+      />
     </Navbar>
   );
 };
