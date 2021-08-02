@@ -58,7 +58,6 @@ label {
   color: #6b7c93;
   font-weight: 300;
   letter-spacing: 0.025em;
-  /* margin-bottom: 1em; */
 }
 
 button {
@@ -82,6 +81,13 @@ button {
   transition: all 150ms ease;
   margin-top: 10px;
 }
+
+.PayButton {
+  width: 500px;
+}
+ .ResetButton {
+  margin-bottom: 50px;
+ }
 
 button:hover {
   color: #fff;
@@ -127,4 +133,35 @@ input:focus,
 
 .StripeElement.PaymentRequestButton {
   height: 40px;
+}
+
+.Result {
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px,
+    rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  background: white;
+  margin-top: 50px;
+  margin-left: 300px;
+  margin-right: 300px;
+  text-align: center;
+  animation: fade 200ms ease-out;
+}
+
+.ResultTitle {
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-size: 17px;
+  text-align: center;
+}
+
+.ResultMessage {
+  color: #7795f8;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 25px;
+  line-height: 1.6em;
+  text-align: center;
 }
