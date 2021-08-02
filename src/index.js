@@ -6,7 +6,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
-import { Home, NavbarComp, CheckoutForm } from './components';
+import { Home, NavbarComp, CheckoutForm, FooterUnit } from './components';
 
 const stripePromise = loadStripe(
   'pk_test_51JIKRDAKg6qdYHfmrwdd1XDwBfUzU6lhJc5JjzWSQIibxbPEAwPSVkgqBAKxr4sG9KihcS9tOZFZ8glLP0R04hJs00x9APJi1Q'
@@ -45,6 +45,7 @@ const App = () => {
           />
         </Route>
       </Switch>
+      <FooterUnit />
     </BrowserRouter>
   );
 };
