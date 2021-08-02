@@ -107,6 +107,7 @@ const NavbarComp = (props) => {
                 style={{ marginLeft: '1rem' }}
               >
                 Logout
+                <p>Welcome {user.username}</p> 
               </Button>
             )}
           </Nav>
