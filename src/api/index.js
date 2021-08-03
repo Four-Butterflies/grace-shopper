@@ -23,6 +23,16 @@ export async function getAlbumById(id) {
   }
 }
 
+export async function getMostRecentAlbums() {
+  try {
+    const { data } = await axios.get(`${BASE_URL}/albums/recent`);
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
 // CHECKOUT
 export async function stripeCharge({ id, amount }) {
   try {

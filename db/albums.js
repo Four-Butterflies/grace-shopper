@@ -142,6 +142,22 @@ async function addReviewsToAlbum(albums) {
   }
 }
 
+async function getMostRecentAlbums() {
+  try {
+    const { rows } = await client.query(
+      `
+        SELECT * FROM albums
+        ORDER BY year DESC
+        LIMIT 12;
+      `
+    );
+
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+}
+
 async function getAllGenres() {
   try {
     const { rows } = await client.query(`SELECT genres FROM albums;`);
@@ -230,6 +246,7 @@ module.exports = {
   createAlbums,
   getAlbumsByName,
   getAlbumsByArtist,
+  getMostRecentAlbums,
   getAllGenres,
   getAlbumsByGenre,
   editAlbum,

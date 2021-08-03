@@ -35,6 +35,7 @@ const NavbarComp = (props) => {
       style={{
         backgroundColor: 'var(--color-primary)',
       }}
+      className="fixed-top"
     >
       <Container>
         <Link
@@ -43,13 +44,15 @@ const NavbarComp = (props) => {
             textDecoration: 'none',
             color: 'white',
             fontWeight: 'bold',
-            margin: '0.5rem',
+            width: '4rem',
           }}
         >
-          Vinyl{' '}
-          <span role="img" aria-label="Rock and Roll">
-            🤘
-          </span>
+          <>
+            Vinyl{' '}
+            <span role="img" aria-label="Rock and Roll">
+              🤘
+            </span>
+          </>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -106,8 +109,7 @@ const NavbarComp = (props) => {
                 variant="warning"
                 style={{ marginLeft: '1rem' }}
               >
-                Logout
-                <p>Welcome {user.username}</p> 
+                Logout ({user.username.split(' ')[0]})
               </Button>
             )}
           </Nav>

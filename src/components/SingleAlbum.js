@@ -1,41 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
-import { getAlbumById } from '../api';
 
-const SingleAlbum = () => {
-  const [singleAlbum, setSingleAlbum] = useState({});
-
-  useEffect(() => {
-    const mount = async () => {
-      const singleAlbum = await getAlbumById(7);
-      setSingleAlbum(singleAlbum[0]);
-    };
-    mount();
-  }, []);
+const SingleAlbum = ({ album }) => {
+  const { album_name, artist, year, price, img_url, total_tracks } = album;
 
   return (
-    <Card style={{ width: '18rem' }}>
-        <Card.Img             
-            variant="top"
-            src={singleAlbum.img_url}
-            alt={singleAlbum.album_name}            
-          />
-        <Card.Body>
-            <Card.Title>{singleAlbum.album_name}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-                {singleAlbum.artist} ({singleAlbum.year})
-            </Card.Subtitle>
-        </Card.Body>
-        <ListGroup className="list-group-flush">
-            <ListGroupItem>{singleAlbum.total_tracks} tracks</ListGroupItem>
-            <ListGroupItem>Price: ${singleAlbum.price}</ListGroupItem>
-        </ListGroup>
-        <Card.Body>
-            <Card.Link href="#">See Reviews</Card.Link>
-            <Card.Link href="#">Add to Cart</Card.Link>
-        </Card.Body>
-        </Card>
-    
+    <Card style={{ width: '18rem', marginBottom: '1rem' }}>
+      <Card.Img variant="top" src={img_url} alt={album_name} />
+      <Card.Body>
+        <Card.Title>{album_name}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">
+          {artist} ({year})
+        </Card.Subtitle>
+      </Card.Body>
+      <ListGroup className="list-group-flush">
+        <ListGroupItem>{total_tracks} tracks</ListGroupItem>
+        <ListGroupItem>Price: ${price / 100}</ListGroupItem>
+      </ListGroup>
+      <Card.Body>
+        <Card.Link href="#">See Reviews</Card.Link>
+        <Card.Link href="#">Add to Cart</Card.Link>
+      </Card.Body>
+    </Card>
   );
 };
 
