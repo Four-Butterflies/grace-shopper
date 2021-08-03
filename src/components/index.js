@@ -5,3 +5,5 @@ export { default as LoginModal } from './Login.js';
 export { default as RegisterModal } from './Register.js';
 export { default as Albums } from './Albums'
 export { default as PaginationComponent } from './PaginationComponent'
+export { default as SingleAlbum } from './SingleAlbum.js';
+export { default as FooterUnit } from './Footer.js';

@@ -1,13 +1,19 @@
-import React, { useMemo } from 'react';
+import React, { useState } from 'react';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import { stripeCharge } from '../api';
 
 const CheckoutForm = () => {
   const elements = useElements();
   const stripe = useStripe();
+  const [error, setError] = useState(null);
+  const [billingDetails, setBillingDetails] = useState({
+    email: '',
+  });
+  const [paymentMethod, setPaymentMethod] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardElement),
@@ -17,7 +23,8 @@ const CheckoutForm = () => {
     });
 
     if (!error) {
-      console.log(paymentMethod);
+      setPaymentMethod(paymentMethod);
+
       const { id } = paymentMethod;
       const amount = 199;
       try {
@@ -26,10 +33,28 @@ const CheckoutForm = () => {
       } catch (error) {
         console.log(error);
       }
+    } else {
+      setError(error);
     }
   };
 
-  return (
+  const reset = () => {
+    setError(null);
+    setPaymentMethod(null);
+    setBillingDetails({ email: '' });
+  };
+
+  return paymentMethod ? (
+    <div className="Result">
+      <div className="ResultTitle" role="alert">
+        Payment successful
+      </div>
+      <div className="ResultMessage">
+        PaymentMethod: {paymentMethod.id}
+      </div>
+      <button className="ResetButton"onClick={reset}> Reset</button> 
+    </div>
+  ) : (
     <form onSubmit={handleSubmit} className="CheckoutForm">
       <label>
         Email
@@ -39,7 +64,7 @@ const CheckoutForm = () => {
         Card details
         <CardElement />
       </label>
-      <button type="submit" disable={!stripe}>
+      <button className="PayButton" type="submit" disable={!stripe}>
         Pay
       </button>
     </form>

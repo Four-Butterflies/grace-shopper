@@ -5,6 +5,7 @@ const {
   getAlbumByID,
   getAlbumsByName,
   getAlbumsByArtist,
+  getMostRecentAlbums,
   getAllGenres,
   getAlbumsByGenre,
   createAlbums,
@@ -27,7 +28,6 @@ albumsRouter.get('/album/:albumID', async (req, res, next) => {
 
   try {
     const result = await getAlbumByID(albumID);
-
     res.send(result);
   } catch (error) {
     next(error);
@@ -70,10 +70,22 @@ albumsRouter.get('/genres', async (req, res, next) => {
 
 albumsRouter.get('/genres/:genre', async (req, res, next) => {
   let { genre } = req.params;
-  genre = genre.split('&');
+  genre = genre.split('&').map((g) => {
+    return g.charAt(0).toUpperCase() + g.slice(1).toLowerCase();
+  });
 
   try {
     const albums = await getAlbumsByGenre(genre);
+
+    res.send(albums);
+  } catch (error) {
+    next(error);
+  }
+});
+
+albumsRouter.get('/recent', async (req, res, next) => {
+  try {
+    const albums = await getMostRecentAlbums();
 
     res.send(albums);
   } catch (error) {

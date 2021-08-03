@@ -11,7 +11,8 @@ import {
   NavbarComp, 
   CheckoutForm,
   Albums,
-  PaginationComponent
+  PaginationComponent,
+  FooterUnit
 } from './components';
 
 import { 
@@ -53,13 +54,14 @@ const App = () => {
   return (
     <BrowserRouter>
       <NavbarComp user={user} setUser={setUser} />
-      <Switch>
-        <Route path={'/checkout'}>
-          <Elements stripe={stripePromise} className="App">
-            <CheckoutForm />
-          </Elements>
-        </Route>
-        <Route path={'/albums'}>
+      <div id="app" style={{ paddingTop: '5rem', paddingBottom: '3rem' }}>
+        <Switch>
+          <Route path={'/checkout'}>
+            <Elements stripe={stripePromise} className="App">
+              <CheckoutForm />
+            </Elements>
+          </Route>
+          <Route path={'/albums'}>
           <Albums 
             allAlbums={ allAlbums }
             albumsPerPage={ albumsPerPage }
@@ -71,19 +73,21 @@ const App = () => {
             totalAlbums={ totalAlbums }
             paginate={ paginate }
           />
-        </Route>
-        <Route path={'/'} exact>
-          <Home />
-        </Route>
-        <Route>
-          <h1>404 Page Not Found</h1>
-          <img
-            src="https://vignette.wikia.nocookie.net/spongebob/images/f/f7/Krab_Borg_003.png/revision/latest?cb=20200726123800"
-            width="480px"
-            alt="night of the robot 404"
-          />
-        </Route>
-      </Switch>
+          </Route>
+          <Route path={'/'} exact>
+            <Home />
+          </Route>
+          <Route>
+            <h1>404 Page Not Found</h1>
+            <img
+              src="https://vignette.wikia.nocookie.net/spongebob/images/f/f7/Krab_Borg_003.png/revision/latest?cb=20200726123800"
+              width="480px"
+              alt="night of the robot 404"
+            />
+          </Route>
+        </Switch>
+      </div>
+      <FooterUnit />
     </BrowserRouter>
   );
 };

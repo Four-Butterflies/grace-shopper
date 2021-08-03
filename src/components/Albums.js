@@ -38,7 +38,7 @@ const Albums = ({ allAlbums, currentPage, albumsPerPage, setTotalAlbums }) => {
                     }}>
                         <Card.Title>{album.album_name}</Card.Title>
                         <Card.Subtitle className="mb-2">{album.artist}</Card.Subtitle>
-                        <Card.Text>{album.price}</Card.Text>
+                        <Card.Text>${album.price / 100}</Card.Text>
                     </Card.Body> 
                 </Card>
             )
