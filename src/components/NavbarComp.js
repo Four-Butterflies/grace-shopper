@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../index.css';
 
@@ -6,13 +6,29 @@ import {
   Navbar,
   Nav,
   Container,
-  NavDropdown,
   Form,
   FormControl,
   Button,
 } from 'react-bootstrap';
 
-const NavbarComp = () => {
+import { logoutUser } from '../api';
+
+import LoginModal from './Login.js';
+import RegisterModal from './Register.js';
+
+const NavbarComp = (props) => {
+  const { user, setUser } = props;
+  const [showLogin, setShowLogin] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
+
+  const handleShowLogin = () => {
+    setShowLogin(true);
+  };
+
+  const handleShowRegister = () => {
+    setShowRegister(true);
+  };
+
   return (
     <Navbar
       expand="lg"
@@ -30,7 +46,10 @@ const NavbarComp = () => {
             margin: '0.5rem',
           }}
         >
-          Vinyl 🤘
+          Vinyl{' '}
+          <span role="img" aria-label="Rock and Roll">
+            🤘
+          </span>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -47,11 +66,10 @@ const NavbarComp = () => {
             </Navbar.Text>
             <Navbar.Text>
               <Link to={'/checkout'} style={{ marginLeft: '1rem' }}>
-                Albums
+                Checkout
               </Link>
             </Navbar.Text>
             <Form
-              inline
               style={{
                 marginLeft: '600px', // this styling needs to be fixed
               }}
@@ -62,9 +80,48 @@ const NavbarComp = () => {
                 className="mr-sm-2"
               />
             </Form>
+            {!user.username ? (
+              <>
+                <Button
+                  onClick={handleShowLogin}
+                  variant="warning"
+                  style={{ marginLeft: '1rem' }}
+                >
+                  Login
+                </Button>
+                <Button
+                  onClick={handleShowRegister}
+                  variant="warning"
+                  style={{ marginLeft: '1rem' }}
+                >
+                  Register
+                </Button>
+              </>
+            ) : (
+              <Button
+                onClick={() => {
+                  logoutUser();
+                  setUser({});
+                }}
+                variant="warning"
+                style={{ marginLeft: '1rem' }}
+              >
+                Logout
+              </Button>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
+      <LoginModal
+        showLogin={showLogin}
+        setShowLogin={setShowLogin}
+        setUser={setUser}
+      />
+      <RegisterModal
+        showRegister={showRegister}
+        setShowRegister={setShowRegister}
+        setUser={setUser}
+      />
     </Navbar>
   );
 };

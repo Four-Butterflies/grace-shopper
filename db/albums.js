@@ -1,13 +1,8 @@
 const client = require('./client.js');
-// database methods
 
 async function getAlbums() {
   try {
-    const { rows } = await client.query(
-      `
-    SELECT * FROM albums;
-    `
-    );
+    const { rows } = await client.query(`SELECT * FROM albums;`);
 
     const albumsWithReviews = await addReviewsToAlbum(rows);
     return albumsWithReviews;
@@ -16,18 +11,20 @@ async function getAlbums() {
   }
 }
 
-async function createAlbums({
-  name,
-  artists,
-  release_date,
-  genres,
-  price,
-  quantity,
-  reorder,
-  image,
-  total_tracks,
-  spotify,
-}) {
+async function createAlbums(albumToCreate) {
+  const {
+    name,
+    artists,
+    release_date,
+    genres,
+    price,
+    quantity,
+    reorder,
+    image,
+    total_tracks,
+    spotify,
+  } = albumToCreate;
+
   try {
     const {
       rows: [album],
@@ -62,9 +59,9 @@ async function getAlbumsByName(name) {
   try {
     const { rows } = await client.query(
       `
-      SELECT * FROM albums
-      WHERE album_name ILIKE $1;
-    `,
+        SELECT * FROM albums
+        WHERE album_name ILIKE $1;
+      `,
       [`%${name}%`]
     );
 
@@ -79,9 +76,9 @@ async function getAlbumsByArtist(artist) {
   try {
     const { rows } = await client.query(
       `
-      SELECT * FROM albums
-      WHERE artist ILIKE $1;
-    `,
+        SELECT * FROM albums
+        WHERE artist ILIKE $1;
+      `,
       [`%${artist}%`]
     );
 
@@ -96,9 +93,9 @@ async function getAlbumByID(id) {
   try {
     const { rows } = await client.query(
       `
-    SELECT * FROM albums
-    WHERE id = $1;
-    `,
+        SELECT * FROM albums
+        WHERE id = $1;
+      `,
       [id]
     );
 
@@ -113,11 +110,11 @@ async function getReviewsForAlbum(albumId) {
   try {
     const { rows } = await client.query(
       `
-      SELECT r.id, r.review, r.rating, r.date, r."userId"
-      FROM albums a
-      JOIN reviews r ON a.id = r."albumId"
-      WHERE a.id = $1;
-    `,
+        SELECT r.id, r.review, r.rating, r.date, r."userId"
+        FROM albums a
+        JOIN reviews r ON a.id = r."albumId"
+        WHERE a.id = $1;
+      `,
       [albumId]
     );
     return rows;
@@ -147,11 +144,7 @@ async function addReviewsToAlbum(albums) {
 
 async function getAllGenres() {
   try {
-    const { rows } = await client.query(
-      `
-      SELECT genres FROM albums;
-    `
-    );
+    const { rows } = await client.query(`SELECT genres FROM albums;`);
 
     const result = [];
 
@@ -173,9 +166,9 @@ async function getAlbumsByGenre(genre) {
   try {
     const { rows } = await client.query(
       `
-    SELECT * FROM albums
-    WHERE genres @> $1;
-    `,
+        SELECT * FROM albums
+        WHERE genres @> $1;
+      `,
       [genre]
     );
 
@@ -199,11 +192,11 @@ async function editAlbum(id, fields = {}) {
       rows: [album],
     } = await client.query(
       `
-      UPDATE albums
-      SET ${setString}
-      WHERE id=${id}
-      RETURNING *;
-    `,
+        UPDATE albums
+        SET ${setString}
+        WHERE id=${id}
+        RETURNING *;
+      `,
       Object.values(fields)
     );
 
@@ -219,9 +212,9 @@ async function deleteAlbum(id) {
       rows: [album],
     } = await client.query(
       `
-    DELETE FROM albums
-    where id=$1
-    `,
+        DELETE FROM albums
+        where id=$1
+      `,
       [id]
     );
 

@@ -3,9 +3,11 @@ const reviewsRouter = express.Router();
 const { createReview } = require('../db/reviews.js');
 const { getAlbumByID } = require('../db/albums.js');
 
+// POST
 reviewsRouter.post('/:albumId/newreview', async (req, res) => {
   const { albumId } = req.params;
   const { review, rating, userId } = req.body;
+
   try {
     const [album] = await getAlbumByID(albumId);
     if (!album.id) {
@@ -14,9 +16,10 @@ reviewsRouter.post('/:albumId/newreview', async (req, res) => {
         message: 'There is no album under that Id.',
       });
     }
-    const newReview = await createReview({review, rating, albumId, userId})
-    if(review){
-        res.send(newReview)
+
+    const newReview = await createReview({ review, rating, albumId, userId });
+    if (review) {
+      res.send(newReview);
     }
   } catch (error) {
     console.log(error);

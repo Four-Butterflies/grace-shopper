@@ -1,21 +1,22 @@
-// code to build and initialize DB goes here
+// Intializes and seeds DB
 const client = require('./client');
 const { createAlbums } = require('./albums.js');
 const { createAlbumUnit } = require('./album_units');
 const { createOrder } = require('./orders.js');
 const { createReview } = require('./reviews.js');
-const { createUser, getAllUsers } = require('./users.js');
+const { createUser } = require('./users.js');
 
-// SEED DATA
-const albums = require('./seeddata.json');
-const users = require('./usersseeddata.json');
-const reviews = require('./reviews.json');
+const {
+  albums,
+  users,
+  reviews,
+  orders,
+  albumUnits,
+} = require('./seeddata.json');
 
 async function buildTables() {
   try {
     console.log('Building tables...');
-
-    // build tables in correct order
 
     await client.query(`
     DROP TABLE IF EXISTS album_units CASCADE;
@@ -67,7 +68,6 @@ async function buildTables() {
       "orderId" INTEGER REFERENCES orders(id) ON DELETE CASCADE NOT NULL,
       strike_price INT
     );
-
   `);
 
     console.log('Tables Built!');
@@ -80,15 +80,10 @@ async function buildTables() {
 async function createInitialUsers() {
   try {
     console.log('Starting to create users...');
+
     await Promise.all(
       users.map(async (user) => {
-        const { username, password, email } = user;
-
-        await createUser({
-          username,
-          password,
-          email,
-        });
+        await createUser(user);
       })
     );
 
@@ -98,10 +93,11 @@ async function createInitialUsers() {
   }
 }
 
-// CREATE INITIAL ALBUMS, ALSO CREATES GENRES AND ALBUM GENRE RELATIONS
+// CREATE INITIAL ALBUMS
 async function createInitialAlbums() {
   try {
     console.log('Starting to create albums...');
+
     await Promise.all(
       albums.map(async (album) => {
         await createAlbums(album);
@@ -114,100 +110,35 @@ async function createInitialAlbums() {
   }
 }
 
-//CREATE INITIAL Orders
+//CREATE INITIAL ORDERS
 async function createInitialOrders() {
   try {
-    console.log('Starting to create Initial Orders...');
-    const users = await getAllUsers();
-    const ordersTocreate = [
-      {
-        userId: 1,
-        status: 'in progress',
-        total: 1299,
-      },
-      {
-        userId: 2,
-        status: 'in progress',
-        total: 1399,
-      },
-      {
-        userId: 3,
-        status: 'in progress',
-        total: 1099,
-      },
-      {
-        userId: 1,
-        status: 'Delivered',
-        total: 2000,
-      },
-      {
-        userId: 4,
-        status: 'Cancelled',
-        total: 599,
-      },
-      {
-        userId: 4,
-        status: 'in progress',
-        total: 599,
-      },
-      {
-        userId: 3,
-        status: 'in progress',
-        total: 4999,
-      },
-      {
-        userId: 5,
-        status: 'delivered',
-        total: 9999,
-      },
-    ];
-    const orders = await Promise.all(
-      ordersTocreate.map((order) => createOrder(order))
+    console.log('Starting to create orders...');
+
+    await Promise.all(
+      orders.map(async (order) => {
+        await createOrder(order);
+      })
     );
-    // console.log('Orders created: ', orders);
-    console.log('Finished creating Initial Orders');
+
+    console.log('Finished creating orders');
   } catch (error) {
     throw error;
   }
 }
 
-// CREATE INITIAL album-units
+// CREATE INITIAL ALBUM UNITS
 async function createInitialAlbumUnits() {
   try {
-    console.log('Starting to create Initial AlbumUnits...');
+    console.log('Starting to create albumUnits...');
 
-    const albumUntsToCreate = [
-      {
-        albumId: 10,
-        orderId: 1,
-        strikePrice: 1999,
-      },
-      {
-        albumId: 20,
-        orderId: 1,
-        strikePrice: 1499,
-      },
-      {
-        albumId: 30,
-        orderId: 2,
-        strikePrice: 599,
-      },
-      {
-        albumId: 4,
-        orderId: 3,
-        strikePrice: 699,
-      },
-      {
-        albumId: 6,
-        orderId: 3,
-        strikePrice: 1699,
-      },
-    ];
-    const albumUnits = await Promise.all(
-      albumUntsToCreate.map((au) => createAlbumUnit(au))
+    await Promise.all(
+      albumUnits.map(async (albumUnit) => {
+        await createAlbumUnit(albumUnit);
+      })
     );
-    // console.log('AlbumUnits created: ', albumUnits);
-    console.log('Finished creating Initial AlbumUnits');
+
+    console.log('Finished creating albumUnits');
   } catch (error) {
     console.log(error);
   }
@@ -217,20 +148,14 @@ async function createInitialAlbumUnits() {
 async function createInitialReviews() {
   try {
     console.log('Starting to create reviews...');
+
     await Promise.all(
       reviews.map(async (eachReview) => {
-        const { review, rating, albumId, userId } = eachReview;
-
-        await createReview({
-          review,
-          rating,
-          albumId,
-          userId,
-        });
+        await createReview(eachReview);
       })
     );
 
-    console.log('Finished creating reviews!');
+    console.log('Finished creating reviews');
   } catch (error) {
     throw error;
   }
