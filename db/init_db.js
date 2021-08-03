@@ -23,8 +23,6 @@ async function buildTables() {
     DROP TABLE IF EXISTS orders;
     DROP TABLE IF EXISTS reviews;
     DROP TABLE IF EXISTS users CASCADE;
-    DROP TABLE IF EXISTS genre_albums;
-    DROP TABLE IF EXISTS genres;
     DROP TABLE IF EXISTS albums CASCADE;
 
     CREATE TABLE albums (
@@ -82,8 +80,8 @@ async function createInitialUsers() {
     console.log('Starting to create users...');
 
     await Promise.all(
-      users.map(async (user) => {
-        await createUser(user);
+      users.map((user) => {
+        createUser(user);
       })
     );
 
@@ -99,8 +97,8 @@ async function createInitialAlbums() {
     console.log('Starting to create albums...');
 
     await Promise.all(
-      albums.map(async (album) => {
-        await createAlbums(album);
+      albums.map((album) => {
+        createAlbums(album);
       })
     );
 
@@ -116,8 +114,8 @@ async function createInitialOrders() {
     console.log('Starting to create orders...');
 
     await Promise.all(
-      orders.map(async (order) => {
-        await createOrder(order);
+      orders.map((order) => {
+        createOrder(order);
       })
     );
 
@@ -133,8 +131,8 @@ async function createInitialAlbumUnits() {
     console.log('Starting to create albumUnits...');
 
     await Promise.all(
-      albumUnits.map(async (albumUnit) => {
-        await createAlbumUnit(albumUnit);
+      albumUnits.map((albumUnit) => {
+        createAlbumUnit(albumUnit);
       })
     );
 
@@ -150,8 +148,8 @@ async function createInitialReviews() {
     console.log('Starting to create reviews...');
 
     await Promise.all(
-      reviews.map(async (eachReview) => {
-        await createReview(eachReview);
+      reviews.map((review) => {
+        createReview(review);
       })
     );
 
