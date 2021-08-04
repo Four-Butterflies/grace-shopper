@@ -52,7 +52,7 @@ const getOrderWithDetailsByOrderId = async (orderId) => {
   try {
     const order = await getOrderById(orderId);
     const orderWithDetails = await addDetailsToOrders(order);
-
+    
     return orderWithDetails;
   } catch (error) {
     console.log(error);
@@ -98,6 +98,7 @@ const addDetailsToOrders = async (orders) => {
     const result = Promise.all(
       orders.map(async (order) => {
         const details = await getDetailsForOrder(order.id);
+         details.forEach((detail)=>{ order.total = order.total + detail.strike_price})
         return {
           ...order,
           details,
