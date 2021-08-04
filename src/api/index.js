@@ -57,12 +57,12 @@ export async function registerUser(username, email, password) {
     });
 
     const result = await res.json();
-    
-    result.token && localStorage.setItem('token', JSON.stringify(result.token))
-    result.user && localStorage.setItem('user', JSON.stringify(result.user))
+
+    result.token && localStorage.setItem('token', JSON.stringify(result.token));
+    result.user && localStorage.setItem('user', JSON.stringify(result.user));
 
     //TODO: result can contain api error messages. provide for that.
-
+    return result;
   } catch (error) {
     throw error;
   }
@@ -80,13 +80,12 @@ export async function loginUser(email, password) {
     });
 
     const result = await res.json();
-    
-    result.token && localStorage.setItem('token', JSON.stringify(result.token))
-    result.user && localStorage.setItem('user', JSON.stringify(result.user))
+
+    result.token && localStorage.setItem('token', JSON.stringify(result.token));
+    result.user && localStorage.setItem('user', JSON.stringify(result.user));
 
     //TODO: result can contain api error messages. provide for that.
-
-
+    return result;
   } catch (error) {
     throw error;
   }

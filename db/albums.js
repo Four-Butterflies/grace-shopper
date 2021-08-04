@@ -164,6 +164,7 @@ async function getAllGenres() {
 
     const result = [];
 
+    // Loop through returned genres and ensure no duplicates are passed back
     rows.forEach((row) => {
       row.genres.forEach((genre) => {
         if (!result.includes(genre)) {
