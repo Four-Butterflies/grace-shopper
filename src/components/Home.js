@@ -136,10 +136,15 @@ const Home = () => {
           }}
         >
           {recentAlbums.map((album) => {
-            return <SingleAlbum album={album} />;
+            return (
+              <SingleAlbum
+                key={album.album_name + album.artist}
+                album={album}
+              />
+            );
           })}
         </Container>
-        <Link to={'/albums'}>See More...</Link>
+        <Link to={'/albums/#'}>See More...</Link>
       </Container>
     </>
   );

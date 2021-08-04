@@ -173,6 +173,7 @@ albumsRouter.patch('/:albumID', async (req, res, next) => {
     spotify,
   };
 
+  // Input validation for setString, psql should recieve no empty keys
   Object.keys(albumObj).forEach((key) => {
     if (albumObj[key] === undefined) {
       delete albumObj[key];

@@ -23,8 +23,6 @@ async function buildTables() {
     DROP TABLE IF EXISTS orders;
     DROP TABLE IF EXISTS reviews;
     DROP TABLE IF EXISTS users CASCADE;
-    DROP TABLE IF EXISTS genre_albums;
-    DROP TABLE IF EXISTS genres;
     DROP TABLE IF EXISTS albums CASCADE;
 
     CREATE TABLE albums (
@@ -150,8 +148,8 @@ async function createInitialReviews() {
     console.log('Starting to create reviews...');
 
     await Promise.all(
-      reviews.map(async (eachReview) => {
-        await createReview(eachReview);
+      reviews.map(async (review) => {
+        await createReview(review);
       })
     );
 
