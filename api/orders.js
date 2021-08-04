@@ -42,8 +42,8 @@ ordersRouter.get('/details', async (req, res) => {
   }
 });
 
-ordersRouter.get('/user_orders', async (req, res) => {
-  const { userId } = req.body;
+ordersRouter.get('/user_orders/:userId', async (req, res) => {
+  const { userId } = req.params;
 
   try {
     const orders = await getOrdersWithDetailsByUserId(userId);
@@ -54,7 +54,7 @@ ordersRouter.get('/user_orders', async (req, res) => {
       });
     }
 
-    res.send({ orders });
+    res.send(orders);
   } catch (error) {
     console.log(error);
   }

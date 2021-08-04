@@ -12,7 +12,8 @@ import {
   CheckoutForm,
   Albums,
   PaginationComponent,
-  FooterUnit
+  FooterUnit,
+  Orders
 } from './components';
 
 import { 
@@ -61,21 +62,24 @@ const App = () => {
               <CheckoutForm />
             </Elements>
           </Route>
-          <Route path={'/albums'}>
-          <Albums 
-            allAlbums={ allAlbums }
-            albumsPerPage={ albumsPerPage }
-            currentPage={ currentPage }
-            setTotalAlbums={ setTotalAlbums }
-          />
-          <PaginationComponent 
-            albumsPerPage={ albumsPerPage }
-            totalAlbums={ totalAlbums }
-            paginate={ paginate }
-          />
-          </Route>
           <Route path={'/'} exact>
             <Home />
+          </Route>
+          <Route path={'/albums'}>
+            <Albums 
+              allAlbums={ allAlbums }
+              albumsPerPage={ albumsPerPage }
+              currentPage={ currentPage }
+              setTotalAlbums={ setTotalAlbums }
+            />
+            <PaginationComponent 
+              albumsPerPage={ albumsPerPage }
+              totalAlbums={ totalAlbums }
+              paginate={ paginate }
+            />
+          </Route>
+          <Route path={'/orders'}>
+            <Orders />
           </Route>
           <Route>
             <h1>404 Page Not Found</h1>
