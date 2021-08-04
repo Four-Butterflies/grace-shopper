@@ -5,6 +5,14 @@ const { getAlbumByID } = require('../db/albums.js');
 
 // POST
 reviewsRouter.post('/:albumId/newreview', async (req, res) => {
+
+  if (Object.keys(req.body).length < 3) { 
+    return res.status(400).send({
+      name: 'InformationRequired',
+      message: 'Please provide your review, rating and userId.',
+    });
+  }
+
   const { albumId } = req.params;
   const { review, rating, userId } = req.body;
 

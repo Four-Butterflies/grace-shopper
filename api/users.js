@@ -6,6 +6,7 @@ const {
   createUser,
   getUserByEmailAndPassword,
   getUserByEmail,
+  getUserByUsername,
 } = require('../db/users.js');
 
 usersRouter.get('/', async (req, res) => {
@@ -18,14 +19,31 @@ usersRouter.get('/', async (req, res) => {
 });
 
 usersRouter.post('/register', async (req, res, next) => {
-  const { username, password, email } = req.body;
-  try {
-    const existingUser = await getUserByEmail(email);
+  
+  if (Object.keys(req.body).length < 3) { 
+    return res.status(400).send({
+      name: 'CredentialsRequired',
+      message: 'Please provide email, username and password to register.',
+    });
+  }
 
-    if (existingUser) {
-      res.status(400).send({
+  const { username, password, email } = req.body;
+
+  try {
+    const existingUserByEmail = await getUserByEmail(email);
+    const existingUserUsername = await getUserByUsername(username);
+
+    if (existingUserByEmail) {
+      return res.status(400).send({
+        name: 'EmailExistsError',
+        message: 'A user under that email already exists.',
+      });
+    }
+
+    if (existingUserUsername) {
+      return res.status(400).send({
         name: 'UserExistsError',
-        message: 'A user by that username already exists.',
+        message: 'A user under that username already exists.',
       });
     }
 
@@ -50,7 +68,15 @@ usersRouter.post('/register', async (req, res, next) => {
 });
 
 usersRouter.post('/login', async (req, res, next) => {
-  const { email, password } = req.body; 
+
+  if (Object.keys(req.body).length < 2) {
+    return res.status(400).send({
+      name: 'CredentialsRequired',
+      message: 'Please provide email and password to login.',
+    });
+  }
+
+  const { email, password } = req.body;
 
   if (!email || !password || password.length < 5) {
     res.status(400).send({
