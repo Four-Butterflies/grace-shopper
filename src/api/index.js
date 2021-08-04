@@ -34,9 +34,10 @@ export async function getMostRecentAlbums() {
 }
 
 // CHECKOUT
-export async function stripeCharge({ id, amount }) {
+export async function stripeCharge({ id }) {
   try {
-    const { data } = await axios.post(`${BASE_URL}/charge`, { id, amount });
+    const { data } = await axios.post(`${BASE_URL}/charge`, { id });
+    console.log('src api', data)
     return data;
   } catch (error) {
     throw error;
