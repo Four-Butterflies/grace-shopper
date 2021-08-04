@@ -16,7 +16,7 @@ const createUser = async ({ username, password, email }) => {
       `,
       [username, hashedPassword, email]
     );
-
+    console.log('db', user);
     return user;
   } catch (error) {
     throw error;
@@ -127,6 +127,27 @@ const getUserByEmail = async (email) => {
   }
 };
 
+const getUserByUsername = async (username) => {
+  try {
+    const {
+      rows: [user],
+    } = await client.query(
+      `
+        SELECT id, username, email
+        FROM users
+        WHERE username=$1;
+      `,
+      [username]
+    );
+    if (!user) {
+      return false;
+    }
+    return user;
+  } catch (error) {
+    throw error;
+  }
+};
+
 // wild card to check for api calls
 const getAllUsers = async () => {
   try {
@@ -145,5 +166,7 @@ module.exports = {
   getUserById,
   updateUser,
   getUserByEmail,
+  getUserByUsername,
   getAllUsers,
+
 };

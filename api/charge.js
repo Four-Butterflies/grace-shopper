@@ -7,6 +7,9 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // POST
 chargeRouter.post('/', async (req, res) => {
+
+  //TODO: guard clause for check req.body
+
   const { id, amount } = req.body;
 
   try {
