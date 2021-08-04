@@ -80,8 +80,8 @@ async function createInitialUsers() {
     console.log('Starting to create users...');
 
     await Promise.all(
-      users.map((user) => {
-        createUser(user);
+      users.map(async (user) => {
+        await createUser(user);
       })
     );
 
@@ -97,8 +97,8 @@ async function createInitialAlbums() {
     console.log('Starting to create albums...');
 
     await Promise.all(
-      albums.map((album) => {
-        createAlbums(album);
+      albums.map(async (album) => {
+        await createAlbums(album);
       })
     );
 
@@ -114,8 +114,8 @@ async function createInitialOrders() {
     console.log('Starting to create orders...');
 
     await Promise.all(
-      orders.map((order) => {
-        createOrder(order);
+      orders.map(async (order) => {
+        await createOrder(order);
       })
     );
 
@@ -131,8 +131,8 @@ async function createInitialAlbumUnits() {
     console.log('Starting to create albumUnits...');
 
     await Promise.all(
-      albumUnits.map((albumUnit) => {
-        createAlbumUnit(albumUnit);
+      albumUnits.map(async (albumUnit) => {
+        await createAlbumUnit(albumUnit);
       })
     );
 
@@ -148,8 +148,8 @@ async function createInitialReviews() {
     console.log('Starting to create reviews...');
 
     await Promise.all(
-      reviews.map((review) => {
-        createReview(review);
+      reviews.map(async (review) => {
+        await createReview(review);
       })
     );
 
