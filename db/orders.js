@@ -79,9 +79,10 @@ const getDetailsForOrder = async (orderId) => {
   try {
     const { rows } = await client.query(
       `
-        SELECT  au.id as "albumUnitId", au."albumId", au.strike_price
+        SELECT  au.id as "albumUnitId", au."albumId", au.strike_price, a.album_name
         FROM orders o
         JOIN album_units au ON o.id = au."orderId"
+        JOIN albums a ON au."albumId" = a.id
         WHERE o.id = $1; 
       `,
       [orderId]

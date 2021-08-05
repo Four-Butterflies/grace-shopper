@@ -9,20 +9,20 @@ const Stripe = require('stripe');
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // POST
-chargeRouter.post('/', async (req, res) => {
+chargeRouter.post('/', async (req, res, next) => {
 
   //TODO: guard clause for check req.body
  
   const { id } = req.body;
 
   try {  
-    const [{total, id: orderId, details:[all]}] = await getOrderWithDetailsByOrderId(1);
-    console.log('oderdetails', all)
+    const [{total, id: orderId, details}] = await getOrderWithDetailsByOrderId(1);
+    console.log('oderdetails', typeof String(details.length))
 
     const payment = await stripe.paymentIntents.create({
       amount: total,
       currency: 'USD',
-      description: 'add details as strings', //TODO: add details as string.
+      description: String(details.length) + ' Items', 
       payment_method: id,
       confirm: true,
     });
@@ -30,11 +30,11 @@ chargeRouter.post('/', async (req, res) => {
 
     return res.status(200).send({ orderId, payment });
   } catch (error) {
-    console.log(error);
+    console.log('charge', error);
 
-    return res.status(400).send({
-      message: error.message,
-    });
+    return next(
+       error,
+    );
   }
 });
 
