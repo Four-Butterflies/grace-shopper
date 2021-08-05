@@ -47,11 +47,12 @@
   flex: 1;
   margin: 0 auto;
   margin-top: 5em;
-  max-width: 40%;
+  max-width: 35%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 40%;
+  align-items: center;
+  /* padding-bottom: 40%; */
 }
 
 label {
@@ -138,8 +139,8 @@ input:focus,
 /* PAGINATION CUSTOM CSS */
 
 .Result {
-  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px,
-    rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+  /* box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px,
+    rgba(0, 0, 0, 0.0196078) 0px 1px 0px; */
   border: 0;
   outline: 0;
   border-radius: 4px;
@@ -152,18 +153,18 @@ input:focus,
 }
 
 .ResultTitle {
-  color: #fff;
+  color: #7795f8;
   font-weight: 500;
   margin-bottom: 8px;
   font-size: 17px;
   text-align: center;
 }
 
-.ResultMessage {
-  color: #7795f8;
-  font-size: 14px;
-  font-weight: 400;
-  margin-bottom: 25px;
-  line-height: 1.6em;
-  text-align: center;
-}
+/* .ResultMessage { */
+  /* color: #7795f8; */
+  /* font-size: 14px; */
+  /* font-weight: 400; */
+  /* margin-bottom: 25px; */
+  /* line-height: 1.6em; */
+  /* text-align: center; */
+/* } */
