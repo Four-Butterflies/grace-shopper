@@ -25,11 +25,10 @@ const CheckoutForm = () => {
     if (!error) {
       setPaymentMethod(paymentMethod);
 
-      const { id } = paymentMethod;
-      const amount = 199;
+      const { id }  = paymentMethod;
       try {
-        const result = await stripeCharge({ id, amount });
-        console.log(result);
+        const result = await stripeCharge({ id });
+        console.log("checkout form", result);
       } catch (error) {
         console.log(error);
       }

@@ -95,6 +95,14 @@ albumsRouter.get('/recent', async (req, res, next) => {
 
 // POST
 albumsRouter.post('/', async (req, res, next) => {
+
+  if (Object.keys(req.body).length < 10) { 
+    return res.status(400).send({
+      name: 'InformationRequiredRequired',
+      message: 'Please provide all fields required.',
+    });
+  }
+
   const {
     name,
     artists,
@@ -130,6 +138,14 @@ albumsRouter.post('/', async (req, res, next) => {
 
 // PATCH
 albumsRouter.patch('/:albumID', async (req, res, next) => {
+  
+  if (Object.keys(req.body).length < 10) { 
+    return res.status(400).send({
+      name: 'InformationRequiredRequired',
+      message: 'Please provide all fields required.',
+    });
+  }
+
   const { albumID } = req.params;
   const {
     name: album_name,
@@ -157,6 +173,7 @@ albumsRouter.patch('/:albumID', async (req, res, next) => {
     spotify,
   };
 
+  // Input validation for setString, psql should recieve no empty keys
   Object.keys(albumObj).forEach((key) => {
     if (albumObj[key] === undefined) {
       delete albumObj[key];

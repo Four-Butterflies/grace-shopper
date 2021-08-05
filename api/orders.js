@@ -25,6 +25,14 @@ ordersRouter.get('/', async (req, res) => {
 });
 
 ordersRouter.get('/details', async (req, res) => {
+
+  if (Object.keys(req.body).length === 0) { 
+    return res.status(400).send({
+      name: 'InformationRequired',
+      message: 'Please provide orderId to get your order deatails.',
+    });
+  }
+
   const { orderId } = req.body;
 
   try {
@@ -43,6 +51,13 @@ ordersRouter.get('/details', async (req, res) => {
 });
 
 ordersRouter.get('/user_orders/:userId', async (req, res) => {
+  if (Object.keys(req.params).length === 0) { 
+    return res.status(400).send({
+      name: 'InformationRequired',
+      message: 'Please provide userId to get your order deatails.',
+    });
+  }
+
   const { userId } = req.params;
 
   try {
@@ -62,6 +77,14 @@ ordersRouter.get('/user_orders/:userId', async (req, res) => {
 
 // POST
 ordersRouter.post('/submit_order', async (req, res) => {
+
+  if (Object.keys(req.body).length < 3) { 
+    return res.status(400).send({
+      name: 'InformationRequired',
+      message: 'Please provide userId, status and total to submit your order.',
+    });
+  }
+
   const { userId, status, total } = req.body;
 
   try {

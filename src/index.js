@@ -17,7 +17,7 @@ import {
 } from './components';
 
 import { 
-  getAllAlbums 
+  getAllAlbums, getOrders 
 } from './api'
 
 const stripePromise = loadStripe(

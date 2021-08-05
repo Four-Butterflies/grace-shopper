@@ -58,9 +58,10 @@ export async function getOrders() {
 // }
 
 // CHECKOUT
-export async function stripeCharge({ id, amount }) {
+export async function stripeCharge({ id }) {
   try {
-    const { data } = await axios.post(`${BASE_URL}/charge`, { id, amount });
+    const { data } = await axios.post(`${BASE_URL}/charge`, { id });
+    console.log('src api', data)
     return data;
   } catch (error) {
     throw error;
@@ -80,12 +81,13 @@ export async function registerUser(username, email, password) {
       }),
     });
 
-    const { token, user } = await res.json();
+    const result = await res.json();
 
-    localStorage.setItem('token', JSON.stringify(token));
-    localStorage.setItem('user', JSON.stringify(user));
+    result.token && localStorage.setItem('token', JSON.stringify(result.token));
+    result.user && localStorage.setItem('user', JSON.stringify(result.user));
 
-    return { token, user };
+    //TODO: result can contain api error messages. provide for that.
+    return result;
   } catch (error) {
     throw error;
   }
@@ -102,12 +104,13 @@ export async function loginUser(email, password) {
       }),
     });
 
-    const { token, user } = await res.json();
+    const result = await res.json();
 
-    localStorage.setItem('token', JSON.stringify(token));
-    localStorage.setItem('user', JSON.stringify(user));
+    result.token && localStorage.setItem('token', JSON.stringify(result.token));
+    result.user && localStorage.setItem('user', JSON.stringify(result.user));
 
-    return { token, user };
+    //TODO: result can contain api error messages. provide for that.
+    return result;
   } catch (error) {
     throw error;
   }
