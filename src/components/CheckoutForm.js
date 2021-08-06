@@ -70,8 +70,8 @@ const CheckoutForm = () => {
           <ListGroup variant="flush">
             <ListGroup.Item>Order Number: {details.orderId}</ListGroup.Item>
             <ListGroup.Item>Payment Method: {paymentMethod.id}</ListGroup.Item>
-            <ListGroup.Item>Amount: ${details.amount / 100}</ListGroup.Item>
             <ListGroup.Item>Album & Quantity: {details.description}</ListGroup.Item>
+            <ListGroup.Item>Amount: ${details.amount / 100}</ListGroup.Item>
           </ListGroup>
         </Card>
       </div>
