@@ -10,8 +10,7 @@ const {
   getUserById,
 } = require('../db/users.js');
 
-// TODO: Disable before turning in project? Seems like a security risk
-//       Leaving it and its DB function for debug for now
+// First admin only route :D
 usersRouter.get('/', async (req, res) => {
   const user = verifyJWT(req.headers.authorization);
 

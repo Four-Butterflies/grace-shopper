@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { loginUser } from '../api';
 import { Form, Button, Modal } from 'react-bootstrap';
 
+import { isAdmin } from './../api';
+
 // TODO - Add message when login fails
-const LoginModal = ({ showLogin, setShowLogin, setUser }) => {
+const LoginModal = ({ showLogin, setShowLogin, setUser, setAdmin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -40,6 +42,9 @@ const LoginModal = ({ showLogin, setShowLogin, setUser }) => {
             try {
               const { user } = await loginUser(email, password);
               setUser(user);
+
+              const adminRes = await isAdmin();
+              setAdmin(adminRes);
             } catch (error) {
               console.error(error);
             }

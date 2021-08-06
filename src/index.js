@@ -39,11 +39,8 @@ const App = () => {
     }
 
     (async () => {
-      const resultOrSomething = await isAdmin();
-
-      console.log(resultOrSomething);
-
-      setAdmin(resultOrSomething);
+      const adminRes = await isAdmin();
+      setAdmin(adminRes);
     })();
   }, []);
 
@@ -63,7 +60,12 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <NavbarComp user={user} setUser={setUser} />
+      <NavbarComp
+        user={user}
+        setUser={setUser}
+        admin={admin}
+        setAdmin={setAdmin}
+      />
       <div id="app" style={{ paddingTop: '5rem', paddingBottom: '3rem' }}>
         <Switch>
           <Route path={'/admin'}>
