@@ -31,6 +31,8 @@ const App = () => {
   const [albumsPerPage] = useState(20);
   const [totalAlbums, setTotalAlbums] = useState(0);
 
+  // Check if user is logged in
+  // Then, check if they are an admin
   useEffect(() => {
     if (localStorage.getItem('user')) {
       setUser(JSON.parse(localStorage.getItem('user')));
@@ -45,17 +47,16 @@ const App = () => {
     })();
   }, []);
 
+  // Load a list of our wicked albums 🤘
   useEffect(() => {
-    const albumsPromise = async () => {
+    (async () => {
       try {
         const albumsResults = await getAllAlbums();
         setAllAlbums(albumsResults);
       } catch (error) {
         console.log(error);
       }
-    };
-
-    albumsPromise();
+    })();
   }, []);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -72,19 +73,6 @@ const App = () => {
             <Elements stripe={stripePromise} className="App">
               <CheckoutForm />
             </Elements>
-          </Route>
-          <Route path={'/albums'}>
-            <Albums
-              allAlbums={allAlbums}
-              albumsPerPage={albumsPerPage}
-              currentPage={currentPage}
-              setTotalAlbums={setTotalAlbums}
-            />
-            <PaginationComponent
-              albumsPerPage={albumsPerPage}
-              totalAlbums={totalAlbums}
-              paginate={paginate}
-            />
           </Route>
           <Route path={'/'} exact>
             <Home />

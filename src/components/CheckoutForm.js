@@ -12,7 +12,6 @@ const CheckoutForm = () => {
   const [processing, setProcessing] = useState(false);
 
   const handleSubmit = async (event) => {
-
     event.preventDefault();
     setProcessing(true);
 
@@ -31,7 +30,6 @@ const CheckoutForm = () => {
     const { id } = paymentMethod;
 
     try {
-      
       const result = await stripeCharge({ id });
 
       if (result.orderId) {
@@ -43,12 +41,10 @@ const CheckoutForm = () => {
         setDetails({ orderId, amount, description });
         setPaymentMethod(paymentMethod);
         setProcessing(false);
-        
       } else {
-        setError( result.raw.message );
+        setError(result.raw.message);
         setProcessing(false);
       }
-
     } catch (error) {
       setError(error);
     }
@@ -70,7 +66,9 @@ const CheckoutForm = () => {
           <ListGroup variant="flush">
             <ListGroup.Item>Order Number: {details.orderId}</ListGroup.Item>
             <ListGroup.Item>Payment Method: {paymentMethod.id}</ListGroup.Item>
-            <ListGroup.Item>Album & Quantity: {details.description}</ListGroup.Item>
+            <ListGroup.Item>
+              Album & Quantity: {details.description}
+            </ListGroup.Item>
             <ListGroup.Item>Amount: ${details.amount / 100}</ListGroup.Item>
           </ListGroup>
         </Card>
@@ -78,7 +76,7 @@ const CheckoutForm = () => {
       <button className="ResetButton" onClick={reset}>
         Reset
       </button>
-    </div> 
+    </div>
   ) : (
     <form onSubmit={handleSubmit} className="CheckoutForm">
       <label>
@@ -89,7 +87,7 @@ const CheckoutForm = () => {
         Card details
         <CardElement />
       </label>
-      
+
       <button
         className="PayButton"
         type="submit"
