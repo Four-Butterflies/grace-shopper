@@ -17,7 +17,6 @@ chargeRouter.post('/', async (req, res, next) => {
 
   try {  
     const [{total, id: orderId, details}] = await getOrderWithDetailsByOrderId(1);
-    console.log('oderdetails', typeof String(details.length))
 
     const payment = await stripe.paymentIntents.create({
       amount: total,
@@ -30,7 +29,6 @@ chargeRouter.post('/', async (req, res, next) => {
 
     return res.status(200).send({ orderId, payment });
   } catch (error) {
-    console.log('charge', error);
 
     return next(
        error,

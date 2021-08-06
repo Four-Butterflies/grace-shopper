@@ -18,7 +18,7 @@ ordersRouter.get('/', async (req, res) => {
       });
     }
 
-    res.send({ orders });
+    res.send( orders );
   } catch (error) {
     console.log(error);
   }
@@ -26,7 +26,7 @@ ordersRouter.get('/', async (req, res) => {
 
 ordersRouter.get('/details/:orderId', async (req, res) => {
 
-  if (Object.keys(req.body).length === 0) { 
+  if (Object.keys(req.params).length === 0) { 
     return res.status(400).send({
       name: 'InformationRequired',
       message: 'Please provide orderId to get your order deatails.',
@@ -51,6 +51,7 @@ ordersRouter.get('/details/:orderId', async (req, res) => {
 });
 
 ordersRouter.get('/user_orders/:userId', async (req, res) => {
+  
   if (Object.keys(req.params).length === 0) { 
     return res.status(400).send({
       name: 'InformationRequired',

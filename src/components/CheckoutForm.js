@@ -10,7 +10,7 @@ const CheckoutForm = () => {
   const [details, setDetails] = useState({});
   const [paymentMethod, setPaymentMethod] = useState(null);
   const [processing, setProcessing] = useState(false);
-  console.log(error);
+
   const handleSubmit = async (event) => {
 
     event.preventDefault();
@@ -39,9 +39,11 @@ const CheckoutForm = () => {
           orderId,
           payment: { amount, description },
         } = result;
+
         setDetails({ orderId, amount, description });
         setPaymentMethod(paymentMethod);
         setProcessing(false);
+        
       } else {
         setError( result.raw.message );
         setProcessing(false);
