@@ -16,7 +16,7 @@ const {
 albumsRouter.get('/', async (req, res, next) => {
   try {
     const result = await getAlbums();
-
+    
     res.send(result);
   } catch (error) {
     next(error);

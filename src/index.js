@@ -14,6 +14,7 @@ import {
   PaginationComponent,
   FooterUnit,
   Admin,
+  Orders,
 } from './components';
 
 import { getAllAlbums, isAdmin } from './api';
@@ -87,6 +88,22 @@ const App = () => {
           </Route>
           <Route path={'/'} exact>
             <Home />
+          </Route>
+          <Route path={'/albums'}>
+            <Albums
+              allAlbums={allAlbums}
+              albumsPerPage={albumsPerPage}
+              currentPage={currentPage}
+              setTotalAlbums={setTotalAlbums}
+            />
+            <PaginationComponent
+              albumsPerPage={albumsPerPage}
+              totalAlbums={totalAlbums}
+              paginate={paginate}
+            />
+          </Route>
+          <Route path={'/orders'}>
+            <Orders />
           </Route>
           <Route>
             <h1>404 Page Not Found</h1>

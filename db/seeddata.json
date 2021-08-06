@@ -2021,47 +2021,52 @@
     {
       "userId": 1,
       "status": "in progress",
-      "total": 1299
+      "total": 0
     },
     {
       "userId": 2,
       "status": "in progress",
-      "total": 1399
+      "total": 0
     },
     {
       "userId": 3,
       "status": "in progress",
-      "total": 1099
+      "total": 0
     },
     {
       "userId": 1,
       "status": "Delivered",
-      "total": 2000
+      "total": 0
     },
     {
       "userId": 4,
       "status": "Cancelled",
-      "total": 599
+      "total": 0
     },
     {
       "userId": 4,
       "status": "in progress",
-      "total": 599
+      "total": 0
     },
     {
       "userId": 3,
       "status": "in progress",
-      "total": 4999
+      "total": 0
     },
     {
       "userId": 5,
       "status": "delivered",
-      "total": 9999
+      "total": 0
+    },
+    {
+      "userId": 1,
+      "status": "Cancelled",
+      "total": 0
     }
   ],
   "albumUnits": [
     {
-      "albumId": 10,
+      "albumId": 1,
       "orderId": 1,
       "strikePrice": 1999
     },
@@ -2071,9 +2076,9 @@
       "strikePrice": 1499
     },
     {
-      "albumId": 30,
-      "orderId": 2,
-      "strikePrice": 599
+      "albumId": 1,
+      "orderId": 1,
+      "strikePrice": 1999
     },
     {
       "albumId": 4,
@@ -2084,6 +2089,16 @@
       "albumId": 6,
       "orderId": 3,
       "strikePrice": 1699
+    },
+    {
+      "albumId": 6,
+      "orderId": 4,
+      "strikePrice": 1699
+    },
+    {
+      "albumId": 36,
+      "orderId": 9,
+      "strikePrice": 599
     }
   ]
 }

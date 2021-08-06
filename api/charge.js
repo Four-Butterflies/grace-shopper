@@ -1,40 +1,46 @@
 const express = require('express');
 const chargeRouter = express.Router();
 require('dotenv').config();
-const {
-  getOrderWithDetailsByOrderId,
-} = require('./../db/orders.js');
+const { getOrderWithDetailsByOrderId } = require('./../db/orders.js');
 
 const Stripe = require('stripe');
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // POST
-chargeRouter.post('/', async (req, res) => {
-
+chargeRouter.post('/', async (req, res, next) => {
   //TODO: guard clause for check req.body
- 
+
   const { id } = req.body;
 
-  try {  
-    const [{total, id: orderId, details:[all]}] = await getOrderWithDetailsByOrderId(1);
-    console.log('oderdetails', all)
+  try {
+    const [{ total, id: orderId, details }] =
+      await getOrderWithDetailsByOrderId(1);
+
+    let albumNames = {};
+
+    details.forEach((detail) => {
+      albumNames[`${detail.album_name}`]
+        ? albumNames[`${detail.album_name}`]++
+        : (albumNames[`${detail.album_name}`] = 1);
+    });
+
+    const albumNameCount = Object.entries(albumNames)
+      .map((line) => {
+        return line.join(' = ');
+      })
+      .join(' , ');
 
     const payment = await stripe.paymentIntents.create({
       amount: total,
       currency: 'USD',
-      description: 'add details as strings', //TODO: add details as string.
+      description: albumNameCount,
       payment_method: id,
       confirm: true,
     });
-    console.log('route',payment);
 
     return res.status(200).send({ orderId, payment });
   } catch (error) {
-    console.log(error);
-
-    return res.status(400).send({
-      message: error.message,
-    });
+    return next(error);
   }
 });
 

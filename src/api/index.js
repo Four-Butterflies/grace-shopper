@@ -33,11 +33,47 @@ export async function getMostRecentAlbums() {
   }
 }
 
+// CART
+export async function getOrders() {
+  try {
+    const token = localStorage.getItem('token');
+    const res = localStorage.getItem('user');
+    const user = JSON.parse(res);
+
+    if (!token) {
+      console.error('token not valid');
+    }
+
+    const { data } = await axios.get(
+      `${BASE_URL}/orders/user_orders/${user.id}`
+    );
+    // const inProgressOrders = data.filter((album) => album.status === 'in progress')
+    // console.log(data)
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function getOrderDetails(orderId) {
+  try {
+    const { data } = await axios.get(`${BASE_URL}/orders/details/${orderId}`);
+    console.log(data);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+// export async function addAlbumToCart(albumId) {
+
+// }
+
 // CHECKOUT
 export async function stripeCharge({ id }) {
   try {
     const { data } = await axios.post(`${BASE_URL}/charge`, { id });
-    console.log('src api', data);
+
     return data;
   } catch (error) {
     throw error;
