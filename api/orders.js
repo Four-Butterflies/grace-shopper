@@ -24,7 +24,7 @@ ordersRouter.get('/', async (req, res) => {
   }
 });
 
-ordersRouter.get('/details', async (req, res) => {
+ordersRouter.get('/details/:orderId', async (req, res) => {
 
   if (Object.keys(req.body).length === 0) { 
     return res.status(400).send({
@@ -33,7 +33,7 @@ ordersRouter.get('/details', async (req, res) => {
     });
   }
 
-  const { orderId } = req.body;
+  const { orderId } = req.params;
 
   try {
     const order = await getOrderWithDetailsByOrderId(orderId);

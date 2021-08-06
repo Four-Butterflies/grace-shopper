@@ -53,6 +53,16 @@ export async function getOrders() {
   }
 }
 
+export async function getOrderDetails(orderId) {
+  try {
+    const { data } = await axios.get(`${BASE_URL}/orders/details/${orderId}`)
+    console.log(data)
+    return data
+  } catch(error) {
+    throw error
+  }
+}
+
 // export async function addAlbumToCart(albumId) {
 
 // }

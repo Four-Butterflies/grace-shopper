@@ -8,3 +8,4 @@ export { default as PaginationComponent } from './PaginationComponent.js'
 export { default as SingleAlbum } from './SingleAlbum.js';
 export { default as FooterUnit } from './Footer.js';
 export { default as Orders } from './Orders.js'
+export { default as OrdersAlbums} from './OrdersAlbums.js'
