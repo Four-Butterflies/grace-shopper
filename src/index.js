@@ -6,18 +6,17 @@ import { Elements } from '@stripe/react-stripe-js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
-import { 
-  Home, 
-  NavbarComp, 
+import {
+  Home,
+  NavbarComp,
   CheckoutForm,
   Albums,
   PaginationComponent,
-  FooterUnit
+  FooterUnit,
+  Admin,
 } from './components';
 
-import { 
-  getAllAlbums 
-} from './api'
+import { getAllAlbums, isAdmin } from './api';
 
 const stripePromise = loadStripe(
   'pk_test_51JIKRDAKg6qdYHfmrwdd1XDwBfUzU6lhJc5JjzWSQIibxbPEAwPSVkgqBAKxr4sG9KihcS9tOZFZ8glLP0R04hJs00x9APJi1Q'
@@ -25,54 +24,66 @@ const stripePromise = loadStripe(
 
 const App = () => {
   const [user, setUser] = useState({});
-  const [allAlbums, setAllAlbums] = useState([])
-  const [currentPage, setCurrentPage] = useState(1)
-  const [albumsPerPage] = useState(20)
-  const [totalAlbums, setTotalAlbums] = useState(0)
+  const [admin, setAdmin] = useState(false);
+  const [allAlbums, setAllAlbums] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [albumsPerPage] = useState(20);
+  const [totalAlbums, setTotalAlbums] = useState(0);
 
   useEffect(() => {
     if (localStorage.getItem('user')) {
       setUser(JSON.parse(localStorage.getItem('user')));
     }
+
+    (async () => {
+      const resultOrSomething = await isAdmin();
+
+      console.log(resultOrSomething);
+
+      setAdmin(resultOrSomething);
+    })();
   }, []);
 
   useEffect(() => {
     const albumsPromise = async () => {
-        try {
-            const albumsResults = await getAllAlbums()
-            setAllAlbums(albumsResults)
-        } catch (error) {
-            console.log(error)
-        }
-    }
+      try {
+        const albumsResults = await getAllAlbums();
+        setAllAlbums(albumsResults);
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-    albumsPromise()
-  }, [])
+    albumsPromise();
+  }, []);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <BrowserRouter>
       <NavbarComp user={user} setUser={setUser} />
       <div id="app" style={{ paddingTop: '5rem', paddingBottom: '3rem' }}>
         <Switch>
+          <Route path={'/admin'}>
+            <Admin user={user} admin={admin} />
+          </Route>
           <Route path={'/checkout'}>
             <Elements stripe={stripePromise} className="App">
               <CheckoutForm />
             </Elements>
           </Route>
           <Route path={'/albums'}>
-          <Albums 
-            allAlbums={ allAlbums }
-            albumsPerPage={ albumsPerPage }
-            currentPage={ currentPage }
-            setTotalAlbums={ setTotalAlbums }
-          />
-          <PaginationComponent 
-            albumsPerPage={ albumsPerPage }
-            totalAlbums={ totalAlbums }
-            paginate={ paginate }
-          />
+            <Albums
+              allAlbums={allAlbums}
+              albumsPerPage={albumsPerPage}
+              currentPage={currentPage}
+              setTotalAlbums={setTotalAlbums}
+            />
+            <PaginationComponent
+              albumsPerPage={albumsPerPage}
+              totalAlbums={totalAlbums}
+              paginate={paginate}
+            />
           </Route>
           <Route path={'/'} exact>
             <Home />

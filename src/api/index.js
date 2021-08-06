@@ -37,7 +37,7 @@ export async function getMostRecentAlbums() {
 export async function stripeCharge({ id }) {
   try {
     const { data } = await axios.post(`${BASE_URL}/charge`, { id });
-    console.log('src api', data)
+    console.log('src api', data);
     return data;
   } catch (error) {
     throw error;
@@ -95,4 +95,24 @@ export async function loginUser(email, password) {
 export async function logoutUser() {
   localStorage.removeItem('token');
   localStorage.removeItem('user');
+}
+
+export async function isAdmin() {
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  if (!token) {
+    return false;
+  }
+
+  try {
+    const { data } = await axios.get(`${BASE_URL}/users/admin`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
 }
