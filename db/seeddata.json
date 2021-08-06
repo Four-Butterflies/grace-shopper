@@ -2051,6 +2051,11 @@
       "userId": 5,
       "status": "delivered",
       "total": 9999
+    },
+    {
+      "userId": 1,
+      "status": "Cancelled",
+      "total": 599
     }
   ],
   "albumUnits": [
@@ -2078,6 +2083,16 @@
       "albumId": 6,
       "orderId": 3,
       "strikePrice": 1699
+    },
+    {
+      "albumId": 6,
+      "orderId": 4,
+      "strikePrice": 1699
+    },
+    {
+      "albumId": 36,
+      "orderId": 9,
+      "strikePrice": 599
     }
   ]
 }

@@ -68,6 +68,11 @@ const NavbarComp = (props) => {
               </Link>
             </Navbar.Text>
             <Navbar.Text>
+              <Link to={'/orders'} style={{ marginLeft: '1rem' }}>
+                Cart
+              </Link>
+            </Navbar.Text>
+            <Navbar.Text>
               <Link to={'/checkout'} style={{ marginLeft: '1rem' }}>
                 Checkout
               </Link>

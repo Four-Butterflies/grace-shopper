@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card} from 'react-bootstrap'
+import { Card, Button } from 'react-bootstrap'
 
 const Albums = ({ allAlbums, currentPage, albumsPerPage, setTotalAlbums }) => {
 
@@ -39,6 +39,16 @@ const Albums = ({ allAlbums, currentPage, albumsPerPage, setTotalAlbums }) => {
                         <Card.Title>{album.album_name}</Card.Title>
                         <Card.Subtitle className="mb-2">{album.artist}</Card.Subtitle>
                         <Card.Text>${album.price / 100}</Card.Text>
+                        <Button 
+                            style={{
+                                backgroundColor: "var(--color-primary)",
+                                border: "solid var(--color-primary) 3px"
+                            }}
+                            onClick={(event) => {
+                                event.preventDefault()
+                                
+                            }}
+                            >Add to Cart</Button>
                     </Card.Body> 
                 </Card>
             )
