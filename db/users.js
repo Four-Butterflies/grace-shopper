@@ -2,21 +2,27 @@ const client = require('./client.js');
 const { hash, comparePasswords } = require('../utils');
 
 // CREATING THE USER
-const createUser = async ({ username, password, email }) => {
+const createUser = async ({ username, password, email, isAdmin }) => {
   const hashedPassword = hash(password);
+
+  // isAdmin must be explicitly set to true
+  if (isAdmin !== 'true') {
+    isAdmin = false;
+  }
+
   try {
     const {
       rows: [user],
     } = await client.query(
       `
-        INSERT INTO users(username, password, email)
-        VALUES($1, $2, $3)
+        INSERT INTO users(username, password, email, isadmin)
+        VALUES($1, $2, $3, $4)
         ON CONFLICT (username) DO NOTHING
-        RETURNING id, username, email;
+        RETURNING id, username, email, isadmin;
       `,
-      [username, hashedPassword, email]
+      [username, hashedPassword, email, isAdmin]
     );
-    console.log('db', user);
+
     return user;
   } catch (error) {
     throw error;
@@ -32,6 +38,7 @@ const updateUser = async (userId, fields = {}) => {
   if (setString.length === 0) {
     return;
   }
+
   try {
     const {
       rows: [user],
@@ -58,7 +65,10 @@ const getUserByEmailAndPassword = async ({ email, password }) => {
       rows: [user],
     } = await client.query(
       `
-        SELECT id, username, email, password FROM users WHERE email=$1 LIMIT 1;
+        SELECT *
+        FROM users
+        WHERE email=$1
+        LIMIT 1;
       `,
       [email]
     );
@@ -72,7 +82,12 @@ const getUserByEmailAndPassword = async ({ email, password }) => {
       return false;
     }
 
-    return { id: user.id, email: user.email, username: user.username };
+    return {
+      id: user.id,
+      email: user.email,
+      username: user.username,
+      isAdmin: user.isadmin,
+    };
   } catch (error) {
     throw error;
   }
@@ -86,7 +101,7 @@ const getUserById = async (id) => {
       rows: [user],
     } = await client.query(
       `
-        SELECT id, username, email
+        SELECT id, username, email, isadmin
         FROM users
         WHERE id=$1;
       `,
@@ -110,7 +125,7 @@ const getUserByEmail = async (email) => {
       rows: [user],
     } = await client.query(
       `
-        SELECT id, username, email
+        SELECT id, username, email, isadmin
         FROM users
         WHERE email=$1;
       `,
@@ -133,27 +148,32 @@ const getUserByUsername = async (username) => {
       rows: [user],
     } = await client.query(
       `
-        SELECT id, username, email
+        SELECT id, username, email, isadmin
         FROM users
         WHERE username=$1;
       `,
       [username]
     );
+
     if (!user) {
       return false;
     }
+
     return user;
   } catch (error) {
     throw error;
   }
 };
 
-// wild card to check for api calls
 const getAllUsers = async () => {
   try {
     const { rows } = await client.query(
-      `SELECT id, username, password, email FROM users;`
+      `
+        SELECT id, username, email, isadmin
+        FROM users;
+      `
     );
+
     return rows;
   } catch (error) {
     throw error;
@@ -168,5 +188,4 @@ module.exports = {
   getUserByEmail,
   getUserByUsername,
   getAllUsers,
-
 };

@@ -2,12 +2,13 @@ const jwt = require('jsonwebtoken');
 const JWT_SECRET = process.env.JWT_SECRET;
 const bcrypt = require('bcrypt');
 
-const createJWT = (email, id, username) => {
+const createJWT = (email, id, username, isAdmin) => {
   const token = jwt.sign(
     {
       email,
       id,
       username,
+      isAdmin,
     },
     JWT_SECRET,
     { expiresIn: '1w' }
@@ -20,7 +21,9 @@ const verifyJWT = (authHeader) => {
   const [, token] = authHeader.split('Bearer ');
   const validatedToken = jwt.verify(token, JWT_SECRET);
 
-  if (!validatedToken) return null;
+  if (!validatedToken) {
+    return null;
+  }
 
   return validatedToken;
 };

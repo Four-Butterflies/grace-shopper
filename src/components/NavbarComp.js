@@ -17,7 +17,7 @@ import LoginModal from './Login.js';
 import RegisterModal from './Register.js';
 
 const NavbarComp = (props) => {
-  const { user, setUser } = props;
+  const { user, setUser, admin, setAdmin } = props;
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
 
@@ -77,6 +77,15 @@ const NavbarComp = (props) => {
                 Checkout
               </Link>
             </Navbar.Text>
+            {admin ? (
+              <Navbar.Text>
+                <Link to={'/admin'} style={{ marginLeft: '1rem' }}>
+                  Admin
+                </Link>
+              </Navbar.Text>
+            ) : (
+              ''
+            )}
             <Form
               style={{
                 marginLeft: '600px', // this styling needs to be fixed
@@ -110,6 +119,7 @@ const NavbarComp = (props) => {
                 onClick={() => {
                   logoutUser();
                   setUser({});
+                  setAdmin(false);
                 }}
                 variant="warning"
                 style={{ marginLeft: '1rem' }}
@@ -124,6 +134,7 @@ const NavbarComp = (props) => {
         showLogin={showLogin}
         setShowLogin={setShowLogin}
         setUser={setUser}
+        setAdmin={setAdmin}
       />
       <RegisterModal
         showRegister={showRegister}

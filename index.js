@@ -1,15 +1,14 @@
 require('dotenv').config();
-const express             = require("express");
-const morgan              = require("morgan");
-const client              = require("./db/client.js");
-const { authMiddleware }  = require("./utils");
-const apiRouter           = require('./api');
-const path                = require('path');
-const cors                = require('cors');
+const express = require('express');
+const morgan = require('morgan');
+const client = require('./db/client.js');
+const { authMiddleware } = require('./utils');
+const apiRouter = require('./api');
+const path = require('path');
+const cors = require('cors');
 
 const PORT = process.env.PORT || 5000;
 const server = express();
-
 
 server.use(express.json());
 server.use(morgan('dev'));
@@ -43,5 +42,3 @@ const startServer = async () => {
 };
 
 startServer();
-
-

@@ -6,19 +6,18 @@ import { Elements } from '@stripe/react-stripe-js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
-import { 
-  Home, 
-  NavbarComp, 
+import {
+  Home,
+  NavbarComp,
   CheckoutForm,
   Albums,
   PaginationComponent,
   FooterUnit,
-  Orders
+  Admin,
+  Orders,
 } from './components';
 
-import { 
-  getAllAlbums
-} from './api'
+import { getAllAlbums, isAdmin } from './api';
 
 const stripePromise = loadStripe(
   'pk_test_51JIKRDAKg6qdYHfmrwdd1XDwBfUzU6lhJc5JjzWSQIibxbPEAwPSVkgqBAKxr4sG9KihcS9tOZFZ8glLP0R04hJs00x9APJi1Q'
@@ -26,37 +25,52 @@ const stripePromise = loadStripe(
 
 const App = () => {
   const [user, setUser] = useState({});
-  const [allAlbums, setAllAlbums] = useState([])
-  const [currentPage, setCurrentPage] = useState(1)
-  const [albumsPerPage] = useState(20)
-  const [totalAlbums, setTotalAlbums] = useState(0)
+  const [admin, setAdmin] = useState(false);
+  const [allAlbums, setAllAlbums] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [albumsPerPage] = useState(20);
+  const [totalAlbums, setTotalAlbums] = useState(0);
 
+  // Check if user is logged in
+  // Then, check if they are an admin
   useEffect(() => {
     if (localStorage.getItem('user')) {
       setUser(JSON.parse(localStorage.getItem('user')));
     }
+
+    (async () => {
+      const adminRes = await isAdmin();
+      setAdmin(adminRes);
+    })();
   }, []);
 
+  // Load a list of our wicked albums 🤘
   useEffect(() => {
-    const albumsPromise = async () => {
-        try {
-            const albumsResults = await getAllAlbums()
-            setAllAlbums(albumsResults)
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    (async () => {
+      try {
+        const albumsResults = await getAllAlbums();
+        setAllAlbums(albumsResults);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
 
-    albumsPromise()
-  }, [])
-
-  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <BrowserRouter>
-      <NavbarComp user={user} setUser={setUser} />
+      <NavbarComp
+        user={user}
+        setUser={setUser}
+        admin={admin}
+        setAdmin={setAdmin}
+      />
       <div id="app" style={{ paddingTop: '5rem', paddingBottom: '3rem' }}>
         <Switch>
+          <Route path={'/admin'}>
+            <Admin user={user} admin={admin} />
+          </Route>
           <Route path={'/checkout'}>
             <Elements stripe={stripePromise} className="App">
               <CheckoutForm />
@@ -66,16 +80,16 @@ const App = () => {
             <Home />
           </Route>
           <Route path={'/albums'}>
-            <Albums 
-              allAlbums={ allAlbums }
-              albumsPerPage={ albumsPerPage }
-              currentPage={ currentPage }
-              setTotalAlbums={ setTotalAlbums }
+            <Albums
+              allAlbums={allAlbums}
+              albumsPerPage={albumsPerPage}
+              currentPage={currentPage}
+              setTotalAlbums={setTotalAlbums}
             />
-            <PaginationComponent 
-              albumsPerPage={ albumsPerPage }
-              totalAlbums={ totalAlbums }
-              paginate={ paginate }
+            <PaginationComponent
+              albumsPerPage={albumsPerPage}
+              totalAlbums={totalAlbums}
+              paginate={paginate}
             />
           </Route>
           <Route path={'/orders'}>

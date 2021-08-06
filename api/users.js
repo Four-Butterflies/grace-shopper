@@ -1,26 +1,69 @@
 const express = require('express');
 const usersRouter = express.Router();
-const { createJWT } = require('../utils');
+const { createJWT, verifyJWT } = require('../utils');
 const {
   getAllUsers,
   createUser,
   getUserByEmailAndPassword,
   getUserByEmail,
   getUserByUsername,
+  getUserById,
 } = require('../db/users.js');
 
+// First admin only route :D
 usersRouter.get('/', async (req, res) => {
+  const user = verifyJWT(req.headers.authorization);
+
+  if (user.isAdmin) {
+    try {
+      const users = await getAllUsers();
+
+      return res.send({ users });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  res.send(':P');
+});
+
+usersRouter.get('/whoami', (req, res) => {
+  if (req.user) {
+    res.send({
+      user: req.user,
+    });
+  } else {
+    res.status(401).send({
+      message: 'You are not a signed in or authenticated user.',
+    });
+  }
+});
+
+// Helper route to check if a user is an admin
+usersRouter.get('/admin', (req, res) => {
+  const user = verifyJWT(req.headers.authorization);
+
+  if (user.isAdmin) {
+    return res.send(true);
+  }
+
+  res.send(false);
+});
+
+usersRouter.get('/:id', (req, res) => {
+  const { id } = req.params;
+
   try {
-    const users = await getAllUsers();
-    res.send({ users });
+    const result = getUserById(id);
+
+    res.send(result);
   } catch (error) {
     console.log(error);
   }
 });
 
 usersRouter.post('/register', async (req, res, next) => {
-  
-  if (Object.keys(req.body).length < 3) { 
+  if (Object.keys(req.body).length < 3) {
     return res.status(400).send({
       name: 'CredentialsRequired',
       message: 'Please provide email, username and password to register.',
@@ -68,7 +111,6 @@ usersRouter.post('/register', async (req, res, next) => {
 });
 
 usersRouter.post('/login', async (req, res, next) => {
-
   if (Object.keys(req.body).length < 2) {
     return res.status(400).send({
       name: 'CredentialsRequired',
@@ -100,7 +142,7 @@ usersRouter.post('/login', async (req, res, next) => {
     }
 
     if (user) {
-      const token = createJWT(user.email, user.id, user.username);
+      const token = createJWT(user.email, user.id, user.username, user.isAdmin);
 
       res.send({
         user: { id: user.id, username: user.username },
@@ -113,16 +155,9 @@ usersRouter.post('/login', async (req, res, next) => {
   }
 });
 
-usersRouter.get('/whoami', (req, res) => {
-  if (req.user) {
-    res.send({
-      user: req.user,
-    });
-  } else {
-    res.status(401).send({
-      message: 'You are not a signed in or authenticated user.',
-    });
-  }
+// TODO
+usersRouter.patch('/:id', (req, res) => {
+  const { id } = req.params;
 });
 
 module.exports = usersRouter;

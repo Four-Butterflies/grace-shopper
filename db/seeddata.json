@@ -1767,6 +1767,12 @@
       "username": "Aristide Katrijn",
       "password": "giftedgroan",
       "email": "aristide.katrijn@gmail.com"
+    },
+    {
+      "username": "Alex Ortiz-Rosado",
+      "password": "mexicancoke",
+      "email": "alex.ortiz-rosado@fullstackacademy.com",
+      "isAdmin": "true"
     }
   ],
   "reviews": [

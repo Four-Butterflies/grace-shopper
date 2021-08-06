@@ -19,7 +19,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const mount = async () => {
+    (async () => {
       const albums = await getMostRecentAlbums();
       setAlbums(albums);
       const firstAlbum = await getAlbumById(1);
@@ -28,8 +28,7 @@ const Home = () => {
       setAlbumTwo(secondAlbum[0]);
       const thirdAlbum = await getAlbumById(3);
       setAlbumThree(thirdAlbum[0]);
-    };
-    mount();
+    })();
   }, []);
 
   // console.log(albumOne, albumTwo, albumThree);
