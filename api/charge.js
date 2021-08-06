@@ -25,8 +25,7 @@ chargeRouter.post('/', async (req, res, next) => {
       payment_method: id,
       confirm: true,
     });
-    console.log('route',payment);
-
+      
     return res.status(200).send({ orderId, payment });
   } catch (error) {
 
