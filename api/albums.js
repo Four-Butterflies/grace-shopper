@@ -16,7 +16,7 @@ const {
 albumsRouter.get('/', async (req, res, next) => {
   try {
     const result = await getAlbums();
-    
+
     res.send(result);
   } catch (error) {
     next(error);
@@ -95,8 +95,7 @@ albumsRouter.get('/recent', async (req, res, next) => {
 
 // POST
 albumsRouter.post('/', async (req, res, next) => {
-
-  if (Object.keys(req.body).length < 10) { 
+  if (Object.keys(req.body).length < 10) {
     return res.status(400).send({
       name: 'InformationRequiredRequired',
       message: 'Please provide all fields required.',
@@ -138,8 +137,7 @@ albumsRouter.post('/', async (req, res, next) => {
 
 // PATCH
 albumsRouter.patch('/:albumID', async (req, res, next) => {
-  
-  if (Object.keys(req.body).length < 10) { 
+  if (Object.keys(req.body).length < 10) {
     return res.status(400).send({
       name: 'InformationRequiredRequired',
       message: 'Please provide all fields required.',
