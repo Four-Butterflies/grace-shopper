@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import { stripeCharge } from '../api';
-import { Card, ListGroup } from 'react-bootstrap';
+import { Card, ListGroup, Table } from 'react-bootstrap';
 
 const CheckoutForm = () => {
   const elements = useElements();
@@ -38,7 +38,8 @@ const CheckoutForm = () => {
           payment: { amount, description },
         } = result;
 
-        setDetails({ orderId, amount, description });
+        const splitDesc = description.split(',');
+        setDetails({ orderId, amount, splitDesc });
         setPaymentMethod(paymentMethod);
         setProcessing(false);
       } else {
@@ -64,12 +65,33 @@ const CheckoutForm = () => {
             Payment successful
           </Card.Header>
           <ListGroup variant="flush">
-            <ListGroup.Item>Order Number: {details.orderId}</ListGroup.Item>
-            <ListGroup.Item>Payment Method: {paymentMethod.id}</ListGroup.Item>
             <ListGroup.Item>
-              Album & Quantity: {details.description}
+              <b>Order Number</b>: {details.orderId}
             </ListGroup.Item>
-            <ListGroup.Item>Amount: ${details.amount / 100}</ListGroup.Item>
+            <ListGroup.Item>
+              <b>Payment Method</b>: {paymentMethod.id}
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <Table bordered size="sm">
+                <thead>
+                  <tr>
+                    <th>Album & Quantity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {details.splitDesc.map((desc) => {
+                    return (
+                      <tr>
+                        <td>{desc}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </Table>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <b>Total Amount</b>: ${details.amount / 100}
+            </ListGroup.Item>
           </ListGroup>
         </Card>
       </div>

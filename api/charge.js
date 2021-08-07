@@ -17,18 +17,20 @@ chargeRouter.post('/', async (req, res, next) => {
       await getOrderWithDetailsByOrderId(1);
 
     let albumNames = {};
-
+    
     details.forEach((detail) => {
-      albumNames[`${detail.album_name}`]
-        ? albumNames[`${detail.album_name}`]++
-        : (albumNames[`${detail.album_name}`] = 1);
+      detail.strike_price = `$${detail.strike_price / 100}(ea.)`;
+
+      albumNames[`${detail.album_name} ${detail.strike_price}`]
+        ? albumNames[`${detail.album_name} ${detail.strike_price}`]++
+        : (albumNames[`${detail.album_name} ${detail.strike_price}`] = 1);
     });
 
     const albumNameCount = Object.entries(albumNames)
-      .map((line) => {
-        return line.join(' = ');
+      .map((album) => {
+        return album.join(' x ');
       })
-      .join(' , ');
+      .join(', ');
 
     const payment = await stripe.paymentIntents.create({
       amount: total,
