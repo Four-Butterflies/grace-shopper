@@ -1,7 +1,8 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 
-const Albums = ({ allAlbums, currentPage, albumsPerPage, setTotalAlbums }) => {
+const Albums = ({ allAlbums, currentPage, albumsPerPage, setTotalAlbums, setCurrentAlbum }) => {
   const indexOfLastAlbum = currentPage * albumsPerPage;
   const indexOfFirstAlbum = indexOfLastAlbum - albumsPerPage;
   const currentAlbums = allAlbums.slice(indexOfFirstAlbum, indexOfLastAlbum);
@@ -46,17 +47,18 @@ const Albums = ({ allAlbums, currentPage, albumsPerPage, setTotalAlbums }) => {
               <Card.Title>{album.album_name}</Card.Title>
               <Card.Subtitle className="mb-2">{album.artist}</Card.Subtitle>
               <Card.Text>${album.price / 100}</Card.Text>
-              <Button
+              <Link 
+                className="btn btn-outline-light"
+                role="button"
+                onClick={async () => {
+                  await setCurrentAlbum(album)}
+                }
+                to={`/current-album/${album.id}`}
                 style={{
                   backgroundColor: 'var(--color-primary)',
-                  border: 'solid var(--color-primary) 3px',
+                  border: 'solid var(--color-primary) 3px'
                 }}
-                onClick={(event) => {
-                  event.preventDefault();
-                }}
-              >
-                Add to Cart
-              </Button>
+                >See Details</Link>
             </Card.Body>
           </Card>
         );
