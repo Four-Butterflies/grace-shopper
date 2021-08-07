@@ -15,6 +15,7 @@ import {
   FooterUnit,
   Admin,
   Orders,
+  AlbumInformation,
   Contact,
   AboutUs
 } from './components';
@@ -32,6 +33,7 @@ const App = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [albumsPerPage] = useState(20);
   const [totalAlbums, setTotalAlbums] = useState(0);
+  const [currentAlbum, setCurrentAlbum] = useState({})
 
   // Check if user is logged in
   // Then, check if they are an admin
@@ -79,7 +81,9 @@ const App = () => {
             </Elements>
           </Route>
           <Route path={'/'} exact>
-            <Home />
+            <Home 
+              setCurrentAlbum={setCurrentAlbum}
+            />
           </Route>
           <Route path={'/albums'}>
             <Albums
@@ -87,11 +91,18 @@ const App = () => {
               albumsPerPage={albumsPerPage}
               currentPage={currentPage}
               setTotalAlbums={setTotalAlbums}
+              setCurrentAlbum={setCurrentAlbum}
+              currentAlbum={currentAlbum}
             />
             <PaginationComponent
               albumsPerPage={albumsPerPage}
               totalAlbums={totalAlbums}
               paginate={paginate}
+            />
+          </Route>
+          <Route exact path={`/current-album/:albumId`}>
+            <AlbumInformation 
+              currentAlbum={currentAlbum}
             />
           </Route>
           <Route path={'/orders'}>

@@ -18,7 +18,7 @@ const SingleAlbum = ({ album }) => {
         <ListGroupItem>Price: ${price / 100}</ListGroupItem>
       </ListGroup>
       <Card.Body>
-        <Card.Link href="#">See Reviews</Card.Link>
+        <Card.Link href="#">See More Details</Card.Link>
         <Card.Link href="#">Add to Cart</Card.Link>
       </Card.Body>
     </Card>
