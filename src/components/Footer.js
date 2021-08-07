@@ -17,12 +17,12 @@ const FooterUnit = () => {
       <Row>
         <Col> </Col>
         <Col>
-          <Link to={'/'} style={{ marginLeft: '1rem', color: 'white' }}>
+          <Link to={'/about'} style={{ marginLeft: '1rem', color: 'white' }}>
             About Us
           </Link>
         </Col>
         <Col>
-          <Link to={'/'} style={{ marginLeft: '1rem', color: 'white' }}>
+          <Link to={'/contact'} style={{ marginLeft: '1rem', color: 'white' }}>
             Contact
           </Link>
         </Col>
