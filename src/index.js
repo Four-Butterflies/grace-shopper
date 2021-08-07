@@ -16,6 +16,8 @@ import {
   Admin,
   Orders,
   AlbumInformation,
+  Contact,
+  AboutUs
 } from './components';
 
 import { getAllAlbums, isAdmin } from './api';
@@ -105,6 +107,12 @@ const App = () => {
           </Route>
           <Route path={'/orders'}>
             <Orders />
+          </Route>
+          <Route path={'/contact'} exact>
+            <Contact />
+          </Route>
+          <Route path={'/about'} exact>
+            <AboutUs />
           </Route>
           <Route>
             <h1>404 Page Not Found</h1>
