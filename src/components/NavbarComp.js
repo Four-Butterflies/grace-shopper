@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../index.css';
-
+import { SearchBar } from '../components';
 import {
   Navbar,
   Nav,
   Container,
   Form,
-  FormControl,
   Button,
 } from 'react-bootstrap';
 
-import { logoutUser } from '../api';
+import { logoutUser, getAllAlbums } from '../api';
 
 import LoginModal from './Login.js';
 import RegisterModal from './Register.js';
 
 const NavbarComp = (props) => {
-  const { user, setUser, admin, setAdmin } = props;
+  const { user, setUser, admin, setAdmin, allAlbums, setAllAlbums } = props;
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
-
+  
   const handleShowLogin = () => {
     setShowLogin(true);
   };
@@ -28,6 +27,11 @@ const NavbarComp = (props) => {
   const handleShowRegister = () => {
     setShowRegister(true);
   };
+
+  const handleClick = async() => {
+    const allAlbums = await getAllAlbums()
+    setAllAlbums(allAlbums)
+  }
 
   return (
     <Navbar
@@ -63,7 +67,7 @@ const NavbarComp = (props) => {
               </Link>
             </Navbar.Text>
             <Navbar.Text>
-              <Link to={'/albums'} style={{ marginLeft: '1rem' }}>
+              <Link to={'/albums'} onClick={handleClick} style={{ marginLeft: '1rem' }}>
                 Albums
               </Link>
             </Navbar.Text>
@@ -88,14 +92,10 @@ const NavbarComp = (props) => {
             )}
             <Form
               style={{
-                marginLeft: '600px', // this styling needs to be fixed
+                 marginLeft: '300px', 
               }}
             >
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className="mr-sm-2"
-              />
+            <SearchBar allAlbums={allAlbums} setAllAlbums={setAllAlbums}/>
             </Form>
             {!user.username ? (
               <>

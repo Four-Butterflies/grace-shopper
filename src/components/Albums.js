@@ -19,8 +19,10 @@ const Albums = ({ allAlbums, currentPage, albumsPerPage, setTotalAlbums, setCurr
         margin: 'auto',
       }}
     >
+
       {currentAlbums.map((album) => {
         return (
+
           <Card
             key={album.id}
             style={{
@@ -44,6 +46,7 @@ const Albums = ({ allAlbums, currentPage, albumsPerPage, setTotalAlbums, setCurr
                 background: 'var(--color-secondary)',
               }}
             >
+           
               <Card.Title>{album.album_name}</Card.Title>
               <Card.Subtitle className="mb-2">{album.artist} ({album.year})</Card.Subtitle>
             </Card.Body>

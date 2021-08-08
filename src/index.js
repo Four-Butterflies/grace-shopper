@@ -65,6 +65,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <NavbarComp
+        allAlbums={allAlbums}
+        setAllAlbums={setAllAlbums}
         user={user}
         setUser={setUser}
         admin={admin}
