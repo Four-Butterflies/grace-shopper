@@ -65,9 +65,6 @@ export async function getOrderDetails(orderId) {
   }
 }
 
-// export async function addAlbumToCart(albumId) {
-
-// }
 
 // CHECKOUT
 export async function stripeCharge({ id }) {

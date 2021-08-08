@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getAlbumById } from '../api';
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 
-const OrdersAlbums = ({ albumId }) => {
+const OrdersAlbums = ({ albumId, albumQuantity, albumTotalPrice }) => {
   const [album, setAlbum] = useState();
 
   useEffect(() => {
@@ -28,8 +28,9 @@ const OrdersAlbums = ({ albumId }) => {
             </Card.Subtitle>
           </Card.Body>
           <ListGroup className="list-group-flush">
+            <ListGroupItem>Quantity: {albumQuantity}</ListGroupItem>
             <ListGroupItem>{album.total_tracks} tracks</ListGroupItem>
-            <ListGroupItem>Price: ${album.price / 100}</ListGroupItem>
+            <ListGroupItem>Price: ${albumTotalPrice / 100}</ListGroupItem>
           </ListGroup>
         </Card>
       ) : (
