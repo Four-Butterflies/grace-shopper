@@ -42,11 +42,11 @@ const Orders = () => {
                 foundAlbum.total_price += album.strike_price
               }
             })}
-            {console.log(quantities)}
+
             return (
               <Card style={{ width: '70rem' }} key={order.id}>
                 <Card.Body>
-                  <Card.Title>{order.status}{console.log(order)}</Card.Title>
+                  <Card.Title>{order.status}</Card.Title>
                   <Card.Text>{order.status}</Card.Text>
                   <Container
                     fluid
