@@ -47,8 +47,7 @@ export async function getOrders() {
     const { data } = await axios.get(
       `${BASE_URL}/orders/user_orders/${user.id}`
     );
-    // const inProgressOrders = data.filter((album) => album.status === 'in progress')
-    // console.log(data)
+
     return data;
   } catch (error) {
     throw error;
@@ -58,10 +57,42 @@ export async function getOrders() {
 export async function getOrderDetails(orderId) {
   try {
     const { data } = await axios.get(`${BASE_URL}/orders/details/${orderId}`);
-    console.log(data);
+
     return data;
   } catch (error) {
     throw error;
+  }
+}
+
+export async function createOrder() {
+  try {
+    const user = JSON.parse(localStorage.getItem('user'))
+
+    const { data } = await axios.post(`${BASE_URL}/orders/submit_order`, {
+      userId: user.id,
+      status: 'in progress',
+      total: 0
+    })
+
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
+// CREATE ALBUM_UNIT
+export async function createAlbumUnit(albumId, orderId, strikePrice) {
+  console.log('we in the api', albumId, orderId, strikePrice)
+  try {
+    const { data } = await axios.post(`${BASE_URL}/album_units`, {
+      albumId: albumId,
+      orderId: orderId,
+      strikePrice: strikePrice
+    })
+    console.log(data)
+    return data
+  } catch (error) {
+
   }
 }
 

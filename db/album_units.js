@@ -1,6 +1,6 @@
 const client = require('./client.js');
 
-async function createAlbumUnit({ albumId, orderId, strikePrice }) {
+async function createAlbumUnit(albumId, orderId, strikePrice) {
   try {
     const {
       rows: [albumUnit],

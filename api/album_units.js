@@ -4,11 +4,13 @@ const { createAlbumUnit, deleteAlbumUnit } = require('../db/album_units.js');
 
 // POST
 albumUnitsRouter.post('/', async (req, res, next) => {
-  const { albumId, userId, strikePrice } = req.body;
+  const { albumId, orderId, strikePrice } = req.body;
+  console.log(albumId, orderId, strikePrice)
 
   try {
-    const newAlbumUnit = await createAlbumUnit(albumId, userId, strikePrice);
+    const newAlbumUnit = await createAlbumUnit(albumId, orderId, strikePrice);
 
+    console.log(newAlbumUnit)
     res.send(newAlbumUnit);
   } catch (error) {
     next(error);
