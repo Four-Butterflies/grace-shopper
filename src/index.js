@@ -72,7 +72,7 @@ const App = () => {
         admin={admin}
         setAdmin={setAdmin}
       />
-      <div id="app" style={{ paddingBottom: '3rem' }}>
+      <div id="app" style={{  paddingBottom: '3rem' }}>
         <Switch>
           <Route path={'/admin'}>
             <Admin user={user} admin={admin} />
