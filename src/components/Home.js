@@ -125,7 +125,7 @@ const Home = () => {
         </Carousel.Item>
       </Carousel>
       <Container fluid>
-        <h1>New Releases:</h1>
+        <h1 style={{textAlign:'center', borderBottom:'1px solid black'}}>New Releases (now in stock!)</h1>
         <Container
           fluid
           style={{

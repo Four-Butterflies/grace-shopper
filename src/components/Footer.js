@@ -8,7 +8,7 @@ const FooterUnit = () => {
     <Container
       fluid
       style={{
-        backgroundColor: 'var(--color-primary)',
+        backgroundColor: '#18d1e7',
         textDecoration: 'underline',
         color: 'white',
       }}
@@ -17,7 +17,12 @@ const FooterUnit = () => {
       <Row>
         <Col> </Col>
         <Col>
-          <Link to={'/about'} style={{ marginLeft: '1rem', color: 'white' }}>
+          <Link to={'/about'} 
+            style={{ 
+              marginLeft: '1rem', 
+              color: 'white',
+              alignItems: 'flex-start', 
+              }}>
             About Us
           </Link>
         </Col>
@@ -29,6 +34,8 @@ const FooterUnit = () => {
         <Col
           style={{
             textAlign: 'right',
+            alignItems: 'flex-end',
+            fontSize: '0.8rem',
           }}
         >
           A Four Butterflies Production <span>&copy;</span> 2021
