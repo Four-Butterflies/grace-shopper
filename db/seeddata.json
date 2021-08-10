@@ -710,6 +710,18 @@
       "spotify": "https://open.spotify.com/album/06S2JBsr4U1Dz3YaenPdVq"
     },
     {
+      "name": "The Colour And The Shape",
+      "artists": "Foo Fighters",
+      "release_date": "1997",
+      "genres": ["Alternative Metal", "Alternative Rock","Modern Rock","Permanent Wave","Post-grunge","Rock"],
+      "price": 3999,
+      "quantity": 27,
+      "reorder": 2,
+      "image": "https://i.scdn.co/image/ab67616d0000b2730389027010b78a5e7dce426b",
+      "total_tracks": 14,
+      "spotify": "https://open.spotify.com/album/30ly6F6Xl0TKmyBCU50Khv"
+    },
+        {
       "name": "The Unseen",
       "artists": "Quasimoto",
       "release_date": "2000",

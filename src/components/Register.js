@@ -23,9 +23,9 @@ const RegisterModal = ({ showRegister, setShowRegister, setUser }) => {
       <Modal.Header
         className="register-user-header"
         style={{
-          backgroundColor: 'green',
+          backgroundColor: '#18d1e7',
           color: 'white',
-          borderBottom: '2px solid black',
+          borderBottom: '2px solid blue',
         }}
       >
         Register
@@ -95,14 +95,34 @@ const RegisterModal = ({ showRegister, setShowRegister, setUser }) => {
           <Form.Group>
             <Button
               type="Submit"
-              style={{ float: 'right', marginLeft: '1rem' }}
-              variant="success"
+              variant="primary"
+              style={{     
+              float: 'right',         
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+              fontWeight: '600',
+              textTransform: 'uppercase',
+              textDecoration: 'none',
+              webkitTransition: 'all 150ms ease',
+              transition: 'all 150ms ease',
+              margin: '10px',
+              height: '2.5rem',
+              }}
             >
               Submit
             </Button>
             <Button
-              style={{ float: 'right' }}
-              variant="secondary"
+                  variant="primary"
+                  style={{     
+                  float: 'right',         
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                  fontWeight: '600',
+                  textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  webkitTransition: 'all 150ms ease',
+                  transition: 'all 150ms ease',
+                  margin: '10px',
+                  height: '2.5rem',
+                  }}
               onClick={() => {
                 clearForm();
                 handleClose();

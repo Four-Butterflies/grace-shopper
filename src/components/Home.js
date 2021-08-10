@@ -24,7 +24,7 @@ const Home = () => {
       setAlbums(albums);
       const firstAlbum = await getAlbumById(1);
       setAlbumOne(firstAlbum[0]);
-      const secondAlbum = await getAlbumById(7);
+      const secondAlbum = await getAlbumById(57);
       setAlbumTwo(secondAlbum[0]);
       const thirdAlbum = await getAlbumById(3);
       setAlbumThree(thirdAlbum[0]);
@@ -125,7 +125,7 @@ const Home = () => {
         </Carousel.Item>
       </Carousel>
       <Container fluid>
-        <h1>New Releases:</h1>
+        <h1 style={{textAlign:'center', borderBottom:'1px solid black'}}>New Releases (now in stock!)</h1>
         <Container
           fluid
           style={{

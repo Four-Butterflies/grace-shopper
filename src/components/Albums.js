@@ -25,47 +25,61 @@ const Albums = ({ allAlbums, currentPage, albumsPerPage, setTotalAlbums, setCurr
 
           <Card
             key={album.id}
-            style={{
-              width: '18rem',
-              margin: '1rem',
-              background: 'var(--color-tertiary)',
-            }}
+            style={{ width: '18rem', marginBottom: '1rem' }}
           >
-            <Card.Img
-              variant="top"
-              src={album.img_url}
+            <Card.Img variant="top" src={album.img_url} alt={album.album_name} 
               style={{
-                width: '10rem',
-                height: '10rem',
-                margin: '1rem',
-                border: 'solid black 1px',
-              }}
-            />
-            <Card.Body
-              style={{
-                background: 'var(--color-secondary)',
-              }}
-            >
-           
+                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 12px #186AE7',
+                border: '2px solid lightgray'
+              }}/>
+
+            <Card.Body>           
               <Card.Title>{album.album_name}</Card.Title>
-              <Card.Subtitle className="mb-2">{album.artist} ({album.year})</Card.Subtitle>
+              <Card.Subtitle className="mb-2 text-muted">{album.artist} ({album.year})
+              </Card.Subtitle>
             </Card.Body>
             <ListGroup className="list-group-flush">
-              <ListGroupItem>{album.total_tracks} tracks</ListGroupItem>
+              <ListGroupItem>{album.total_tracks} Tracks</ListGroupItem>
               <ListGroupItem>Price: ${album.price / 100}</ListGroupItem>
               <ListGroupItem>
-                <Link 
-                  className="btn btn-outline-light"
-                  role="button"
+                <Button 
+                    variant="primary"
+                    style={{                          
+                      width: '100px',  
+                      fontSize: '0.8rem',  
+                      textAlign: 'center',
+                      alignItems:'center',
+                      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                      fontWeight: '450',
+                      textTransform: 'uppercase',
+                      textDecoration: 'none',
+                      webkitTransition: 'all 150ms ease',
+                      transition: 'all 150ms ease',
+                      margin: '5px',
+                      height: '2rem',
+                      }}
                   onClick={async () => {
                     await setCurrentAlbum(album)}
                   }
-                  to={`/current-album/${album.id}`}
-                  style={{
-                    backgroundColor: 'var(--color-primary)',
-                    border: 'solid var(--color-primary) 3px'
-                  }}
-                  >See Details</Link>
+                  href={`/current-album/${album.id}`}>
+                  See Details</Button>
+                   <Button 
+                    variant="primary"
+                    style={{                          
+                    width: '120px',  
+                    fontSize: '0.8rem',  
+                    textAlign: 'center',
+                    alignItems:'center',
+                    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                    fontWeight: '450',
+                    textTransform: 'uppercase',
+                    textDecoration: 'none',
+                    webkitTransition: 'all 150ms ease',
+                    transition: 'all 150ms ease',
+                    margin: '5px',
+                    height: '2rem',
+                    }}
+                    to={`/orders`}>Add to Cart</Button>
               </ListGroupItem>
             </ListGroup>
           </Card>
