@@ -33,6 +33,54 @@ export async function getMostRecentAlbums() {
   }
 }
 
+// This is a bit overly verbose while debugging something
+export async function createAlbum(album) {
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  if (!token) {
+    return false;
+  }
+
+  const {
+    name,
+    artists,
+    release_date,
+    genres,
+    price,
+    quantity,
+    reorder,
+    image,
+    total_tracks,
+    spotify,
+  } = album;
+
+  try {
+    const { data } = await fetch(`${BASE_URL}/albums`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        artists,
+        release_date,
+        genres,
+        price,
+        quantity,
+        reorder,
+        image,
+        total_tracks,
+        spotify,
+      }),
+    });
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
 // CART
 export async function getOrders() {
   try {
@@ -66,36 +114,33 @@ export async function getOrderDetails(orderId) {
 
 export async function createOrder() {
   try {
-    const user = JSON.parse(localStorage.getItem('user'))
+    const user = JSON.parse(localStorage.getItem('user'));
 
     const { data } = await axios.post(`${BASE_URL}/orders/submit_order`, {
       userId: user.id,
       status: 'in progress',
-      total: 0
-    })
+      total: 0,
+    });
 
-    return data
+    return data;
   } catch (error) {
-    throw error
+    throw error;
   }
 }
 
 // CREATE ALBUM_UNIT
 export async function createAlbumUnit(albumId, orderId, strikePrice) {
-  console.log('we in the api', albumId, orderId, strikePrice)
+  console.log('we in the api', albumId, orderId, strikePrice);
   try {
     const { data } = await axios.post(`${BASE_URL}/album_units`, {
       albumId: albumId,
       orderId: orderId,
-      strikePrice: strikePrice
-    })
-    console.log(data)
-    return data
-  } catch (error) {
-
-  }
+      strikePrice: strikePrice,
+    });
+    console.log(data);
+    return data;
+  } catch (error) {}
 }
-
 
 // CHECKOUT
 export async function stripeCharge({ id }) {
