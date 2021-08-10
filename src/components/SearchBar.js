@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import CloseIcon from '@material-ui/icons/Close'
+import { ListGroup} from 'react-bootstrap';
+
 import '../index.css';
 
 import { getAlbumById } from '../api';
@@ -14,9 +16,13 @@ const SearchBar = ({ allAlbums, setAllAlbums }) => {
     const albumSearched = event.target.value;
     setSearchTerm(albumSearched);
     const albumFilter = allAlbums.filter((albums)=>{
-        return albums.artist.toLowerCase().includes(albumSearched.toLowerCase()) 
-    });
 
+        const album     = albums.artist.toLowerCase().includes(albumSearched.toLowerCase());
+        const artist    = albums.album_name.toLowerCase().includes(albumSearched.toLowerCase());
+
+        return artist ? artist : album
+    });
+    
     albumSearched === "" ? setFilteredAlbums([]) : setFilteredAlbums(albumFilter);
   }
 
@@ -27,7 +33,7 @@ const SearchBar = ({ allAlbums, setAllAlbums }) => {
   }
 
   const handleSearch = async(event) => {
-    console.log(event.target.id)
+
     const albumSearched = await getAlbumById(event.target.id)
     setAllAlbums(albumSearched)
     setFilteredAlbums([]);
@@ -46,7 +52,7 @@ const SearchBar = ({ allAlbums, setAllAlbums }) => {
       { filteredAlbums.length !== 0 &&
         <div className="dataResult">
           {filteredAlbums.slice(0,10).map((value) => {
-            return <p className="dataItem" onClick={handleSearch} id={value.id}>{`${value.album_name}, ${value.artist}` }</p>;
+            return  <ListGroup.Item className="dataItem" onClick={handleSearch} id={value.id}>{`${value.album_name}, ${value.artist}` }</ListGroup.Item>;
           })}
         </div>
       }
