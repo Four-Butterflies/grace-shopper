@@ -24,7 +24,7 @@ const Home = () => {
       setAlbums(albums);
       const firstAlbum = await getAlbumById(1);
       setAlbumOne(firstAlbum[0]);
-      const secondAlbum = await getAlbumById(7);
+      const secondAlbum = await getAlbumById(57);
       setAlbumTwo(secondAlbum[0]);
       const thirdAlbum = await getAlbumById(3);
       setAlbumThree(thirdAlbum[0]);
