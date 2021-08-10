@@ -92,7 +92,7 @@ const NavbarComp = (props) => {
             )}
             <Form
               style={{
-                 marginLeft: '300px', 
+                 marginLeft: '100px', 
               }}
             >
             <SearchBar allAlbums={allAlbums} setAllAlbums={setAllAlbums}/>
