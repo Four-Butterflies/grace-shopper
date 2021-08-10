@@ -8,6 +8,8 @@ import {
   Container,
   Form,
   Button,
+  Image,
+  Col
 } from 'react-bootstrap';
 
 import { logoutUser, getAllAlbums } from '../api';
@@ -37,79 +39,138 @@ const NavbarComp = (props) => {
     <Navbar
       expand="lg"
       style={{
-        backgroundColor: 'var(--color-primary)',
+        backgroundColor: '#18d1e7',
       }}
       className="fixed-top"
     >
       <Container>
-        <Link
-          to={'/'}
-          style={{
-            textDecoration: 'none',
-            color: 'white',
-            fontWeight: 'bold',
-            width: '4rem',
-          }}
-        >
-          <>
-            Vinyl{' '}
-            <span role="img" aria-label="Rock and Roll">
-              🤘
-            </span>
-          </>
-        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
+          <Image src="https://americanvinylco.com/wp-content/uploads/2019/06/americanvinyl0.png" rounded
+          style={{
+            height: '4rem',
+            width: '4rem',
+            margin: '10px',
+            marginRight: '25px',
+            justifyContent: 'center',
+          }}/>
           <Nav className="me-auto">
-            <Navbar.Text>
-              <Link to={'/'} style={{ marginLeft: '1rem' }}>
+              <Button href={'/'}  onClick={handleClick}                   
+                variant="primary"
+                  style={{                  
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                  fontWeight: '600',
+                  textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  webkitTransition: 'all 150ms ease',
+                  transition: 'all 150ms ease',
+                  margin: '10px',
+                  height: '2.5rem',
+                   }}
+                >
                 Home
-              </Link>
-            </Navbar.Text>
-            <Navbar.Text>
-              <Link to={'/albums'} onClick={handleClick} style={{ marginLeft: '1rem' }}>
+              </Button>
+              <Button href={'/albums'} onClick={handleClick} 
+                  variant="primary"
+                  style={{                  
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                  fontWeight: '600',
+                  textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  webkitTransition: 'all 150ms ease',
+                  transition: 'all 150ms ease',
+                  margin: '10px',
+                  height: '2.5rem',
+
+                   }}
+                >
                 Albums
-              </Link>
-            </Navbar.Text>
-            <Navbar.Text>
-              <Link to={'/orders'} style={{ marginLeft: '1rem' }}>
+              </Button>
+              <Button href={'/orders'} onClick={handleClick} 
+                  variant="primary"
+                  style={{                  
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                  fontWeight: '600',
+                  textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  webkitTransition: 'all 150ms ease',
+                  transition: 'all 150ms ease',
+                  margin: '10px',
+                  height: '2.5rem',
+                   }}
+                >
                 Cart
-              </Link>
-            </Navbar.Text>
-            <Navbar.Text>
-              <Link to={'/checkout'} style={{ marginLeft: '1rem' }}>
+              </Button>
+              <Button href={'/checkout'} onClick={handleClick} 
+                  variant="primary"
+                  style={{                  
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                  fontWeight: '600',
+                  textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  webkitTransition: 'all 150ms ease',
+                  transition: 'all 150ms ease',
+                  margin: '10px',
+                  height: '2.5rem',
+
+                   }}
+                >
                 Checkout
-              </Link>
-            </Navbar.Text>
+              </Button>
             {admin ? (
               <Navbar.Text>
-                <Link to={'/admin'} style={{ marginLeft: '1rem' }}>
+                <Button href={'/admin'}                 
+                  variant="primary"
+                  style={{                  
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                  fontWeight: '600',
+                  textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  webkitTransition: 'all 150ms ease',
+                  transition: 'all 150ms ease',
+                  margin: '10px',
+                  height: '2.5rem',
+
+                   }}
+                >
                   Admin
-                </Link>
+                </Button>
               </Navbar.Text>
             ) : (
               ''
             )}
-            <Form
-              style={{
-                 marginLeft: '100px', 
-              }}
-            >
-            <SearchBar allAlbums={allAlbums} setAllAlbums={setAllAlbums}/>
-            </Form>
             {!user.username ? (
               <>
                 <Button
                   onClick={handleShowLogin}
-                  variant="warning"
-                  style={{ marginLeft: '1rem' }}
+                  variant="primary"
+                  style={{                  
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                  fontWeight: '600',
+                  textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  webkitTransition: 'all 150ms ease',
+                  transition: 'all 150ms ease',
+                  margin: '10px',
+                  height: '2.5rem',
+                   }}
                 >
                   Login
                 </Button>
                 <Button
                   onClick={handleShowRegister}
-                  variant="warning"
-                  style={{ marginLeft: '1rem' }}
+                  variant="primary"
+                  style={{                  
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                  fontWeight: '600',
+                  textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  webkitTransition: 'all 150ms ease',
+                  transition: 'all 150ms ease',
+                  margin: '10px',
+                  height: '2.5rem',
+
+                   }}
                 >
                   Register
                 </Button>
@@ -121,12 +182,31 @@ const NavbarComp = (props) => {
                   setUser({});
                   setAdmin(false);
                 }}
-                variant="warning"
-                style={{ marginLeft: '1rem' }}
+                variant="primary"
+                style={{                  
+                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                fontWeight: '600',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                webkitTransition: 'all 150ms ease',
+                transition: 'all 150ms ease',
+                margin: '10px',
+                height: '2.5rem',
+                 }}
               >
                 Logout ({user.username.split(' ')[0]})
               </Button>
             )}
+            <Form
+              style={{
+                 marginLeft: '100px',
+                 marginBottom: '10px',
+ 
+              }}
+            >
+            <SearchBar allAlbums={allAlbums} setAllAlbums={setAllAlbums}/>
+            </Form>
+
           </Nav>
         </Navbar.Collapse>
       </Container>

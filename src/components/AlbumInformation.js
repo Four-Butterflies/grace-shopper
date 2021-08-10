@@ -16,6 +16,7 @@ const AlbumInformation = () => {
         }
         mount()
     }, [])
+    
 
     //TODO: put in username for reviews
     //TODO: add button to checkout
@@ -32,72 +33,130 @@ const AlbumInformation = () => {
                     <img src={album.img_url}></img>
                     <div>
                         {album.genres.map((genre) => {
-                            return (<Link 
-                                className="btn btn-outline-light"
-                                role="button"
-                                to='/'
-                                style={{
-                                    backgroundColor: 'var(--color-primary)',
-                                    border: 'solid var(--color-primary) 3px',
-                                    margin: '0.5rem'
-                                }}
-                            >{genre}</Link>)
+                            return (
+                            <Button 
+                                href="/"
+                                variant="primary"
+                                style={{                  
+                                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                                fontWeight: '600',
+                                textTransform: 'uppercase',
+                                textDecoration: 'none',
+                                webkitTransition: 'all 150ms ease',
+                                transition: 'all 150ms ease',
+                                margin: '10px',
+                                height: '2.5rem',
+                                 }}
+                            >{genre}</Button>)
                         })}
                     </div>
-                    <p>${album.price / 100}</p>
-                    <h2>Reviews</h2>
+                    <h3>${album.price / 100}</h3>
+                    <br></br>
+                    <h2 style={{
+                        borderBottom: '1px solid black',
+                    }}>Reviews</h2>
                     {album.reviews.map((review) => {
+                        var date = new Date(review.date);
+
+                        var year = date.getFullYear();
+                        var month = date.getMonth()+1;
+                        var day = date.getDate();
+                        
+                        if (day < 10) {
+                          day = '0' + day;
+                        }
+                        if (month < 10) {
+                          month = '0' + month;
+                        }
+                        
+                        var formattedDate = month + '-' + day + '-' + year
                         return (
-                            <div>
-                                <h3>{review.rating.toString()}</h3>
-                                <p>{review.date}</p>
+                            <div
+                                style={{
+                                border: '1px solid black'
+                                }}>
+                                <p style={{textAlign:'right',}}>{formattedDate}</p>
+                                <h3 style={{textAlign:'right',}}>{review.rating.toString()}</h3>
                                 <p>{review.review}</p>
                             </div>
                         )
                     })}
                 </div>
                 <div>
-                    <h1>{album.album_name}</h1>
-                    <h2>{album.artist}</h2>
+                    <h1 style={{
+                        textAlign: 'left',
+                    }}>{album.album_name}</h1>
+                    <h2 style={{
+                        fontStyle:'italic',
+                        textAlign: 'left',
+                        borderBottom: 'solid 1px black'
+                    }} >{album.artist}</h2>
                     <p>Quantity</p>
                     <div style={{
                         display: 'flex',
                         alignItems: 'center'
                     }}>
                         {quantity === 1 ? 
-                        <Button disabled style={{
-                            backgroundColor: 'var(--color-primary)',
-                            border: 'solid var(--color-primary) 3px',
-                            margin: '0.5rem'
-                        }}></Button> : 
+                        <Button disabled                                
+                            variant="primary"
+                            style={{                  
+                            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                            fontWeight: '600',
+                            textTransform: 'uppercase',
+                            textDecoration: 'none',
+                            webkitTransition: 'all 150ms ease',
+                            transition: 'all 150ms ease',
+                            margin: '10px',
+                            height: '2.5rem',
+                        }}>
+
+                        </Button> : 
                         <Button 
-                            style={{
-                                backgroundColor: 'var(--color-primary)',
-                                border: 'solid var(--color-primary) 3px',
-                                margin: '0.5rem'
-                            }}
+                                variant="primary"
+                                style={{                  
+                                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                                fontWeight: '600',
+                                textTransform: 'uppercase',
+                                textDecoration: 'none',
+                                webkitTransition: 'all 150ms ease',
+                                transition: 'all 150ms ease',
+                                margin: '10px',
+                                height: '2.5rem',
+                                 }}
                             onClick={(event) => {
                                 event.preventDefault()
                                 setQuantity(quantity - 1)}}
                         >-</Button>}
                         <p>{quantity}</p>
                         <Button 
-                            style={{
-                                backgroundColor: 'var(--color-primary)',
-                                border: 'solid var(--color-primary) 3px',
-                                margin: '0.5rem'
-                            }}
+                                variant="primary"
+                                style={{                  
+                                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                                fontWeight: '600',
+                                textTransform: 'uppercase',
+                                textDecoration: 'none',
+                                webkitTransition: 'all 150ms ease',
+                                transition: 'all 150ms ease',
+                                margin: '10px',
+                                height: '2.5rem',
+                                 }}
                             onClick={(event) => {
                                 event.preventDefault()
                                 setQuantity(quantity + 1)}}
                         >+</Button>
                     </div>
                     <Button
-                        style={{
-                            backgroundColor: 'var(--color-tertiary)',
-                            border: 'solid var(--color-tertiary) 3px',
-                            margin: '0.5rem'
-                        }}
+                                variant="primary"
+                                style={{                  
+                                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                                fontWeight: '600',
+                                textTransform: 'uppercase',
+                                textDecoration: 'none',
+                                webkitTransition: 'all 150ms ease',
+                                transition: 'all 150ms ease',
+                                margin: '10px',
+                                height: '2.5rem',
+                                 }}
                         onClick={async (event) => {
                             event.preventDefault()
                             const orders = await getOrders()
@@ -107,7 +166,6 @@ const AlbumInformation = () => {
                             } else {
                                 for(let i = 0; i < quantity; i++) { // will make multiple album_units
                                     createAlbumUnit(album.id, inProgressOrder.id, album.price)
-                                    console.log("added from front end", album.id, inProgressOrder.id, album.price)
                                 }
                             }
                         }}

@@ -130,16 +130,17 @@ export async function createOrder() {
 
 // CREATE ALBUM_UNIT
 export async function createAlbumUnit(albumId, orderId, strikePrice) {
-  console.log('we in the api', albumId, orderId, strikePrice);
   try {
     const { data } = await axios.post(`${BASE_URL}/album_units`, {
-      albumId: albumId,
-      orderId: orderId,
-      strikePrice: strikePrice,
+      albumId,
+      orderId,
+      strikePrice,
     });
     console.log(data);
-    return data;
-  } catch (error) {}
+    return { data };
+  } catch (error) {
+    throw error
+  }
 }
 
 // CHECKOUT

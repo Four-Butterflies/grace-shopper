@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Card, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
 
 const SingleAlbum = ({ album }) => {
   const { album_name, artist, year, price, img_url, total_tracks } = album;
@@ -17,10 +17,45 @@ const SingleAlbum = ({ album }) => {
         <ListGroupItem>{total_tracks} tracks</ListGroupItem>
         <ListGroupItem>Price: ${price / 100}</ListGroupItem>
       </ListGroup>
-      <Card.Body>
-        <Card.Link href="#">See More Details</Card.Link>
-        <Card.Link href="#">Add to Cart</Card.Link>
-      </Card.Body>
+      <ListGroupItem>
+          <Button 
+            variant="primary"
+              style={{                          
+                width: '100px',  
+                      fontSize: '0.8rem',  
+                      textAlign: 'center',
+                      alignItems:'center',
+                      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                      fontWeight: '450',
+                      textTransform: 'uppercase',
+                      textDecoration: 'none',
+                      webkitTransition: 'all 150ms ease',
+                      transition: 'all 150ms ease',
+                      margin: '5px',
+                      height: '2rem',
+                      }}
+                      href={`/current-album/${album.id}`}
+
+                  >See Details</Button>
+                   <Button 
+                    variant="primary"
+                    style={{                          
+                    width: '120px',  
+                    fontSize: '0.8rem',  
+                    textAlign: 'center',
+                    alignItems:'center',
+                    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                    fontWeight: '450',
+                    textTransform: 'uppercase',
+                    textDecoration: 'none',
+                    webkitTransition: 'all 150ms ease',
+                    transition: 'all 150ms ease',
+                    margin: '5px',
+                    height: '2rem',
+                    }}
+                    to={`/orders`}>Add to Cart</Button>
+              </ListGroupItem>
+           
     </Card>
   );
 };
