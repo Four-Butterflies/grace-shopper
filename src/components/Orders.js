@@ -65,7 +65,7 @@ const Orders = () => {
                     )) : <div>No Orders</div>}
                   </Container>
                   {order.status === 'in progress' ? (
-                    <Button variant="primary">Complete Order</Button>
+                    <Button variant="primary">Complete Order</Button> /* order.id -- send order ID to */
                   ) : (
                     <Button variant="primary">See Details</Button>
                   )}
