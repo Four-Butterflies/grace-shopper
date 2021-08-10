@@ -81,6 +81,27 @@ export async function createAlbum(album) {
   }
 }
 
+// SEARCH
+export async function searchByAlbumName(name) {
+  try {
+    const { data } = await axios.get(`${BASE_URL}/albums/name/${name}`)
+
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
+export async function searchByArtist(artist) {
+  try {
+    const { data } = await axios.get(`${BASE_URL}/albums/artist/${artist}`)
+
+    return data
+  } catch (error) {
+    throw error
+  }
+}
+
 // CART
 export async function getOrders() {
   try {

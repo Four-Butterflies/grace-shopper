@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import SearchIcon from '@material-ui/icons/Search';
-import CloseIcon from '@material-ui/icons/Close'
-import { ListGroup} from 'react-bootstrap';
-
+import { ListGroup, InputGroup, DropdownButton, Dropdown, FormControl, Button } from 'react-bootstrap';
 import '../index.css';
-
-import { getAlbumById } from '../api';
+import { getAlbumById, searchByAlbumName, searchByArtist } from '../api';
+import { Route } from 'react-router-dom'
 
 const SearchBar = ({ allAlbums, setAllAlbums }) => {
   const [filteredAlbums, setFilteredAlbums] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [title, setTitle] = useState('Album Name')
 
   const handleFilter = (event) =>{
       
@@ -26,12 +25,6 @@ const SearchBar = ({ allAlbums, setAllAlbums }) => {
     albumSearched === "" ? setFilteredAlbums([]) : setFilteredAlbums(albumFilter);
   }
 
-  const clearInput = () => {
-    setFilteredAlbums([]);
-    setSearchTerm('')
-
-  }
-
   const handleSearch = async(event) => {
 
     const albumSearched = await getAlbumById(event.target.id)
@@ -40,22 +33,63 @@ const SearchBar = ({ allAlbums, setAllAlbums }) => {
     setSearchTerm('')
   }
 
+  const handleOnSubmit = async () => {
+    if (title === 'Album Name') {
+      const albums = await searchByAlbumName(searchTerm)
+      setAllAlbums(albums)
+      setFilteredAlbums([]);
+      setSearchTerm('')
+    } else if (title === 'Artist') {
+      const albums = await searchByArtist(searchTerm)
+      setAllAlbums(albums)
+      setFilteredAlbums([]);
+      setSearchTerm('')
+    }
+  }
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      console.log('Pressed the enter key!')
+      handleOnSubmit()
+    }
+  }
+
   return (
     <div className="search">
-      <div className="searchInputs">
-        <input type="text" placeholder="Search Album" value={searchTerm} onChange={handleFilter} />
-        <div className="searchIcon">
-        {filteredAlbums.length === 0 ? <SearchIcon /> : <CloseIcon id='clearBtn' onClick={clearInput}/>}
-          
-        </div> 
-      </div>
-      { filteredAlbums.length !== 0 &&
-        <div className="dataResult">
-          {filteredAlbums.slice(0,10).map((value) => {
-            return  <ListGroup.Item className="dataItem" onClick={handleSearch} id={value.id}>{`${value.album_name}, ${value.artist}` }</ListGroup.Item>;
-          })}
-        </div>
-      }
+      <InputGroup className="mb-3">
+        <DropdownButton
+          variant="outline-secondary"
+          title={title}
+          id="input-group-dropdown-1"
+        >
+          <Dropdown.Item href="#" onClick={(event) => {
+            event.preventDefault()
+            setTitle('Artist')}}
+            >Artist</Dropdown.Item>
+          <Dropdown.Item href="#" onClick={(event) => {
+            event.preventDefault()
+            setTitle('Album Name')}}>Album Name</Dropdown.Item>
+        </DropdownButton>
+        <FormControl aria-label="Text input with dropdown button" placeholder="Search" value={searchTerm} onChange={handleFilter} onSubmit={handleOnSubmit} onKeyDown={handleKeyDown}/>
+        <Route render={({ history }) => (
+          <Button variant="outline-secondary" id="button-addon2" onClick={(event) => {
+            event.preventDefault()
+            history.push('/albums')
+            handleOnSubmit()
+          }}>
+            <div className="searchIcon">
+              <SearchIcon />
+            </div>
+          </Button>
+        )} />
+        { filteredAlbums.length !== 0 &&
+          <div className="dataResult">
+            {filteredAlbums.slice(0,10).map((value) => {
+              return  <ListGroup.Item className="dataItem" onClick={handleSearch} id={value.id}>{`${value.album_name}, ${value.artist}` }</ListGroup.Item>;
+            })}
+          </div>
+        }
+      </InputGroup>
     </div>
   );
 };

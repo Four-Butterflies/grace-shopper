@@ -185,9 +185,9 @@ input:focus,
 }
 
 .searchIcon{
-  height: 70px;
-  width: 50px;
-  margin-left: -40px; 
+  /* height: 70px; */
+  /* width: 50px; */
+  /* margin-left: -40px;  */
   display: grid;
   place-items:center;
 }
