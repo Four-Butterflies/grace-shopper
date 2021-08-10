@@ -95,6 +95,12 @@ albumsRouter.get('/recent', async (req, res, next) => {
 
 // POST
 albumsRouter.post('/', async (req, res, next) => {
+  const user = verifyJWT(req.headers.authorization);
+
+  if (!user.isAdmin) {
+    return res.send(':P');
+  }
+
   if (Object.keys(req.body).length < 10) {
     return res.status(400).send({
       name: 'InformationRequiredRequired',
@@ -102,7 +108,7 @@ albumsRouter.post('/', async (req, res, next) => {
     });
   }
 
-  const {
+  let {
     name,
     artists,
     release_date,
@@ -114,6 +120,10 @@ albumsRouter.post('/', async (req, res, next) => {
     total_tracks,
     spotify,
   } = req.body;
+
+  if (typeof genres == 'string') {
+    genres = genres.split(',').map((genre) => genre.trim());
+  }
 
   try {
     const result = await createAlbums({
