@@ -34,7 +34,7 @@ const SingleAlbum = ({ album }) => {
                       margin: '5px',
                       height: '2rem',
                       }}
-                  to={`/`}
+                      href={`/current-album/${album.id}`}
 
                   >See Details</Button>
                    <Button 

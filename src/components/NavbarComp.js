@@ -101,7 +101,7 @@ const NavbarComp = (props) => {
                 >
                 Cart
               </Button>
-              <Button href={'/albums'} onClick={handleClick} 
+              <Button href={'/checkout'} onClick={handleClick} 
                   variant="primary"
                   style={{                  
                   boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',

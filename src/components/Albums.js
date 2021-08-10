@@ -61,9 +61,8 @@ const Albums = ({ allAlbums, currentPage, albumsPerPage, setTotalAlbums, setCurr
                   onClick={async () => {
                     await setCurrentAlbum(album)}
                   }
-                  to={`/current-album/${album.id}`}
-
-                  >See Details</Button>
+                  href={`/current-album/${album.id}`}>
+                  See Details</Button>
                    <Button 
                     variant="primary"
                     style={{                          
