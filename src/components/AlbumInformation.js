@@ -166,7 +166,6 @@ const AlbumInformation = () => {
                             } else {
                                 for(let i = 0; i < quantity; i++) { // will make multiple album_units
                                     createAlbumUnit(album.id, inProgressOrder.id, album.price)
-                                    console.log("added from front end", album.id, inProgressOrder.id, album.price)
                                 }
                             }
                         }}
