@@ -34,8 +34,6 @@ const AlbumCreate = ({ showAlbumCreate, setShowAlbumCreate }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    setGenres(genres.split(',').map((genre) => genre.trim()));
-
     try {
       await createAlbum({
         name,

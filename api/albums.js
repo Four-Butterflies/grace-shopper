@@ -12,6 +12,7 @@ const {
   editAlbum,
   deleteAlbum,
 } = require('../db/albums.js');
+const { verifyJWT } = require('../utils');
 
 albumsRouter.get('/', async (req, res, next) => {
   try {
