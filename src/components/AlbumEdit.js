@@ -7,6 +7,8 @@ const AlbumEdit = ({
   setShowAlbumEdit,
   selectedAlbum,
   setSelectedAlbum,
+  refreshAlbums,
+  setRefreshAlbums,
 }) => {
   const [name, setName] = useState('');
   const [artists, setArtists] = useState('');
@@ -64,6 +66,7 @@ const AlbumEdit = ({
     }
 
     clearForm();
+    setRefreshAlbums(!refreshAlbums);
     handleClose();
   };
 

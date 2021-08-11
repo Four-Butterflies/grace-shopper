@@ -52,11 +52,22 @@ usersRouter.get('/admin', (req, res) => {
   res.send(false);
 });
 
-usersRouter.get('/:id', (req, res) => {
+usersRouter.get('/:id', async (req, res) => {
   const { id } = req.params;
 
   try {
-    const result = getUserById(id);
+    const result = await getUserById(id);
+
+    const user = req.headers.authorization
+      ? verifyJWT(req.headers.authorization)
+      : false;
+
+    if (user.id === id || user.isAdmin) {
+      return res.send(result);
+    }
+
+    delete result.email;
+    delete result.isadmin;
 
     res.send(result);
   } catch (error) {
