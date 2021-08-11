@@ -88,7 +88,7 @@ const App = () => {
           <Route path={'/'} exact>
             <Home setCurrentAlbum={setCurrentAlbum} />
           </Route>
-          <Route path={'/albums'}>
+          <Route exact path={'/albums'}>
             <Albums
               allAlbums={allAlbums}
               albumsPerPage={albumsPerPage}
@@ -103,7 +103,7 @@ const App = () => {
               paginate={paginate}
             />
           </Route>
-          <Route exact path={`/current-album/:albumId`}>
+          <Route exact path={`/albums/:albumId`}>
             <AlbumInformation currentAlbum={currentAlbum} />
           </Route>
           <Route path={'/orders'}>

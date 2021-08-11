@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Pagination } from 'react-bootstrap';
 
@@ -10,7 +9,7 @@ const PaginationComponent = ({ albumsPerPage, totalAlbums, paginate }) => {
   for (let i = 1; i <= Math.ceil(totalAlbums / albumsPerPage); i++) {
     pageNumbers.push(i);
   }
-  
+
   return (
     <Pagination
       style={{
