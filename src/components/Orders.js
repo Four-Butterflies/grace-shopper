@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { getOrders } from '../api';
+import { getOrders, stripeCharge } from '../api';
 import { Container, Card, Button } from 'react-bootstrap';
 import OrdersAlbums from './OrdersAlbums';
 
-const Orders = () => {
+const Orders = ({ currentOrderId, setOrderId }) => {
   const [allOrders, setAllOrders] = useState();
   let quantities = [];
 
@@ -65,7 +65,8 @@ const Orders = () => {
                     )) : <div>No Orders</div>}
                   </Container>
                   {order.status === 'in progress' ? (
-                    <Button variant="primary">Complete Order</Button> /* order.id -- send order ID to */
+                    <Button variant="primary" onClick={async () => {
+                      await stripeCharge(order.id)}}>Complete Order</Button> /* order.id -- send order ID to checkOutForm component */
                   ) : (
                     <Button variant="primary">See Details</Button>
                   )}

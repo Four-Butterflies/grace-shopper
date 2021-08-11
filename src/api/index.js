@@ -165,9 +165,9 @@ export async function createAlbumUnit(albumId, orderId, strikePrice) {
 }
 
 // CHECKOUT
-export async function stripeCharge({ id }) {
+export async function stripeCharge(id, currentOrderId) {
   try {
-    const { data } = await axios.post(`${BASE_URL}/charge`, { id });
+    const { data } = await axios.post(`${BASE_URL}/charge`, { id, currentOrderId });
 
     return data;
   } catch (error) {

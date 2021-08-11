@@ -10,11 +10,11 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 chargeRouter.post('/', async (req, res, next) => {
   //TODO: guard clause for check req.body
 
-  const { id } = req.body;
+  const { id, currentOrderId } = req.body;
 
   try {
     const [{ total, id: orderId, details }] =
-      await getOrderWithDetailsByOrderId(1);
+      await getOrderWithDetailsByOrderId(currentOrderId);
 
     let albumNames = {};
     

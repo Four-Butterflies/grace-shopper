@@ -34,6 +34,7 @@ const App = () => {
   const [albumsPerPage] = useState(20);
   const [totalAlbums, setTotalAlbums] = useState(0);
   const [currentAlbum, setCurrentAlbum] = useState({})
+  // const [currentOrderId, setOrderId] = useState(0)
 
   // Check if user is logged in
   // Then, check if they are an admin
@@ -61,6 +62,7 @@ const App = () => {
   }, []);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  
 
   return (
     <BrowserRouter>
@@ -78,10 +80,10 @@ const App = () => {
             <Admin user={user} admin={admin} />
           </Route>
           <Route path={'/checkout'}>
-            <Elements stripe={stripePromise} className="App">
+            <Elements stripe={stripePromise}  className="App">
               <CheckoutForm />
             </Elements>
-          </Route>
+          </Route> 
           <Route path={'/'} exact>
             <Home 
               setCurrentAlbum={setCurrentAlbum}
