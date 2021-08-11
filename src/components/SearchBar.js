@@ -94,4 +94,3 @@ const SearchBar = ({ allAlbums, setAllAlbums }) => {
   );
 };
 export default SearchBar;
- 
