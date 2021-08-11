@@ -213,7 +213,7 @@ export async function createOrder() {
   }
 }
 
-// CREATE ALBUM_UNIT
+// ALBUM_UNIT
 export async function createAlbumUnit(albumId, orderId, strikePrice) {
   try {
     const { data } = await axios.post(`/api/album_units`, {
@@ -223,6 +223,30 @@ export async function createAlbumUnit(albumId, orderId, strikePrice) {
     });
     console.log(data);
     return { data };
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function deleteAlbumUnit(albumUnitId) {
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  console.log('from src/api', albumUnitId)
+
+  if (!token) {
+    return false;
+  }
+
+  try {
+    const { data } = await fetch(`/api/album_units/${albumUnitId}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    console.log(data)
+    return data;
   } catch (error) {
     throw error;
   }

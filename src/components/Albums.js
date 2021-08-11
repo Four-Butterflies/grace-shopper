@@ -75,7 +75,7 @@ const Albums = ({
                 >
                   See Details
                 </Button>
-                <Button
+                {/* <Button
                   variant="primary"
                   style={{
                     width: '120px',
@@ -97,7 +97,7 @@ const Albums = ({
                   }}
                 >
                   Add to Cart
-                </Button>
+                </Button> */}
               </ListGroupItem>
             </ListGroup>
           </Card>

@@ -36,8 +36,6 @@ const App = () => {
   const [currentAlbum, setCurrentAlbum] = useState({});
   const [orderCheckOut, setOrderCheckOut] = useState();
 
-   console.log('index',orderCheckOut)
-
   // Check if user is logged in
   // Then, check if they are an admin
   useEffect(() => {

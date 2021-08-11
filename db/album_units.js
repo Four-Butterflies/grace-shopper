@@ -20,6 +20,7 @@ async function createAlbumUnit({ albumId, orderId, strikePrice }) {
 }
 
 async function deleteAlbumUnit(albumUnitId) {
+  console.log('from the db', albumUnitId)
   try {
     const {
       rows: [albumUnit],
@@ -30,7 +31,8 @@ async function deleteAlbumUnit(albumUnitId) {
       `,
       [albumUnitId]
     );
-
+    
+    console.log('from the db - the return', albumUnit)
     return albumUnit;
   } catch (error) {
     throw error;

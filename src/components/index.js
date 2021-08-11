@@ -19,3 +19,4 @@ export { default as AlbumEdit } from './AlbumEdit.js';
 export { default as AlbumDelete } from './AlbumDelete.js';
 export { default as UserDelete } from './UserDelete.js';
 export { default as UserEdit } from './UserEdit.js';
+export { default as Alert } from './Alert.js';
