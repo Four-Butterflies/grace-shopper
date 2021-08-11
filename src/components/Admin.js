@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Container, Button, Card, ListGroupItem } from 'react-bootstrap';
 import AlbumCreate from './AlbumCreate';
 import AlbumEdit from './AlbumEdit';
+import AlbumDelete from './AlbumDelete';
 
 const Admin = ({ user, admin, allAlbums }) => {
   const [showAlbumCreate, setShowAlbumCreate] = useState(false);
   const [showAlbumEdit, setShowAlbumEdit] = useState(false);
+  const [showAlbumDelete, setShowAlbumDelete] = useState(false);
   const [selectedAlbum, setSelectedAlbum] = useState({});
   const [showAllUsers, setShowAllUsers] = useState(false);
 
@@ -15,6 +17,10 @@ const Admin = ({ user, admin, allAlbums }) => {
 
   const handleShowAlbumEdit = () => {
     setShowAlbumEdit(true);
+  };
+
+  const handleShowAlbumDelete = () => {
+    setShowAlbumDelete(true);
   };
 
   const handleShowAllUsers = () => {
@@ -69,7 +75,15 @@ const Admin = ({ user, admin, allAlbums }) => {
                   >
                     Edit
                   </Button>
-                  <Button variant="danger">Delete</Button>
+                  <Button
+                    variant="danger"
+                    onClick={() => {
+                      setSelectedAlbum(album);
+                      handleShowAlbumDelete();
+                    }}
+                  >
+                    Delete
+                  </Button>
                 </ListGroupItem>
               </Card>
             );
@@ -89,6 +103,12 @@ const Admin = ({ user, admin, allAlbums }) => {
       <AlbumEdit
         showAlbumEdit={showAlbumEdit}
         setShowAlbumEdit={setShowAlbumEdit}
+        selectedAlbum={selectedAlbum}
+        setSelectedAlbum={setSelectedAlbum}
+      />
+      <AlbumDelete
+        showAlbumDelete={showAlbumDelete}
+        setShowAlbumDelete={setShowAlbumDelete}
         selectedAlbum={selectedAlbum}
         setSelectedAlbum={setSelectedAlbum}
       />

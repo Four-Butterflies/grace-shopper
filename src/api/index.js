@@ -101,19 +101,6 @@ export async function editAlbum(album, id) {
     spotify,
   } = album;
 
-  console.log(
-    name,
-    artists,
-    release_date,
-    genres,
-    price,
-    quantity,
-    reorder,
-    image,
-    total_tracks,
-    spotify
-  );
-
   try {
     const { data } = await fetch(`${BASE_URL}/albums/${id}`, {
       method: 'PATCH',
@@ -135,6 +122,27 @@ export async function editAlbum(album, id) {
       }),
     });
 
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function deleteAlbum(id) {
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  if (!token) {
+    return false;
+  }
+
+  try {
+    const { data } = await fetch(`${BASE_URL}/albums/${id}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
     return data;
   } catch (error) {
     throw error;
