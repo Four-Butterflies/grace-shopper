@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getAlbumById, createAlbumUnit, getOrders } from '../api';
-import { Container, Button } from 'react-bootstrap';
+import { getAlbumById, createAlbumUnit, getOrders, getUserById } from '../api';
+import { Container, Button, Card, ListGroup } from 'react-bootstrap';
 
 const AlbumInformation = () => {
   let { albumId } = useParams();
@@ -9,14 +9,21 @@ const AlbumInformation = () => {
   const [album, setAlbum] = useState();
   const [quantity, setQuantity] = useState(1);
 
+  let positiveReviews = 0;
+
   useEffect(() => {
     (async () => {
-      const result = await getAlbumById(albumId);
-      setAlbum(result[0]);
+      const [result] = await getAlbumById(albumId);
+      await Promise.all(
+        result.reviews.map(async (review) => {
+          const user = await getUserById(review.userId);
+          review.username = user ? user.username : 'Deleted User';
+        })
+      );
+      setAlbum(result);
     })();
   }, [albumId]);
 
-  //TODO: put in username for reviews
   //TODO: add button to checkout
 
   return (
@@ -30,7 +37,11 @@ const AlbumInformation = () => {
           }}
         >
           <div>
-            <img src={album.img_url} alt={`${album.album_name}`}></img>
+            <img
+              src={album.img_url}
+              alt={`${album.album_name}`}
+              style={{ maxWidth: '640px' }}
+            ></img>
             <div>
               {album.genres.map((genre) => {
                 return (
@@ -59,37 +70,70 @@ const AlbumInformation = () => {
             <h2
               style={{
                 borderBottom: '1px solid black',
+                display: 'flex',
+                justifyContent: 'space-between',
               }}
             >
-              Reviews
+              <span>Reviews</span>
+              {album.reviews.forEach((review) => {
+                if (review.rating) {
+                  positiveReviews++;
+                }
+              })}
+              <span
+                style={
+                  (positiveReviews / album.reviews.length) * 100 > 50
+                    ? { color: 'green' }
+                    : { color: 'red' }
+                }
+              >
+                {album.reviews.length
+                  ? (positiveReviews / album.reviews.length) * 100 + '% 👍'
+                  : ''}
+              </span>
             </h2>
-            {album.reviews.map((review) => {
-              const date = new Date(review.date);
-              const year = date.getFullYear();
-              const month =
-                date.getMonth() + 1 < 10
-                  ? '0' + (date.getMonth() + 1)
-                  : date.getMonth() + 1;
-              const day =
-                date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+            {album.reviews.length ? (
+              album.reviews.map((review, index) => {
+                const date = new Date(review.date);
+                const year = date.getFullYear();
+                const month =
+                  date.getMonth() + 1 < 10
+                    ? '0' + (date.getMonth() + 1)
+                    : date.getMonth() + 1;
+                const day =
+                  date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
 
-              return (
-                <div
-                  style={{
-                    border: '1px solid black',
-                  }}
-                  key={date}
-                >
-                  <p
-                    style={{ textAlign: 'right' }}
-                  >{`${month} - ${day} - ${year}`}</p>
-                  <h3 style={{ textAlign: 'right' }}>
-                    {review.rating ? '👍' : '👎'}
-                  </h3>
-                  <p>{review.review}</p>
-                </div>
-              );
-            })}
+                return (
+                  <Card
+                    style={{ width: 'auto', marginBottom: '1rem' }}
+                    key={review.date + index}
+                  >
+                    <Card.Header
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                      }}
+                    >
+                      <span>{review.username}</span>
+                      <span>
+                        {review.rating ? '👍' : '👎'}{' '}
+                        {`${month} - ${day} - ${year}`}
+                      </span>
+                    </Card.Header>
+
+                    {review.review ? (
+                      <ListGroup variant="flush">
+                        <ListGroup.Item>{review.review}</ListGroup.Item>
+                      </ListGroup>
+                    ) : (
+                      ''
+                    )}
+                  </Card>
+                );
+              })
+            ) : (
+              <h4 className="text-muted">Nothing here yet</h4>
+            )}
           </div>
           <div>
             <h1
