@@ -1,27 +1,19 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import '../index.css';
-import { SearchBar } from '../components';
-import {
-  Navbar,
-  Nav,
-  Container,
-  Form,
-  Button,
-  Image,
-  Col
-} from 'react-bootstrap';
+import { Navbar, Nav, Container, Form, Button, Image } from 'react-bootstrap';
 
-import { logoutUser, getAllAlbums } from '../api';
+import { logoutUser } from '../api';
 
-import LoginModal from './Login.js';
-import RegisterModal from './Register.js';
+import { SearchBar, LoginModal, RegisterModal } from '../components';
 
 const NavbarComp = (props) => {
   const { user, setUser, admin, setAdmin, allAlbums, setAllAlbums } = props;
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
-  
+
+  const history = useHistory();
+
   const handleShowLogin = () => {
     setShowLogin(true);
   };
@@ -29,11 +21,6 @@ const NavbarComp = (props) => {
   const handleShowRegister = () => {
     setShowRegister(true);
   };
-
-  const handleClick = async() => {
-    const allAlbums = await getAllAlbums()
-    setAllAlbums(allAlbums)
-  }
 
   return (
     <Navbar
@@ -46,83 +33,99 @@ const NavbarComp = (props) => {
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Image src="https://americanvinylco.com/wp-content/uploads/2019/06/americanvinyl0.png" rounded
-          style={{
-            height: '4rem',
-            width: '4rem',
-            margin: '10px',
-            marginRight: '25px',
-            justifyContent: 'center',
-          }}/>
+          <Image
+            src="https://americanvinylco.com/wp-content/uploads/2019/06/americanvinyl0.png"
+            rounded
+            style={{
+              height: '4rem',
+              width: '4rem',
+              margin: '10px',
+              marginRight: '25px',
+              justifyContent: 'center',
+            }}
+          />
           <Nav className="me-auto">
-              <Button href={'/'}  onClick={handleClick}                   
-                variant="primary"
-                  style={{                  
-                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
-                  fontWeight: '600',
-                  textTransform: 'uppercase',
-                  textDecoration: 'none',
-                  webkitTransition: 'all 150ms ease',
-                  transition: 'all 150ms ease',
-                  margin: '10px',
-                  height: '2.5rem',
-                   }}
-                >
-                Home
-              </Button>
-              <Button href={'/albums'} onClick={handleClick} 
-                  variant="primary"
-                  style={{                  
-                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
-                  fontWeight: '600',
-                  textTransform: 'uppercase',
-                  textDecoration: 'none',
-                  webkitTransition: 'all 150ms ease',
-                  transition: 'all 150ms ease',
-                  margin: '10px',
-                  height: '2.5rem',
-
-                   }}
-                >
-                Albums
-              </Button>
-              <Button href={'/orders'} onClick={handleClick} 
-                  variant="primary"
-                  style={{                  
-                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
-                  fontWeight: '600',
-                  textTransform: 'uppercase',
-                  textDecoration: 'none',
-                  webkitTransition: 'all 150ms ease',
-                  transition: 'all 150ms ease',
-                  margin: '10px',
-                  height: '2.5rem',
-                   }}
-                >
-                Cart
-              </Button>
-              <Button href={'/checkout'} onClick={handleClick} 
-                  variant="primary"
-                  style={{                  
-                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
-                  fontWeight: '600',
-                  textTransform: 'uppercase',
-                  textDecoration: 'none',
-                  webkitTransition: 'all 150ms ease',
-                  transition: 'all 150ms ease',
-                  margin: '10px',
-                  height: '2.5rem',
-
-                   }}
-                >
-                Checkout
-              </Button>
+            <Button
+              onClick={() => {
+                history.push('/');
+              }}
+              variant="primary"
+              style={{
+                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                fontWeight: '600',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                webkitTransition: 'all 150ms ease',
+                transition: 'all 150ms ease',
+                margin: '10px',
+                height: '2.5rem',
+              }}
+            >
+              Home
+            </Button>
+            <Button
+              onClick={() => {
+                history.push('/albums');
+              }}
+              variant="primary"
+              style={{
+                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                fontWeight: '600',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                webkitTransition: 'all 150ms ease',
+                transition: 'all 150ms ease',
+                margin: '10px',
+                height: '2.5rem',
+              }}
+            >
+              Albums
+            </Button>
+            <Button
+              onClick={() => {
+                history.push('/orders');
+              }}
+              variant="primary"
+              style={{
+                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                fontWeight: '600',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                webkitTransition: 'all 150ms ease',
+                transition: 'all 150ms ease',
+                margin: '10px',
+                height: '2.5rem',
+              }}
+            >
+              Cart
+            </Button>
+            <Button
+              onClick={() => {
+                history.push('/checkout');
+              }}
+              variant="primary"
+              style={{
+                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                fontWeight: '600',
+                textTransform: 'uppercase',
+                textDecoration: 'none',
+                webkitTransition: 'all 150ms ease',
+                transition: 'all 150ms ease',
+                margin: '10px',
+                height: '2.5rem',
+              }}
+            >
+              Checkout
+            </Button>
             {admin ? (
-              <Navbar.Text>
-                <Button href={'/admin'}                 
-                  variant="primary"
-                  style={{                  
-                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+              <Button
+                onClick={() => {
+                  history.push('/admin');
+                }}
+                variant="primary"
+                style={{
+                  boxShadow:
+                    '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
                   fontWeight: '600',
                   textTransform: 'uppercase',
                   textDecoration: 'none',
@@ -130,12 +133,10 @@ const NavbarComp = (props) => {
                   transition: 'all 150ms ease',
                   margin: '10px',
                   height: '2.5rem',
-
-                   }}
-                >
-                  Admin
-                </Button>
-              </Navbar.Text>
+                }}
+              >
+                Admin
+              </Button>
             ) : (
               ''
             )}
@@ -144,33 +145,34 @@ const NavbarComp = (props) => {
                 <Button
                   onClick={handleShowLogin}
                   variant="primary"
-                  style={{                  
-                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
-                  fontWeight: '600',
-                  textTransform: 'uppercase',
-                  textDecoration: 'none',
-                  webkitTransition: 'all 150ms ease',
-                  transition: 'all 150ms ease',
-                  margin: '10px',
-                  height: '2.5rem',
-                   }}
+                  style={{
+                    boxShadow:
+                      '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                    fontWeight: '600',
+                    textTransform: 'uppercase',
+                    textDecoration: 'none',
+                    webkitTransition: 'all 150ms ease',
+                    transition: 'all 150ms ease',
+                    margin: '10px',
+                    height: '2.5rem',
+                  }}
                 >
                   Login
                 </Button>
                 <Button
                   onClick={handleShowRegister}
                   variant="primary"
-                  style={{                  
-                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
-                  fontWeight: '600',
-                  textTransform: 'uppercase',
-                  textDecoration: 'none',
-                  webkitTransition: 'all 150ms ease',
-                  transition: 'all 150ms ease',
-                  margin: '10px',
-                  height: '2.5rem',
-
-                   }}
+                  style={{
+                    boxShadow:
+                      '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                    fontWeight: '600',
+                    textTransform: 'uppercase',
+                    textDecoration: 'none',
+                    webkitTransition: 'all 150ms ease',
+                    transition: 'all 150ms ease',
+                    margin: '10px',
+                    height: '2.5rem',
+                  }}
                 >
                   Register
                 </Button>
@@ -183,30 +185,29 @@ const NavbarComp = (props) => {
                   setAdmin(false);
                 }}
                 variant="primary"
-                style={{                  
-                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
-                fontWeight: '600',
-                textTransform: 'uppercase',
-                textDecoration: 'none',
-                webkitTransition: 'all 150ms ease',
-                transition: 'all 150ms ease',
-                margin: '10px',
-                height: '2.5rem',
-                 }}
+                style={{
+                  boxShadow:
+                    '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+                  fontWeight: '600',
+                  textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  webkitTransition: 'all 150ms ease',
+                  transition: 'all 150ms ease',
+                  margin: '10px',
+                  height: '2.5rem',
+                }}
               >
                 Logout ({user.username.split(' ')[0]})
               </Button>
             )}
             <Form
               style={{
-                 marginLeft: '100px',
-                 marginBottom: '10px',
- 
+                marginLeft: '100px',
+                marginBottom: '10px',
               }}
             >
-            <SearchBar allAlbums={allAlbums} setAllAlbums={setAllAlbums}/>
+              <SearchBar allAlbums={allAlbums} setAllAlbums={setAllAlbums} />
             </Form>
-
           </Nav>
         </Navbar.Collapse>
       </Container>
