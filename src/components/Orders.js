@@ -20,8 +20,8 @@ const Orders = ({ currentOrderId, setOrderId }) => {
 
   return (
     <Container fluid>
-      <h1>Your Cart:</h1>
       <Container>
+        {allOrders ? console.log(allOrders) : console.log('something else')}
         {allOrders ? (
           allOrders.map((order) => {
             {/* Have to go through the orders.details array and assign quantity to each item
@@ -46,8 +46,9 @@ const Orders = ({ currentOrderId, setOrderId }) => {
             return (
               <Card style={{ width: '70rem' }} key={order.id}>
                 <Card.Body>
-                  <Card.Title>{order.status}</Card.Title>
-                  <Card.Text>{order.status}</Card.Text>
+                  {order.status === 'in progress' ? <Card.Title style={{
+                    fontSize: '2rem'
+                  }}>Your Cart</Card.Title> : <Card.Title>{order.status}</Card.Title>}
                   <Container
                     fluid
                     style={{
@@ -64,6 +65,7 @@ const Orders = ({ currentOrderId, setOrderId }) => {
                         />
                     )) : <div>No Orders</div>}
                   </Container>
+                  <Card.Title>Total: ${order.total / 100}</Card.Title>
                   {order.status === 'in progress' ? (
                     <Button variant="primary" onClick={async () => {
                       await stripeCharge(order.id)}}>Complete Order</Button> /* order.id -- send order ID to checkOutForm component */

@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Button, Modal } from 'react-bootstrap';
-import { createAlbum } from '../api';
+import { editAlbum } from '../api';
 
-const AlbumCreate = ({ showAlbumCreate, setShowAlbumCreate }) => {
+const AlbumEdit = ({
+  showAlbumEdit,
+  setShowAlbumEdit,
+  selectedAlbum,
+  setSelectedAlbum,
+}) => {
   const [name, setName] = useState('');
   const [artists, setArtists] = useState('');
   const [release_date, setReleaseDate] = useState('');
@@ -15,38 +20,47 @@ const AlbumCreate = ({ showAlbumCreate, setShowAlbumCreate }) => {
   const [spotify, setSpotify] = useState('');
 
   const handleClose = () => {
-    setShowAlbumCreate(false);
+    setShowAlbumEdit(false);
   };
 
   const clearForm = () => {
-    setName('');
-    setArtists('');
-    setReleaseDate('');
-    setGenres('');
-    setPrice('');
-    setQuantity('');
-    setReorder('');
-    setImage('');
-    setTotalTracks('');
-    setSpotify('');
+    setSelectedAlbum({});
   };
+
+  console.log(selectedAlbum);
+
+  useEffect(() => {
+    setName(selectedAlbum.album_name);
+    setArtists(selectedAlbum.artist);
+    setReleaseDate(selectedAlbum.year);
+    setGenres(selectedAlbum.genres ? selectedAlbum.genres.join(', ') : '');
+    setPrice(selectedAlbum.price);
+    setQuantity(selectedAlbum.quantity);
+    setReorder(selectedAlbum.reorder_number);
+    setImage(selectedAlbum.img_url);
+    setTotalTracks(selectedAlbum.total_tracks);
+    setSpotify(selectedAlbum.spotify);
+  }, [selectedAlbum]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      await createAlbum({
-        name,
-        artists,
-        release_date,
-        genres,
-        price,
-        quantity,
-        reorder,
-        image,
-        total_tracks,
-        spotify,
-      });
+      await editAlbum(
+        {
+          name,
+          artists,
+          release_date,
+          genres,
+          price,
+          quantity,
+          reorder,
+          image,
+          total_tracks,
+          spotify,
+        },
+        selectedAlbum.id
+      );
     } catch (error) {
       console.error(error);
     }
@@ -56,8 +70,8 @@ const AlbumCreate = ({ showAlbumCreate, setShowAlbumCreate }) => {
   };
 
   return (
-    <Modal show={showAlbumCreate}>
-      <Modal.Header>Create Album</Modal.Header>
+    <Modal show={showAlbumEdit}>
+      <Modal.Header>Edit Album</Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit}>
           <Form.Group required>
@@ -227,4 +241,4 @@ const AlbumCreate = ({ showAlbumCreate, setShowAlbumCreate }) => {
   );
 };
 
-export default AlbumCreate;
+export default AlbumEdit;
