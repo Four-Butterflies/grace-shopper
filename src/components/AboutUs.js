@@ -18,7 +18,10 @@ const AboutUs = () => {
       </p>
       <p>
         We hope it is just as obvious to you that you should spend your time
-        browsing this site and your money on some albums here 🤑
+        browsing this site and your money on some albums here{' '}
+        <span role="img" aria-label="money">
+          🤑
+        </span>
       </p>
     </>
   );

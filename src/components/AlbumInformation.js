@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getAlbumById, createAlbumUnit, getOrders } from '../api';
 import { Container, Button } from 'react-bootstrap';
 
@@ -9,14 +9,12 @@ const AlbumInformation = () => {
   const [album, setAlbum] = useState();
   const [quantity, setQuantity] = useState(1);
 
-  const history = useHistory();
-
   useEffect(() => {
     (async () => {
       const result = await getAlbumById(albumId);
       setAlbum(result[0]);
     })();
-  }, []);
+  }, [albumId]);
 
   //TODO: put in username for reviews
   //TODO: add button to checkout
@@ -32,7 +30,7 @@ const AlbumInformation = () => {
           }}
         >
           <div>
-            <img src={album.img_url}></img>
+            <img src={album.img_url} alt={`${album.album_name}`}></img>
             <div>
               {album.genres.map((genre) => {
                 return (
@@ -44,7 +42,7 @@ const AlbumInformation = () => {
                       fontWeight: '600',
                       textTransform: 'uppercase',
                       textDecoration: 'none',
-                      webkitTransition: 'all 150ms ease',
+                      WebkitTransition: 'all 150ms ease',
                       transition: 'all 150ms ease',
                       margin: '10px',
                       height: '2.5rem',
@@ -127,7 +125,7 @@ const AlbumInformation = () => {
                     fontWeight: '600',
                     textTransform: 'uppercase',
                     textDecoration: 'none',
-                    webkitTransition: 'all 150ms ease',
+                    WebkitTransition: 'all 150ms ease',
                     transition: 'all 150ms ease',
                     margin: '10px',
                     height: '2.5rem',
@@ -144,7 +142,7 @@ const AlbumInformation = () => {
                     fontWeight: '600',
                     textTransform: 'uppercase',
                     textDecoration: 'none',
-                    webkitTransition: 'all 150ms ease',
+                    WebkitTransition: 'all 150ms ease',
                     transition: 'all 150ms ease',
                     margin: '10px',
                     height: '2.5rem',
@@ -166,7 +164,7 @@ const AlbumInformation = () => {
                   fontWeight: '600',
                   textTransform: 'uppercase',
                   textDecoration: 'none',
-                  webkitTransition: 'all 150ms ease',
+                  WebkitTransition: 'all 150ms ease',
                   transition: 'all 150ms ease',
                   margin: '10px',
                   height: '2.5rem',
@@ -186,7 +184,7 @@ const AlbumInformation = () => {
                 fontWeight: '600',
                 textTransform: 'uppercase',
                 textDecoration: 'none',
-                webkitTransition: 'all 150ms ease',
+                WebkitTransition: 'all 150ms ease',
                 transition: 'all 150ms ease',
                 margin: '10px',
                 height: '2.5rem',
