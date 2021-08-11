@@ -364,3 +364,25 @@ export async function editUser(user, id) {
     throw error;
   }
 }
+
+export async function deleteUser(id) {
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  if (!token) {
+    return false;
+  }
+
+  try {
+    const { data } = await fetch(`${BASE_URL}/users/${id}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}

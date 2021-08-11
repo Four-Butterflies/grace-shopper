@@ -9,6 +9,7 @@ const {
   getUserByUsername,
   getUserById,
   updateUser,
+  deleteUser,
 } = require('../db/users.js');
 
 // First admin only route :D
@@ -177,6 +178,24 @@ usersRouter.patch('/:id', (req, res) => {
 
   try {
     const result = updateUser(id, userObj);
+
+    res.send(result);
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+usersRouter.delete('/:id', async (req, res) => {
+  const user = verifyJWT(req.headers.authorization);
+
+  if (!user.isAdmin) {
+    return res.send(':P');
+  }
+
+  const { id } = req.params;
+
+  try {
+    const result = await deleteUser(id);
 
     res.send(result);
   } catch (error) {

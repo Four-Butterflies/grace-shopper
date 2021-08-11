@@ -180,6 +180,24 @@ const getAllUsers = async () => {
   }
 };
 
+const deleteUser = async (id) => {
+  try {
+    const {
+      rows: [user],
+    } = await client.query(
+      `
+        DELETE FROM users
+        WHERE id=$1;
+      `,
+      [id]
+    );
+
+    return user;
+  } catch (error) {
+    throw error;
+  }
+};
+
 module.exports = {
   createUser,
   getUserByEmailAndPassword,
@@ -188,4 +206,5 @@ module.exports = {
   getUserByEmail,
   getUserByUsername,
   getAllUsers,
+  deleteUser,
 };

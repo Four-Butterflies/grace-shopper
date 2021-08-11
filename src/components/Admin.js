@@ -10,6 +10,7 @@ import AlbumCreate from './AlbumCreate';
 import AlbumEdit from './AlbumEdit';
 import AlbumDelete from './AlbumDelete';
 import UserEdit from './UserEdit';
+import UserDelete from './UserDelete';
 import { getAllUsers } from '../api/index.js';
 
 const Admin = ({ user, admin, allAlbums }) => {
@@ -31,14 +32,9 @@ const Admin = ({ user, admin, allAlbums }) => {
   };
 
   const [allUsers, setAllUsers] = useState([]);
-  const [showUserCreate, setShowUserCreate] = useState(false);
   const [showUserEdit, setShowUserEdit] = useState(false);
   const [showUserDelete, setShowUserDelete] = useState(false);
   const [selectedUser, setSelectedUser] = useState({});
-
-  const handleShowUserCreate = () => {
-    setShowUserCreate(true);
-  };
 
   const handleShowUserEdit = () => {
     setShowUserEdit(true);
@@ -50,8 +46,7 @@ const Admin = ({ user, admin, allAlbums }) => {
 
   useEffect(() => {
     (async () => {
-      const {users} = await getAllUsers();
-      console.log(users);
+      const { users } = await getAllUsers();
       setAllUsers(users);
     })();
   }, []);
@@ -130,9 +125,6 @@ const Admin = ({ user, admin, allAlbums }) => {
       </Container>
       <Container fluid>
         <h3>Users</h3>
-        <Button onClick={handleShowUserCreate} variant="warning">
-          Create User
-        </Button>
         <Accordion>
           <Accordion.Item eventKey="0">
             <Accordion.Header>Users</Accordion.Header>
@@ -206,6 +198,12 @@ const Admin = ({ user, admin, allAlbums }) => {
       <UserEdit
         showUserEdit={showUserEdit}
         setShowUserEdit={setShowUserEdit}
+        selectedUser={selectedUser}
+        setSelectedUser={setSelectedUser}
+      />
+      <UserDelete
+        showUserDelete={showUserDelete}
+        setShowUserDelete={setShowUserDelete}
         selectedUser={selectedUser}
         setSelectedUser={setSelectedUser}
       />
