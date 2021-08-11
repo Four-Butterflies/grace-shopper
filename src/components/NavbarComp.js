@@ -99,24 +99,6 @@ const NavbarComp = (props) => {
             >
               Cart
             </Button>
-            <Button
-              onClick={() => {
-                history.push('/checkout');
-              }}
-              variant="primary"
-              style={{
-                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
-                fontWeight: '600',
-                textTransform: 'uppercase',
-                textDecoration: 'none',
-                WebkitTransition: 'all 150ms ease',
-                transition: 'all 150ms ease',
-                margin: '10px',
-                height: '2.5rem',
-              }}
-            >
-              Checkout
-            </Button>
             {admin ? (
               <Button
                 onClick={() => {

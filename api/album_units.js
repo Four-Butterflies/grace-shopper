@@ -14,8 +14,10 @@ albumUnitsRouter.post('/', async (req, res, next) => {
 });
 
 // DELETE
-albumUnitsRouter.delete('/', async (req, res, next) => {
-  const { albumUnitId } = req.body;
+albumUnitsRouter.delete('/:albumUnitId', async (req, res, next) => {
+  const { albumUnitId } = req.params;
+
+  console.log('from the api', albumUnitId)
 
   try {
     const deletedAlbumUnit = await deleteAlbumUnit(albumUnitId);

@@ -63,6 +63,7 @@ const App = () => {
   }, [refreshAlbums]);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  
 
   return (
     <BrowserRouter>
@@ -92,7 +93,7 @@ const App = () => {
                 setOrderCheckOut={setOrderCheckOut}
               />
             </Elements>
-          </Route>
+          </Route> 
           <Route path={'/'} exact>
             <Home setCurrentAlbum={setCurrentAlbum} />
           </Route>
