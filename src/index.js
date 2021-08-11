@@ -17,7 +17,7 @@ import {
   Orders,
   AlbumInformation,
   Contact,
-  AboutUs
+  AboutUs,
 } from './components';
 
 import { getAllAlbums, isAdmin } from './api';
@@ -33,7 +33,7 @@ const App = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [albumsPerPage] = useState(20);
   const [totalAlbums, setTotalAlbums] = useState(0);
-  const [currentAlbum, setCurrentAlbum] = useState({})
+  const [currentAlbum, setCurrentAlbum] = useState({});
 
   // Check if user is logged in
   // Then, check if they are an admin
@@ -72,10 +72,10 @@ const App = () => {
         admin={admin}
         setAdmin={setAdmin}
       />
-      <div id="app" style={{  paddingBottom: '3rem' }}>
+      <div id="app" style={{ paddingBottom: '3rem' }}>
         <Switch>
           <Route path={'/admin'}>
-            <Admin user={user} admin={admin} />
+            <Admin user={user} admin={admin} allAlbums={allAlbums} />
           </Route>
           <Route path={'/checkout'}>
             <Elements stripe={stripePromise} className="App">
@@ -83,9 +83,7 @@ const App = () => {
             </Elements>
           </Route>
           <Route path={'/'} exact>
-            <Home 
-              setCurrentAlbum={setCurrentAlbum}
-            />
+            <Home setCurrentAlbum={setCurrentAlbum} />
           </Route>
           <Route path={'/albums'}>
             <Albums
@@ -103,9 +101,7 @@ const App = () => {
             />
           </Route>
           <Route exact path={`/current-album/:albumId`}>
-            <AlbumInformation 
-              currentAlbum={currentAlbum}
-            />
+            <AlbumInformation currentAlbum={currentAlbum} />
           </Route>
           <Route path={'/orders'}>
             <Orders />
