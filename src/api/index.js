@@ -315,3 +315,52 @@ export async function isAdmin() {
     throw error;
   }
 }
+
+export async function getAllUsers() {
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  if (!token) {
+    return false;
+  }
+
+  try {
+    const { data } = await axios.get(`${BASE_URL}/users`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function editUser(user, id) {
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  if (!token) {
+    return false;
+  }
+
+  const { username, email, isadmin } = user;
+
+  try {
+    const { data } = await fetch(`${BASE_URL}/users/${id}`, {
+      method: 'PATCH',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username,
+        email,
+        isadmin,
+      }),
+    });
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}

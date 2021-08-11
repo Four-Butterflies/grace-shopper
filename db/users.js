@@ -46,7 +46,7 @@ const updateUser = async (userId, fields = {}) => {
       `
         UPDATE users
         SET ${setString}
-        WHERE user_id=${userId}
+        WHERE id=${userId}
         RETURNING *;
       `,
       Object.values(fields)

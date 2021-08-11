@@ -8,6 +8,7 @@ const {
   getUserByEmail,
   getUserByUsername,
   getUserById,
+  updateUser,
 } = require('../db/users.js');
 
 // First admin only route :D
@@ -155,9 +156,32 @@ usersRouter.post('/login', async (req, res, next) => {
   }
 });
 
-// TODO
 usersRouter.patch('/:id', (req, res) => {
   const { id } = req.params;
+  const user = verifyJWT(req.headers.authorization);
+
+  if (!user.isAdmin) {
+    return res.send(':P');
+  }
+
+  const { username, email, isadmin } = req.body;
+
+  const userObj = { username, email, isadmin };
+
+  // Input validation for setString, psql should recieve no empty keys
+  Object.keys(userObj).forEach((key) => {
+    if (userObj[key] === undefined) {
+      delete userObj[key];
+    }
+  });
+
+  try {
+    const result = updateUser(id, userObj);
+
+    res.send(result);
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 module.exports = usersRouter;
