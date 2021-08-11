@@ -148,6 +148,12 @@ albumsRouter.post('/', async (req, res, next) => {
 
 // PATCH
 albumsRouter.patch('/:albumID', async (req, res, next) => {
+  const user = verifyJWT(req.headers.authorization);
+
+  if (!user.isAdmin) {
+    return res.send(':P');
+  }
+
   if (Object.keys(req.body).length < 10) {
     return res.status(400).send({
       name: 'InformationRequiredRequired',
@@ -156,7 +162,8 @@ albumsRouter.patch('/:albumID', async (req, res, next) => {
   }
 
   const { albumID } = req.params;
-  const {
+
+  let {
     name: album_name,
     artists: artist,
     release_date: year,
@@ -168,6 +175,10 @@ albumsRouter.patch('/:albumID', async (req, res, next) => {
     total_tracks,
     spotify,
   } = req.body;
+
+  if (typeof genres == 'string') {
+    genres = genres.split(',').map((genre) => genre.trim());
+  }
 
   const albumObj = {
     album_name,
@@ -188,6 +199,8 @@ albumsRouter.patch('/:albumID', async (req, res, next) => {
       delete albumObj[key];
     }
   });
+
+  console.log(albumObj);
 
   try {
     const result = await editAlbum(albumID, albumObj);
