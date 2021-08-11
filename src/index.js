@@ -34,6 +34,9 @@ const App = () => {
   const [albumsPerPage] = useState(20);
   const [totalAlbums, setTotalAlbums] = useState(0);
   const [currentAlbum, setCurrentAlbum] = useState({});
+  const [orderCheckOut, setOrderCheckOut] = useState();
+
+   console.log('index',orderCheckOut)
 
   // Check if user is logged in
   // Then, check if they are an admin
@@ -79,14 +82,14 @@ const App = () => {
             <Admin user={user} admin={admin} allAlbums={allAlbums} />
           </Route>
           <Route path={'/checkout'}>
-            <Elements stripe={stripePromise}  className="App">
-              <CheckoutForm />
+            <Elements stripe={stripePromise} className="App">
+              <CheckoutForm orderCheckOut={orderCheckOut} setOrderCheckOut={setOrderCheckOut} />
             </Elements>
           </Route> 
           <Route path={'/'} exact>
             <Home setCurrentAlbum={setCurrentAlbum} />
           </Route>
-          <Route path={'/albums'}>
+          <Route exact path={'/albums'}>
             <Albums
               allAlbums={allAlbums}
               albumsPerPage={albumsPerPage}
@@ -101,11 +104,11 @@ const App = () => {
               paginate={paginate}
             />
           </Route>
-          <Route exact path={`/current-album/:albumId`}>
+          <Route exact path={`/albums/:albumId`}>
             <AlbumInformation currentAlbum={currentAlbum} />
           </Route>
           <Route path={'/orders'}>
-            <Orders />
+            <Orders setOrderCheckOut={setOrderCheckOut} />
           </Route>
           <Route path={'/contact'} exact>
             <Contact />

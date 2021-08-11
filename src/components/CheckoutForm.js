@@ -3,13 +3,15 @@ import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import { stripeCharge } from '../api';
 import { Card, ListGroup, Table } from 'react-bootstrap';
 
-const CheckoutForm = () => {
+const CheckoutForm = ({orderCheckOut, setOrderCheckOut}) => {
   const elements = useElements();
   const stripe = useStripe();
   const [error, setError] = useState(null);
   const [details, setDetails] = useState({});
   const [paymentMethod, setPaymentMethod] = useState(null);
   const [processing, setProcessing] = useState(false);
+
+  console.log('where it matters', orderCheckOut)
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -30,7 +32,7 @@ const CheckoutForm = () => {
     const { id } = paymentMethod;
 
     try {
-      const result = await stripeCharge({ id });
+      const result = await stripeCharge({ id, orderCheckOut });
 
       if (result.orderId) {
         const {
@@ -42,9 +44,12 @@ const CheckoutForm = () => {
         setDetails({ orderId, amount, splitDesc });
         setPaymentMethod(paymentMethod);
         setProcessing(false);
+        setOrderCheckOut(null)
+        
       } else {
         setError(result.raw.message);
         setProcessing(false);
+        setOrderCheckOut(null)
       }
     } catch (error) {
       setError(error);

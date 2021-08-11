@@ -200,8 +200,6 @@ albumsRouter.patch('/:albumID', async (req, res, next) => {
     }
   });
 
-  console.log(albumObj);
-
   try {
     const result = await editAlbum(albumID, albumObj);
 
@@ -213,6 +211,12 @@ albumsRouter.patch('/:albumID', async (req, res, next) => {
 
 // DELETE
 albumsRouter.delete('/:albumID', async (req, res, next) => {
+  const user = verifyJWT(req.headers.authorization);
+
+  if (!user.isAdmin) {
+    return res.send(':P');
+  }
+
   const { albumID } = req.params;
 
   try {

@@ -27,8 +27,6 @@ const AlbumEdit = ({
     setSelectedAlbum({});
   };
 
-  console.log(selectedAlbum);
-
   useEffect(() => {
     setName(selectedAlbum.album_name);
     setArtists(selectedAlbum.artist);

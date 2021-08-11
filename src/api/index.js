@@ -1,11 +1,9 @@
 import axios from 'axios';
 
-const BASE_URL = `http://localhost:5000/api`;
-
 // ALBUM
 export async function getAllAlbums() {
   try {
-    const { data } = await axios.get(`${BASE_URL}/albums`);
+    const { data } = await axios.get(`/api/albums`);
 
     return data;
   } catch (error) {
@@ -15,7 +13,7 @@ export async function getAllAlbums() {
 
 export async function getAlbumById(id) {
   try {
-    const { data } = await axios.get(`${BASE_URL}/albums/album/${id}`);
+    const { data } = await axios.get(`/api/albums/album/${id}`);
 
     return data;
   } catch (error) {
@@ -25,7 +23,7 @@ export async function getAlbumById(id) {
 
 export async function getMostRecentAlbums() {
   try {
-    const { data } = await axios.get(`${BASE_URL}/albums/recent`);
+    const { data } = await axios.get(`/api/albums/recent`);
 
     return data;
   } catch (error) {
@@ -55,7 +53,7 @@ export async function createAlbum(album) {
   } = album;
 
   try {
-    const { data } = await fetch(`${BASE_URL}/albums`, {
+    const { data } = await fetch(`/api/albums`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -101,21 +99,8 @@ export async function editAlbum(album, id) {
     spotify,
   } = album;
 
-  console.log(
-    name,
-    artists,
-    release_date,
-    genres,
-    price,
-    quantity,
-    reorder,
-    image,
-    total_tracks,
-    spotify
-  );
-
   try {
-    const { data } = await fetch(`${BASE_URL}/albums/${id}`, {
+    const { data } = await fetch(`/api/albums/${id}`, {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -141,10 +126,31 @@ export async function editAlbum(album, id) {
   }
 }
 
+export async function deleteAlbum(id) {
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  if (!token) {
+    return false;
+  }
+
+  try {
+    const { data } = await fetch(`/api/albums/${id}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
 // SEARCH
 export async function searchByAlbumName(name) {
   try {
-    const { data } = await axios.get(`${BASE_URL}/albums/name/${name}`);
+    const { data } = await axios.get(`/api/albums/name/${name}`);
 
     return data;
   } catch (error) {
@@ -154,7 +160,7 @@ export async function searchByAlbumName(name) {
 
 export async function searchByArtist(artist) {
   try {
-    const { data } = await axios.get(`${BASE_URL}/albums/artist/${artist}`);
+    const { data } = await axios.get(`/api/albums/artist/${artist}`);
 
     return data;
   } catch (error) {
@@ -173,9 +179,7 @@ export async function getOrders() {
       console.error('token not valid');
     }
 
-    const { data } = await axios.get(
-      `${BASE_URL}/orders/user_orders/${user.id}`
-    );
+    const { data } = await axios.get(`/api/orders/user_orders/${user.id}`);
 
     return data;
   } catch (error) {
@@ -185,7 +189,7 @@ export async function getOrders() {
 
 export async function getOrderDetails(orderId) {
   try {
-    const { data } = await axios.get(`${BASE_URL}/orders/details/${orderId}`);
+    const { data } = await axios.get(`/api/orders/details/${orderId}`);
 
     return data;
   } catch (error) {
@@ -197,7 +201,7 @@ export async function createOrder() {
   try {
     const user = JSON.parse(localStorage.getItem('user'));
 
-    const { data } = await axios.post(`${BASE_URL}/orders/submit_order`, {
+    const { data } = await axios.post(`/api/orders/submit_order`, {
       userId: user.id,
       status: 'in progress',
       total: 0,
@@ -212,7 +216,7 @@ export async function createOrder() {
 // CREATE ALBUM_UNIT
 export async function createAlbumUnit(albumId, orderId, strikePrice) {
   try {
-    const { data } = await axios.post(`${BASE_URL}/album_units`, {
+    const { data } = await axios.post(`/api/album_units`, {
       albumId,
       orderId,
       strikePrice,
@@ -225,9 +229,9 @@ export async function createAlbumUnit(albumId, orderId, strikePrice) {
 }
 
 // CHECKOUT
-export async function stripeCharge(id, currentOrderId) {
+export async function stripeCharge({ id, orderCheckOut }) {
   try {
-    const { data } = await axios.post(`${BASE_URL}/charge`, { id, currentOrderId });
+    const { data } = await axios.post(`/api/charge`, { id, orderCheckOut });
 
     return data;
   } catch (error) {
@@ -238,7 +242,7 @@ export async function stripeCharge(id, currentOrderId) {
 // USER
 export async function registerUser(username, email, password) {
   try {
-    const res = await fetch(`${BASE_URL}/users/register`, {
+    const res = await fetch(`/api/users/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -262,7 +266,7 @@ export async function registerUser(username, email, password) {
 
 export async function loginUser(email, password) {
   try {
-    const res = await fetch(`${BASE_URL}/users/login`, {
+    const res = await fetch(`/api/users/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -296,9 +300,80 @@ export async function isAdmin() {
   }
 
   try {
-    const { data } = await axios.get(`${BASE_URL}/users/admin`, {
+    const { data } = await axios.get(`/api/users/admin`, {
       headers: {
         Authorization: `Bearer ${token}`,
+      },
+    });
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function getAllUsers() {
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  if (!token) {
+    return false;
+  }
+
+  try {
+    const { data } = await axios.get(`/api/users`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function editUser(user, id) {
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  if (!token) {
+    return false;
+  }
+
+  const { username, email, isadmin } = user;
+
+  try {
+    const { data } = await fetch(`/api/users/${id}`, {
+      method: 'PATCH',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username,
+        email,
+        isadmin,
+      }),
+    });
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function deleteUser(id) {
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  if (!token) {
+    return false;
+  }
+
+  try {
+    const { data } = await fetch(`/api/users/${id}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
       },
     });
 

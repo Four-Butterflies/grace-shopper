@@ -15,7 +15,7 @@
 
 /* Nav bar */
 .fixed-top {
-  position:relative;
+  position: relative;
 }
 
 /* FRONT PAGE FORMATTING */
@@ -91,9 +91,9 @@ button {
 .PayButton {
   width: 500px;
 }
- .ResetButton {
+.ResetButton {
   margin-bottom: 50px;
- }
+}
 
 button:hover {
   color: #fff;
@@ -166,30 +166,29 @@ input:focus,
 }
 
 /* .ResultMessage { */
-  /* color: #7795f8; */
-  /* font-size: 14px; */
-  /* font-weight: 400; */
-  /* margin-bottom: 25px; */
-  /* line-height: 1.6em; */
-  /* text-align: center; */
+/* color: #7795f8; */
+/* font-size: 14px; */
+/* font-weight: 400; */
+/* margin-bottom: 25px; */
+/* line-height: 1.6em; */
+/* text-align: center; */
 /* } */
 
-.searchInputs{
+.searchInputs {
   display: flex;
- 
 }
-.search input{
+.search input {
   display: flex;
   justify-content: center;
   width: 400px;
 }
 
-.searchIcon{
+.searchIcon {
   /* height: 70px; */
   /* width: 50px; */
   /* margin-left: -40px;  */
   display: grid;
-  place-items:center;
+  place-items: center;
 }
 
 .dataResult {
@@ -197,7 +196,7 @@ input:focus,
   font-family: 'Source Code Pro', monospace;
   height: 100px;
   background-color: white;
-  box-shadow: rgba(0,0,0,0.35)opx 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) opx 5px 15px;
   overflow: hidden;
   overflow-y: auto;
   border-radius: 4px;
@@ -207,12 +206,11 @@ input:focus,
   display: none;
 }
 
-.dataResult .dataItem{
+.dataResult .dataItem {
   width: 100%;
   height: 30px;
   display: flex;
-  align-items:flex-start;
-  
+  align-items: flex-start;
 }
 
 .dataItem p {

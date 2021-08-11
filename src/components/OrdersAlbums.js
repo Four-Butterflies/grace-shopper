@@ -14,7 +14,7 @@ const OrdersAlbums = ({ albumId, albumQuantity, albumTotalPrice }) => {
         console.log(error);
       }
     })();
-  }, []);
+  }, [albumId]);
 
   return (
     <div>

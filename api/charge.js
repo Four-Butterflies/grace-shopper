@@ -10,13 +10,21 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 chargeRouter.post('/', async (req, res, next) => {
   //TODO: guard clause for check req.body
 
+<<<<<<< HEAD
   const { id, currentOrderId } = req.body;
 
   try {
     const [{ total, id: orderId, details }] =
       await getOrderWithDetailsByOrderId(currentOrderId);
+=======
+  const { id, orderCheckOut } = req.body;
+  
+  try {
+    const [{ total, id: orderId, details }] =
+      await getOrderWithDetailsByOrderId(orderCheckOut);
+>>>>>>> 3af459a51e173617bf444c797ebdc91163c83d29
 
-    let albumNames = {};
+     let albumNames = {};
     
     details.forEach((detail) => {
       detail.strike_price = `$${detail.strike_price / 100}(ea.)`;
