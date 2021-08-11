@@ -15,14 +15,16 @@ const FooterUnit = () => {
       className="fixed-bottom"
     >
       <Row>
-        <Col> </Col>
+        <Col />
         <Col>
-          <Link to={'/about'} 
-            style={{ 
-              marginLeft: '1rem', 
+          <Link
+            to={'/about'}
+            style={{
+              marginLeft: '1rem',
               color: 'white',
-              alignItems: 'flex-start', 
-              }}>
+              alignItems: 'flex-start',
+            }}
+          >
             About Us
           </Link>
         </Col>
@@ -30,6 +32,14 @@ const FooterUnit = () => {
           <Link to={'/contact'} style={{ marginLeft: '1rem', color: 'white' }}>
             Contact
           </Link>
+        </Col>
+        <Col>
+          <a
+            href={'https://github.com/Four-Butterflies/grace-shopper'}
+            style={{ marginLeft: '1rem', color: 'white' }}
+          >
+            Github
+          </a>
         </Col>
         <Col
           style={{
@@ -40,7 +50,7 @@ const FooterUnit = () => {
         >
           A Four Butterflies Production <span>&copy;</span> 2021
         </Col>
-        <Col> </Col>
+        <Col />
       </Row>
     </Container>
   );

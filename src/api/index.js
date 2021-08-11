@@ -101,19 +101,6 @@ export async function editAlbum(album, id) {
     spotify,
   } = album;
 
-  console.log(
-    name,
-    artists,
-    release_date,
-    genres,
-    price,
-    quantity,
-    reorder,
-    image,
-    total_tracks,
-    spotify
-  );
-
   try {
     const { data } = await fetch(`${BASE_URL}/albums/${id}`, {
       method: 'PATCH',
@@ -135,6 +122,27 @@ export async function editAlbum(album, id) {
       }),
     });
 
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function deleteAlbum(id) {
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  if (!token) {
+    return false;
+  }
+
+  try {
+    const { data } = await fetch(`${BASE_URL}/albums/${id}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    });
     return data;
   } catch (error) {
     throw error;
@@ -299,6 +307,77 @@ export async function isAdmin() {
     const { data } = await axios.get(`${BASE_URL}/users/admin`, {
       headers: {
         Authorization: `Bearer ${token}`,
+      },
+    });
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function getAllUsers() {
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  if (!token) {
+    return false;
+  }
+
+  try {
+    const { data } = await axios.get(`${BASE_URL}/users`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function editUser(user, id) {
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  if (!token) {
+    return false;
+  }
+
+  const { username, email, isadmin } = user;
+
+  try {
+    const { data } = await fetch(`${BASE_URL}/users/${id}`, {
+      method: 'PATCH',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username,
+        email,
+        isadmin,
+      }),
+    });
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function deleteUser(id) {
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  if (!token) {
+    return false;
+  }
+
+  try {
+    const { data } = await fetch(`${BASE_URL}/users/${id}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
       },
     });
 
