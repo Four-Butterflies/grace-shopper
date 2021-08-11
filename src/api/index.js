@@ -3,7 +3,7 @@ import axios from 'axios';
 // ALBUM
 export async function getAllAlbums() {
   try {
-    const { data } = await axios.get(`/albums`);
+    const { data } = await axios.get(`/api/albums`);
 
     return data;
   } catch (error) {
@@ -13,7 +13,7 @@ export async function getAllAlbums() {
 
 export async function getAlbumById(id) {
   try {
-    const { data } = await axios.get(`/albums/album/${id}`);
+    const { data } = await axios.get(`/api/albums/album/${id}`);
 
     return data;
   } catch (error) {
@@ -23,7 +23,7 @@ export async function getAlbumById(id) {
 
 export async function getMostRecentAlbums() {
   try {
-    const { data } = await axios.get(`/albums/recent`);
+    const { data } = await axios.get(`/api/albums/recent`);
 
     return data;
   } catch (error) {
@@ -53,7 +53,7 @@ export async function createAlbum(album) {
   } = album;
 
   try {
-    const { data } = await fetch(`/albums`, {
+    const { data } = await fetch(`/api/albums`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -100,7 +100,7 @@ export async function editAlbum(album, id) {
   } = album;
 
   try {
-    const { data } = await fetch(`/albums/${id}`, {
+    const { data } = await fetch(`/api/albums/${id}`, {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -134,7 +134,7 @@ export async function deleteAlbum(id) {
   }
 
   try {
-    const { data } = await fetch(`/albums/${id}`, {
+    const { data } = await fetch(`/api/albums/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -150,7 +150,7 @@ export async function deleteAlbum(id) {
 // SEARCH
 export async function searchByAlbumName(name) {
   try {
-    const { data } = await axios.get(`/albums/name/${name}`);
+    const { data } = await axios.get(`/api/albums/name/${name}`);
 
     return data;
   } catch (error) {
@@ -160,7 +160,7 @@ export async function searchByAlbumName(name) {
 
 export async function searchByArtist(artist) {
   try {
-    const { data } = await axios.get(`/albums/artist/${artist}`);
+    const { data } = await axios.get(`/api/albums/artist/${artist}`);
 
     return data;
   } catch (error) {
@@ -179,7 +179,7 @@ export async function getOrders() {
       console.error('token not valid');
     }
 
-    const { data } = await axios.get(`/orders/user_orders/${user.id}`);
+    const { data } = await axios.get(`/api/orders/user_orders/${user.id}`);
 
     return data;
   } catch (error) {
@@ -189,7 +189,7 @@ export async function getOrders() {
 
 export async function getOrderDetails(orderId) {
   try {
-    const { data } = await axios.get(`/orders/details/${orderId}`);
+    const { data } = await axios.get(`/api/orders/details/${orderId}`);
 
     return data;
   } catch (error) {
@@ -201,7 +201,7 @@ export async function createOrder() {
   try {
     const user = JSON.parse(localStorage.getItem('user'));
 
-    const { data } = await axios.post(`/orders/submit_order`, {
+    const { data } = await axios.post(`/api/orders/submit_order`, {
       userId: user.id,
       status: 'in progress',
       total: 0,
@@ -216,7 +216,7 @@ export async function createOrder() {
 // CREATE ALBUM_UNIT
 export async function createAlbumUnit(albumId, orderId, strikePrice) {
   try {
-    const { data } = await axios.post(`/album_units`, {
+    const { data } = await axios.post(`/api/album_units`, {
       albumId,
       orderId,
       strikePrice,
@@ -231,7 +231,7 @@ export async function createAlbumUnit(albumId, orderId, strikePrice) {
 // CHECKOUT
 export async function stripeCharge({ id, orderCheckOut }) {
   try {
-    const { data } = await axios.post(`/charge`, { id, orderCheckOut });
+    const { data } = await axios.post(`/api/charge`, { id, orderCheckOut });
 
     return data;
   } catch (error) {
@@ -242,7 +242,7 @@ export async function stripeCharge({ id, orderCheckOut }) {
 // USER
 export async function registerUser(username, email, password) {
   try {
-    const res = await fetch(`/users/register`, {
+    const res = await fetch(`/api/users/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -266,7 +266,7 @@ export async function registerUser(username, email, password) {
 
 export async function loginUser(email, password) {
   try {
-    const res = await fetch(`/users/login`, {
+    const res = await fetch(`/api/users/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -300,7 +300,7 @@ export async function isAdmin() {
   }
 
   try {
-    const { data } = await axios.get(`/users/admin`, {
+    const { data } = await axios.get(`/api/users/admin`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -320,7 +320,7 @@ export async function getAllUsers() {
   }
 
   try {
-    const { data } = await axios.get(`/users`, {
+    const { data } = await axios.get(`/api/users`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -342,7 +342,7 @@ export async function editUser(user, id) {
   const { username, email, isadmin } = user;
 
   try {
-    const { data } = await fetch(`/users/${id}`, {
+    const { data } = await fetch(`/api/users/${id}`, {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -369,7 +369,7 @@ export async function deleteUser(id) {
   }
 
   try {
-    const { data } = await fetch(`/users/${id}`, {
+    const { data } = await fetch(`/api/users/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`,
