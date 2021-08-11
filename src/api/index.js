@@ -81,24 +81,84 @@ export async function createAlbum(album) {
   }
 }
 
+export async function editAlbum(album, id) {
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  if (!token) {
+    return false;
+  }
+
+  const {
+    name,
+    artists,
+    release_date,
+    genres,
+    price,
+    quantity,
+    reorder,
+    image,
+    total_tracks,
+    spotify,
+  } = album;
+
+  console.log(
+    name,
+    artists,
+    release_date,
+    genres,
+    price,
+    quantity,
+    reorder,
+    image,
+    total_tracks,
+    spotify
+  );
+
+  try {
+    const { data } = await fetch(`${BASE_URL}/albums/${id}`, {
+      method: 'PATCH',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        artists,
+        release_date,
+        genres,
+        price,
+        quantity,
+        reorder,
+        image,
+        total_tracks,
+        spotify,
+      }),
+    });
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
 // SEARCH
 export async function searchByAlbumName(name) {
   try {
-    const { data } = await axios.get(`${BASE_URL}/albums/name/${name}`)
+    const { data } = await axios.get(`${BASE_URL}/albums/name/${name}`);
 
-    return data
+    return data;
   } catch (error) {
-    throw error
+    throw error;
   }
 }
 
 export async function searchByArtist(artist) {
   try {
-    const { data } = await axios.get(`${BASE_URL}/albums/artist/${artist}`)
+    const { data } = await axios.get(`${BASE_URL}/albums/artist/${artist}`);
 
-    return data
+    return data;
   } catch (error) {
-    throw error
+    throw error;
   }
 }
 
@@ -160,7 +220,7 @@ export async function createAlbumUnit(albumId, orderId, strikePrice) {
     console.log(data);
     return { data };
   } catch (error) {
-    throw error
+    throw error;
   }
 }
 
