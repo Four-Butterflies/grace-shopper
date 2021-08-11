@@ -10,9 +10,7 @@ const PaginationComponent = ({ albumsPerPage, totalAlbums, paginate }) => {
   for (let i = 1; i <= Math.ceil(totalAlbums / albumsPerPage); i++) {
     pageNumbers.push(i);
   }
-
-  console.log(`There are ${pageNumbers.length} pages`);
-
+  
   return (
     <Pagination
       style={{
