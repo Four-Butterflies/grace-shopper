@@ -132,7 +132,9 @@ const AlbumInformation = () => {
                     margin: '10px',
                     height: '2.5rem',
                   }}
-                ></Button>
+                >
+                  -
+                </Button>
               ) : (
                 <Button
                   variant="primary"
@@ -155,7 +157,7 @@ const AlbumInformation = () => {
                   -
                 </Button>
               )}
-              <p>{quantity}</p>
+              {quantity}
               <Button
                 variant="primary"
                 style={{
