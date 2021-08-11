@@ -3,10 +3,9 @@ import { getOrders } from '../api';
 import { Container, Card, Button } from 'react-bootstrap';
 import OrdersAlbums from './OrdersAlbums';
 
-const Orders = () => {
+const Orders = ({setOrderCheckOut}) => {
   const [allOrders, setAllOrders] = useState();
   let quantities = [];
-
   useEffect(() => {
     (async () => {
       try {
@@ -18,6 +17,9 @@ const Orders = () => {
     })();
   }, []);
 
+const sendOrder = (order) => {
+  setOrderCheckOut(order)
+}
   return (
     <Container fluid>
       <h1>Your Cart:</h1>
@@ -65,7 +67,9 @@ const Orders = () => {
                     )) : <div>No Orders</div>}
                   </Container>
                   {order.status === 'in progress' ? (
-                    <Button variant="primary">Complete Order</Button> /* order.id -- send order ID to */
+                    <Button variant="primary" onClick={  async() =>{
+                        await sendOrder(order.id)
+                    } }>Complete Order</Button> /* order.id -- send order ID to */
                   ) : (
                     <Button variant="primary">See Details</Button>
                   )}
