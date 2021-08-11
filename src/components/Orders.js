@@ -2,10 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { getOrders } from '../api';
 import { Container, Card, Button } from 'react-bootstrap';
 import OrdersAlbums from './OrdersAlbums';
+import { useHistory } from 'react-router-dom';
 
 const Orders = ({setOrderCheckOut}) => {
   const [allOrders, setAllOrders] = useState();
   let quantities = [];
+
+  const history = useHistory()
+
   useEffect(() => {
     (async () => {
       try {
@@ -22,7 +26,6 @@ const sendOrder = (order) => {
 }
   return (
     <Container fluid>
-      <h1>Your Cart:</h1>
       <Container>
         {allOrders ? (
           allOrders.map((order) => {
@@ -50,15 +53,11 @@ const sendOrder = (order) => {
             return (
               <Card style={{ width: '70rem' }} key={order.id}>
                 <Card.Body>
-                  <Card.Title>{order.status}</Card.Title>
-                  <Card.Text>{order.status}</Card.Text>
+                  {order.status === 'in progress' ? <Card.Title style={{
+                    fontSize: '2rem'
+                  }}>Your Cart</Card.Title> : <Card.Title>{order.status}</Card.Title>}
                   <Container
                     fluid
-                    style={{
-                      display: 'flex',
-                      flexWrap: 'wrap',
-                      justifyContent: 'space-evenly',
-                    }}
                   >
                     {order.details.length !== 0 ? (
                       quantities.map((album) => (
@@ -66,15 +65,18 @@ const sendOrder = (order) => {
                           albumId={album.albumId}
                           albumQuantity={album.quantity}
                           albumTotalPrice={album.total_price}
+                          setAllOrders={setAllOrders}
                         />
                       ))
                     ) : (
                       <div>No Orders</div>
                     )}
                   </Container>
+                  <Card.Title>Total: ${order.total / 100}</Card.Title>
                   {order.status === 'in progress' ? (
-                    <Button variant="primary" onClick={  async() =>{
+                    <Button variant="primary" onClick={ async() =>{
                         await sendOrder(order.id)
+                        history.push('/checkout')
                     } }>Complete Order</Button> /* order.id -- send order ID to */
                   ) : (
                     <Button variant="primary">See Details</Button>

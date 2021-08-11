@@ -36,8 +36,6 @@ const App = () => {
   const [currentAlbum, setCurrentAlbum] = useState({});
   const [orderCheckOut, setOrderCheckOut] = useState();
 
-   console.log('index',orderCheckOut)
-
   // Check if user is logged in
   // Then, check if they are an admin
   useEffect(() => {
@@ -64,6 +62,7 @@ const App = () => {
   }, []);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  
 
   return (
     <BrowserRouter>
@@ -84,7 +83,7 @@ const App = () => {
             <Elements stripe={stripePromise} className="App">
               <CheckoutForm orderCheckOut={orderCheckOut} setOrderCheckOut={setOrderCheckOut} />
             </Elements>
-          </Route>
+          </Route> 
           <Route path={'/'} exact>
             <Home setCurrentAlbum={setCurrentAlbum} />
           </Route>
