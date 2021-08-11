@@ -7,6 +7,8 @@ const UserEdit = ({
   setShowUserEdit,
   selectedUser,
   setSelectedUser,
+  refreshUser,
+  setRefreshUser,
 }) => {
   const [username, setUserName] = useState('');
   const [email, setEmail] = useState('');
@@ -43,6 +45,7 @@ const UserEdit = ({
     }
 
     clearForm();
+    setRefreshUser(!refreshUser);
     handleClose();
   };
 

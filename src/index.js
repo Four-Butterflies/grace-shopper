@@ -35,6 +35,7 @@ const App = () => {
   const [totalAlbums, setTotalAlbums] = useState(0);
   const [currentAlbum, setCurrentAlbum] = useState({});
   const [orderCheckOut, setOrderCheckOut] = useState();
+  const [refreshAlbums, setRefreshAlbums] = useState(false);
 
   // Check if user is logged in
   // Then, check if they are an admin
@@ -59,7 +60,7 @@ const App = () => {
         console.log(error);
       }
     })();
-  }, []);
+  }, [refreshAlbums]);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   
@@ -77,11 +78,20 @@ const App = () => {
       <div id="app" style={{ paddingBottom: '3rem' }}>
         <Switch>
           <Route path={'/admin'}>
-            <Admin user={user} admin={admin} allAlbums={allAlbums} />
+            <Admin
+              user={user}
+              admin={admin}
+              allAlbums={allAlbums}
+              refreshAlbums={refreshAlbums}
+              setRefreshAlbums={setRefreshAlbums}
+            />
           </Route>
           <Route path={'/checkout'}>
             <Elements stripe={stripePromise} className="App">
-              <CheckoutForm orderCheckOut={orderCheckOut} setOrderCheckOut={setOrderCheckOut} />
+              <CheckoutForm
+                orderCheckOut={orderCheckOut}
+                setOrderCheckOut={setOrderCheckOut}
+              />
             </Elements>
           </Route> 
           <Route path={'/'} exact>

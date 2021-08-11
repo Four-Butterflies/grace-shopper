@@ -406,3 +406,17 @@ export async function deleteUser(id) {
     throw error;
   }
 }
+
+export async function getUserById(id) {
+  const token = JSON.parse(localStorage.getItem('token'));
+
+  try {
+    const { data } = await axios.get(`/api/users/${id}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}

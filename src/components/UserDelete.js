@@ -7,6 +7,8 @@ const UserDelete = ({
   setShowUserDelete,
   selectedUser,
   setSelectedUser,
+  refreshUser,
+  setRefreshUser,
 }) => {
   const handleClose = () => {
     setShowUserDelete(false);
@@ -22,6 +24,7 @@ const UserDelete = ({
     }
 
     setSelectedUser({});
+    setRefreshUser(!refreshUser);
     handleClose();
   };
 
