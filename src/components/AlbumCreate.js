@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { Form, Button, Modal } from 'react-bootstrap';
 import { createAlbum } from '../api';
 
-const AlbumCreate = ({ showAlbumCreate, setShowAlbumCreate }) => {
+const AlbumCreate = ({
+  showAlbumCreate,
+  setShowAlbumCreate,
+  refreshAlbums,
+  setRefreshAlbums,
+}) => {
   const [name, setName] = useState('');
   const [artists, setArtists] = useState('');
   const [release_date, setReleaseDate] = useState('');
@@ -52,6 +57,7 @@ const AlbumCreate = ({ showAlbumCreate, setShowAlbumCreate }) => {
     }
 
     clearForm();
+    setRefreshAlbums(!refreshAlbums);
     handleClose();
   };
 

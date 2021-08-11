@@ -7,6 +7,8 @@ const AlbumDelete = ({
   setShowAlbumDelete,
   selectedAlbum,
   setSelectedAlbum,
+  refreshAlbums,
+  setRefreshAlbums,
 }) => {
   const handleClose = () => {
     setShowAlbumDelete(false);
@@ -22,6 +24,7 @@ const AlbumDelete = ({
     }
 
     setSelectedAlbum({});
+    setRefreshAlbums(!refreshAlbums);
     handleClose();
   };
 
