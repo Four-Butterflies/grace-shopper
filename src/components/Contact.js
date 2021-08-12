@@ -159,7 +159,8 @@ const Contact = () => {
                   Chief Financial Officer
                 </Card.Text>
                 <Card.Text style={{ color: '#344143' }}>
-                  <strong>Favorite Artist: </strong>Britney Spears
+                  <strong>Favorite Artist: </strong>
+                  <Link to={'/albums/1'}>The Dark Side of the Moon</Link>
                 </Card.Text>
                 <Row>
                   <Col>
