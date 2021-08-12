@@ -19,13 +19,21 @@ const createJWT = (email, id, username, isAdmin) => {
 
 const verifyJWT = (authHeader) => {
   const [, token] = authHeader.split('Bearer ');
-  const validatedToken = jwt.verify(token, JWT_SECRET);
+  try {
+    if (token === null) {
+      return null;
+    }
 
-  if (!validatedToken) {
-    return null;
+    const validatedToken = token ? jwt.verify(token, JWT_SECRET) : false;
+
+    if (!validatedToken) {
+      return null;
+    }
+
+    return validatedToken;
+  } catch (error) {
+    console.error('Bad token');
   }
-
-  return validatedToken;
 };
 
 const authMiddleware = (req, res, next) => {

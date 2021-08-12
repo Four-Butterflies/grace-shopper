@@ -62,7 +62,7 @@ usersRouter.get('/:id', async (req, res) => {
       ? verifyJWT(req.headers.authorization)
       : false;
 
-    if (user.id === id || user.isAdmin) {
+    if (user && (user.id === id || user.isAdmin)) {
       return res.send(result);
     }
 
