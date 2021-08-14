@@ -22,9 +22,9 @@ const Albums = ({
       style={{
         display: 'flex',
         flexWrap: 'wrap',
-        maxWidth: '960px',
+        maxWidth: '100%',
         justifyContent: 'space-around',
-        margin: 'auto',
+        // margin: 'auto',
       }}
     >
       {currentAlbums.map((album) => {
@@ -40,7 +40,6 @@ const Albums = ({
                 border: '2px solid lightgray',
               }}
             />
-
             <Card.Body>
               <Card.Title>{album.album_name}</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">
@@ -50,21 +49,16 @@ const Albums = ({
             <ListGroup className="list-group-flush">
               <ListGroupItem>{album.total_tracks} Tracks</ListGroupItem>
               <ListGroupItem>Price: ${album.price / 100}</ListGroupItem>
-              <ListGroupItem>
+              <ListGroupItem
+                style={{ display: 'flex', justifyContent: 'center' }}
+              >
                 <Button
                   variant="primary"
                   style={{
-                    width: '100px',
+                    width: '14rem',
                     fontSize: '0.8rem',
-                    textAlign: 'center',
-                    alignItems: 'center',
                     boxShadow:
                       '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
-                    fontWeight: '450',
-                    textTransform: 'uppercase',
-                    textDecoration: 'none',
-                    WebkitTransition: 'all 150ms ease',
-                    transition: 'all 150ms ease',
                     margin: '5px',
                     height: '2rem',
                   }}
@@ -75,29 +69,6 @@ const Albums = ({
                 >
                   See Details
                 </Button>
-                {/* <Button
-                  variant="primary"
-                  style={{
-                    width: '120px',
-                    fontSize: '0.8rem',
-                    textAlign: 'center',
-                    alignItems: 'center',
-                    boxShadow:
-                      '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
-                    fontWeight: '450',
-                    textTransform: 'uppercase',
-                    textDecoration: 'none',
-                    WebkitTransition: 'all 150ms ease',
-                    transition: 'all 150ms ease',
-                    margin: '5px',
-                    height: '2rem',
-                  }}
-                  onClick={() => {
-                    history.push(`/orders`);
-                  }}
-                >
-                  Add to Cart
-                </Button> */}
               </ListGroupItem>
             </ListGroup>
           </Card>

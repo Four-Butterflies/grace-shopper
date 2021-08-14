@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Pagination } from 'react-bootstrap';
+import { Container, Row, Pagination } from 'react-bootstrap';
 
 const PaginationComponent = ({ albumsPerPage, totalAlbums, paginate }) => {
   const [active, setActive] = useState(1);
@@ -11,26 +11,26 @@ const PaginationComponent = ({ albumsPerPage, totalAlbums, paginate }) => {
   }
 
   return (
-    <Pagination
-      style={{
-        maxWidth: '960px',
-        margin: 'auto',
-      }}
-    >
-      {pageNumbers.map((number) => (
-        <Pagination.Item
-          key={number}
-          active={number === active}
-          onClick={(event) => {
-            event.preventDefault();
-            setActive(number);
-            paginate(number);
-          }}
-        >
-          {number}
-        </Pagination.Item>
-      ))}
-    </Pagination>
+    <Container>
+      <Row className="justify-content-md-center">
+        <Pagination>
+          {pageNumbers.map((number) => (
+            <Pagination.Item
+              key={number}
+              active={number === active}
+              onClick={(event) => {
+                event.preventDefault();
+                setActive(number);
+                paginate(number);
+                window.scrollTo(0, 0);
+              }}
+            >
+              {number}
+            </Pagination.Item>
+          ))}
+        </Pagination>
+      </Row>
+    </Container>
   );
 };
 

@@ -31,7 +31,7 @@ const App = () => {
   const [admin, setAdmin] = useState(false);
   const [allAlbums, setAllAlbums] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [albumsPerPage] = useState(20);
+  const [albumsPerPage] = useState(24);
   const [totalAlbums, setTotalAlbums] = useState(0);
   const [currentAlbum, setCurrentAlbum] = useState({});
   const [orderCheckOut, setOrderCheckOut] = useState();
@@ -63,7 +63,6 @@ const App = () => {
   }, [refreshAlbums]);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-  
 
   return (
     <BrowserRouter>
@@ -93,7 +92,7 @@ const App = () => {
                 setOrderCheckOut={setOrderCheckOut}
               />
             </Elements>
-          </Route> 
+          </Route>
           <Route path={'/'} exact>
             <Home setCurrentAlbum={setCurrentAlbum} />
           </Route>
@@ -118,10 +117,10 @@ const App = () => {
           <Route path={'/orders'}>
             <Orders setOrderCheckOut={setOrderCheckOut} />
           </Route>
-          <Route path={'/contact'} exact>
+          <Route path={'/contact'}>
             <Contact />
           </Route>
-          <Route path={'/about'} exact>
+          <Route path={'/about'}>
             <AboutUs />
           </Route>
           <Route>

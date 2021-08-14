@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Carousel, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Carousel, Container, Row, Button } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import { getAlbumById, getMostRecentAlbums } from '../api';
 
 import SingleAlbum from './SingleAlbum.js';
@@ -13,6 +13,8 @@ const Home = () => {
   const [albumOne, setAlbumOne] = useState({});
   const [albumTwo, setAlbumTwo] = useState({});
   const [albumThree, setAlbumThree] = useState({});
+
+  const history = useHistory();
 
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
@@ -30,8 +32,6 @@ const Home = () => {
       setAlbumThree(thirdAlbum[0]);
     })();
   }, []);
-
-  // console.log(albumOne, albumTwo, albumThree);
 
   return (
     <>
@@ -126,7 +126,7 @@ const Home = () => {
       </Carousel>
       <Container fluid>
         <h1 style={{ textAlign: 'center', borderBottom: '1px solid black' }}>
-          New Releases (now in stock!)
+          New Releases (Now in stock!)
         </h1>
         <Container
           fluid
@@ -145,7 +145,16 @@ const Home = () => {
             );
           })}
         </Container>
-        <Link to={'/albums/#'}>See More...</Link>
+        <span style={{ display: 'flex', justifyContent: 'center' }}>
+          <Button
+            onClick={() => {
+              window.scrollTo(0, 0);
+              history.push('/albums');
+            }}
+          >
+            See More...
+          </Button>
+        </span>
       </Container>
     </>
   );
