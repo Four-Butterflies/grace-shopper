@@ -11,12 +11,7 @@ const PaginationComponent = ({ albumsPerPage, totalAlbums, paginate }) => {
   }
 
   return (
-    <Pagination
-      style={{
-        maxWidth: '960px',
-        margin: 'auto',
-      }}
-    >
+    <Pagination>
       {pageNumbers.map((number) => (
         <Pagination.Item
           key={number}
@@ -25,6 +20,7 @@ const PaginationComponent = ({ albumsPerPage, totalAlbums, paginate }) => {
             event.preventDefault();
             setActive(number);
             paginate(number);
+            window.scrollTo(0, 0);
           }}
         >
           {number}

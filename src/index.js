@@ -11,7 +11,6 @@ import {
   NavbarComp,
   CheckoutForm,
   Albums,
-  PaginationComponent,
   FooterUnit,
   Admin,
   Orders,
@@ -30,9 +29,6 @@ const App = () => {
   const [user, setUser] = useState({});
   const [admin, setAdmin] = useState(false);
   const [allAlbums, setAllAlbums] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [albumsPerPage] = useState(20);
-  const [totalAlbums, setTotalAlbums] = useState(0);
   const [currentAlbum, setCurrentAlbum] = useState({});
   const [orderCheckOut, setOrderCheckOut] = useState();
   const [refreshAlbums, setRefreshAlbums] = useState(false);
@@ -62,9 +58,6 @@ const App = () => {
     })();
   }, [refreshAlbums]);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-  
-
   return (
     <BrowserRouter>
       <NavbarComp
@@ -93,24 +86,12 @@ const App = () => {
                 setOrderCheckOut={setOrderCheckOut}
               />
             </Elements>
-          </Route> 
+          </Route>
           <Route path={'/'} exact>
             <Home setCurrentAlbum={setCurrentAlbum} />
           </Route>
           <Route exact path={'/albums'}>
-            <Albums
-              allAlbums={allAlbums}
-              albumsPerPage={albumsPerPage}
-              currentPage={currentPage}
-              setTotalAlbums={setTotalAlbums}
-              setCurrentAlbum={setCurrentAlbum}
-              currentAlbum={currentAlbum}
-            />
-            <PaginationComponent
-              albumsPerPage={albumsPerPage}
-              totalAlbums={totalAlbums}
-              paginate={paginate}
-            />
+            <Albums allAlbums={allAlbums} setCurrentAlbum={setCurrentAlbum} />
           </Route>
           <Route exact path={`/albums/:albumId`}>
             <AlbumInformation currentAlbum={currentAlbum} />
@@ -118,10 +99,10 @@ const App = () => {
           <Route path={'/orders'}>
             <Orders setOrderCheckOut={setOrderCheckOut} />
           </Route>
-          <Route path={'/contact'} exact>
+          <Route path={'/contact'}>
             <Contact />
           </Route>
-          <Route path={'/about'} exact>
+          <Route path={'/about'}>
             <AboutUs />
           </Route>
           <Route>

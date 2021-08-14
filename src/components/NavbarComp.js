@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import '../index.css';
 import { Navbar, Nav, Container, Form, Button, Image } from 'react-bootstrap';
 
@@ -13,6 +13,13 @@ const NavbarComp = (props) => {
   const [showRegister, setShowRegister] = useState(false);
 
   const history = useHistory();
+
+  const navButtonStyle = {
+    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+    fontWeight: '600',
+    margin: '10px',
+    height: '2.5rem',
+  };
 
   const handleShowLogin = () => {
     setShowLogin(true);
@@ -32,34 +39,26 @@ const NavbarComp = (props) => {
     >
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Link to={'/'}>
           <Image
-            src="https://americanvinylco.com/wp-content/uploads/2019/06/americanvinyl0.png"
+            src="https://i.imgur.com/cMgINSb.png"
             rounded
             style={{
               height: '4rem',
               width: '4rem',
               margin: '10px',
               marginRight: '25px',
-              justifyContent: 'center',
             }}
           />
+        </Link>
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Button
               onClick={() => {
                 history.push('/');
               }}
               variant="primary"
-              style={{
-                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
-                fontWeight: '600',
-                textTransform: 'uppercase',
-                textDecoration: 'none',
-                WebkitTransition: 'all 150ms ease',
-                transition: 'all 150ms ease',
-                margin: '10px',
-                height: '2.5rem',
-              }}
+              style={navButtonStyle}
             >
               Home
             </Button>
@@ -68,16 +67,7 @@ const NavbarComp = (props) => {
                 history.push('/albums');
               }}
               variant="primary"
-              style={{
-                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
-                fontWeight: '600',
-                textTransform: 'uppercase',
-                textDecoration: 'none',
-                WebkitTransition: 'all 150ms ease',
-                transition: 'all 150ms ease',
-                margin: '10px',
-                height: '2.5rem',
-              }}
+              style={navButtonStyle}
             >
               Albums
             </Button>
@@ -86,16 +76,7 @@ const NavbarComp = (props) => {
                 history.push('/orders');
               }}
               variant="primary"
-              style={{
-                boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
-                fontWeight: '600',
-                textTransform: 'uppercase',
-                textDecoration: 'none',
-                WebkitTransition: 'all 150ms ease',
-                transition: 'all 150ms ease',
-                margin: '10px',
-                height: '2.5rem',
-              }}
+              style={navButtonStyle}
             >
               Cart
             </Button>
@@ -105,17 +86,7 @@ const NavbarComp = (props) => {
                   history.push('/admin');
                 }}
                 variant="primary"
-                style={{
-                  boxShadow:
-                    '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
-                  fontWeight: '600',
-                  textTransform: 'uppercase',
-                  textDecoration: 'none',
-                  WebkitTransition: 'all 150ms ease',
-                  transition: 'all 150ms ease',
-                  margin: '10px',
-                  height: '2.5rem',
-                }}
+                style={navButtonStyle}
               >
                 Admin
               </Button>
@@ -127,34 +98,14 @@ const NavbarComp = (props) => {
                 <Button
                   onClick={handleShowLogin}
                   variant="primary"
-                  style={{
-                    boxShadow:
-                      '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
-                    fontWeight: '600',
-                    textTransform: 'uppercase',
-                    textDecoration: 'none',
-                    WebkitTransition: 'all 150ms ease',
-                    transition: 'all 150ms ease',
-                    margin: '10px',
-                    height: '2.5rem',
-                  }}
+                  style={navButtonStyle}
                 >
                   Login
                 </Button>
                 <Button
                   onClick={handleShowRegister}
                   variant="primary"
-                  style={{
-                    boxShadow:
-                      '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
-                    fontWeight: '600',
-                    textTransform: 'uppercase',
-                    textDecoration: 'none',
-                    WebkitTransition: 'all 150ms ease',
-                    transition: 'all 150ms ease',
-                    margin: '10px',
-                    height: '2.5rem',
-                  }}
+                  style={navButtonStyle}
                 >
                   Register
                 </Button>
@@ -167,17 +118,7 @@ const NavbarComp = (props) => {
                   setAdmin(false);
                 }}
                 variant="primary"
-                style={{
-                  boxShadow:
-                    '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
-                  fontWeight: '600',
-                  textTransform: 'uppercase',
-                  textDecoration: 'none',
-                  WebkitTransition: 'all 150ms ease',
-                  transition: 'all 150ms ease',
-                  margin: '10px',
-                  height: '2.5rem',
-                }}
+                style={navButtonStyle}
               >
                 Logout ({user.username.split(' ')[0]})
               </Button>
