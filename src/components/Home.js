@@ -5,14 +5,15 @@ import { getAlbumById, getMostRecentAlbums } from '../api';
 
 import SingleAlbum from './SingleAlbum.js';
 
-// IDEA: CHANGE THE RANDOM ALBUMS DAILY
-
 const Home = () => {
   const [index, setIndex] = useState(0);
   const [recentAlbums, setAlbums] = useState([]);
   const [albumOne, setAlbumOne] = useState({});
   const [albumTwo, setAlbumTwo] = useState({});
   const [albumThree, setAlbumThree] = useState({});
+
+  // Get the date so we can change the albums daily
+  const date = new Date().getDate();
 
   const history = useHistory();
 
@@ -24,11 +25,11 @@ const Home = () => {
     (async () => {
       const albums = await getMostRecentAlbums();
       setAlbums(albums);
-      const firstAlbum = await getAlbumById(1);
+      const firstAlbum = await getAlbumById(date);
       setAlbumOne(firstAlbum[0]);
-      const secondAlbum = await getAlbumById(57);
+      const secondAlbum = await getAlbumById(date * 2);
       setAlbumTwo(secondAlbum[0]);
-      const thirdAlbum = await getAlbumById(3);
+      const thirdAlbum = await getAlbumById(date * 3);
       setAlbumThree(thirdAlbum[0]);
     })();
   }, []);
