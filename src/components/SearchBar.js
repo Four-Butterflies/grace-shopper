@@ -44,12 +44,12 @@ const SearchBar = ({ allAlbums, setAllAlbums }) => {
   };
 
   const handleOnSubmit = async () => {
-    if (title === 'Album Name') {
+    if (title === 'Album Name' && searchTerm !== '') {
       const albums = await searchByAlbumName(searchTerm);
       setAllAlbums(albums);
       setFilteredAlbums([]);
       setSearchTerm('');
-    } else if (title === 'Artist') {
+    } else if (title === 'Artist' && searchTerm !== '') {
       const albums = await searchByArtist(searchTerm);
       setAllAlbums(albums);
       setFilteredAlbums([]);
