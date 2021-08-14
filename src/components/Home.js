@@ -147,6 +147,14 @@ const Home = () => {
         </Container>
         <span style={{ display: 'flex', justifyContent: 'center' }}>
           <Button
+            variant="primary"
+            style={{
+              width: '14rem',
+              fontSize: '0.8rem',
+              boxShadow: '0 1px 3px rgba(0, 0, 0, 0.08), 4px 4px 8px #186AE7',
+              margin: '5px',
+              height: '2rem',
+            }}
             onClick={() => {
               window.scrollTo(0, 0);
               history.push('/albums');

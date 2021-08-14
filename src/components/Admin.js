@@ -58,7 +58,13 @@ const Admin = ({ user, admin, allAlbums, refreshAlbums, setRefreshAlbums }) => {
       <h3>Welcome {`${user.username.split(' ')[0]}`}</h3>
       <Container fluid>
         <h3>Albums</h3>
-        <Button onClick={handleShowAlbumCreate} variant="warning">
+        <Button
+          variant="warning"
+          style={{
+            marginBottom: '1rem',
+          }}
+          onClick={handleShowAlbumCreate}
+        >
           Create Album
         </Button>
         <Accordion>
@@ -98,10 +104,16 @@ const Admin = ({ user, admin, allAlbums, refreshAlbums, setRefreshAlbums }) => {
                             {album.artist} ({album.year})
                           </Card.Subtitle>
                         </Card.Body>
-                        <ListGroupItem>
+                        <ListGroupItem
+                          style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                          }}
+                        >
                           <Button
                             variant="warning"
-                            style={{ width: '7rem' }}
+                            style={{ width: '5rem' }}
                             onClick={() => {
                               setSelectedAlbum(album);
                               handleShowAlbumEdit();
@@ -111,7 +123,7 @@ const Admin = ({ user, admin, allAlbums, refreshAlbums, setRefreshAlbums }) => {
                           </Button>
                           <Button
                             variant="danger"
-                            style={{ width: '7rem' }}
+                            style={{ width: '5rem' }}
                             onClick={() => {
                               setSelectedAlbum(album);
                               handleShowAlbumDelete();
@@ -158,10 +170,16 @@ const Admin = ({ user, admin, allAlbums, refreshAlbums, setRefreshAlbums }) => {
                             {/* {album.artist} ({album.year}) */}
                           </Card.Subtitle>
                         </Card.Body>
-                        <ListGroupItem>
+                        <ListGroupItem
+                          style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                          }}
+                        >
                           <Button
                             variant="warning"
-                            style={{ width: '7rem' }}
+                            style={{ width: '5rem' }}
                             onClick={() => {
                               setSelectedUser(user);
                               handleShowUserEdit();
@@ -171,7 +189,7 @@ const Admin = ({ user, admin, allAlbums, refreshAlbums, setRefreshAlbums }) => {
                           </Button>
                           <Button
                             variant="danger"
-                            style={{ width: '7rem' }}
+                            style={{ width: '5rem' }}
                             onClick={() => {
                               setSelectedUser(user);
                               handleShowUserDelete();
