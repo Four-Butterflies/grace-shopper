@@ -32,7 +32,7 @@ const Home = () => {
       const thirdAlbum = await getAlbumById(date * 3);
       setAlbumThree(thirdAlbum[0]);
     })();
-  }, []);
+  }, [date]);
 
   return (
     <>
