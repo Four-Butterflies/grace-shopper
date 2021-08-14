@@ -11,7 +11,6 @@ import {
   NavbarComp,
   CheckoutForm,
   Albums,
-  PaginationComponent,
   FooterUnit,
   Admin,
   Orders,
@@ -30,9 +29,6 @@ const App = () => {
   const [user, setUser] = useState({});
   const [admin, setAdmin] = useState(false);
   const [allAlbums, setAllAlbums] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [albumsPerPage] = useState(24);
-  const [totalAlbums, setTotalAlbums] = useState(0);
   const [currentAlbum, setCurrentAlbum] = useState({});
   const [orderCheckOut, setOrderCheckOut] = useState();
   const [refreshAlbums, setRefreshAlbums] = useState(false);
@@ -61,8 +57,6 @@ const App = () => {
       }
     })();
   }, [refreshAlbums]);
-
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <BrowserRouter>
@@ -97,19 +91,7 @@ const App = () => {
             <Home setCurrentAlbum={setCurrentAlbum} />
           </Route>
           <Route exact path={'/albums'}>
-            <Albums
-              allAlbums={allAlbums}
-              albumsPerPage={albumsPerPage}
-              currentPage={currentPage}
-              setTotalAlbums={setTotalAlbums}
-              setCurrentAlbum={setCurrentAlbum}
-              currentAlbum={currentAlbum}
-            />
-            <PaginationComponent
-              albumsPerPage={albumsPerPage}
-              totalAlbums={totalAlbums}
-              paginate={paginate}
-            />
+            <Albums allAlbums={allAlbums} setCurrentAlbum={setCurrentAlbum} />
           </Route>
           <Route exact path={`/albums/:albumId`}>
             <AlbumInformation currentAlbum={currentAlbum} />

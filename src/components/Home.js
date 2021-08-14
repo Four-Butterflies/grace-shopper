@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Carousel, Container, Row, Button } from 'react-bootstrap';
+import { Carousel, Container, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { getAlbumById, getMostRecentAlbums } from '../api';
 
